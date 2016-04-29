@@ -17,10 +17,12 @@ li {
 .Back-Button {
     text-align: center;
     background-color: royalblue;
+    cursor: pointer;
 }
-.Diary-Button {
+.Diary-Button, .Task-Button {
     text-align: center;
     background-color: forestgreen;
+    cursor: pointer;
 }
 .Diary-Entry {
     width: 100%;
@@ -38,6 +40,7 @@ li {
 .Main-Div {
     min-height: 100%;
     background-color: antiquewhite;
+    text-align: center;
 }
 .Month-And-Year {
     text-align: center;
@@ -68,18 +71,16 @@ li {
     width: 100%;
     text-align: center;
 }
-.Submit-Entry {
+.Submit-Entry, .Edit-Entry, .Complete-Button {
     display: inline-block;
+    cursor: pointer;
 }
 .Table-Div {
     width: 100%;
 }
-.Task-Button {
-    text-align: center;
-    background-color: forestgreen;
-}
 .Task-Entry {
     width: 100%;
+    box-sizing: border-box;
 }
 .Task-Header {
     cursor: pointer;
