@@ -1,0 +1,298 @@
+September, 2015
+17th
+Introduction and tour around Barnwood Domain.
+18th
+Getting used to software and colleagues. Attended an Oracle BI meeting.
+19th to 22nd
+Cannington Court induction: Team-building exercises and lectures on important aspects to work, e.g. rapport, communications, etc.
+23rd
+Attended an EDT meeting and a STEM Ambassador Talk.
+24th to 25th
+Reading digital backlog, IT architecture and completing Export Controls and Anti-fraud assessments.
+26th to 28th
+Continue understanding of Accenture e-forms mobile app source code. Intro talk with Martin Edmond on the 28th.
+29th
+Ordered Freedom laptop, started looking at PDDs, and attended Architects Team meeting.
+30th
+Talked with Robin Whitfield on PDD templates, had a Mobility and Innovation steering meeting, started looking into wiki options.
+October, 2015
+1st
+Gave in outstanding ID documents to STEM today, attended a strategy session, talk with Graham on the SharePoint system, had an induction follow-up with Martin.
+2nd to 4th
+Had a talk with Simon Dickinson on the Asset Guardian PDD on the 2nd.
+5th
+Began understanding of the Microsoft Azure services after gaining access to an Office 365 account, attended meeting on migration of legal team from Blue to Red, new tasks were given.
+6th
+Attended a Mandate A meeting on integration approaches, had a chat with Sunil Prajapat on DeepSecure test cases, attended an NG Architecture Forum.
+7th
+Started first draft of the DeepSecure test cases.
+8th
+Completed first draft of the DeepSecure test cases.
+9th to 14th
+Miscellanea - Reading up on integration and writing up notes and Tuesday Architects meeting.
+15th to 16th
+Hack Day on AutoTour with Microsoft, mainly working on the presentation with Team 3.
+17th to 19th
+Continued note-taking on integration.
+20th
+Attended a strategy forum and - with help from Andy - I created my first virtual machine, TomsMachine.
+21st
+Started configuration of TomsMachine; like adding programs - Visual Studio for example. Started to see how to access/compile Team 1's source code for the AutoTour hackday. Started building a document on high-level structure of templating and wikifying, (possibly), the PDDs.
+22nd
+Attended a Strategy session on business capabilities. Considered possibility of using bespoke application to develop PDDs. Sorted out a meeting with Jen Stephens; Portfolio Management and a meeting with Robin on PDD Wiki Visions.
+23rd
+Continued working on documents for PDD wikification and making the layout of the DeepSecure test cases more like Phil Gilbert's. Attended info talk on Portfolio management with Jen Stephens.
+24th to 26th
+Sent Team 3 presentation and mock-up UI to Sunil. Continued writing up on integration; message construction.
+27th
+Attended architects team meeting and talked with Martin on wikifying PDDs. More integration note-taking.
+28th
+Reformatted test cases for DeepSecure and had a talk on wikifying PDDs with Mat Rowles.
+29th
+Inserted formal detail on DeepSecure to expand the likes of the test procedure document. Attended a strategy session on integration. Started developing more on SharePoint PDD wiki to prepare for demo.
+30th
+Ill.
+November, 2015
+1st to 2nd
+Built upon revised test procedure for DeepSecure test cases. Started creating a powerpoint for demo presentation on wikifying PDDs.
+3rd
+Continued building WPDD demo powerpoint. Attended architect's meeting. Attended meeting on Mubaloo on the art of the possible with using beacons (BLE) on plants, specifically concerning AutoTour procedure.
+4th
+Continued to look into using a Powershell-powered runbook to automate up-times and down-times for the running of Azure virtual machines and servers. Obtained equipment names for resting from Jon Hall to add to DeepSecure test procedures document.
+5th
+Attended small architect forum. Continued trying to work out complications for creating a runbook in Azure.
+6th
+More work on sorting out the Azure runbook. Had a DeepSecure workshop on the test procedure with Sunil, Ian Kelly, Phil Gilbert, Andy and Neil from DeepSecure.
+9th to 10th
+Went to the Malverns with Sunil, Nigel and Jon Bale for DeepSecure training.
+11th
+Gave a demo on wikifying PDDs. Created a cross-analysis table for the multiple options for simplifying the creation of PDDs. More automation - runbook research. Had a one-to-one with Martin; moved to Friday.
+12th
+Set up Linux CentOS server on Red Hat to host the MediaWiki files and directories. This will make MediaWiki ready to build a directory PDD to test functionality on. Went to a strategy session on pushing a final project on strategy and capabilities as well as high level thinking for upgrading desktop OSs from XP to 7 and then to 10. Went to a pension briefing with Generation IS. Attended a YinI mentor meeting correlating views between me, Martin and Pete.
+13th
+Getting a little more insight on how to use Microsoft PowerShell, specifically to use Powershell scripts in Azure. More help from John Bale on setting up the Linuz server to start working on the MediaWiki demo. Made an outlining specification for how to structure the created MediaWiki. Me and John completed the setup of the MediaWiki, ready for configuration and creation.
+16th
+Learning how to make restarting the web server for the MediaWiki more autonomous. Had a DeepSecure follow-up with Sunil and Nigel Atkins. Also talked with Andy on an update for how Azure automation was progressing.
+17th
+Sorted out the certificate problem on Azure automation. Had a Generation Architect's meeting in the morning and a Generation Architect's Forum in the afternoon. Continued making a template PDD wiki page.
+18th
+Completed the template PDD wiki page. Started filling in template for Asset Guardian (dummified).
+19th
+Edited Ian Kelly's input on test procedure for review form Phil and Sunil. Attended a strategy session on updating and finalising the strategy capabilities summary. Continuation of editing Asset Guardian PDD wiki.
+20th
+Continuation and finalisation of Asset Guardian PDD wiki.
+23rd
+Tarnishing Asset Guardian PDD wiki page by adding links and associated files. Steve from DeepSecure is in today.
+24th
+Started building example HLA wiki page. It was an HLA for HNB Beran but for example's sake, I linked it with the Asset Guardian PDD. Catch up with Sunil and Nigel on DeepSecure insights. Had an informal meeting with Steve from DeepSecure, John Bale and Sunil on requirements and required actions for DeepSecure. Gave Steve test procedure for review.
+25th
+Finished HLA wiki page. Had an informed meeting with Nigel and Sunil on current system's (Web Sense) forensics capabilities, (forensics with respect to data). Looking into time-constrained formatting of text in wikis for purpose of 'recent changes' acknowledgment.
+26th
+Day of learning the configuration of DeepSecure test environment as well as how the policies for their guards can tie into the current test procedure. Also managed to find security problem with TransGap guard.
+27th
+Developing better page for help in MediaWiki PDD site. Made changes to DeepSecure test procedure based on Steve's words yesterday. Seen Nathan Mustoe on Clearswift.
+30th
+Steve came round again to roughly round up the remainder of the DeepSecure smoke tests, completing the dropbox use case and adding to the other two use cases. He may come back in the near future.
+December, 2015
+1st
+Used a for loop and pre-defined variables to finalise the runbook scripts. The final point of agenda is to learn the sequence of order for how the virtual machine should be turned off and on. Made further edits to the DeepSecure test procedure document. Completed sequencing for Azure Powershell.
+2nd
+Continuation of building/updating/investigating MediaWiki interface. Had a meeting with Ian and Sunil on next steps for DeepSecure.
+3rd
+Had a strategy session and a conference call with Neil Hepsworth and Sunil. Had a session with Niall who will be testing DeepSecure when the time comes - the session was to get him used to the environment.
+4th
+Had a meeting with Redhat on integration; where EDF stands on the concept and what Redhat would be able to do. Gave an updated demo on wikification of project design documents. Given feedback on further investigation. Had a strategy session with Nuclear New Build on their business strategy/capability process and how NG could adapt to their more successful workflows.
+7th
+Simply checking DeepSecure configuration is correct.
+8th
+Steve from DeepSecure came to help configure the web service side of ClearPoint. Had to avoid the Generation Architect's meeting to work with Steve.
+9th
+Configured the desktop environment for DeepSecure a little. Started writing a document on progress made on the wikification of PDDs. Started round one testing with Niall. Had a one-to-one with Martin.
+10th
+Had a catch up on DeepSecure with Ian, Phil and Sunil. Had a strategy session with Martin, Graham and Sunil with Computer Associates on ways to tackle the business strategies case. Did research on GigJam and wrote an overview document.
+11th
+Fail on the driving test. Added a small update to the Azure Automation Implementation document. Looked into GigJam a little more after talking with Adam Ashby and then getting into contact with Clive Dilley of Microsoft. Shared out wiki IP to ask for feedback from the other architects. Starting more experimentation with the layout of the wiki.
+14th
+Ill.
+15th
+Edited the DeepSecure ClearPoint environment to notify the originator and considered how to block attachments and files that have not been labelled, which may be hard to get around. LEft early due to continuing illness.
+16th
+Ill.
+17th
+Still ill but came in anyway. A little more refinement on DeepSecure configuration. Had  PoT catch-up with Ian and Sunil on DeepSecure progress. Talked on a new use case on coupling DeepSecure with Bolton-James or other similar software in-use to see how it will couple on refining and constraining transmitted metadata in attachemnts.
+18th
+Ill.
+21st
+Day of further editing on Azure Automation document. Added more images and clarification based on Andy's comments on the document. Talked with Martin on starting investigation/work on Dragon NaturallySpeaking and Beran from the innovation hopper.
+22nd
+Talked with Kathryn Prime and Becky Andrews on how Dragon NaturallySpeaking works. Constructed more of the Dragon NS document. Constructed an Interim report for Loughborough university. Collated more screenshots for the Azure automation document.
+23rd
+Developed Interim report a little more. Handed it into Martin for anlaysis on containing sensitive information. More development on Azure Automation document. In talks with John B on Visual Editor for MediaWiki. Starting set-up for that.
+24th
+Worked with John B on VisualEditor. Got to final stages of implementation.
+25th to 31st
+Christmas Break.
+January, 2016
+1st to 3rd
+Christmas Break.
+4th
+Expenses claim for Holiday Inn on the 15th of October - need receipt to come through. Now have access to ESS portal. Submitted expenses claim report. Completed test cases for first and third use cases by Niall. Finalising of ClearPoint configuration for authors property condition to prevent it from entering branching additional policies form label identification.
+5th
+More configuration of DeepSecure ClearPoint. Fitted in certain cells of DeepSecure test procedure document based on Niall's testing. A little investigation on Vagrant and how it can be used with Microsoft Azure. First Architect team meeting of 2016.
+6th
+Worked out what was wrong with VisualEditor; (IE7 not supported). Trying to constrain who can access wiki web service on DeepSecure test environments based on user rather than IP... Troubleshooting. More research on several things.
+7th
+Got new desktop environment from Jon H with IE10 installed. VisualEditor now works for creating new pages. Need to set up parsoid server with John B to edit already existing pages and saving changes. Strategy session on illustration of Vision 2020. Trying to catch up to everyone else's wavelength.
+8th
+Meeting on Innovation Pipeline, concerning objects in the innovation pipeline and who to assign them to.
+11th
+More investigation on ClearPoint configuration for TransGap and how to make it work properly. Need to arrange meeting with Steve of DeepSecure.
+12th
+Had a Generation Architect's team meeting. Tidbits everywhere else.
+13th
+Got Niall to provide feedback from DeepSecure training. Meeting with Andy on Beran and Vagrant introduction. One-to-one with Martin on how I'm doing. Set up Wiki Editor to see how it is.
+14th
+DeepSecure PoT with Phil, Ian and Sunil. Working with alternatives to VisualEditor for MediaWiki, WikiEditor seems to be the best alternative.
+15th
+Changed the date of the new PDD Demo to Tuesday. E-mailed Chan Mistry on Dragon NS. Started investigation into Vagrant and how it could benefit the company.
+18th
+Spent day on developing knowledge on Vagrant and began writing out a Word document. Also attended an innovation pipeline meeting.
+19th
+Had a demo for PDD MediaWiki: A lot of stuff to take in. Began to assess the MediaWiki situation. I fixed the file upload situation. I then theorized around the structure of the PDD and component pages.
+20th
+Steven from DeepSecure came over to sort out TransGap with success. Met with Ieuan on the subject of Beran to get a better understanding. Study of Beran.
+21st
+More study of Beran. Strategy Meeting. DeepSecure PoT. Talk with Ian on the progress of the Beran historic data risk assessment. Investigation into Azure problem.
+22nd
+Talked with Chan Mistry on Dragon NS. False lead. Created a Visio diagram for the outlying MediaWiki website layout. More playing with the actual website.
+25th
+Installed InputBox extension into MediaWiki to allow for easy creation of new pages. Looking into installing either the Preloader or Boilerplate extensions that will allow section templates to have applied to article pages. This could prove helpful for either classification tags, or other possibilities that apply to certain categories.
+26th
+Had a Generation Architect's meeting, and an innovation pipeline. There is a possibility that the packaged Dragon NS software could be packaged as a grouped accessibility package with Dragon NS and Jaws; maybe more as well. Working on expanding MediaWiki more. Added HTML and started to categorize.
+27th
+More work on improving the MediaWiki with raw HTML. Categorization of pages is still a little buggy.
+28th
+Go4Set introduction in Tewkesbury with the others. Talked with Tom Barker on the 'categories' problem. No answer. However, can gain information on engwiki through introduction to their meetings. More work on MediaWiki as well.
+29th
+MediaWiki improvements.
+February, 2016
+1st
+MediaWiki skill improvements. This was done through more investigation of Vagrant. Set-up Vagrant and VirtualBox software on the Mac. Quickly learnt how to autonomously set up simplistic virtual machines, one of which has a MediaWiki server included to it. Went to the Crypt school to help with Go4Set boys.
+2nd
+Easily provisioned MediaWiki extensions, inluding VisualEditor which was previously impossible on 10.138.137.82 wiki. The new foundations for this 'test' wiki has also helped me to develop a more aesthetically pleasing wiki. Also had a driving test.
+3rd
+Showed Sunil the ropes on creating his own wiki pages in the PDD Wiki. Gave in final identification documents to STEM lady Caroline. Gave scanned copy of passport to Melanie Bailey for CTC vetting. Started developing the Vagrant overview document more with more specific examples applying to EDF.
+4th
+Had a Strategy session. Helped Aidan set up a virtual machine for the development team. More updates to the Vagrant document ans sent it off to Andy to review.
+5th
+Playing around with Vagrant and Azure and also Vagrant with Docker. Vagrant with Azure needs to be updated as Vagrant makes the input of a management certificate mandatory where Azure management certificates are no longer supported.
+8th
+More configuration/exploration with Vagrant used with Docker. Not too important concerning use cases for Vagrant implementation. Updated Vagrant document. Had an innovation pipeline. Had a meeting with Sunil and others on use of wikis to provide information on information governance with regards to data types against company systems.
+9th
+Work on MediaWiki formatting. Had an Architect's team meeting.
+10th
+Work on MediaWiki formatting. Had a one-to-one with Martin.
+11th
+Developing obsolescence view for information systems in generation and their supporting components.
+12th
+Finished first draft of obsolescence view for review from Martin, Andy, Graham. Put through a WPDO request to Dawn Thorneycroft and package crew to no effect. Needs adjusting. Put the Beran Hack Day idea into the innovation hopper.
+15th
+Minor tweaking to PDD wiki site. Had an innovation pipeline meeting. Development of personal development 'checklist' document. Sent down an e-mail on prospects for Dragon NaturallySpeaking . Requirements gathering for Beran project.
+16th
+Had first Deliverable Team 3 meeting. Had an Architect team meeting. More tweaking of PDD MediaWiki. Improvements made to Obsolescence Plan. Looking into talking with Jon Annison on potential implementation of Dragon NS Professional.
+17th
+Trying to install Parsoid.
+18th
+Trying to install Parsoid. Talking with Dave Webb on Docker.
+19th
+On Leave.
+22nd
+Had an innovation pipeline meeting. Made progress on a requirements gathering document for Beran project.
+23rd
+More work on Beran requirements gathering document. Attended a Delivery Team 3 meeting. Completed DBS application for STEM ambassador induction.
+24th
+Talked with Kathryn on Dragon NaturallySpeaking update. Did a lot of programming on python regarding number properties to stay up to scratch.
+25th to 26th
+After a strategy session on the 25th I needed to up the priority of perfecting the obsolescence plan as it was due on the 26th. I did all I could and handed a copy to Martin but some of the systems still require validation from Andy.
+29th
+Worked on developing Beran requirements a little more. Attended another Go4Set meeting/session.
+March, 2016
+1st
+Had a meeting with Kathryn, Becky, Megan and co. on steps forwards for collating an accessibility software wiki. Had another session for collating an accessibility software wiki. Had another session with Kathryn, Megan and Becky on the usage of JAWS. More work on obsolescence plan based on Andy's input. Started work on a web hierarchy structure for the accessibility wiki.
+2nd
+More work on obsolescence plan before and after a meeting with Graham and Andy on validation of the aspects in the diagram. Asked to start a draft of the execution plan. Need to see the MTP from Glen Thorney.
+3rd
+Got a reply back from Ieuan on Beran. Passed my driving test practical. Also had a look at the MTP trying to understand that.
+4th
+More Beran requirements.
+7th
+More Beran requirements. Shut down the Azure virtual machines for Lync. Attended another Go4Set session at the Crypt School.
+8th
+Talking with Kathryn, Adam and George Xydas on possibility of placing accessibility user help stuff on Pulse/SharePoint/MediaWiki. Attended Team Architect's meeting. Sorted something out with Mat on PDD wiki. Attended Strategy session on Vision 2020.
+9th
+More Beran requirements, work on Execution plan. Had a one-to-one with Martin. Talked with Mat on inevitability for downfalls to PDD wiki.
+10th
+More work on Beran Requirements and execution plan. Had a Delivery Team 3 weekly meeting and talked with Ieuan on any conflicts to the Beran requirements as well as additions and improvements to be made.
+11th
+Fixed Beran requirements according to Ieuan's words on the matter. Had a Vision 2020 meeting to catch up with architects and 2020 vision. More work on execution plan.
+14th
+More work on execution plan. Attended Go4Set to steer children on their projects. Attended an innovation pipeline meeting.
+15th
+Attended a Delivery Team 3 meeting and then an Architect's Team meeting. Working more on Beran requirements document. Also working on adding Sunil as a user to the Microsoft Azure environment for him to work on IoT services.
+16th
+More work on Beran requirements document. Talked over actions for Go4Set with Niall and Aidan.
+17th
+Attended a Strategy session to work out actions for progressing with the Obsolescence plan and the Execution plan. Saw a demonstration for the LittleBits kit with Simon Richardson. Took one of the kits ready to use on Monday with the Crypt school kids for Go4Set.
+18th
+Thinking up extra challenges for the LittleBits kit used by Go4Set kids on Monday. Edited both the Execution plan and the Obsolescence plan. Looking into Beran requirements document a little more.
+21st
+Go4Set day providing activities for the Crypt school at Barnwood. Small amount of work on Beran requirements. Also had a YinI mentor meeting. Need to see how other departments work at some point, as well as the station visit and provide an exit strategy by the end of the year.
+22nd
+Setting up a SharePoint 2013 Server Farm for Hack Day management.
+23rd
+More work on setting up the SharePoint SF from Azure. Talked with Mark on potentially creating component references in a wiki.
+24th
+Started to develop an idea on how to structure the new component wiki.
+25th to 31st
+Easter Break.
+April, 2016
+1st to 3rd
+Easter Break.
+4th
+Had an Accessibility meeting with Kathryn, Becky, Dave and others. Attended innovation pipeline meeting and talked with Graham and Martin Wragby on MEGA and its applications. Started to add new systems and components to obsolescence plan.
+5th
+Had a Delivery Team 3 meeting, and Architect's Team meeting as well as a GAF. Finished adding to the obsolescence plan based on Graham's MEGA data extraction.
+6th
+Working on component wiki a little more, ground to a halt while Graham consults on quality/benefits of purpose. Working on analysis of funding for Microsoft Azure resources.
+7th
+Had a Strategy session on Actions to progress 2020 visions. Given a Project Tango Developer's Kit to test out how the hardware/software functions. More work on Azure billing granularity.
+8th
+Started on Excel spreadsheet showing support dates for critical applications we use. A little more investigation for Project Tango.
+11th
+Attended a Go4Set and an innovation pipeline meeting.
+12th
+Had an Architect's Team meeting on IT Principles. Also had a one-to-one with Martin. Started looking into more developer tools for Project Tango. Also started on Excel spreadsheet on Azure billing to include charts.
+13th
+Had a Delivery Team 3 meeting. Talked with Becky and also Dave to add to Accessibility Requirements Matrix. Finished the Excel spreadsheet granularizing Azure billing with charts.
+14th
+Had a Strategy session on Obsolescence and Data Management. Attended training for Unescorted Access to Hinkley Point B. Contacted Dot Product LLC on issues with serial numbers. Looked into a few apps for Project Tango.
+15th
+Started looking into developing some form of web server to host information from my time with EDF.
+18th
+Attended a Go4Set session; approaching crunch time now. More work on developing this server.
+19th
+Hinkley Point B tour around Pumphouse, Turbine Hall, Reactor Hall, Control Room. A little more work on the Accessibility software Requirements Matrix.
+20th
+A day of learning more on creating web servers; specifically for a Mac OS. More development before heading off to Black Horse in Cranham to drink.
+21st
+Finished developing Server-Side area of programming for site, specifically for the log.
+22nd
+More coding for selecting text within clicked table cell. Also created a SharePoint list to establish Application ownership across Generation IS. Attended a meeting on Go4Set CAD day with YinI students.
+25th
+Attended Go4Set session, closing in on completing the report.
+26th
+Leave.
+27th
+More development on building up the Task List page of my web service.
+28th
+Rounding off of development of the Task List page for my web service. Attended a Software Accessibility Meeting with Becky, Jane, Kathryn and Dave.

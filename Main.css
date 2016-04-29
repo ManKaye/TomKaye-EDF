@@ -1,0 +1,87 @@
+a:link {
+    color: darkgreen;
+}
+a:visited {
+    color: coral;
+}
+body {
+    font-family: "Helvetica-Neue", Helvetica, Arial, sans-serif;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: burlywood;
+}
+li {
+    list-style-type:disc;
+}
+.Back-Button {
+    text-align: center;
+    background-color: royalblue;
+}
+.Diary-Button {
+    text-align: center;
+    background-color: forestgreen;
+}
+.Diary-Entry {
+    width: 100%;
+}
+.Diary-Table {
+    width: 100%;
+}
+.Input-Div {
+    text-align: center;
+}
+.List-Header {
+    font-size: 150%;
+    text-align: center;
+}
+.Main-Div {
+    min-height: 100%;
+    background-color: antiquewhite;
+}
+.Month-And-Year {
+    text-align: center;
+}
+.Month-Row {
+    font-style: oblique;
+}
+.Side-Div {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.Std-Header {
+    text-align: center;
+}
+.Sub-Div {
+    background-color: burlywood;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Sub-Task, .Sub-Task-Status, .Sub-Task-Form {
+    width: 33%;
+    display: inline-block;
+    text-align: center;
+}
+.Sub-Task-Table {
+    width: 100%;
+    text-align: center;
+}
+.Submit-Entry {
+    display: inline-block;
+}
+.Table-Div {
+    width: 100%;
+}
+.Task-Button {
+    text-align: center;
+    background-color: forestgreen;
+}
+.Task-Entry {
+    width: 100%;
+}
+.Task-Header {
+    cursor: pointer;
+    text-align: center;
+}

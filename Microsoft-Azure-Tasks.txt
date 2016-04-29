@@ -1,0 +1,3 @@
+Create Azure automation with scripts.done
+Remove the Lync virtual machines from automation scripts and shut them down.done
+Create chart(s) on expenditure.done
