@@ -19,8 +19,7 @@
                 </form>
             </div>
             <div id="Table-Div">
-                <table class="Diary-Table" id="Diary-Table" border="1">
-                </table>
+                
             </div>
         </div>
     </body>

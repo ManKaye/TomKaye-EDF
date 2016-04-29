@@ -296,3 +296,5 @@ Leave.
 More development on building up the Task List page of my web service.
 28th
 Rounding off of development of the Task List page for my web service. Attended a Software Accessibility Meeting with Becky, Jane, Kathryn and Dave.
+29th
+More development of the web services - mainly rounding off edges. A little more optimisation of the SharePoint list for Applications Ownership.

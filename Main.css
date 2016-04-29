@@ -30,6 +30,30 @@ li {
 .Diary-Table {
     width: 100%;
 }
+.Entry-Cell-Left {
+    display: table-cell ;
+    text-align: center;
+    float: left;
+    width: 15%;
+    border-top: 1px solid;
+}
+.Entry-Cell-Middle {
+    display: table-cell;
+    text-align: center; 
+    float: left;
+    width: 70%;
+    border-top: 1px solid;
+}
+.Entry-Cell-Right {
+    display: table-cell;
+    text-align: center;
+    float: right;
+    width: 15%;
+    border-top: 1px solid;    
+}
+.Entry-Row, .Month-Row {
+    display: table-row;
+}
 .Input-Div {
     text-align: center;
 }
@@ -44,9 +68,12 @@ li {
 }
 .Month-And-Year {
     text-align: center;
+    font-weight: bold;
+    display: table-cell;
+    border-top: 1px solid;
 }
 .Month-Row {
-    font-style: oblique;
+    background-color: gainsboro;
 }
 .Side-Div {
     width: 25%;
@@ -77,6 +104,7 @@ li {
 }
 .Table-Div {
     width: 100%;
+    display: table;
 }
 .Task-Entry {
     width: 100%;
