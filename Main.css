@@ -19,7 +19,7 @@ li {
     background-color: royalblue;
     cursor: pointer;
 }
-.Diary-Button, .Task-Button {
+.Diary-Button, .Favourites-Button, .Task-Button {
     text-align: center;
     background-color: forestgreen;
     cursor: pointer;
@@ -53,6 +53,9 @@ li {
 }
 .Entry-Row, .Month-Row {
     display: table-row;
+}
+.Favourite-Entry, .Position-Entry {
+    width: 50%;
 }
 .Input-Div {
     text-align: center;

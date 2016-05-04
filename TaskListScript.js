@@ -14,7 +14,7 @@ function LoadTasks(){
         }
     });
     $(".Task-Div").change(function(){
-       window.location.replace("TaskList.php");
+       window.location = "TaskList.php";
     });
 }
 

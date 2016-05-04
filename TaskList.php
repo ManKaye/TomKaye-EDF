@@ -9,7 +9,7 @@
         <div class="Main-Div">
             <h1 class="Std-Header">EDF Task List</h1>
             <div class="Input-Div">
-                <input type="button" class="Back-Button" onclick="window.location.replace('index.html');" value="Back to Main Page">
+                <input type="button" class="Back-Button" onclick="window.location = 'index.html';" value="Back to Main Page">
             </div>
             <div class="Input-Div">
                 <form action="TaskEntry.php" method="post">
