@@ -31,3 +31,7 @@ function LoadEntries(){
         window.location = "Diary.php";
     });
 }
+
+//$(".Main-Div").scroll(function(){
+//    $("#Back-Button-Div").css("top", $(this).scrollTop());
+//});

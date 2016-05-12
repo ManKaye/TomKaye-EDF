@@ -297,4 +297,23 @@ More development on building up the Task List page of my web service.
 28th
 Rounding off of development of the Task List page for my web service. Attended a Software Accessibility Meeting with Becky, Jane, Kathryn and Dave.
 29th
-More development of the web services - mainly rounding off edges. A little more optimisation of the SharePoint list for Applications Ownership.
+More development of the web services - mainly rounding off edges. A little more optimization of the SharePoint list for Applications Ownership.
+May, 2016
+2nd
+May Day Holiday
+3rd
+Attended Delivery Team 3 meeting and  GA Forum with the Architects. I started helping Ian with the architectural components of the new Beran infrastructure.
+4th
+More help for Ian to expand on his Risk Assessment for the new Beran infratructure. Missed out on Human Performance workshop.
+5th
+Attended a Nuclear Safety Culture workshop for the whole day - very informative.
+6th
+Development of the infrastructure of Beran on a Visio diagram as well as a talk with Gareth Edwards on understanding certain aspects of how the current infrastructure works as well as what he would want from the potential infrastructure.
+9th
+Added notes on the Visio diagram concerning certain aspects of the current infrastructure for Beran and the transmission of its data. Attended a Go4Set session at the Crypt School.
+10th
+For the entire day, I attended and in some ways helped to coordinate the Go4Set CAD day hosted in Barnwood. I helped the kids get to the places they needed to be regarding the itinerary for the day. Mine and Niall's team unfortunately didn't win an award.
+11th
+Started development of the HLA for Strategic Remote Access in MediaWiki in a last attempt to trial the potential of the software regarding its containerization of project design documents; this time with high level options reports.
+12th
+Continued and completed copying up the HLOR for Strategic Remote Access. Got a place in attending the Performance and Innovation Awards for EDF next Tuesday.

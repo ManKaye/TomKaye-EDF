@@ -18,6 +18,12 @@ li {
     text-align: center;
     background-color: royalblue;
     cursor: pointer;
+    width: 110%;
+}
+#Back-Button-Div {
+    position: fixed;
+    top: 20px;
+    left: 45%;
 }
 .Diary-Button, .Favourites-Button, .Task-Button {
     text-align: center;
@@ -92,10 +98,14 @@ li {
     margin-left: auto;
     margin-right: auto;
 }
+[class$="-Sub-Task-Div"] {
+    border-top: 1px solid;
+}
 .Sub-Task, .Sub-Task-Status, .Sub-Task-Form {
     width: 33%;
     display: inline-block;
     text-align: center;
+    vertical-align: middle;
 }
 .Sub-Task-Table {
     width: 100%;

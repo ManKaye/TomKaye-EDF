@@ -2,3 +2,5 @@ Create a one-pager.done
 Create a requirements document.done
 Speak with Ieuan Mogridgedone
 Continue to ask Ian Kelly on Risk Assessment status.not done
+Complete understanding of architectural components of current infrastructure.done
+Complete development of architectural components of potential infrastructure and send to Ian Kelly.done

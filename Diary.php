@@ -8,7 +8,7 @@
     <body onload="LoadEntries()">
         <div class="Main-Div">
             <h1 class="Std-Header">EDF Diary</h1>
-            <div class="Input-Div">
+            <div class="Input-Div" id="Back-Button-Div">
                 <input type="button" class="Back-Button" onclick="window.location = 'index.html';" value="Back to Main Page">
             </div>
             <br/>
