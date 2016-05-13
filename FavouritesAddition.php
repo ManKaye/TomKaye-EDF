@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,7 +9,7 @@
     </head>
     <body>
         <?php
-            echo "<div class='Main-Div'><br/><input type='button' class='Back-Button' onclick='window.location = \"FavouritesList.php\";' value='Back to Favourites'>";
+            echo "<div class='Main-Div'><br/><div class='Input-Div' id='Back-Button-Div'><input type='button' class='Back-Button' onclick='window.location = \"FavouritesList.php\";' value='Back to Favourites'></div>";
             if($_POST["Submit-Favourite"]){
                 if($_POST["New-Favourite"] == "Enter Favourite Here..." || "" == trim($_POST["New-Favourite"])){
                     die("<p>The data set for the favourite was the default or there was no data to write.</p></div>");
@@ -16,13 +19,24 @@
                 }
                 elseif("" != trim($_POST["Favourites-Position"]) && "" != trim($_POST["New-Favourite"]) && 1 <= intval($_POST["Favourites-Position"]) && intval($_POST["Favourites-Position"]) <= intval($_POST["List-Length"])+1){
                     $file = $_POST["Topic"]."List.txt";
-                    $current = file($file, FILE_IGNORE_NEW_LINES);
+                    $current = file($file);
+                    $_SESSION["Topic"] = $_POST["Topic"];
                     $i = intval($_POST["List-Length"]);
-                    while($i >= intval($_POST["Favourites-Position"]) - 1){
-                        $current[$i] = $current[$i-1];
-                        $i--;
+                    $j = intval($_POST["Favourites-Position"]);
+                    while($i >= $j){
+                        if($i != 0){
+                            $current[$i] = $current[$i - 1];
+                            $i--;
+                        }
+                        else{
+                        }
                     }
-                    $current[$_POST["Favourites-Position"] - 1] = $_POST["New-Favourite"];
+                    if(intval($_POST["List-Length"]) != $j){
+                        $current[$j - 1] = $_POST["New-Favourite"]."\n";
+                    }
+                    else{
+                        $current[$j - 1] = "\n".$_POST["New-Favourite"];
+                    }
                     $fileOpen = file_get_contents($file);
                     $fileOpen = "";
                     file_put_contents($file, $fileOpen);
@@ -35,7 +49,28 @@
                     }
                 }
                 else{
-                    //die("<p>Please enter a number in the correct range.</p></div>");
+                    die("<p>Please enter a number in the correct range.</p></div>");
+                }
+            }
+            if($_POST["Submit-Entry"]){
+                if($_POST["Favourites-Entry"] == "Enter List Name Here..." || "" == trim($_POST["Favourites-Entry"])){
+                    die("<p>The data set for the new favourite list was the default or there was no data to write.</p></div>");
+                }
+                else{
+                    $file = "FavouriteLists.txt";
+                    $newList = $_POST["Favourites-Entry"];
+                    $fileOpen = file_get_contents($file);
+                    $fileOpen .= "\n".$newList;
+                    $insert = file_put_contents($file, $fileOpen);
+                    $newFile = $newList."List.txt";
+                    $fileCreate = fopen($newFile, "w");
+                    fclose($fileCreate);
+                    if($insert == false){
+                        die("<p>There was an error writing the text to the file.</p></div>");
+                    }
+                    else{
+                        echo "<script>window.location = 'FavouritesList.php'</script>";
+                    }
                 }
             }
         ?>
