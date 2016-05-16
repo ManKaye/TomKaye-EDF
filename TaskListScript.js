@@ -8,13 +8,10 @@ function LoadTasks(){
        var taskID = 1;
        for(var i = 0; i < len; i++){
            var task = lines[i].replace(/ /g, "-");
-           $(taskArea).append("<h5 class='Task-Header' id='Task-"+taskID+"' onclick='ShowHide("+taskID+", \""+task+"\")'>"+task+"</h5><div class='"+task+"-Task-Div'><div id='"+taskID+"' class='Input-Div' hidden><form action='SubTaskEntry.php' method='post'><input type='text' name='Task-Entry' class='Task-Entry' id='Task-Entry' value='Enter Entry Here...' onfocus='DefaultEntry(this)'><input type='submit' name='Submit-Entry' class='Submit-Entry' id='Submit-Entry' value='Submit Sub-Task'><input type='hidden' name='Task-Name' value='"+task+"'></form></div></div>");
+           $(taskArea).append("<h5 class='Task-Header' id='Task-"+taskID+"' onclick='ShowHide(\""+taskID+"\", \""+task+"\")'>"+task+"</h5><div class='"+task+"-Task-Div'><div id='"+taskID+"' class='Input-Div' hidden><form action='SubTaskEntry.php' method='post'><input type='text' name='Task-Entry' class='Task-Entry' id='Task-Entry' value='Enter Entry Here...' onfocus='DefaultEntry(this)'><input type='submit' name='Submit-Entry' class='Submit-Entry' id='Submit-Entry' value='Submit Sub-Task'><input type='hidden' name='Task-Name' value='"+task+"'></form></div></div>");
            taskID++;
            LoadSubTasks(task, taskID-1);
         }
-    });
-    $(".Task-Div").change(function(){
-       window.location = "TaskList.php";
     });
 }
 
@@ -27,7 +24,7 @@ function LoadSubTasks(task, taskID){
                 for(var j = 0; j < len; j++){
                     var notDone = lines[j].substring(lines[j].length-8);
                     var taskAndSubTaskID = taskID+""+subTaskID;
-                    if(notDone == "not done"){
+                    if(notDone === "not done"){
                         $("."+task+"-Task-Div").append("<div class='"+task+"-Sub-Task-Div' hidden><p class='Sub-Task'>"+lines[j].substring(0, lines[j].length-8)+"</p><p class='Sub-Task-Status' id='"+taskAndSubTaskID+"' style='color: red;'>Not Completed.</p><form action='SubTaskEntry.php' class='Sub-Task-Form' method='post'><input type='submit' class='Complete-Button' name='Complete-Button' value='Complete'><input type='submit' name='Edit-Entry' class='Edit-Entry' value='Edit Entry'><input type='hidden' name='Line' value='"+lines[j]+"'><input type='hidden' name='Task' value='"+task+"'><input type='hidden' name='Sub-Task' value='"+lines[j]+"'></form></div>");
                         subTaskID++;
                     }
@@ -66,5 +63,5 @@ function DefaultEntry(text){
     }
 }
 function Redirect(){
-    window.location.replace("TaskList.php");
+    window.location = "TaskList.php";
 }
