@@ -6,12 +6,12 @@
     <head>
         <title>Tom's Favourites List</title>
         <link rel="stylesheet" href="Main.css">
-        <script src="FavouritesListScript.js"></script>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="FavouritesListScript.js"></script>
         <script type="text/javascript">
         </script>
     </head>
-    <body onload="Start()">
+    <body>
         <div class="Main-Div">
             <h1 class="Std-Header">Favourites List</h1>
             <div class="Input-Div" id="Back-Button-Div">
@@ -20,8 +20,7 @@
             <div class="Input-Div">
                 <br/>
                 <h4 class="Std-Header">Choose a favourites list:</h4>
-                <input type="hidden" id="Last-Topic" value="<?php echo $_SESSION['Topic']; ?>">
-                <select class="Select-List" id="Select-List" onchange="LoadFavourites()">
+                <select class="Select-List" id="Select-List">
                 </select>
                 <br/>
                 <form action="FavouritesAddition.php" method="post">
