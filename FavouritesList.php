@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <html>
     <head>
         <title>Tom's Favourites List</title>
@@ -20,8 +16,10 @@
             <div class="Input-Div">
                 <br/>
                 <h4 class="Std-Header">Choose a favourites list:</h4>
-                <select class="Select-List" id="Select-List">
-                </select>
+                <div id="Select-Div">
+                    <select class="Select-List" id="Select-List">
+                    </select>
+                </div>
                 <br/>
                 <form action="FavouritesAddition.php" method="post">
                     <h4 class="Std-Header">Create a new favourites list here:</h4>

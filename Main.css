@@ -18,13 +18,13 @@ li {
     text-align: center;
     background-color: royalblue;
     cursor: pointer;
-    width: 110%;
+    width: 200px;
 }
 #Back-Button-Div {
     position: fixed;
-    top: 20px;
+    top: 50px;
     left: 50%;
-	margin-left: -69.5;
+    margin-left: -100px;
 }
 .Diary-Button, .Favourites-Button, .Task-Button {
     text-align: center;

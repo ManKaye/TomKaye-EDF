@@ -317,3 +317,11 @@ For the entire day, I attended and in some ways helped to coordinate the Go4Set 
 Started development of the HLA for Strategic Remote Access in MediaWiki in a last attempt to trial the potential of the software regarding its containerization of project design documents; this time with high level options reports.
 12th
 Continued and completed copying up the HLOR for Strategic Remote Access. Got a place in attending the Performance and Innovation Awards for EDF next Tuesday.
+13th
+Odd jobs here and there. Received a reply from Dot Products LLC on the license for Phi.3D.
+16th
+Got back to Dot Products LLC on the license issue and eventually received a working license from them. Tested out the software on the Project Tango; seemed very successful. Attended an Innovation Pipeline for updates on BERAN and Project Tango and also a dress rehearsal for the awards show for tomorrow.
+17th
+Attended the Performance and Innovation Awards event at Kingsholm Rugby Stadium.
+18th
+Had a session with Andrea from Loughborough University on how the placement was going after his last check up in December. Sorted out arrangements for tomorrow with regards to helping out for D&I week.

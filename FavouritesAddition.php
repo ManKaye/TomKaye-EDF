@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,22 +17,26 @@
                 elseif("" != trim($_POST["Favourites-Position"]) && "" != trim($_POST["New-Favourite"]) && 1 <= intval($_POST["Favourites-Position"]) && intval($_POST["Favourites-Position"]) <= intval($_POST["List-Length"])+1){
                     $file = $_POST["Topic"]."List.txt";
                     $current = file($file);
-                    $_SESSION["Topic"] = $_POST["Topic"];
                     $i = intval($_POST["List-Length"]);
                     $j = intval($_POST["Favourites-Position"]);
-                    while($i >= $j){
-                        if($i != 0){
-                            $current[$i] = $current[$i - 1];
-                            $i--;
-                        }
-                        else{
-                        }
-                    }
-                    if(intval($_POST["List-Length"]) != $j){
-                        $current[$j - 1] = $_POST["New-Favourite"]."\n";
+                    if($i - 1 === 1 && $current[0] == ""){
+                        $current[0] = $_POST["New-Favourite"];
                     }
                     else{
-                        $current[$j - 1] = "\n".$_POST["New-Favourite"];
+                        while($i >= $j){
+                            if($i != 0){
+                                $current[$i] = $current[$i - 1];
+                                $i--;
+                            }
+                            else{
+                            }
+                        }
+                        if(intval($_POST["List-Length"]) != $j){
+                            $current[$j - 1] = $_POST["New-Favourite"]."\n";
+                        }
+                        else{
+                            $current[$j - 1] = "\n".$_POST["New-Favourite"];
+                        }
                     }
                     $fileOpen = file_get_contents($file);
                     $fileOpen = "";
