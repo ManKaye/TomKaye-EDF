@@ -61,8 +61,8 @@ li {
 .Entry-Row, .Month-Row {
     display: table-row;
 }
-.Favourite-Entry, .Position-Entry {
-    width: 50%;
+.Favourite-Entry {
+    width: 500px;
 }
 .Input-Div {
     text-align: center;
@@ -84,6 +84,9 @@ li {
 }
 .Month-Row {
     background-color: gainsboro;
+}
+.Position-Entry {
+    width: 50px;
 }
 .Side-Div {
     width: 25%;

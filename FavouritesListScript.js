@@ -40,7 +40,7 @@ $(document).ready(function(){
                 $(listArea).append("<p>"+favouriteNumber+". "+lines[i]+"</p>");
                 favouriteNumber++;
             }
-            $(listArea).append("<div class='Input-Div'><form action='FavouritesAddition.php' method='post'><input type='number' class='Position-Entry' name='Favourites-Position' min='1' max='"+favouriteNumber+"'/><br/><input type='text' class='Favourite-Entry' value='Enter Favourite Here...' name='New-Favourite' onfocus='DefaultEntry(this, 1)'><br/><input type='submit' name='Submit-Favourite' value='Submit New Favourite'><input type='hidden' name='Topic' value='"+selection+"'><input type='hidden' name='List-Length' value = '"+favouriteNumber+"'></form></div>");
+            $(listArea).append("<div class='Input-Div'><form action='FavouritesAddition.php' method='post'><label for='Position-Entry' style='font-size: 10pt;'><strong>Enter the position here from 1 to "+favouriteNumber+": </strong></label><input type='number' class='Position-Entry' name='Favourites-Position' min='1' max='"+favouriteNumber+"'/><br/><input type='text' class='Favourite-Entry' value='Enter Favourite Here...' name='New-Favourite' onfocus='DefaultEntry(this, 1)'><br/><input type='submit' name='Submit-Favourite' value='Submit New Favourite'><input type='hidden' name='Topic' value='"+selection+"'><input type='hidden' name='List-Length' value = '"+favouriteNumber+"'></form></div>");
         });
     });
     $("#Select-List").trigger("change"); 
