@@ -26,7 +26,7 @@ li {
     left: 50%;
     margin-left: -100px;
 }
-.TwoD-Computer-Graphics-Button, .Advanced-Web-Programming-Button, AI-Methods-Button, .Computer-Systems-Button, .Databases-Button, .Diary-Button, .Favourites-Button, .Modules-Button, .Task-Button {
+.TwoD-Computer-Graphics-Button, .Advanced-Web-Programming-Button, .AI-Methods-Button, .Computer-Systems-Button, .Databases-Button, .Diary-Button, .Favourites-Button, .Modules-Button, .Task-Button {
     text-align: center;
     background-color: forestgreen;
     cursor: pointer;

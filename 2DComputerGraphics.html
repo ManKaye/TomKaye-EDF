@@ -1,0 +1,484 @@
+<html>
+    <head>
+        <title>2D Computer Graphics</title>
+        <link rel="stylesheet" href="Main.css">
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" async
+            src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    </head>
+    <body>
+        <div class="Main-Div">
+            <h1 class="Std-Header">Tom & Loughborough University - 2D Computer Graphics</h1>
+            <div class="Input-Div" id="Back-Button-Div">
+                <input type="button" class="Back-Button" onclick="window.location = 'UniversityModules.html';" value="Back to University Modules">
+            </div>
+            <br/>
+            <div class="Sub-Div">
+                <u>Raster Fundamentals</u>
+                <p>A raster display shows a matrix with a series of pixels in it that make up a 
+                    virtual image. The image is refreshed one row at a time from top to bottom. In a 
+                    visual representation, a raster matrix would show a series of 0's and 1's neatly 
+                    aligned. The 0's would be blank space in the virtual image and the 1's will 
+                    represent the lit up pixels that show the virtual image. In the simplest raster 
+                    display, one bit would represent one pixel but in more complicated raster 
+                    displays, more than one bit would represent a pixel.<br/>On a refresh of a raster 
+                    display, there are aspects to the resolution. One example would be the limited 
+                    spatial resolution. This is where there are not enough pixels to resolve a good 
+                    quality line/image. An example of this would be the jagged looking lines you can 
+                    sometimes see in images on a virtual device. This is where there are not enough 
+                    pixels in the resolution to display a perfect representation of what needs to be 
+                    displayed. Another aspect is the intensity resolution. In the simple system 
+                    mentioned before, there are two states for a pixel; on or off. This will, again 
+                    not display the perfect representation of the image as the intensity of the 
+                    pixel cannot be managed analogously. If a pixel has n bits associated with it 
+                    then the intensity resolution will be 2<sup>n</sup>. To achieve these higher levels of 
+                    intensity resolution, a multi-plane buffer can be utilized to display each bit 
+                    representation of a pixel on each plane. Another aspect of resolution is 
+                    temporal resolution which is the resolution of a virtual image with regards to 
+                    the flow of time. This would be measured in frames per second (FPS).<br/>A 
+                    monochrome display with 8 bits per pixel resolves 2<sup>8</sup> = 256 levels of grey-scale 
+                    for the virtual image.</p>
+                <br/>
+                <u>Display Types</u>
+                <p>Colours are achieved on a raster display by combining the intensity of three 
+                    different colours, red green and blue, (in the RGB model). CRT and LCD (Liquid 
+                    Crystal Display) both use the RGB model to generate a gamut of colours. The CRT 
+                    tube has three RGB-emitting phosphors that are each energized by individual 
+                    electron guns. An LCD is a liquid panel that is backlit with bright fluorescent 
+                    light. Each pixel in an LCD display contains three sub-pixels that contain an 
+                    intensity of red, green and blue each. Each sub-pixel is then opened or closed 
+                    to emit a certain intensity of that colour which, when combined with the other 
+                    two sub-pixels, will produce ‘any’ colour. In reality, the colour system is 
+                    different from the virtual colour system. Printers for example use the CMYK 
+                    model (Cyan, magenta, yellow and key (black)).</p>
+                <br/>
+                <u>Direct & Table-Driven Colour Displays</u>
+                <p>Direct drive displays produce the buffer contents using 2n fixed colours for the 
+                    nth buffer plane. This method of colour display is fine when there is enough 
+                    memory to produce this number of possible pixel states and benefits from a high 
+                    number of simultaneously displayable colours. For a 3-bit per pixel direct 
+                    system, there isn’t a large enough range of colours for most applications to be 
+                    able to use it. Full-colour is generally defined as a 24-bits per pixel 
+                    intensity. This allows for 224 different colours to be simultaneously 
+                    displayable. A device with a screen resolution of 1024x1024 will require 3 
+                    megabytes of memory for the frame buffer.<br/>24/3 = 8, 2<sup>n</sup>=8, n=3, therefore 3 
+                    megabytes is the answer.<br/>Table driven displays are a better alternative 
+                    when there is less memory available for the refresh buffer. The colour table is 
+                    dynamic meaning that the 2<sup>n</sup> colours that are displayable in the image can be 
+                    changed. The palette size of a colour display is determined by the number of 
+                    bits addressing each gun. If m bits control each gun, the palette size is (2<sup>m</sup>)3 
+                    or 2<sup>3m</sup>. From this, 2<sup>n</sup> can be displayed at any one time. Therefore, if m=4 and 
+                    n=4 then the colours that can be selected at any one time is 2<sup>4</sup>=16 and the 
+                    palette size is (2<sup>4</sup>)<sup>3</sup>=2<sup>12</sup>=4096. When m=4, the hexadecimal notation can be used 
+                    to define the intensity of the colour guns. FFF will represent white and 000 
+                    will represent black. A more typical table driven display would be when m=8 and 
+                    n=8. This would produce 256 possible colours that can be displayed at any one 
+                    time and 2<sup>24</sup> colours in the palette.</p>
+                <br/>
+                <u>Multiple Images in the Frame Buffer</u>
+                <p>Rather than having n planes in a buffer, n can be recognized as n images in a 
+                    buffer. Assuming the display is monochrome will help with understanding. An 
+                    example would be loading the entries 0-3 as white and 4-7 as black. When this 
+                    is done. All the image for the first image will be white and all the image of 
+                    the last image will be black. The middle image will have aspects of black and 
+                    white and therefore will be visible.<img src='2D Computer Graphics/Image1.jpg' alt='First Image'>
+                    <img src="2D Computer Graphics/Image2.jpg" alt='Second Image'>
+                    </p>
+                <br/>
+                <u>Display Lists & Picture Segmentation</u>
+                <p><img src="2D Computer Graphics/Image3.jpg" alt='Third Image'><br/>
+                   A display list can be segmented to produced segments of the display list. These 
+                   segments can practically represent vectors of an image; different landmarks that 
+                   would appear on the display.</p>
+                <br/>
+                <u>Raster System with Support for Picture Segmentation</u>
+                <p>A raster system with support for picture segmentation will put the second 
+                    segment at the bottom of the display list in free storage. When the image or 
+                    segment needs to be changed, the segment will be converted to the second 
+                    segment and that segment will be displayed as the pointer for the first segment 
+                    will be dereferenced and released to free store.</p>
+                <br/>
+                <u>Operations on Segments</u>
+                <p>Selective erasure is the condition where the user has segments of the display 
+                    dereferenced and not refreshed, effectively removing that segment from the 
+                    buffer. To update a segment, that segment must eventually get to the top of 
+                    the display list at segment 1. Garbage collection will eventually be required 
+                    when too many operations have been performed and the display list file has 
+                    been broken up from all the operations and has too much space.</p>
+                <br/>
+                <u>Segment Formats</u>
+                <p><img src="2D Computer Graphics/Image4.jpg" alt='Fourth Image'><br/>
+                   To make a segment invisible, you must make the second name in the segment 
+                   header equal the first name. To make that segment visible again, the first word 
+                   in the header must be overwritten with an instruction to jump two words.</p>
+                <br/>
+                <u>Coordinate Systems</u>
+                <p>The two-dimensional plane &#8477; is all the pairs of real numbers (x, y).</p>
+                <br/>
+                <u>Cartesian Coordinate System for &#8477;</u>
+                <p><img src="2D Computer Graphics/Image5.jpg" alt='Fifth Image'><br/>
+                   With Cartesian coordinates, the axes can point in either direction, and the 
+                   positive integer of each value will always follow the arrow above the line of 
+                   the other arrow. With the right-handed system, the y axis is 90 degrees 
+                   anti-clockwise from the x axis and with the left-handed system, the y axis is 
+                   90 degrees clockwise from the x axis. Left-hand systems are more natural for a 
+                   computer display as the display is loaded from the top left to the bottom 
+                   right. However, the commonly seen systems for humans are the right-hand 
+                   systems.</p>
+                <br/>
+                <u>Polar Coordinate System for &#8477;</u>
+                <p>With this system, instead of coordinating a point with an x value and a y 
+                    value, the polar coordinate system will define a displacement from the 
+                    origin, so a distance.
+                    <img src="2D Computer Graphics/Image6.jpg" alt='Sixth Image'><br/>
+                    At point P therefore in figure 3, the value of x will be r where <br/>
+                    `r = sqrt(x^2 + y^2)`<br/>
+                    The value of y will be &theta; where<br/>
+                    `\theta = \tan^{-1}(\frac{y}{x})`<br/>
+                    There can be a simple conversion from polar to Cartesian by doing the following<br/>
+                    `x = r\cos\theta`<br/>
+                    `y = r\sin\theta`</p>
+                <br/>
+                <u>Homogenous Coordinates for &#8477;<sup>2</sup></u>
+                <p>An extra dimension is given to the initial pair from a Cartesian system making 
+                    the concluding triplet (x, y, 1). Any triplet of real numbers (&lambda;x, &lambda;y, &lambda;) for 
+                    &lambda; &ne; 0.</p>
+                <br/>
+                <u>The Plane &#8477;<sup>2</sup> as a Set of Vectors</u><br/>
+                <u>Addition and Scalar Multiplication of Vectors in &Ropf;<sup>2</sup> - Algebraic View</u>
+                <p>Pairs of points in &Ropf;<sup>2</sup> can be added together like so<br/>
+                    `(x, y) + (x', y') = (x + x', y + y')`<br/>
+                    Scalar multiplication of vectors can also be achieved with &lambda; like so<br/>
+                    `\lambda(x, y) = (\lambdax, \lambday)`<br/>
+                    When &lambda; = -1, vectors can be subtracted like so<br/>
+                    `(x, y) - (x', y') = (x, y) + (-x', -y') = (x - x', y - y')`<br/>
+                    (0, 0) is the zero vector. It satisfies that when it is added to another 
+                    vector, the result is the other vector.</p>
+                <br/>
+                <u>Addition & Scalar Multiplication of Vectors in &Ropf;<sup>2</sup> - Geometric View</u>
+                <p><img src="2D Computer Graphics/Image7.jpg" alt='Seventh Image'><br/>
+                    </p>
+                <br/>
+                <u>The Standard Basis Vectors for the Two Dimensional Plane</u>
+                <p>If there are two vectors in &Ropf;<sup>2</sup>, i and j where i=(1, 0) and j=(0, 1), then the 
+                    two vectors can represent any vector in &Ropf;<sup>2</sup> with the help of &lambda; functions.<br/>
+                    `r = (x, y) = x(1, 0) + y(0, 1) = xi + xj`<br/>
+                    These are known as the standard basis vectors in &Ropf;<sup>2</sup>.<br/>
+                    <img src="2D Computer Graphics/Image8.jpg" alt='Eighth Image'>
+                    </p>
+                <br/>
+                <u>Magnitude & Direction of Vectors in &Ropf;<sup>2</sup></u>
+                <p>`|| \(x, y)\ || = sqrt(x^2 + y^2)`<br/>
+                    This represents the length of a vector or the distance from the origin.<br/>
+                    <img src="2D Computer Graphics/Image9.jpg" alt='Ninth Image'><br/>
+                    This graph represents the direction difference between two vectors, the 
+                    difference in direction from r<sub>1</sub> to r<sub>2</sub> would be<br/>
+                    `\theta = \theta_1 - \theta_2`<br/>
+                    We have<br/>
+                    `\cos\theta = \cos(\theta_2 - \theta_1) = \cos\theta_1\cos\theta_2 + \sin\theta_1\sin\theta_2`<br/>
+                    Now<br/>
+                    `\cos\theta_1 = \frac{x_1}{||r_1||}`<br/>
+                    `\cos\theta_2 = \frac{x_2}{||r_2||}`<br/>
+                    `\sin\theta_1 = \frac{y_1}{||r_1||}`<br/>
+                    `\sin\theta_2 = \frac{y_2}{||r_2||}`<br/>
+                    Then<br/>
+                    `\cos\theta = \frac{x_1x_2+y_1y_2}{||r_1||||r_2||}`<br/>
+                    Therefore, noting the `x_1x_2 + y_1y_2` part of the last equation, this can be used to 
+                    determine the scalar product of any two vectors. As such, it is defined by 
+                    `r_1 \cdot r_2 = x_1 x_2 + y_1y_2`.<br/>
+                    Length in scalar products is simply<br/>
+                    `||r|| = sqrt(r \cdot r)`<br/>
+                    Direction of the scalar product is<br/>
+                    `\cos\theta = \frac{r_1 \cdot r_2}{||r_1||||r_2||}` or `||r_1||||r_2||\cos\theta = r_1 \cdot r_2`<br/>
+                    If r has length 1 or `||r|| = r \cdot r = 1` then r is a unit vector.<br/>
+                    Two vectors are orthogonal if their direction difference is `\theta = \frac \pi2`.<br/>
+                    Two vectors are parallel if the angle between them equals zero.<br/>
+                    Orthogonality Test - Vectors are said to be orthogonal if and only if `a \cdot b = 0` as<br/>
+                    `a \cdot b = ||a||||b||\cos\theta`<br/>
+                    And if `a \cdot b = 0` then that implies that `\cos\theta = 0` which would mean that `\theta = \frac \pi2`.<br/>
+                    Parallelism Test - Vectors are parallel if and only if the angle between them is equal to `\pi` or 0.</p>
+                <br/>
+                <u>Square Matrices</u>
+                <u>Addition and Scalar Multiplication of Square Matrices</u>
+                <p>A 2x2 matrix is a simple square matrix to base learning off of. It has two rows 
+                    and two columns culminating in a total of 4 values in each corner of the 
+                    matrix.<br/> Adding two matrices is simple so long as the matrices are the 
+                    same size in dimension. It will simply result in a 2x2 matrix with the values 
+                    being the added values of the operand matrices.<br/>
+                    So $\left\lgroup\begin{matrix}1 & 2\cr3 & 4\end{matrix}\right\rgroup + \left\lgroup\begin{matrix}5 & 6\cr7 & 8\end{matrix}\right\rgroup = \left\lgroup\begin{matrix}6 & 8\cr10 & 12\end{matrix}\right\rgroup$<br/>
+                    And $\lambda\left\lgroup\begin{matrix}a & b\cr c & d\end{matrix}\right\rgroup = \left\lgroup\begin{matrix}\lambda a & \lambda b\cr\lambda c & \lambda d\end{matrix}\right\rgroup$<br/>
+                    Using the same principles as geometric subtraction of two vectors, by scalar multiplying with 
+                    `\lambda = -1`, two matrices can be subtracted.<br/>A 2x2 zero matrix is a 2x2 matrix 
+                    where all the values are 0. It is NOT a matrix with no values. This matrix can 
+                    be added to any other 2x2 matrix to culminate in the other 2x2 matrix.<br/>
+                    Matrix addition is commutative and associative.</p>
+                <br/>
+                <u>Alternative Notation</u>
+                <p>Matrices are often notated as such<br/>
+                    $A = \left\lgroup\begin{matrix}a_{11} & b_{12}\cr c_{21} & d_{22}\end{matrix}\right\rgroup$<br/>
+                    This makes it easier to multiply larger matrices.<br/>`A = {a_{ij}}` is a 
+                    common notation. The index i is the row index and j is the column index. With 
+                    the addition of two matrices, individual value addition can be noted down from 
+                    these expressions.<br/>
+                    `C = B + A`<br/>
+                    `c_{ij} = b_{ij} + a_{ij}`</p>
+                <br/>
+                <u>Multiplication of Square Matrices</u>
+                <p>$B = \left\lgroup\begin{matrix}b_{11} & b_{12}\cr b_{21} & b_{22}\end{matrix}\right\rgroup$<br/>
+                    $C = \left\lgroup\begin{matrix}c_{11} & c_{12}\cr c_{21} & c_{22}\end{matrix}\right\rgroup$<br/>
+                    $B \cdot C = \left\lgroup\begin{matrix}b_{11}c_{12} + b_{21}c_{11} & b_{11}c_{12} + b_{12}c_{22}\cr b_{21}c_{11} + b_{22}c_{21} & b_{21}c_{12} + b_{22}c_{22}\end{matrix}\right\rgroup$<br/>
+                    `d_{11} = (b_{11}b_{12}) \cdot (c_{11}c_{21}) = (b_{11}c_{11} + b_{12}c_{21})`<br/>
+                    or<br/>
+                    `d_{ij} = \sum_{k = 1}^2(b_ic_k + b_kc_j)`<br/>
+                    Matrices can be inverted<br/>
+                    $\left\lgroup\begin{matrix}3 & 0\cr 0 & -\frac 32\end{matrix}\right\rgroup \cdot \left\lgroup\begin{matrix}\frac 13 & 0\cr 0 & -\frac 23\end{matrix}\right\rgroup = \left\lgroup\begin{matrix}1 & 0\cr 0 & 1\end{matrix}\right\rgroup$<br/>
+                    $\left\lgroup\begin{matrix}3 & 3\cr -1 & -1\end{matrix}\right\rgroup$ has no inverse.<br/>
+                    `A^T` is the transpose of A that has A's columns as rows and A's rows as columns.<br/>
+                    In this case<br/>
+                    $\left\lgroup\begin{matrix}2 & 1\cr 4 & 3\end{matrix}\right\rgroup$ has a transpose of $\left\lgroup\begin{matrix}2 & 4\cr 1 & 3\end{matrix}\right\rgroup$ where the top right and bottom left values are switched.<br/>
+                    If `A^T = A` then the matrix is symmetric.</p>
+                <br/>
+                <u>Transformation of the Plane</u>
+                <p>In a display, there are multiple functionalities to map objects in a display. 
+                    These transformations could occur as rotations, translations and scalings.<br/>
+                    The simple function `T:\mathbb{R}^2 \rightarrow \mathbb{R}^2` is the mapping of an object from one point in the 
+                    plane to another point on the plane.<br/> `Tr=3r+a` is the vector form of a 
+                    transformation.<br/> `T(x, y) = 3(x, y)+(a_1, a_2)` is the coordinate form of 
+                    the transformation.<br/>
+                    To tell if a transformation is linear or not, the transformations have to be 
+                    as such<br/>
+                    `T(r_1, r_2) = Tr_1 + Tr_2` and `T(\lambda r) = \lambda Tr` where `\lambda \in \mathbb{R}` and `r_1, r_2, r \in \mathbb{R}^2`<br/>
+                    `T(x, y) = (2x + y, 4y)`<br/>
+                    So `T(r_1 + r_2)` where $r_1 = \left\lgroup\begin{matrix}1\cr3\end{matrix}\right\rgroup$ and $r_2 = \left\lgroup\begin{matrix}5\cr7\end{matrix}\right\rgroup$<br/>
+                    Is it linear?<br/>
+                    `2x + 2 + 4y - 1 = 2x + 4y + 1`<br/>
+                    This is the result of both `T(x + y)` and `Tx + Ty` respectively.<br/>
+                    `2x` translates to `2(2x + 2)` and `2y` translates to<br/>
+                    $T(r_1 + r_2) = T\left\lgroup\begin{matrix}6\cr10\end{matrix}\right\rgroup = \left\lgroup\begin{matrix}22\cr40\end{matrix}\right\rgroup$<br/>
+                    $T(r_1) = T\left\lgroup\begin{matrix}1\cr3\end{matrix}\right\rgroup = \left\lgroup\begin{matrix}5\cr12\end{matrix}\right\rgroup$ and $T(r_2) = T\left\lgroup\begin{matrix}5\cr7\end{matrix}\right\rgroup = \left\lgroup\begin{matrix}17\cr28\end{matrix}\right\rgroup$ and $T(r_1) + T(r_2) = \left\lgroup\begin{matrix}22\cr40\end{matrix}\right\rgroup$<br/>
+                    $T(\lambda r) = \lambda Tr$ so $r = r_1 = \left\lgroup\begin{matrix}1\cr3\end{matrix}\right\rgroup$ and `\lambda = 3`<br/>
+                    $T(\lambda r) = T\left\lgroup\begin{matrix}3\cr9\end{matrix}\right\rgroup = \left\lgroup\begin{matrix}15\cr36\end{matrix}\right\rgroup$ and $\lambda Tr = T\left\lgroup\begin{matrix}1\cr3\end{matrix}\right\rgroup = \lambda\left\lgroup\begin{matrix}5\cr12\end{matrix}\right\rgroup = \left\lgroup\begin{matrix}15\cr36\end{matrix}\right\rgroup$<br/>
+                    Therefore `T(x, y) = (2x + y, 4y)` is a linear transformation.</p>
+                <br/>
+                <u>Matrix Transformations</u>
+                <p>A transformation in a 2x2 matrix will produce values as such<br/>
+                    $\left\lgroup\matrix{a & b\cr c & d}\right\rgroup\left\lgroup\matrix{x\cr y}\right\rgroup = \left\lgroup\matrix{ax & by\cr cx & dy}\right\rgroup$<br/>
+                    The first column represents the x values and the second column represents the y values.<br/>
+                    The identity transformation `I(x, y) = (x, y)` can be used to find linear 
+                    transformations and corresponds to the identity matrix that has been covered.</p>
+                <br/>
+                <u>Scale Transformations</u>
+                <p>`S(x, y) = (\lambda x, \mu y)` where `\lambda > 0` and `\mu > 0`<br/>
+                    This function describes scale transformations. This is where the object's size 
+                    is altered by either increasing or decreasing the size of the object from the 
+                    origin.<br/>
+                    $\left\lgroup\matrix{\lambda & 0\cr 0 & \mu}\right\rgroup\left\lgroup\matrix{x\cr y}\right\rgroup = \left\lgroup\matrix{\lambda x\cr \mu y}\right\rgroup$<br/>
+                    Scalar transformations are all linear and invertible, meaning that you can 
+                    double the size of an object and halve the size of an object.<br/>
+                    $S^{-1} = \left\lgroup\matrix{\frac 1\lambda & 0\cr 0 & \frac 1\mu}\right\rgroup$<br/>
+                    The appropriate equation for the inverse of a scalar is as shown above.<br/>
+                    Scalar transformations must ALWAYS take place where one of the vertices is on 
+                    the origin.</p>
+                <br/>
+                <u>Rotation Transformations</u>
+                <p>Rotation transformations are also linear. The rotations do take place around 
+                    the origin and the ones that don't are said to be length preserving.<br/>The 
+                    lengths of the vectors of the object being rotated will remain the same in a 
+                    rotation transformation. The angle from x will change, (as will the angle from 
+                    y).<br/>If<br/>
+                    `r = (x, y)` and `r' = (x', y')`<br/>
+                    Then<br/>
+                    `x = r\cos\phi` and `y = r\sin\phi`<br/>
+                    `x' = r\cos(\theta + \phi)` and `y' = r\sin(\theta + \phi)`<br/>
+                    And<br/>
+                    `\cos(\theta + \phi) = \cos\theta\cos\phi - \sin\theta\sin\phi`<br/>
+                    `\sin(\theta + \phi) = \sin\theta\cos\phi + \cos\theta\sin\phi`<br/>
+                    We obtain<br/>
+                    `x' = r(\cos\theta\cos\phi - \sin\theta\sin\phi) = x\cos\theta - y\sin\theta`<br/>
+                    And<br/>
+                    `y' = r(\sin\theta\cos\phi + \cos\theta\sin\phi) = x\sin\theta + y\cos\theta`<br/>
+                    Therefore<br/>
+                    `W(x, y) = (x\cos\theta - y\sin\theta, x\sin\theta + y\cos\theta)`<br/>
+                    This can be written in matrix form:<br/>
+                    $\left\lgroup\matrix{\cos\theta & -\sin\theta\cr \sin\theta & \cos\theta}\right\rgroup\left\lgroup\matrix{x\cr y}\right\rgroup = \left\lgroup\matrix{x\cos\theta - y\sin\theta\cr x\sin\theta + y\cos\theta}\right\rgroup$</p>
+                <br/>
+                <u>Translation Transformations</u>
+                <p>Translation is the method of moving an object in space without rotation or 
+                    scaling.<br/>In the vector form, translations can be written as:<br/>
+                    `T_r = r + r_0`<br/>
+                    Or in component form:<br/>
+                    `T(x, y) = (x + x_0, y + y_0)`<br/>
+                    The translation `T_r = r - r_0` is the inverse of the translation `T_r = r + r_0`</p>
+                <br/>
+                <u>Combining Transformations</u>
+                <p>Multiple transformations have to be combined in the right order because 
+                    different orders will achieve different looking objects, especially with 
+                    scalar transformations combined with rotation transformations while the object 
+                    is at the origin. Uniform scalar transformations where lambda=mu are commutable 
+                    with rotation transformations.<br/>Rotation or scalar with translation 
+                    transformations are both not commutable as well.</p>
+                <br/>
+                <u>Inverse Tranformations</u>
+                <p>Inverse transformations simply divide where you multiply and subtract where you 
+                    add. They get the reverse action of what was just accomplished by the original 
+                    transformation.</p>
+                <br/>
+                <u>Homogenous Representation of Transformations</u>
+                <p>Translation transformations are non-linear, therefore they can't be represented 
+                    in a 2x2 matrix. Homogenous form solves this issue by transforming the 2x2 
+                    matrix into a 3x3 matrix. The top two values of the right-most column in the 
+                    matrix will be the transformation values for x and y respectively. The bottom 
+                    right matrix value is 1 and the bottom two values at the left are set at 0.<br/>
+                    The inverse transformation in homogenous form will simply multiply the two 
+                    translation values by -1, inversing there positivity to negativity and vice 
+                    versa.<br/>As the multiplication of 2x2 matrices with 3x3 matrices cannot be 
+                    accomplished, the 2x2 matrices for rotation and scalar transformations have to 
+                    be embedded to become 3x3 matrices. The difference of these two transformation 
+                    types in homogenous form from the translation in homogenous form is that these 
+                    values at the right most column at the top are set to 0 instead.</p>
+                <br/>
+                <u>Application of Transformations in Computer Graphics</u>
+                <p>In computer graphics, transformations are used for modelling and viewing in any 
+                    software illustrating program or otherwise.</p>
+                <br/>
+                <u>Modelling Applications</u>
+                <p>Constructive Geometry Modelling - Models have to be built from a library of 
+                    primitive graphical models, their geometric transformations and Boolean set 
+                    operators.<br/>Hierarchical Models and Combined Transformations for 
+                    Dynamic/Animated Sequences - This model will break down a model into several 
+                    different aspects that will all branch from one another if they are in any way 
+                    connected.</p>
+                <br/>
+                <u>Circular List & Hierarchical Representations</u>
+                <p>Trees tend to be a far better form of showing the hierarchical properties of an 
+                    object than linked lists and can be explored and traversed quite easily. The 
+                    form of a tree graph also denotes inheritance of parts of the model, from big 
+                    parts that contain most of the other parts to the smallest end parts. All 
+                    these parts will move accordingly from their parent objects.</p>
+                <br/>
+                <u>The Representations of Geometric Primitives</u>
+                <u>Explicit, Implicit & Parametric Forms</u>
+                <p>Good geometric primitives like the circle or a straight line will all require a 
+                    data structure associated with it and its neighbouring geometric pieces. Other 
+                    processes will have to be called to be able to model these objects from the 
+                    geometric primitives like finding the nearest line to the cursor position, 
+                    determining if a point is inside a circle, determining if  a point is on a 
+                    line. It also determines whether the cursor is in a polygon.<br/>Explicit 
+                    Representation - `y = f(x)`<br/>Implicit Representation - `g(x, y) = 0`<br/>
+                    Parametric Representation - `x = p(t), y = q(t)` or `r(t) = (p(t), q(t))`</p>
+                <br/>
+                <u>The Straight Line & the Circle</u>
+                <u>The Straight Line</u>
+                <p>Explicit - `y = mx + c`<br/>This is for an infinitely long line where m is the 
+                    gradient along x and c is the intercept.<br/>Finitely long lines are defined 
+                    with - `y = mx + c, x_0 \le x \le x_1`<br/>
+                    `m = \frac {y_1 - y_0}{x_1 - x_0}`<br/>
+                    `c = y_1 - mx_1`<br/>
+                    The equation may be written as:<br/>
+                    `y = \frac {y_1 - y_0}{x_1 - x_0} + (y_1 - \frac{x_1y_1 - x_1y_0}{x_1 - y_0}) = `<br/>`\frac{y_1 - y_0}{x_1 - x_0} + \frac{y_1(x_1 - x_0) - (x_1y_1 - x_1y_0)}{x_1 - x_0} = y_1 - (x_1y_1 - x_1y_0)`<br/>
+                    The problem with explicit form is that the representation is incomplete; 
+                    vertical lines cannot be produced from explicit form.<br/>Implicit - `ax + by + c = 0`<br/>
+                    This application deals with all cases involved in composing a straight line of 
+                    finite length. The values a, b and c are all scalar to the x, y and intercept 
+                    values. There will also be a pair of points `(x_0, x_1)` and `(y_0, y_1)` as 
+                    coordinates of the line.<br/>Implicit representation is useful to test the 
+                    points from a line in a plane.<br/>Point classification tests are created in 
+                    this instance to test if a point is on a line or on either side of the line.<br/>
+                    Parametric - `r(t) = r_0 + tu` for `-\infty < t < \infty`<br/>The infinite line needed to 
+                    be found by a parametric equation will lie on the point r0 and it will be 
+                    parallel to the vector u on the plane.<br/>
+                    `x(t) = x_0 + tu_0`<br/>
+                    `y(t) = y_0 + tu_1`<br/>
+                    Where `u = (u_0, u_1)` is the vector of the line and t is the length from `r_0`.<br/>
+                    The line can also be specified from two points in the line, `r_0, r_1`. Then 
+                    the value u can be defined as:<br/>
+                    `u = \frac{r_1 - r_0}{||r_1 - r_0||}`<br/>
+                    Then the parametric form is used:<br/>
+                    `r(t) = r_0 + t(r_1 - r_0)`<br/>
+                    Applications of parametric form include the use of the DDA algorithm to create 
+                    straight lines.</p>
+                <br/>
+                <u>The Circle</u>
+                <p>Explicit - `y = y_c + sqrt(r^2 + (x − x_c)^2)`<br/>This equation has to be 
+                    repeated once as each time covers one half of a circle.<br/>There are no known 
+                    applications of the explicit representation.<br/>Implicit - `(y − y_c)^2 + (x − x_c)^2 − r^2 = 0`<br/>
+                    If the circle representation is above 0, the point lies outside the circle, if 
+                    the representation is below 0, the point lies inside the circle and if the 
+                    representation is 0 then the point is on the line of the circle.<br/>
+                    Parametric - `r(\theta) = (x_c + \cos\theta)i + (y_c + \sin\theta)j, 0 \le \theta \le 2\pi`<br/>
+                    This is used as a platform for scan-conversion programs for the display of 
+                    circles on a raster system.<br/>When a computation to find two objects 
+                    intersecting at certain points, it is best to show one object like a circle in 
+                    implicit form and one object like a straight line in parametric form to be able 
+                    to tell at which two points the line crosses.</p>
+                <br/>
+                <u>Polygons</u>
+                <p>A polygon is a collection of geometric primitives; a selection of vectors on a 
+                    plane that all intersect to form a shape.</p>
+                <br/>
+                <u>Simple Data Structure for Polygons</u>
+                <p>The data for vertices in a polygon are usually stored as (x, y) pairs. Edge 
+                    information may be represented implicitly or explicitly. A chained table or 
+                    flow chart can be used to illustrate the chronological order of the edges and 
+                    their coordinates.<br/>Explicit representation is illustrated with two linked 
+                    tables, an edge table and a vertex table. The edge table will store the vertex 
+                    indices that lead to one another and the vertex table will still contain the x 
+                    and y values for vertices.</p>
+                <br/>
+                <u>An Inside Test for Polygons</u>
+                <p>If two diagonally opposite vertices of a rectangle R are given, the vertices 
+                    are in R if and only if the x value of the top vertex is higher than that of 
+                    the bottom vertex, and the same for y.<br/>For a polygon a point can be 
+                    determined to be inside or outside a polygon by sending out a semi-infinite 
+                    line in the x direction. If the number of times the line crosses the polygon 
+                    is even, then the point lies outside of the polygon and if the number is odd, 
+                    it lies inside the polygon.<br/>The extent of a polygon P is the smallest 
+                    rectangle that surrounds the polygon. It is done by finding two points of the 
+                    polygon with the highest and lowest pairs of x and y values. These two will 
+                    become the bottom left and the top right vertices of the rectangle.<br/>Any 
+                    point outside of the extent is outside of the polygon P, the ray test need 
+                    only be applied to points that are in the extent of P. So long as the value of 
+                    the point has an x value that is within the range of the minimum and maximum x 
+                    values of the rectangle.</p>
+                <br/>
+                <u>Free-form Parametric Curves</u>
+                <p>Not everything can be adequately represented with just circles, straight lines 
+                    and polygons. In some cases, a Bezier Cubic curve will be used as a free-form 
+                    shape function.<br/>The Bezier Cubic curve can be displayed in parametric form 
+                    as so:<br/>
+                    `r(t) = (1-t)^3r_0 + 3t(1-t)^2r_1 + 3t^2(1-t)r_2 + t^3r_3, 0 \le t \le 1`<br/>
+                    The curve is essentially the same as the linked list to create a polygon, 
+                    accept the four vectors are directing in a curved manner, (i.e. they change 
+                    direction gradually and regularly).</p>
+                <br/>
+                <u>Producing Straight Lines</u>
+                <p>On a raster display, only addressable points may be intensified and only when 
+                    the line is 0, 45, or 90 degrees from the x-axis. If there are only two 
+                    addressable points that a straight line passes through, then an algorithm will 
+                    need to be constructed to produce the straight line.<br/>Lines  produced 
+                    should appear straight, lines should have constant intensity along their 
+                    length. For constant intensity, points should be placed at regular points on 
+                    the line. Line intensity should also be independent of line length and 
+                    inclination. This is difficult as for a horizontal straight line with k 
+                    pixels, if there were a line `\frac \pi4`  from the initial line, the new line would 
+                    have `\frac k{sqrt(2)}`  as the number of pixels on the line. The algorithm for creating the 
+                    straight line must also be minimal in space and time complexity.</p>
+                <br/>
+                <u>The Simple Digital Differential Analyser for Generating Straight Lines</u>
+                <p>If a line with endpoints `r_1 = (x_1, y_1)` and `r_2 = (x_2, y_2 )`, the vector 
+                    equation for the line would be:<br/>
+                    `r(t) = r_1 + t(r_2 - r_1)` where `0 \le t \le 1`<br/>
+                    With two points, `r(t)` and `r(t + \epsilon)`, the length between them is 
+                    equal to:<br/>
+                    `r(t + \epsilon) - r(t) = \epsilon(r_2 - r_1)`<br/>
+                    `r(t + \epsilon) = r(t) + \epsilon(r_2 - r_1)`<br/>
+                    If we convert t to n to denote the nth pixel position and `t + \epsilon` as 
+                    the n+1th pixel position, as well as changing r to the individual x and y 
+                    values we will get:<br/></p>
+            </div>
+        </div>
+    </body>
+</html>
