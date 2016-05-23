@@ -201,7 +201,7 @@
                     And if `a \cdot b = 0` then that implies that `\cos\theta = 0` which would mean that `\theta = \frac \pi2`.<br/>
                     Parallelism Test - Vectors are parallel if and only if the angle between them is equal to `\pi` or 0.</p>
                 <br/>
-                <u>Square Matrices</u>
+                <u>Square Matrices</u><br/>
                 <u>Addition and Scalar Multiplication of Square Matrices</u>
                 <p>A 2x2 matrix is a simple square matrix to base learning off of. It has two rows 
                     and two columns culminating in a total of 4 values in each corner of the 
@@ -359,7 +359,7 @@
                     parts that contain most of the other parts to the smallest end parts. All 
                     these parts will move accordingly from their parent objects.</p>
                 <br/>
-                <u>The Representations of Geometric Primitives</u>
+                <u>The Representations of Geometric Primitives</u><br/>
                 <u>Explicit, Implicit & Parametric Forms</u>
                 <p>Good geometric primitives like the circle or a straight line will all require a 
                     data structure associated with it and its neighbouring geometric pieces. Other 
@@ -370,7 +370,7 @@
                     Representation - `y = f(x)`<br/>Implicit Representation - `g(x, y) = 0`<br/>
                     Parametric Representation - `x = p(t), y = q(t)` or `r(t) = (p(t), q(t))`</p>
                 <br/>
-                <u>The Straight Line & the Circle</u>
+                <u>The Straight Line & the Circle</u><br/>
                 <u>The Straight Line</u>
                 <p>Explicit - `y = mx + c`<br/>This is for an infinitely long line where m is the 
                     gradient along x and c is the intercept.<br/>Finitely long lines are defined 
@@ -477,7 +477,201 @@
                     `r(t + \epsilon) = r(t) + \epsilon(r_2 - r_1)`<br/>
                     If we convert t to n to denote the nth pixel position and `t + \epsilon` as 
                     the n+1th pixel position, as well as changing r to the individual x and y 
-                    values we will get:<br/></p>
+                    values we will get:<br/>
+                    `x(n + 1) = x(n) + \epsilon\delta x`<br/>
+                    `y(n + 1) = y(n) + \epsilon\delta y`<br/>
+                    The `\epsilon` value requires to be a small positive number and a relevant value is needed to achieve good line quality. The ϵ value determines the scale of the 
+                    space between pixels and would need to be at least less than 1 to stop the algorithm from selecting just two pixel points from any line.<br/>With `\epsilon\delta x` and `\epsilon\delta y`
+                    summing to +1 or -1, the scale will be appropriate enough that there won't be any holes in the straight line. If `\epsilon\delta y > \epsilon\delta x` then 
+                    increment the pixel in the y-axis and otherwise increment the pixel in the x-axis.<br/>
+                    `\epsilon = \frac 1{max{\delta x, \delta y}}`<br/>
+                    If `\delta y > \delta x, \epsilon = \frac 1{\delta y}` and the recurrence relations are<br/>
+                    `x(n + 1) = x(n) + \frac{\delta x}{\delta y}`<br/>
+                    `y(n + 1) = y(n) + 1`<br/>
+                    If `\delta x > \delta y, \epsilon = \frac 1{\delta x}` and the occurrence relations are<br/>
+                    `x(n + 1) = x(n) + 1`<br/>
+                    `y(n + 1) = y(n) + \frac{\delta x}{\delta y}`<br/>
+                    In both cases, `\frac{\delta x}{\delta y}` will be less than or equal to 1.<br/>
+                    <span style="color:red;">`Max Displacement = abs(x_2 - x_1);`<br/>
+                        `If(abs(y_2-y_1) > \text{Max Displacement})`<br/>
+                        `Then \text{Max Displacement} = abs(y_2 - y_1);`<br/>
+                        `\text{Xinc} = \frac{abs(x_2 - x_1)}{\text{Max Displacement}};`<br/>
+                        `\text{Yinc} = \frac{abs(y_2 - y_1)}{\text{Max Displacement}};`<br/>
+                        `x = x_1 + 0.5;`<br/>
+                        `y = y_1 + 0.5;`<br/>
+                        `For(i = 0 to i = \text{Max Displacement}, i++)`<br/>
+                        `Do Write Pixel(floor(x), floor(y), value);`<br/>
+                        `x = x + \text{Xinc};`<br/>
+                    `y = y + \text{Yinc};`</span></p>
+                <br/>
+                <u>Bresenhem's Algorithm for the Straight Line</u>
+                <p>Bresenham's algorithm, unlike the DDA algorithm, will only use integer values and doesn't require division.<br/>The first step of Bresenham's algorithm is to 
+                    analyse both the endpoints. Assuming that `r_1 = (X1, Y1)` is closer to the origin, and if it isn't then reverse the role of `r_2 = (X2, Y2)` with `r_1`. 
+                    Translate the line by (-X1, -Y1) so that it begins at the origin. The origin is now joined with the difference in x and y from the endpoints of the line. This 
+                    will result in no loss of generality until the assumption made that the slope of the line is between 0 and 1. The translated line now has the equation `y = \frac{\delta x}{\delta y}(x)`<br/>
+                    The value `d_i` in the algorithm will be the decision variable that determines what crossed coordinate the lit pixel will lie on. If di is less than 0.5 on one 
+                    side, then that point it is closer to will be the lit pixel. The point crossing the line with the x-axis of `x_i`, A, is denoted by<br/>
+                    `(1 + x_i, \frac{\delta x}{\delta y}(1 + x_{i - 1}))`<br/>
+                    As `y = \frac{\delta x}{\delta y}(x)`<br/>
+                    <span style='color:red;'>`\text{Light Pixel} X1, Y1;`<br/>
+                        `x = X1;`<br/>
+                        `\text{Initialise} d;`<br/>
+                        `\text{While}(x < X2)`<br/>
+                        `\text{Do} x = x + 1;`<br/>
+                        `\text{Test} d;`<br/>
+                        `\text{Light appropriate pixel};`<br/>
+                    `\text{Update} d;`</span></p>
+                <br/>
+                <u>Anti-aliasing</u>
+                <p>Both of these algorithms produce very jagged-looking lines as only the required pixels light up. A solution to this would be anti-aliasing. This method will 
+                    light up adjacent pixels to the line with a lower intensity to give it a smoothed off gradient look.</p>
+                <br/>
+                <u>Circle Drawing</u><br/>
+                <u>Simple Algorithms Based on the Polar Parametric Representation</u>
+                <p><img src="2D Computer Graphics/Image10.jpg" alt='Tenth Image'><br/>
+                    `x(\phi) = r\cos\phi` and `y(\phi) = r\sin\phi`<br/>
+                    With the rotation matrix<br/>
+                    `\left\lgroup\matrix{\cos\epsilon & -\sin\epsilon\cr \sin\epsilon & \cos\epsilon}\right\rgroup`<br/>
+                    `x(\phi + \epsilon) = x(\phi)\cos\epsilon - y(\phi)\sin\epsilon`<br/>
+                    `y(\phi + \epsilon) = x(\phi)\sin\epsilon + y(\phi)\cos\epsilon`<br/>
+                    In a discrete form for pixels, the equations are:<br/>
+                    `x(n + 1) = x(n)\cos\epsilon - y(n)\sin\epsilon`<br/>
+                    `y(n + 1) = y(n)\sin\epsilon + y(n)\cos\epsilon`<br/>
+                    From (r, 0), the pixels can be created like so<br/>
+                    <span style='color:red;'>`\text{Choose small value for \epsilon value};`<br/>
+                        `s = \sin\epsilon;`<br/>
+                        `c = \cos\epsilon;`<br/>
+                        `n = 1;`<br/>
+                        `x_1 = r;`<br/>
+                        `y_1 = 0`<br/>
+                        `\text{Write Pixel}(x_1, y_1, \text{value});`<br/>
+                        `\text{Repeat}`<br/>
+                        `x_{n + 1} = x_n(c) - y_n(s);`<br/>
+                        `y_{n + 1} = x_n(s) - y_n(c);`<br/>
+                        `\text{Write Pixel}(\text{floor}(x_{n + 1} + 0.5), \text{floor}{y_{n + 1} + 0.5, \text{value});`<br/>
+                        `\text{Until}()`</span><br/>
+                    If `x_{n + 1} - x_n > 1` or `y_{n + 1} - y_n > 1`, then the value for `/epsilon` is too large. This will cause holes to be seen in the curved line of the 
+                    circle. The 8-way symmetry of the circle is useful to divide computation in an algorithm, as with the coordinate (x, y) that crosses over the circle, so must 
+                    (x, -y), (-x, y), (-x, -y), (y, x), (y, -x), (-y, x), (-y, -x).</p>
+                <br/>
+                <u>Bresenhem's Circle Algorithm</u>
+                <p>A quadrant or an eighth of a circle is used in Bresenham's algorithm to work out the pixel pattern for one eighth of a circle and thus the eight times more 
+                    pixels that overall need to be pinpointed. The centre is generally (0, 0) and the quadrant starts at x = 0, y = r to<br/>
+                    `x = y = \frac r{sqrt(2)}`<br/>
+                    As each pixel is covered, the midpoint must be assessed and the two possible pixel points are given. If the midpoint lies in the circle then it will be the 
+                    outer point and if it lies outside of the circle, the inner point will be lit. After the procedure has been completed, two new possible pixel points are chosen 
+                    from the last pixel point that was lit and as well as this a new midpoint is generated from the two possible midpoints that could've been branching from the 
+                    last pixel.<br/>
+                    Implicit - `F(x, y) = x^2 + y^2 - r^2 = 0`<br/>
+                    Any test point will be inside the circle if `F(x_T, y_T) < 0` and outside the circle is 1F(x_T, y_T) > 0`<br/>
+                    <span style='color:red;'>`\text{Procedure}: \text{bresenhem_circle}(r, \text{value:integer})`<br/>
+                        `\text{var} x, y:\text{integer};`<br/>
+                        `d:\text{real};`<br/>
+                        `\text{Begin}`<br/>
+                        `x = 0;`<br/>
+                        `y = r;`<br/>
+                        `d = \frac 54 - r;`<br/>
+                        `\text{Eight Points}(x, y, \text{value});`<br/>
+                        `\text{While} y > x \text{do}`<br/>
+                        `\text{Begin}`<br/>
+                        `\text{If}(d < 0)`<br/>
+                        `\text{Begin}`<br/>
+                        `d = d + 2(x) + 3;`<br/>
+                        `x = x+ 1;`<br/>
+                        `text{End}`<br/>
+                        `\text{Else}`<br/>
+                        `\text{Begin}`<br/>
+                        `d = d + 2(x - y) + 5;`<br/>
+                        `x = x + 1;`<br/>
+                        `y = y - 1;`<br/>
+                        `\text{End}`<br/>
+                        `\text{Eight Points}(x, y, \text{value});`<br/>
+                        `\text{End}`<br/>
+                        `\text{End}`</span></p>
+                <br/>
+                <u>Vector Clipping</u>
+                <p>If a vector is drawn and it clips to outside of a raster display, then the vector should be clipped off so it does not waste any unnecessary memory. If the 
+                    vector clips the edge of the raster display at (x*, y*), and the vector is from `(x_1, y_1)` to `(x_2, y_2)`. The visible vector would be shown from `(x_1, y_1)` to 
+                    (x*, y*) and not to `(x_2, y_2)`.<br/>If the 4-bit code for both endpoints is 0000, then no clipping is required as both endpoints are within the raster display. 
+                    If the bitwise and of the endpoints of the line is not equal to 0000, the whole line will be outside of the raster display. If the endpoints are both , 
+                    all entirely above, below, to the left or to the right of the clipping rectangle, then those lines are not in the clipping rectangle.<br/>If the anded code is 
+                    0000, the line may be partially visible, or it may be completely invisible.<br/>The Cohen-Sutherland algorithm will clip any straight lines that fail tests 1 
+                    and 2. The algorithm will then expand the boundary edges until the straight lines pass tests 1 and 2.</p>
+                <br/>
+                <u>Polygon Clipping</u>
+                <p>Polygons will be stored on the raster display but some of their edges may lie outside of the boundary. If this is so, then the polygon will have to be 
+                    appropriately clipped until all of the vertices of the polygon lie inside the boundary.<br/>A polygon will be stored as a set of vertices, all in order and a 
+                    set of edges with pairs of vertices limiting the edge length.<br/>Clipping polygons can produce 0 or above different clipped polygons in the raster display 
+                    area.<br/>The outputted clipped polygons should have the same data structure as the initial unclipped polygon.</p>
+                <br/>
+                <u>Scan-converting Polygons</u><br/>
+                <u>Using an Inside Test</u>
+                <p>The inside test is a test to see what pixels lie inside a polygon's confines and need to be lit. It is a very inefficient test, even if the extent of the polygon 
+                    P is used to limit the number of pixels to be analysed.</p>
+                <br/>
+                <u>A Scanline Algorithm</u>
+                <p>In this case, one axis is used as a line system and the polygon is scanned on the plane from the top down. The line that is being scanned is split up into pairs 
+                    of coordinates that map the actual body of the polygon. The pixels in between these pairs are lit up.</p>
+                <br/>
+                <u>An Improved Scanline Method</u>
+                <p>The above scanline algorithm only partially exploits the scanline coherence. With an improved algorithm, the edge coherence can also be exploited.<br/>Brute 
+                    force calculation of intersection points should be avoided. Only a small number of intersections should pass through the scanline. Most of the edges intersected 
+                    by the ith scanline, should in general also be intersected by the i+1th scanline. The intersection data should be very similar in adjacent scanlines.<br/>This 
+                    improved scanline method will not completely delete the Active Edge Table once the next scanline is being analysed. It will retain the edge values that still 
+                    intersect the new scanline, old intersections that are no longer present will be removed and newer intersections that were not there in the previous scanline 
+                    will be added.<br/>Each global edge table will contain a `y_{\text{max}}` value, an `x_{\text{min}}` value and the `\frac 1m` value.</p>
+                <br/>
+                <u>Independence Requirements</u>
+                <p>Graphics displays should contain software that is generally interchangeable between operating systems. This means that it requires at little procedure at all to 
+                    be able to play this piece of software on one computer and then play the same piece of software on another, different computer. The graphics software packages 
+                    should also be interchangeable between application and hardware devices of the computer. If the software packages are written in high-level programming 
+                    languages, then generally this can be achieved.<br/>It is not always possible though as some computer systems might be colour and some displays may be 
+                    monochrome. As well as this some computers can use raster displays or vector displays, which aren't very interchangeable.<br/>If general functions and classes 
+                    are implemented into the software then the software won't be application-specific and will be interchangeable between applications.</p>
+                <br/>
+                <u>Functional Requirements</u>
+                <p>There is a set of functional requirements needed for a graphics software package.<br/>Firstly, these pieces of software must have procedures for drawing straight 
+                    lines, circles, squares and other geometric primitives.<br/>Secondly, the pieces of software must have viewing pieces of software for both the 2 and 3D objects.<br/>
+                    Thirdly, there must be functions to provide segmentation to objects.<br/>Fourthly, there must be functions to be able to transform objects from one place to another 
+                    or rotate the object or scale the object, or even any combination of the three.<br/>Fifthly, there must be provision for input from I/O devices like keyboards and 
+                    mice.<br/>Lastly, there must be general facilities like being able to remove objects and requesting device characteristics.</p>
+                <br/>
+                <u>Coordinate Systems, Viewing Transformations</u><br/>
+                <u>Device Coordinates</u>
+                <p>Device coordinates typically involve resolution size of monitors rather than anything else, so the number of addressable, lightable points for a computer display.<br/>
+                    (0, 0) will be the top left point of the raster display.</p>
+                <br/>
+                <u>World Coordinates</u>
+                <p>World coordinates apply the same basic limitations to a plane but they use units and not arbitrary values. These units can include metres, centimetres, miles 
+                    etc.<br/>These coordinates would be better for physics-relating systems or with building projects where real-world dimensions will have to be realised.</p>
+                <br/>
+                <u>A Simple Outline Pipeline</u>
+                <p>The output line will transform the coordinated object into a displayable image in the raster display.<br/>Define boundary edges `\rightarrow` Clip to window limits `\rightarrow` Define 
+                    viewport limits `\rightarrow` Transform window to viewport `\rightarrow` Display</p>
+                <br/>
+                <u>An Alternative Output Pipeline</u>
+                <p>Each device will have a normalized display space, providing a standard system of coordinates, this is a convenient way of holding graphical data in a display.<br/>
+                    Scaling an object will involve normalizing the display space to a viewport for that object and setting the lower left vertex as (0, 0) and the top right vertex 
+                    as (M, N) where M and N are the new scaled coordinates, `M = \lambda x` and `N = \mu y`. Then the viewport will become the updated graphics display.</p>
+                <br/>
+                <u>A Virtual Input Model</u>
+                <p>There are several virtual input devices that will provide certain functionality or data structures to it. The examples are LOCATOR which will provide a position 
+                    in world coordinates. VALUATOR will provide a real number, CHOICE which is a positive integer for any n number of different values, (0 will provide no choice), 
+                    PICK will provide a reference point for a certain image/segment in a raster display, STRING provide a character string, STROKE will provide a string of x, y 
+                    coordinates in world coordinates.<br/>A virtual input device will have measure, trigger, prompt and echo as processes. The measure process is to tell whether 
+                    the virtual input device is interacting with something. The trigger process will signify significant moments in a procedure by firing when these moments take 
+                    place. A prompt is a process to tell the user that the input device is ready.<br/>There are three modes of operation for each process. The first mode of 
+                    operation is REQUEST where the computer is waiting for the user to input a string and signify the completion of the request with a mouse click or something 
+                    similar. SAMPLE is in a sense, the asynchronous form of REQUEST. SAMPLE will not wait for user's input or delimiter click to request an input, instead it will 
+                    output the current input value of the input device. EVENT mode will create event reports asynchronously  by user action only from devices in EVENT mode. The 
+                    virtual input device can also obtain the first event report by using AWAIT EVENT. As well as this, the user can also flush all the event reports from the 
+                    queue.<br/>REQUEST mode is a singular form of EVENT mode where EVENT mode will produce a queue and REQUEST mode will simply output the first trigger. The SAMPLE 
+                    mode will simply have an inoperable trigger that simply measures each call to SAMPLE.</p>
+                <br/>
+                <u>Graphics Standards</u>
+                <p>Graphics standards were developed in the 1980's like the GINO and CORE systems for Europe and the USA were developed and later on in the '80's, the GKS was 
+                    developed; the first international graphics standard, which quickly became obsolete because of  developing technology. Open GL is a current graphics standard 
+                    but at the moment there aren't any international standards.</p>
             </div>
         </div>
     </body>
