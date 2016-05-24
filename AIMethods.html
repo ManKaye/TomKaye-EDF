@@ -1,0 +1,344 @@
+<html>
+    <head>
+        <title>Advanced Web Programming</title>
+        <link rel="stylesheet" href="Main.css">
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$$','$$'], ['\\(','\\)']]}});
+        </script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    </head>
+    <body>
+        <div class="Main-Div">
+            <h1 class="Std-Header">Tom & Loughborough University - Advanced Web Programming</h1>
+            <div class="Input-Div" id="Back-Button-Div">
+                <input type="button" class="Back-Button" onclick="window.location = 'UniversityModules.html';" value="Back to University Modules">
+            </div>
+            <br/>
+            <div class="Sub-Div">
+                <p>Artificial Intelligence - Artificial intelligence is a sub branch of computer 
+                    science which attempts to produce computer systems that exhibit behaviour 
+                    which, if performed by a human, would generally be accepted to require 
+                    intelligence.<br/>AI does not just encompass mathematics and computer science 
+                    but also philosophy, psychology, linguistics.<br/>States are useful aspects of 
+                    artificial intelligence as they can represent the point in time where an 
+                    algorithm is at presently and in more detail, what certain values would be at 
+                    that time. A state will not however reference the possible changes in a system.<br/>
+                    A problem that needs to be solved will have an initial state, a goal state and a 
+                    set of intermediate states as well as a set of operators to form a path between 
+                    states to get from the initial state to the goal state.<br/>Goal Test - This test 
+                    will determine if a state satisfies the goal state of the algorithm.<br/>Path Cost 
+                    Function - This function will help to evaluate or compare certain solutions to find 
+                    the optimal one.<br/>A Solution - A solution is a pathway from the initial 
+                    state of an algorithm to the goal state.<br/>An Optimal Solution - An optimal 
+                    solution will be the outcome of a path cost function in most cases. It will 
+                    find the shortest path from the initial state to the goal state.<br/>Searching 
+                    algorithms revolve entirely around the choice of the next state from the 
+                    previous one. Certain algorithms will scan the next state from left to right, 
+                    top to bottom, or use certain variables to create a heuristic search.<br/>
+                    Searches can illustratively generate search trees and search nodes. Each search 
+                    node will be one state of the world that can be reached from the previous 
+                    search node, (as well as possible others). The root node will be the initial 
+                    state of the problem. The leaf nodes are the intermediate nodes after the root 
+                    node, including the end-point nodes and the goal state node.<br/>There is a 
+                    difference between a search tree and a state space. A search tree is a tree, 
+                    always, and a state space can be a tree but isn't always. A search tree can 
+                    also be infinite, even with a finite search space.<br/>The search nodes of a 
+                    search tree will also have more associated data with each node, like the 
+                    associate state, the parent node, the operator, the depth and the path cost.<br/>
+                    There are four aspects to the objectives and criteria.<br/>Completeness - Is 
+                    the strategy guaranteed to find a solution?<br/>Time Complexity - How long does 
+                    it take to find a solution?<br/>Space Complexity - How much memory does it need 
+                    to perform the search?<br/>Optimality - Is the strategy always complete with 
+                    the smallest path cost?<br/>Uninformed searches are different from heuristic 
+                    searches.<br/>An uninformed search simply uses a basic algorithm to search 
+                    through the possibilities in one move patternistic movement. A heuristic search 
+                    will analyze each state it rests at to see which path is shortest to get to the 
+                    goal state.<br/>Breadth-First Search - A breadth-first search algorithm will 
+                    scan the top-most nodes first, going down in rows. For a binary tree, the 
+                    branching factor for all nodes is two. If there are d levels to the tree then, 
+                    it could take the algorithm a maximum of `b^d` nodes to search through. Space 
+                    requirement is almost always a bigger problem than time requirement.<br/>
+                    Uniform Cost Search - This is a generalization of a breadth-first search 
+                    algorithm. This algorithm keeps a path cost attribute g(n) for each node where 
+                    in a normal breadth-first search it would be depth(n).<br/>Depth-First Search - 
+                    A depth-first search algorithm will scan down one branch first before 
+                    traversing the next. This makes depth-first search quite unfit to search an 
+                    infinitely long tree, as it could descend one branch forever. When the 
+                    algorithm pointer reaches the bottom of a branch and the bottom node is not the 
+                    goal state, the pointer travels up the branch again, to enter the next branch. 
+                    With a branching factor b and a maximum depth of m, the depth-first search 
+                    space complexity is `O(bm)` and the time complexity is `O(b^m)` in the worst 
+                    case scenario.<br/>Depth-Limited Search - This algorithm is simply a 
+                    depth-first search with a constant maximum depth value so infinitely long trees 
+                    are abandoned with this algorithm.<br/>Iterative Deepening Search - This 
+                    algorithm is like the Depth-Limited Search except it is complete and optimal 
+                    like a breadth-first search, this algorithm is preferred for large spaces 
+                    needed to search in.<br/>Bidirectional Search - Two paths are created in this 
+                    algorithm, one from the initial state and one from the goal state. The paths 
+                    will eventually meet up in the middle.<br/>Avoiding Repeated States - Policies 
+                    to avoid wasting time on repeated states, multiple policies could be 
+                    introduced. One could be not to return to the parent node of the current node. 
+                    One could be to not create cyclic paths. A final policy could be to not 
+                    generate any state that has been already generated before.<br/>Best-First 
+                    Search - This algorithm will choose the best-looking option from all the 
+                    possible branches and go down that path.<br/>Greedy Search - Expand the node 
+                    whose state is judged closest to the goal state. Define an estimate of the cost 
+                    of reaching the nearest goal state from the current node, h(n). When `h(n) = 0`, 
+                    the goal state has been reached. The greedy search is not complete nor is it 
+                    greedy. Time complexity is `O(b^m)` worst case and space complexity is also 
+                    `O(b^m)`.A* Search - This algorithm is a combination of the uniform cost search 
+                    and the greedy search.<br/>`f(n) = g(n) + h(n)` and f(n) is the estimated cost 
+                    of the cheapest solution through n.</p>
+                <br/>
+                <u>Admissibility</u>
+                <p>The condition of the heuristic function h(n) is:<br/>H must be optimistic, 
+                    meaning it must never overestimate the cost to reach the goal. This would 
+                    hybridize the heuristic search to become an admissible heuristic search. If an 
+                    admissible heuristic h is used in the A* search, then the A* search will 
+                    underestimate the cost. So long as the heuristic is not admissible, the A* 
+                    search will be complete and optimal. The A* search is optimally efficient 
+                    meaning that no other optimal algorithm which extends search paths from the 
+                    root is guaranteed to expand fewer nodes. If they do miss the preferable 
+                    nodes, that function may miss the optimal solution. A* is complete in a finite 
+                    space. This means it is complete, optimal and optimally efficient. However the 
+                    A* search falls short on storage where it will have to keep all the generated 
+                    nodes in the memory.<br/>Iterative Deepening A* (IDA*) - This algorithm will 
+                    implement a maximum depth like the iterative deepening algorithms do but with 
+                    a space complexity of O(bd) instead.</p>
+                <br/>
+                <u>Logic</u>
+                <p>Logic is a formal language for representing knowledge, together with the 
+                    ability to reason in this language to infer more knowledge from the original. 
+                    The knowledge-based agents are held in the knowledge base.</p>
+                <br/>
+                <u>Syntax vs. Semantics</u>
+                <p>Syntax is the grammar of the language,it determines how the sentences of the 
+                    logic are written and what rules of inference may be applied to them, to 
+                    produce new sentences in the logic.<br/>Semantics defines the meaning of 
+                    sentences in the logic. It maps the elements of the language used into facts 
+                    within the domain of interest to the agent.<br/>When a particular agent has a 
+                    particular sentence in its knowledge base, we say that it believes the 
+                    corresponding fact to be true of the world.<br/>The sentences of a logic do 
+                    not even mean anything on their own. An interpretation must be provided - and 
+                    agreed correspondence between the sentences of the logic and the facts in the 
+                    world.</p>
+                <br/>
+                <u>Inference Mechanism/Procedure</u>
+                <p>An inference mechanism or procedure determines what follows from the knowledge 
+                    base. Entailment - We want to generate new sentences that are necessarily 
+                    true, given that the old sentences are true. This relation between sentences 
+                    is called entailment. This is written as:<br/>
+                    `KB |= \alpha`<br/>
+                    An inference procedure can either tell whether or not the sentence `\alpha` is 
+                    entailed by KB or not. It can also generate new sentences `\alpha` to be entailed by 
+                    the knowledge base.</p>
+                <br/>
+                <u>Sound Inference Procedures</u>
+                <p>An inference procedure that only generated entailed sentences is called sound 
+                    or truth-preserving.<br/>If inference procedure I can derive `\alpha` from KB, 
+                    then we might write:<br/>
+                    `KB \vdash_i \alpha`</p>
+                <br/>
+                <u>Propositional & Predicate Logics</u>
+                <p>There are two types of logic, propositional logic and predicate calculus.<br/>
+                    In propositional logic, symbols represent propositions or facts which can be 
+                    evaluated to be either true or false.<br/>The symbols can be combined by the 
+                    standard set of boolean connectives. Propositional logic is limited in its way 
+                    of representing knowledge. Predicate calculus represents the world as objects 
+                    and predicates on objects. It also uses connective and quantifiers. Predicate 
+                    calculus is a much more powerful representation that propositional calculus. 
+                    It is also the most commonly used logic in AI.<br/>
+                    `\text{Sentence} \rightarrow \text{AtomicSentence} | \text{ComplexSentence}`<br/>
+                    `\text{AtomicSentence} \rightarrow \text{True} | \text{False} | P | Q | R | . . .`<br/>
+                    `\text{ComplexSentence} \rightarrow (\text{Sentence}) | `<br/>`\text{Sentence Connective Sentence} | \not\text{Sentence}`<br/>
+                    `\text{Connective} \rightarrow \wedge | \vee | \Leftrightarrow | \Rightarrow`<br/>
+                    Above is an example of the syntax of propositional logic, much like BNF. The 
+                    logical constants are sentences themselves, (True and False). A propositional 
+                    symbol like P or Q is a sentence by itself. Wrapping parentheses around a 
+                    sentence also gives a sentence. Atomic sentences are single symbols or one of 
+                    the logical constants. Complex sentences will contain connectives or 
+                    parentheses. A literal is an atomic sentence or a negated atomic sentence.<br/>
+                    `\wedge (\text{and})`<br/>
+                    `\vee (\text{or})`<br/>
+                    `\Rightarrow (\text{implies})`<br/>
+                    `\Leftrightarrow (\text{equivalent})`<br/>
+                    `\not (\text{not})`</p>
+                <br/>
+                <u>Precedence of Connectives</u>
+                <p>Parentheses are important to denote order of execution.<br/>
+                    `\not, \wedge, \vee, \Rightarrow, \Leftrightarrow`<br/>
+                    The above list is ordered to show the priority levels of each operator from 
+                    highest to lowest.</p>
+                <br/>
+                <u>Semantics of Propositional Logic</u>
+                <p>A propositional symbol, P, could mean anything. It could mean that London is 
+                    the Capital of the UK, London is the Capital of Ukraine. The two logical 
+                    constants True or False concern with they way the world is and the way the 
+                    world is not, respectively. The meaning of  a complex sentence is defined by 
+                    the cumulative meaning of its parts, usually expressed as truth tables.</p>
+                <br/>
+                <u>Truth Tables for Five Logical Connectives</u>
+                <p><img src='AI Methods/Image1.jpg' alt='First Image'></p>
+                <br/>
+                <u>Propositional Logic Inference Rules</u>
+                <p>Modus Ponens or Implication-Elimination: From an implication and the premise, 
+                    infer the conclusion.<br/>
+                    `\frac {\alpha \Rightarrow \beta, \alpha}\beta`<br/>
+                    And-Elimination: From a conjunction, infer any of the conjuncts.<br/>
+                    `\frac{\alpha_1 \wedge \alpha_2 \wedge ... \wedge \alpha_n}{\alpha_i}`<br/>
+                    And-Introduction: From a list of sentences, infer their conjunction.<br/>
+                    `\frac{\alpha_1, \alpha_2, ..., \alpha_n}{\alpha_1 \wedge \alpha_2 \wedge ... \wedge \alpha_n}`<br/>
+                    Or-Introduction: From a sentence, infer its conjunction with anything else at all.<br/>
+                    `\frac{\alpha_i}{\alpha_1 \vee \alpha_2 \vee ... \vee \alpha_n}`<br/>
+                    Double-Negation Elimination: From a doubly negated sentence, infer a positive sentence.<br/>
+                    `\frac{\not\not\alpha}\alpha`<br/>
+                    Unit Resolution: From a disjunction, if one of the disjuncts is false, then 
+                    infer that the other one is true.<br/>
+                    `\frac{\alpha \vee \beta, \not\beta}{\alpha}`<br/>
+                    Resolution: Because β cannot be both true and false, one of the other 
+                    disjuncts must be true in one of the premises. Equivalently, implication is 
+                    transitive.<br/>
+                    `\frac{\alpha \vee \beta, \not\beta \vee \gamma}{\alpha \vee \gamma}`<br/>
+                    Or equivalently:<br/>
+                    `\frac{\not\alpha \Rightarrow \beta, \beta \Rightarrow \gamma}{\not\alpha \Rightarrow \gamma}`<br/>
+                    Contrapositive Rule:<br/>
+                    `(P \Rightarrow Q) \equiv (\not Q \Rightarrow \not P)`<br/>
+                    De Morgan's Law<br/>
+                    `\not(P \wedge Q) \equiv (\not P \vee \not Q)` and `\not(P \vee Q) \equiv (\not P \wedge \not Q)`<br/>
+                    Implication Elimination:<br/>
+                    `(P \Rightarrow Q) \equiv (\not P \vee Q)`</p>
+                <br/>
+                <u>Logical Proof</u>
+                <p>The above inference rules can be demonstrated to be sound by using a truth 
+                    table approach. Then we can use the rules in proofs.<br/>Logical Proof 
+                    consists of a sequence of applications of inference rules starting with 
+                    sentences initially in the KB and eventually producing the sentence whose 
+                    proof is desired.</p>
+                <br/>
+                <u>Truth Table Proof Method</u>
+                <p>The premises are the given statements and conclusion is what you want to prove.<br/>
+                    If the series of premises P denote the conclusion C, a truth table must be 
+                    used to prove the following statement always true.</p>
+                <br/>
+                <u>First Order Logic</u>
+                <p>First order logic is also known as predicate calculus. There are objects in the 
+                    world, each with different identities and properties that distinguish these 
+                    objects from other objects. There are relations between these objects in the 
+                    world, known as functions, where there is one value for each input.</p>
+                <br/>
+                <u>Syntax of First Order Logic</u>
+                <p>Backus-Naur Form grammar for sentences in predicate logic:<br/>
+                    `\text{Sentence} \rightarrow \text{AtomicSentence}`<br/>
+                    `| \text{Sentence Connective Sentence}`<br/>
+                    `| \text{Quantifier Variable}, ... \text{Sentence}`<br/>
+                    `| \not\text{Sentence}`<br/>
+                    `| (\text{Sentence})`<br/>
+                    `\text{AtomicSentence} \rightarrow \text{Predicate}(\text{Term}, ...) | \text{Term} = \text{Term}`<br/>
+                    `\text{Term} \rightarrow \text{Function}(\text{Term}, ...)`<br/>
+                    `| \text{Constant}`<br/>
+                    `| \text{Variable}`<br/>
+                    `\text{Connective} \rightarrow \wedge | \vee | \Leftrightarrow | \Rightarrow`<br/>
+                    `\text{Quantifier} \rightarrow \forall | \exists`<br/>
+                    `\text{Constant} \rightarrow a | a_1 | \text{john} | ...`<br/>
+                    `\text{Variable} \rightarrow X | Y | Z | ...`<br/>
+                    `\text{Predicate} \rightarrow \text{before} | \text{hasColour} | \text{raining} | ...`<br/>
+                    `\text{Function} \rightarrow \text{mother} | \text{sumOf} | ...`</p>
+                <br/>
+                <u>Elements of First Order Logic</u>
+                <p>The sentences represent the facts about the world, the terms represent the 
+                    objects of the world, the constant symbols must name exactly one object in the 
+                    world, under an interpretation of the logic, an interpretation states which 
+                    predicate symbols refer to which relations between objects in the world. A 
+                    function symbol refers to a relation which maps one object onto another.<br/>
+                    Constants, predicate names and function symbols begin with lower case letters 
+                    where variables usually begin with a capital letter.<br/>Constant symbols, in 
+                    their interpretation, must specify the mapping between constant and object.<br/>
+                    Predicate symbols define the properties of objects and relations between 
+                    objects, unary predicates can define properties of an object. Binary or higher 
+                    order predicates define Relations between objects.<br/>A relations is defined 
+                    by the set of tuples that match it. For example, for the relation of a king, an 
+                    example may be:<br/>
+                    {&lt;john, england&gt;,<br/>
+                    &lt;macbeth, scotland&gt;,<br/>
+                    &lt;henry, spain&gt;,<br/>
+                    &lt;charles, france&gt;,<br/>
+                    ...}<br/>
+                    Some relations are functional, meaning that their mappings can be N:1. For an 
+                    n-input function, we must define an (n+1)-tuple relation in which the last 
+                    element of each tuple is the value of the function. An example would be 
+                    kingOf(england) = john, which is equivalent to king(john, england).<br/>
+                    Terms are logical expressions that refer to objects. They can be symbols, 
+                    variables or complex expressions.<br/>
+                    A predicate symbol followed by a parenthesized list of terms, like 
+                    mother(mary, john) is an example of an atomic sentence. In terms of 
+                    interpretation, the sentence states a fact about the world, which is true if 
+                    the relation defined by the predicate symbol holds between the objects to by 
+                    the arguments. Truth therefore depends on the interpretation and the state of 
+                    the world.<br/>Complex sentences are formed by using logical connective on 
+                    atomic sentences as in propositional logic. They have the same semantics in 
+                    First Order Logic as in propositional logic.<br/>Quantifiers and variables are 
+                    used to express properties of whole collections of objects. Variables are 
+                    usually defined by uppercase letters.<br/>
+                    `\forall X \text{likes}(X, \text{chocolate})`, in English, means for all 
+                    identities X, X like chocolate. This shortens from a series of atomic 
+                    sentences with each individual instance of X, ANDed.</p>
+                <br/>
+                <u>Ground Terms</u>
+                <p>A term with no variable is called a ground term. An example of a ground terms 
+                    is leftLegOf(john), and not brotherOf(X), as there is no defining object to X, 
+                    that could be X's brother.</p>
+                <br/>
+                <u>Implication vs. Conjunction</u>
+                <p>`\forall X \text{cat}(X) \Rightarrow \text{mammal}(X)`<br/>
+                    `\forall X \text{cat}(X) \wedge \text{mammal}(X)`<br/>
+                    These two sentences are not the same, even though it may look on the surface 
+                    that they are. Using technicality, the values of X cannot be cats and mammals, 
+                    as being a cat merely implies the identities of X to be mammals.</p>
+                <br/>
+                <u>The Existential Quantifier</u>
+                <p>`\exists X \text{likes}(X, \text{tea})`, means that, a subset of X likes the 
+                    tea and the disjoint remaining values of X do not like tea. This is a 
+                    shorthand version of using each individual instance of X into a list of atomic 
+                    sentences, all ORed.<br/>
+                    `\exists X \text{cat}(X) \wedge \text{brown}(X)` means that some cats are 
+                    brown.<br/>
+                    `\exists X \text{sister}(X, \text{tiddles}) \wedge \text{cat}(X)` basically 
+                    means,<br/>
+                    `(\text{sister}(\text{tiddles},\text{tiddles}) \wedge \text{cat}(\text{tiddles})) \vee`<br/>
+                    `(\text{sister}(\text{fluffy}, \text{tiddles}) \wedge \text{cat}(\text{fluffy})) \vee`<br/>
+                    `(\text{sister}(\text{apple101}, \text{tiddles}) \wedge \text{cat}(\text{apple101})) \vee`<br/>
+                    `(\text{sister}(\text{kingJohn}, \text{tiddles}) \wedge \text{cat}(\text{kingJohn})) \vee`<br/>
+                    `(\text{sister}(\text{robinHood}, \text{tiddles}) \wedge \text{cat}(\text{robinHood})) \vee`<br/>
+                    ...</p>
+                <br/>
+                <u>Nesting Quantifiers</u>
+                <p>Nested quantifiers will combine more than one quantifier for more than one 
+                    term. Order will be important in some cases with nested quantifiers.<br/>
+                    `\forall X \exists Y \text{loves}(X, Y) = \text{Everybody loves somebody}`<br/>
+                    `\exists Y \forall X \text{loves}(X, Y) =`<br/>`\text{There is somebody who is loved by everybody}`<br/>
+                    Brackets can be used to clarify the nesting:<br/>
+                    `\forall X (\exists Y (\text{loves}(X, Y)))`<br/>
+                    If two quantifiers share the same variable names, the innermost instance will 
+                    be considered other the other(s). If all of the variables in a sentence are 
+                    quantified, it is considered a well-formed formulae.<br/>The two quantifiers 
+                    can be related by de Morgan's laws:<br/>
+                    `\forall X \not P \equiv \nexists X P`<br/>
+                    `\not\forall X P \equiv \exists X \not P`<br/>
+                    `\forall X P \equiv \nexists X \not P`<br/>
+                    `\exists X P \equiv \not\forall X \not P`<br/>
+                    And for unquantified sentences:<br/>
+                    `\not P \wedge \not Q \equiv \not(P \vee Q)`<br/>
+                    `\not(P \wedge Q) \equiv \not P \vee \not Q`<br/>
+                    `P \wedge Q \equiv \not(\not P \vee \not Q)`<br/>
+                    `P \vee Q \equiv \not(\not P \wedge \not Q)`</p>
+                <br/>
+                <u>Equality</u>
+                <p>Equality can be used as an alternative method to defining atomic sentences.<br/>
+                    Father(henry, john) can be written as father(john) = henry<br/>
+                    This can also be used with negation:<br/>
+                    `\not(X = Y)` or `(X \nequals Y)`</p>
+            </div>
+        </div>
+    </body>
+</html>
