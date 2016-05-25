@@ -1,0 +1,174 @@
+<html>
+    <head>
+        <title>Formal Languages & the Theory of Computation</title>
+        <link rel="stylesheet" href="Main.css">
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    </head>
+    <body>
+        <div class="Main-Div">
+            <h2 class="Std-Header">Tom & Loughborough University - Formal Languages & the Theory of Computation</h2>
+            <div class="Input-Div" id="Back-Button-Div">
+                <input type="button" class="Back-Button" onclick="window.location = 'UniversityModules.html';" value="Back to University Modules">
+            </div>
+            <br/>
+            <div class="Sub-Div">
+                <u>Formal Languages</u>
+                <p>Formal languages are sets of strings and symbols. They belong to the field of 
+                    non-commutative discrete mathematics.<br/>Alphabet `\Sigma = \text{an often finite set of symbols or letters}`<br/>
+                    `\text{Word} (\text{over} \Sigma) = \text{a usually finite string of symbols from} \Sigma`. An empty word `\epsilon` is a word of length 0.<br/>
+                    `\text{Language} (\text{over} \Sigma) = \text{an often infinite set of words over} \Sigma`<br/>
+                    Class of languages = a set of languages<br/>
+                    `\text{Concatenation} \cdot = \text{a binary function that maps two words}`<br/>`\text{to each other}`, so words v and w would become vw in the sense that `v \cdot w = vw` (concatenation is non-commutative)<br/>
+                    Kleene star * = an operation generating the language L* of all finite words that result from concatenating any words in L<br/>
+                    `\text{Free monoid} \Sigma * = \text{the set of all words over} \Sigma`<br/>
+                    `\text{Free semigroup} \Sigma+ = \Sigma* \ {\epsilon}`<br/>
+                    Complement L' of a language `L = \Sigma* \ L`<br/>
+                    Factor of a word w = any word v such that `w = u_1vu_2` for some words `u_1, u_2`</p>
+                <br/>
+                <u>Homo-Morphisms</u>
+                <p>Example: `h:{a, b}* \rightarrow {a, b}*`<br/>
+                    `h(x) := {\text{bba}\quad \text{if}\quad x = a,`<br/>
+                    a<br/>
+                    `\text{if}\quad x = b,`
+                    b}<br/>
+                    h(abb) = bbaaa<br/>
+                    A homo-morphism is simply one Kleene star that morphs to another Kleene star 
+                    if it is compatible with the concatenation.</p>
+                <br/>
+                <u>Set-formers</u>
+                <p>A set-former describes a language in the following way:<br/>
+                    `L = {w | \text{something about} w}`<br/>
+                    Example: `L = {w \in {a, b}\ast | |w|_a = |w|_b}`</p>
+                <br/>
+                <u>Grammars</u>
+                <p>A grammar, or language generator is a device that describes how to enumerate 
+                    all words in a language. A grammar provides rules to produce these words but 
+                    unfortunately doesn't lead to a simple test of whether a word is in that 
+                    language or not.</p>
+                <br/>
+                <u>Automata</u>
+                <p>An automaton or a language acceptor is a computational device that reads any 
+                    word and outputs 'yes' if it is in the language and 'no' if it isn't, although 
+                    this doesn't always happen. Automata allow us to test easily on whether words 
+                    are in a language although it makes it difficult to obtain all the words in a 
+                    language.<br/>Set-formers are easy for humans to read but not formal enough for 
+                    a computer to compute. Grammars and automata are the opposite, computers can 
+                    use these but most example of these are too big and complicated for humans to 
+                    read.<br/>As a solution, regular expressions, Backus-Naur Form/Extended 
+                    Backus-Naur Form and patterns are used.</p>
+                <br/>
+                <u>Notation & Remarks</u>
+                <p>If M is a grammar or automaton then L(M) is the language generated/accepted by 
+                    that grammar or automaton.<br/>
+                    If <i>M</i> is a set of grammars or automata then L(<i>M</i>) denotes the class 
+                    of all languages that are generated/accepted from <i>M</i>.</p>
+                <br/>
+                <u>The Membership Problem</u>
+                <p>Input: word w<br/>
+                    Output: 'yes' is `w \in L`, 'no' otherwise<br/>
+                    The membership problem for L is decidable if there is a computable 
+                    function `\chi_L` that solves the problem for every w. L is 
+                    decidable/recursive.<br/>If there is a computable function that outputs 'yes' 
+                    when reading any word `w \in L`, and is undefined otherwise then L is 
+                    semi-decidable/recursively enumerable.</p>
+                <br/>
+                <u>Problem or Language?</u>
+                <p>Observation: Any decision problem can be interpreted as the membership problem 
+                    for a formal language.<br/>We simply encode the problem in a language.<br/>
+                    Example: Is n a prime number?<br/>
+                    `L = {w | w \text{ is a binary representation of a prime number}}`</p>
+                <br/>
+                <u>Equivalence Problem</u>
+                <p>Input: Grammars or automata M, N<br/>
+                    Output: 'yes' if L(M) = L(N), 'no' otherwise</p>
+                <br/>
+                <u>Inclusion Problem</u>
+                <p>Input: Grammars or automata M, N<br/>
+                    `\text{Output}: '\text{yes}' \text{if } L(M) \subseteq L(N), '\text{no}' \text{ otherwise}`</p>
+                <br/>
+                <u>Disjointness Problem</u>
+                <p>Input: Grammars or automata M, N<br/>
+                    `\text{Output}: '\text{yes}' \text{ if }L(M) \cap L(N) = \emptyset, '\text{no}' \text{ otherwise}`</p>
+                <br/>
+                <u>Finiteness Problem</u>
+                <p>Input: Grammar or automaton M<br/>
+                    Output: 'yes' if L(M) is finite, 'no' otherwise</p>
+                <br/>
+                <u>Emptiness Problem</u>
+                <p>Input: Grammar or automaton M<br/>
+                    `\text{Output}: '\text{yes}' \text{ if }L(M) = \emptyset, '\text{no}' \text{ otherwise}`</p>
+                <br/>
+                <u>Membership Problem for a Class `\mathcal{M}` of Grammars or Automata</u>
+                <p>Input: Grammar or Automaton `M \in \mathcal{M}`, word w<br/>
+                    `\text{Output}: '\text{yes}'\text{ if }w \in L(M), '\text{no}'\text{ otherwise}`</p>
+                <br/>
+                <u>Decidability of the Inclusion Problem</u>
+                <p>Decidability and co-semi-decidability: The inclusion problem for a class <i>M</i> of 
+                    grammars/automata is decidable if there exists a computable function that, 
+                    given any `M, N \in mathcal{M}`, outputs 'yes' if `L(M) \subseteq L(N)` and 'no' if 
+                    $L(M) \nsubseteq L(N)$, semi-decidable if there exists a computable function 
+                    that, given any `M, N \in \mathcal{M}`, outputs 'yes' if `L(M) \subseteq L(N)` 
+                    and is undefined if $L(M) \nsubseteq L(N)$, co-semi-decidable if there exists 
+                    a computable function that, given any `M, N \in \mathcal{M}`, outputs 'yes' if 
+                    $L(M) \nsubseteq L(N)$ and is undefined if `L(M) \subseteq L(N)`.</p>
+                <br/>
+                <u>How Difficult Is It to Solve a Decision Problem?</u>
+                <p>Decision problems can be decidable, semi-decidable or co-semi-decidable. If 
+                    they are decidable, then we wish to know the amount of time required for the 
+                    characteristic function `\chi` to compute the correct answer when given an input of 
+                    length n. We might also ask for the required memory space in big O notation 
+                    although complexity questions won't be asked for this module.</p>
+                <br/>
+                <u>Closure Properties</u>
+                <p> Let <i>M</i> be a set of grammars or automata.<br/>
+                    L(M) is said to be closed under union if, for all `M, N \in \mathcal{M}`, 
+                    `L(M) \cup L(N) \in L(M)`.<br/>
+                    L(M) is said to be closed under intersection if, for all `M, N \in 
+                    \mathcal{M}`, `L(M) \cap L(N) \in L(M)`.<br/>
+                    L(M) is said to be closed under complement if, for every `M \in \mathcal{M}, L(M)' \in L(M)`.</p>
+                <br/>
+                <u>Chomsky Hierarchy</u>
+                <p>Type 0 grammars - recursively enumerable<br/>Type 1 grammars - 
+                    context-sensitive<br/>Type 2 grammars - context-free<br/>Type 3 grammars - 
+                    regular<br/>Formal languages always contain a subject, a predicate and an 
+                    object.<br/>A grammar connects these things as such:<br/>
+                    `\text{Sentence} \rightarrow \text{Subject Predicate Object}`<br/>
+                    `\text{Subject} \rightarrow \text{Name}`<br/>
+                    `\text{Subject} \rightarrow \text{Article Noun}`<br/>
+                    `\text{Predicate} \rightarrow \text{Adverb Verb}`<br/>
+                    `\text{Object} \rightarrow \text{Name}`<br/>
+                    `\text{Object} \rightarrow \text{Article Noun}`<br/>
+                    `\text{Name} \rightarrow \text{Alice}`<br/>
+                    `\text{Name} \rightarrow \text{Bob}`<br/>
+                    `\text{Article} \rightarrow a`<br/>
+                    `\text{Article} \rightarrow \text{the}`<br/>
+                    `\text{Noun} \rightarrow \text{hamster}`<br/>
+                    `\text{Noun} \rightarrow \text{lamp}`<br/>
+                    `\text{Noun} \rightarrow \text{room}`<br/>
+                    `\text{Noun} \rightarrow \text{birch}`<br/>
+                    `\text{Noun} \rightarrow \text{tree}`<br/>
+                    `\text{Adverb} \rightarrow \text{Adverb Adverb}`<br/>
+                    `\text{Adverb} \rightarrow \epsilon`<br/>
+                    `\text{Adverb} \rightarrow \text{rarely}`<br/>
+                    `\text{Verb} \rightarrow \text{likes}`<br/>
+                    `\text{Verb} \rightarrow \text{feeds}`<br/>
+                    `\text{Verb} \rightarrow \text{illuminates}`<br/>
+                    `\text{Verb} \rightarrow \text{is}`<br/>
+                    In this layout, the start symbol would be w = Sentence</p>
+                <br/>
+                <u>Type 0 Grammars</u>
+                <p>A (formal or phase-structure) grammar of Type 0 is a tuple G = (N, T, P, S) 
+                    satisfying the following conditions:<br/>N is a finite alphabet of 
+                    non-terminal symbols (or variables), T is a finite alphabet of terminal 
+                    symbols (or letters), `N\cap T = \emptyset`, P is a set of production rules, 
+                    i.e. P is a finite subset of `(N\cup T)^+ x (N\cup T)^\ast, S \in N` is a start 
+                    variable.</p>
+                <br/>
+            </div>
+        </div>
+    </body>
+</html>
