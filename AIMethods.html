@@ -3,7 +3,7 @@
         <title>Advanced Web Programming</title>
         <link rel="stylesheet" href="Main.css">
         <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({tex2jax: {inlineMath: [['$$','$$'], ['\\(','\\)']]}});
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
         </script>
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
@@ -323,9 +323,9 @@
                     be considered other the other(s). If all of the variables in a sentence are 
                     quantified, it is considered a well-formed formulae.<br/>The two quantifiers 
                     can be related by de Morgan's laws:<br/>
-                    `\forall X \not P \equiv \nexists X P`<br/>
+                    $\forall X \lnot P \equiv \nexists X P$<br/>
                     `\not\forall X P \equiv \exists X \not P`<br/>
-                    `\forall X P \equiv \nexists X \not P`<br/>
+                    $\forall X P \equiv \not\exists X \lnot P$<br/>
                     `\exists X P \equiv \not\forall X \not P`<br/>
                     And for unquantified sentences:<br/>
                     `\not P \wedge \not Q \equiv \not(P \vee Q)`<br/>
@@ -337,7 +337,286 @@
                 <p>Equality can be used as an alternative method to defining atomic sentences.<br/>
                     Father(henry, john) can be written as father(john) = henry<br/>
                     This can also be used with negation:<br/>
-                    `\not(X = Y)` or `(X \nequals Y)`</p>
+                    `\not(X = Y)` or `(X \ne Y)`</p>
+                <br/>
+                <u>The Uniqueness Quantifier</u>
+                <p>`\exists ! X \text{king}(X) = \text{There is only one king}`<br/>
+                    Which is equivalent to:<br/>
+                    `\exists X \text{king}(X) \wedge [\forall Y \text{king}(Y) \Rightarrow (X = Y )]`</p>
+                <br/>
+                <u>New Inference Rules</u>
+                <p>Now that quantifiers and variables are used, more inference rules can be used.<br/>
+                    `\text{Subst}({\frac X{\text{sam}}, \frac Y{\text{pam}}}, \text{likes}(X, Y)) = \text{likes}(\text{sam}, \text{pam})`<br/>
+                    Universal Elimination - For any sentence `\alpha`, variable V and ground term g:<br/>
+                    `\frac{\forall V \alpha}{\text{Subst}({\frac Vg}, \alpha)}`<br/>
+                    Existential Elimination - For any instance `\alpha`, variable V and constant symbol k that 
+                    doesn't appear anywhere else in the knowledge base:<br/>
+                    `\frac{\exists V \alpha}{\text{Subst}({\frac Vk}, \alpha)`<br/>
+                    Existential Introduction - For any sentence `\alpha`, variable V that does not 
+                    appear in `\alpha`, and ground term g that does not occur in `\alpha`:<br/>
+                    `\frac \alpha{\exists V \text{Subst}({\frac gV}, \alpha)`<br/>
+                    <img src="AI Methods/Image2.jpg" alt="Second Image"><br/>
+                    <img src="AI Methods/Image3.jpg" alt="Third Image"><br/>
+                    <img src="AI Methods/Image4.jpg" alt="Fourth Image"><br/>
+                    Given:<br/>
+                    `\text{missile}(m1)`<br/>
+                    `\text{Owns}(\text{nono}, m1)`<br/>
+                    `\forall X \text{missile}(X) \wedge \text{owns}(\text{nono}, X) \Rightarrow \text{sells}(\text{west}, X, \text{nono})`<br/>
+                    Infer:<br/>
+                    `\text{sells}(\text{west}, m1, \text{nono})`<br/>
+                    `\frac{p'_1, p'_2, ..., p'_n, p_1 \wedge p_2 \wedge ... \wedge p_n \Rightarrow q}{\text{Subst}(\theta,q)}`<br/>
+                    All the sentences involved must be in canonical form.<br/>
+                    A sentence is in canonical form is it is an atomic sentence or an implication 
+                    with a conjunction of atomic sentences on the left hand side and a single atom 
+                    on the right hand side of the implication.<br/>When converting a sentence to 
+                    horn form (canonical form), firstly use existential elimination and 
+                    and-elimination. Then drop the universal quantifiers.</p>
+                <br/>
+                <u>Unification</u>
+                <p>The unification routine takes two atomic sentences p and q and returns a 
+                    substitution that makes p and q look the same, or fails if there is no such 
+                    substitution.<br/>
+                    `\text{Unify}(p, q) = \theta` where `\text{Subst}(\theta, p) = \text{Subst}(\theta, q)`<br/>
+                    The unifier here will be theta.<br/>
+                    Before unification, the sentences should be standardized apart so they do not 
+                    use the same variable names. Then we find the most general unifier, which is 
+                    the substitution which makes the least commitment about bindings of the 
+                    variables.</p>
+                <br/>
+                <u>The Resolution Inference Procedure</u>
+                <p>To make sure that only one inference rule is true, a value and it's NOT version 
+                    can be used for two rules ORed with two other values, this means that the 
+                    other two values ORed can be inferred into the set of inference rules. 
+                    Implication is transitive, equivalently. In this situation it would have to be 
+                    the same value at the output of the first implication and as the input of the 
+                    second implication.<br/>
+                    <img src='AI Methods/Image5.jpg' alt='Fifth Image'><br/>
+                    and<br/>
+                    <img src='AI Methods/Image6.jpg' alt='Sixth Image'></p>
+                <br/>
+                <u>Generalized Resolution Rule</u>
+                <p>In terms of disjunctions. For literals `p_i (i = 1, ..., m)` and `q_k (k = 1, ..., n)`
+                    where `\text{unify}(p_j \not q_k) = \theta`. If at least one of each 
+                    statements is true, then the substitution of a set of inference rules along 
+                    with a long series of ORs in a statement. In terms of implications, it is very 
+                    similar to disjunctions but with alternate outcomes to each anded sets of 
+                    inputs to the two implications.</p>
+                <br/>
+                <u>Canonical Forms for Resolution</u>
+                <p>To use resolution, you must first convert all the sentences in the knowledge 
+                    base to either conjunctive or implicative normal form.<br/>Conjunctive Normal 
+                    Form - In CNF, each sentence in the knowledge base is a disjunction of 
+                    literals.<br/>Implicative Normal Form - Each sentence in the knowledge base is 
+                    an implication with a conjunction of atoms on the left-hand side and a 
+                    disjunction of atoms on the right hand side.<br/>Therefore, any sentences with 
+                    only OR operators being used on literals rather than atoms; the sentence is in 
+                    CNF. If one operator is an AND, then it is not in CNF. If an atom implies 
+                    another atom, then the sentence is in INF, if an atom implies a series of ORed 
+                    atoms, then that sentence is in INF, as well as this, if a series of Anded 
+                    atoms imply a series of ORed atoms, then that sentence is in INF. If there is 
+                    an OR operator on the left hand side or an AND operator on the right hand 
+                    side, then that sentence is not in INF.</p>
+                <br/>
+                <u>Resolution Proofs</u>
+                <p>Resolution with refutation provides completeness where modus ponens and 
+                    chaining are not complete.<br/>Resolution with Refutation - To prove P, assume 
+                    that P is false and prove a contradiction. Therefore, add `\not P` to KB and 
+                    deduce a contradiction.<br/>
+                    `(KB \wedge \not P \Rightarrow \text{false}) \Leftrightarrow (KB \Rightarrow P)`<br/>
+                    In INF, adding `P Rightarrow \text{false}` and deducing that `\text{true} \Rightarrow \text{false}`.<br/>
+                    In CNF, adding `\not P` and deducing that it is false.<br/>
+                    We can convert any FOL sentence into INF or CNF.<br/>
+                    - Eliminate implications by replacing them with the corresponding 
+                    disjunctions, using the rule `(p \Rightarrow q) \equiv (\not p \vee q)`<br/>
+                    - Move `\not` inwards, − negations are only allowed on atoms in CNF and not 
+                    all in INF.<br/>
+                    Use de Morgan's Law:<br/>
+                    `\not(p \vee q)` becomes `\not p \wedge \not q`<br/>
+                    `\not(p \wedge q)` becomes `\not p \vee \not q`<br/>
+                    `\not\forall X p` becomes `\exists X \not p`<br/>
+                    `\not\exists X p` becomes `\forall X \not p`<br/>
+                    `\not\not p` becomes `p`<br/>
+                    - Standardize variables - if a variable name is used twice in the same 
+                    sentence, change the name of one of the variables.<br/>
+                    - Move quantifiers left - in the same order in which they appear.<br/>
+                    Skolemize - remove the existential quantifiers. Introduce a Skolem function 
+                    for each existentially quantified variable.<br/>
+                    <img src='AI Methods/Image7.jpg' alt='Seventh Image'><br/>
+                    In the above, h is a function that has not appeared anywhere else in the 
+                    knowledge base. This function depends on all the variables being universally 
+                    quantified outside the replaced existential quantifier. This process is like 
+                    existential elimination in the case where there are no universally quantified 
+                    variables in the sentence just introduce a new constant symbol. Where there 
+                    are universally quantified variables, we need arguments to the function.<br/>
+                    - Drop all universal quantifiers, as any remaining variable must be 
+                    universally quantified at this stage.<br/>
+                    - Distribute `\wedge` over `\vee` - so `(a \wedge b) \vee c` becomes `(a \vee c) \wedge (b \vee c)`.<br/>
+                    - Flatten nested conjunctions and disjunctions - So `(a \wedge b) \wedge c` 
+                    becomes `(a \wedge b \wedge c)`  and likewise for OR operators.<br/>
+                    - This is CNF - the sentence is a conjunction of disjunctions. This is a good 
+                    format for resolution.<br/>
+                    Example proof:<br/>
+                    <img src='AI Methods/Image8.jpg' alt='Eighth Image'><br/>
+                    <img src='AI Methods/Image9.jpg' alt='Ninth Image'><br/>
+                    <img src='AI Methods/Image10.jpg' alt='Tenth Image'><br/>
+                    <img src='AI Methods/Image11.jpg' alt='Eleventh Image'><br/>
+                    It is refutation-complete. If a set of sentences is unsatisfiable, resolution 
+                    will derive a contradiction.</p>
+                <br/>
+                <u>PROLOG</u>
+                <p>PROLOG is a logic programming language. Unlike most other programming 
+                    languages, PROLOG is a declarative programming language, where the goal would 
+                    be specified and the system would work out how to achieve that goal.<br/>The 
+                    advantages of using PROLOG include increased programmer productivity and 
+                    facilities proving correctness of programs.<br/>The disadvantage is that it 
+                    slows the execution of programs.<br/>First order predicate calculus forms the 
+                    basis for PROLOG, it is an example of a predicate calculus.<br/>Logic involves 
+                    assumptions, conditions, implications, relationships, and conclusions.<br/>
+                    Assumptions are statements that people agree on, they are called axioms.<br/>A 
+                    conclusion is implied from the assumptions.<br/>
+                    <img src='AI Methods/Image12.jpg' alt='Twelvth Image' style='max-width: 100%;'><br/>
+                    A PROLOG clause is a single-conclusion Horn clause, meaning there is one 
+                    conclusion, followed by a conditional conclusion if n conditions are 
+                    satisfied. All the conclusions and conditions are predicates, which are all 
+                    terms.<br/>There are atoms, numbers, variables (which begin with an uppercase 
+                    letter) and structures. An atom cannot be broken down into component pieces, 
+                    like a non-numeric constant. Variables are a string of letters, digits or 
+                    underscores that start with either an underscore or an uppercase letter. An 
+                    anonymous variable is written as an underscore alone.<br/>The rules of 
+                    inference within PROLOG include modus ponens, where if A is true and if A then 
+                    B is true, then B can also be inferred as true. The chain rule is also used, 
+                    where predicates are triangulated, A then B, B then C, conclude that A then C 
+                    is also true.</p>
+                <br/>
+                <u>Rules of Inference & Proof Procedures</u>
+                <p>Top-down inference is a form of inference where supporting facts are trying to 
+                    be found from a goal, to prove that the certain goal can be reached.<br/>
+                    Bottom-up inference is a form of inference where, from given facts, rules are 
+                    implied to infer everything possible that is true until the given goal can be 
+                    inferred.</p>
+                <br/>
+                <u>PROLOG System for Querying a Knowledge Base</u>
+                <p><img src='AI Methods/Image13.jpg' alt='Thirteenth Image' style='max-width: 100%;'><br/>
+                    The programmer is the only being able to provide the knowledge base.<br/>
+                    A question to PROLOG is a sequence of one or more goals, and to answer a 
+                    question, PROLOG tries to satisfy all of the goals. To satisfy a goal means to 
+                    demonstrate that the goal is true assuming the facts and rule in the knowledge 
+                    base are true. If a query contains a variable, PROLOG also finds 
+                    instantiations of variables to particular objects.<br/>PROLOG therefore 
+                    requires facts and rules as a set of axioms and the user's question as a 
+                    theorem.</p>
+                <br/>
+                <u>PROLOG Clauses</u>
+                <p>PROLOG consists of clauses. Each clause is terminated with a full stop. Clauses 
+                    include facts, which are always true, rules which are conditionally true, and 
+                    queries which are the questions that the user asks on whether things are true 
+                    or not.<br/>A PROLOG clause consists of a head and a body. The body is a list 
+                    of goals separated by commas and understood as conjunctions. The head is the 
+                    factual foundation to the clause. Facts are clauses with a head and no body. 
+                    Rules have a head and a non-empty body. Queries only have a body.<br/>A fact 
+                    consists of a predicate and zero or more arguments, if there are no variables 
+                    used then it is a ground fact and any variables within the fact are 
+                    universally quantified.<br/>For rules, a comma between two conditions 
+                    indicates the conjunction of the conditions and a semicolon between the two 
+                    conditions indicates the disjunction of the conditions. Conjunction has a 
+                    higher precedence than disjunction.<br/>Commas and semicolons have the same 
+                    meaning in queries as they do to rules. If there is a variable in a question 
+                    then it is existentially quantified, and if there are no variables it is 
+                    called a ground goal.<br/>
+                    <img src='AI Methods/Image14.jpg' alt='Fourteenth Image' style='max-width: 100%;'></p>
+                <br/>
+                <u>Unification & Matching</u>
+                <p>The general rule to decide whether two terms S and T match are as follows:<br/>
+                    1. If S and T are constants, then they match only if they are the same 
+                    term.<br/>2. If S is a variable and T is anything, then they match and S is 
+                    instantiated to T. Conversely, if T is a variable, then T is instantiated to 
+                    S.<br/>3. If S and T are complex terms, then they match only if<br/>a. S and T 
+                    have the same principal functor, and<br/>b. All their corresponding components 
+                    match.<br/>
+                a and a unify<br/>
+                12 and 12 unify<br/>
+                Color(red) and Color(red) unify<br/>
+                Color(red) and Color(blue) do not unify<br/>
+                X and a unify<br/>
+                Arithmetic operators include addition, subtraction, multiplication, division; both 
+                real and integer, power.<br/>The is operator is used in PROLOG for expressions to 
+                be evaluated.<br/>All variables to the right of the 'is' must be instantiated by a 
+                prior clause within a statement. An instantiation does not carry over multiple 
+                queries. A numerical constant can also be used to the left of the expression to 
+                see to see whether it matches the answer of the expression.</p>
+                <br/>
+                <u>Built-in Predicates</u>
+                <p>Abs(X) - the absolute value of X<br/>
+                    Min(X, Y) - the minimum value of X and Y<br/>
+                    Max(X,Y) - the maximum value of X and Y<br/>
+                    Exp(X,Y) - the value of XY<br/>
+                    Sqrt(X) - the value of the square root of X<br/>
+                    Recursive functions:<br/>
+                    Base case - 1 != 1<br/>
+                    Recursive rule - N != (N - 1) !* N<br/>
+                    Factorial(1, 1).<br/>
+                    Factorial(N, Result):-<br/>
+                    N > 1,<br/>
+                    N1 is N - 1,<br/>
+                    Factorial(N1, Result1),<br/>
+                    Result is Result1 * N.<br/>
+                    Fib(1, 0).<br/>
+                    Fib(2,1).<br/>
+                    Fib(N, Result):-<br/>
+                    N > 1,<br/>
+                    N1 is N - 1,<br/>
+                    N2 is N - 2,<br/>
+                    Fib(N1, X),<br/>
+                    Fib(N2, Y),<br/>
+                    Result is X + Y.</p>
+                <br/>
+                <u>More Built-in Predicates</u>
+                <p>Var(X) - true if X is currently an uninstantiated variable.<br/>
+                    Nonvar(X) - true if X is not a variable.<br/>
+                    Atom(X) - true is X is currently an atom.<br/>
+                    Integer(X) - true if X currently stands for an integer.<br/>
+                    Float(X) - true if X currently stands for a float.<br/>
+                    Number(X) - true if X currently stands for a number.<br/>
+                    Atomic(X) - true if X currently stands for a number or an atom.<br/>
+                    Compound(X) - true if X is currently a compound term.</p>
+                <br/>
+                <u>Lists</u>
+                <p>Lists are ordered sequences of elements. It is encapsulated with square 
+                    brackets. The elements of the list can be any valid terms like atoms, numbers, 
+                    variables, and other lists. Two square brackets with nothing within them 
+                    represents the empty list.<br/>The first element of a list is called the head 
+                    and the remaining elements of the list are the tail.<br/>
+                    <img src='AI Methods/Image15.jpg' alt='Fifteenth Image'><br/>
+                    PROLOG also uses [First, Second, Third, (etc.) | Rest] as well as [Head | 
+                    Tail] for more variety.</p>
+                <br/>
+                <u>Unification</u>
+                <p>[] unifies with []<br/>[] does not unify with [H|T]<br/>[a,b,c] unifies with 
+                    [H|T]<br/>[a,b,c] unifies with [a|T]<br/>[a,b,c,d] does not unify with [a,b,X] 
+                    since X cannot represent two atoms<br/>[a,b,c] and [A,jim|T] unify<br/>[a,[]] 
+                    and [A,B|T] unify<br/>List membership:<br/>
+                    <img src='AI Methods/Image16.jpg' alt='Sixteenth Image' style='max-width: 100%;'><br/>
+                    List copy:<br/>
+                    <img src='AI Methods/Image17.jpg' alt='Seventeenth Image' style='max-width: 100%;'><br/>
+                    List last element:<br/>
+                    <img src='AI Methods/Image18.jpg' alt='Eighteenth Image' style='max-width: 100%;'><br/>
+                    Length of a list:<br/>
+                    <img src='AI Methods/Image19.jpg' alt='Nineteenth Image' style='max-width: 100%;'><br/>
+                    List concatenation:<br/>
+                    <img src='AI Methods/Image20.jpg' alt='Twentieth Image' style='max-width: 100%;'></p>
+                <br/>
+                <u>The Fail & Cut Predicates</u>
+                <p>The fail predicate will always fail.<br/>The cut predicate will control 
+                    backtracking through the knowledge base and thus speed up the search process.<br/>
+                    The cut predicate is written as a '!' and can be introduced on the right hand 
+                    side of a rule.<br/>
+                    `h(X) :- a(X), b(X), !, c(X), d(X)`.<br/>
+                    The backtracking process can come back to cut but cannot pass it. This if a(X) 
+                    and b(X) are true but c(X) is false, PROLOG will not backtrack past the cut and 
+                    will not try any rules beyond the current rule.<br/>Without cut<br/>
+                    <img src='AI Methods/Image21.jpg' alt='Twenty First Image' style='max-width: 100%;'><br/>
+                    With cut<br/>
+                    <img src='AI Methods/Image22.jpg' alt='Twenty Second Image' style='max-width: 100%;'></p>
             </div>
         </div>
     </body>
