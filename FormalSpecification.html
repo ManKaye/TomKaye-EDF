@@ -1,0 +1,361 @@
+<html>
+    <head>
+        <title>Formal Specification</title>
+        <link rel="stylesheet" href="Main.css">
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    </head>
+    <body>
+        <div class="Main-Div">
+            <h1 class="Std-Header">Tom & Loughborough University - Formal Specification</h1>
+            <div class="Input-Div" id="Back-Button-Div">
+                <input type="button" class="Back-Button" onclick="window.location = 'UniversityModules.html';" value="Back to University Modules">
+            </div>
+            <br/>
+            <div class="Sub-Div">
+                <p>Formal Specification is used for verification and manipulation, reducing 
+                    contradictions and ambiguity, abstraction and as a shorthand.</p>
+                <br/>
+                <u>Testing vs. Verification</u>
+                <p>Testing tells us if there are bugs in the program. Verification tells us if 
+                    there are no bugs in a program. These aspects are important for a system that 
+                    relies heavily on software and should failure happen, it could lead to grave 
+                    consequences. Examples include nuclear reactors, air and spacecraft, medical 
+                    applications and defense applications.<br/>To prove a program correct it needs 
+                    to be run against a specification.</p>
+                <br/>
+                <u>Verification vs. Correctness by Construction</u>
+                <p>There are two approaches to guarantee a bug-free program. The first approach is 
+                    to write a specification and then write a program, then prove the program 
+                    correct against the specification.<br/>The other approach is to write the 
+                    specification and then manipulate it in a way which preserves correctness until 
+                    an executable specification and thus a program is produced.<br/>The Vienna 
+                    Development is an example used in the first approach.</p>
+                <br/>
+                <u>Drawbacks of Specification in English</u>
+                <p>With multiple different objects in a class in a program, these objects can be 
+                    inconsistent and confusing against one another. The initial requirements could 
+                    be different from the worked out requirements making them contradictory. By 
+                    specifying the requirements in a formal mathematical language, we have been 
+                    able to manipulate and analyze them and identify inconsistencies.<br/>
+                    Requirements leave certain options available and are not always a problem as 
+                    either requirement could be chosen to utilize.</p>
+                <br/>
+                <u>Drawbacks of Specification in a Programming Language</u>
+                <p>Ambiguity is eliminated if, instead of using an English specification, a 
+                    programming language is used.</p>
+                <br/>
+                <u>Abstraction & Precision</u>
+                <p>English specifications can be very abstract but are liable to be ambiguous and 
+                    imprecise. The problem with a specification in a programming language is that a 
+                    specification must be sufficiently abstract to encompass all possible 
+                    implementations. When converting an English language specification into a 
+                    programming language specification will achieve precision and lose ambiguity but 
+                    loses abstraction.<br/>If two programs provide two different functions they may 
+                    be different but they can have the same abstract behaviour as they go from being 
+                    in a start state, through execution into an end state. If they both go from $x$ to 
+                    $x_2$ then they have the same abstract behaviour. If another program was strung 
+                    on the end of either two programs that produce $x_2$ and the new program uses 
+                    the returned value as a parameter, the execution of the two procedures are 
+                    essentially the same.</p>
+                <br/>
+                <u>Design of Formal Specifications</u>
+                <p>Design is largely a creative activity, which demands finding patterns to work 
+                    out specifications as well as coming up with proofs.<br/>Specification 
+                    techniques like UML are informal specification techniques as they lack 
+                    precision and offer no scope for proofs or correctness.</p>
+                <br/>
+                <u>Formal Specification & Decomposing Design</u>
+                <p> - Breaking down the problem into smaller more manageable chunks helps make the 
+                    overall problem more solvable.<br/>
+                    - Specifications should then be broken down as well to accompany each 
+                    individual </p>
+                <br/>
+                <u>Classification of Formal Specification Languages</u>
+                <p>Specifications that are formal can either be model-oriented or 
+                    property-oriented.<br/>Specifications can also be used for concurrent systems 
+                    although this will not be covered.</p>
+                <br/>
+                <u>Model-oriented vs. Property-oriented Specification</u>
+                <p>In model-oriented specifications, operations are defined on system data made up 
+                    of structures built-up from assumed simple types such as sets. Operations are 
+                    also defined individually in terms of their effect on the system state. 
+                    Model-oriented specifications are proved correct using logic and set theory.<br/>
+                    In property-oriented specifications, the behaviour of operations is described in 
+                    terms of how two or more of them interact - they are never defined individually. 
+                    Property-oriented specifications are proved correct algebraically, by using 
+                    equational reasoning.<br/>Algebraic proofs can be easier than proofs in logic 
+                    and set theory, however not all systems can be specified satisfactorily, solely 
+                    in terms of how operations interact.<br/>
+                    <img src='Formal Specification/Image1.jpg' alt='First Image' style='max-width: 100%;'><br/>
+                    Above is a property-oriented specification of stacks.<br/>
+                    <img src='Formal Specification/Image2.jpg' alt='Second Image' style='max-width: 100%;'><br/>
+                    Above is a property-oriented specification of queues.<br/>
+                    <img src='Formal Specification/Image3.jpg' alt='Third Image' style='max-width: 100%;'><br/>
+                    Above is a property-oriented specification for non-negative integers.<br/>
+                    <img src='Formal Specification/Image4.jpg' alt='Fourth Image' style='max-width: 100%;'><br/>
+                    Above is an example of a proof.</p>
+                <br/>
+                <u>Real-life Use of Formal Methods</u>
+                <p>Real-life use of formal methods is more scarce nowadays as it requires highly 
+                    skilled people and costs a lot to provide for even a small program to prove it 
+                    correct. System development will also always be a human activity.<br/>Formal 
+                    methods do however provide a reduction in the likelihood of human error, 
+                    identification of errors and inconsistencies missed by conventional 
+                    development methods. It can be cost-effective as well if the costs of using 
+                    formal methods are counter-balanced by the huge savings in not having to 
+                    return design stage due to major design errors found at late stage 
+                    development.<br/>Formal methods should be used if the organization, the 
+                    current stage of development and the expertise available are all 
+                    appropriate.</p>
+                <br/>
+                <u>Formal Methods & Structured Methods</u>
+                <p>Even though formal methods are superior to structured methods in many ways, it 
+                    is not realistic to assume that formal methods could ever replace structure 
+                    methods as they stand.</p>
+                <br/>
+                <u>Logic of Partial Functions</u><br/>
+                <u>Notation for Partial Sets</u>
+                <p>$\mathbb{N}$ is the symbol to describe the set of natural numbers. The standard 
+                    set will output all possible natural numbers from 0 onwards. If a subscript 1 
+                    or any other number is given after the $\mathbb{N}$ set will start from 1.<br/>
+                    $\mathbb{Z}$ is the symbol to describe the standard set of integers. Integers 
+                    are non-decimal numbers that can be positive or negative, including 0.<br/>
+                    $\mathbb{R}$ is the symbol to describe the standard set of real numbers. Real 
+                    numbers are essentially boundless in their syntax. They can be floating point 
+                    numbers or integers, positive or negative as well as the irrational numbers 
+                    like $\pi$, etc.</p>
+                <br/>
+                <u>Functions</u>
+                <p>A (total) function is a mapping between two sets of values and the signature of 
+                    the function is shown in the form:<br/>
+                    $f:X\rightarrow Y$<br/>
+                    - f is the name for the function<br/>
+                    - X is the set of values, called the domain, which are mapped by f to Y<br/>
+                    - Y is called the range<br/>
+                    $f:{\text{fred}, \text{bill}, \text{joe}}\rightarrow{\text{freda}, \text{gertie}}$<br/>
+                    This is an example function mapping...<br/>
+                    $f(\text{fred})\triangle \text{gertie}, f(\text{bill})\triangle\text{gertie}, f(\text{joe})\triangle\text{freda}$<br/>
+                    The above is the individual mapping relations with the previous function.<br/>
+                    Functions with infinite domains are defined in terms of already understood 
+                    functions by the use of variables:<br/>
+                    $g:Z\rightarrow N, g(i)\triangle i(i)$<br/>
+                    A signature must be given when defining a function. With the above example, 
+                    the first half of the function is the function (g) and the second half of the 
+                    function is the application of the function with regards to the infinitely 
+                    expansive domain.</p>
+                <br/>
+                <u>Partial Functions</u>
+                <p>A partial function with $f:X\rightarrow Y$ maps some of the elements X to Y, 
+                    but some values of X will map to an undefined value.<br/>
+                    $h:{\text{fred}, \text{bill}, \text{joe}}\rightarrow{\text{fred}, \text{gertie}}$<br/>
+                    $h(\text{fred})\triangle\text{gertie}, h(\text{bill})\triangle\text{undefined}, h(\text{joe})\triangle\text{freda}$<br/>
+                    The domain value of bill maps to nothing with regards to the above function 
+                    definition.<br/>A total function can be extracted from a partial function by 
+                    restricting the partial function's domain. In this case, the above function 
+                    will change to:<br/>
+                    $h:{\text{fred}, \text{joe}}\rightarrow{\text{freda}, \text{gertie}}$<br/>
+                    $h(\text{fred})\triangle\text{gertie}, h(\text{joe})\triangle\text{freda}$<br/>
+                    Here, one value of the domain - bill - has been removed as bill was the only 
+                    domain value mapping to nothing.<br/>
+                    $\text{divide}:Z\times Z\rightarrow R$<br/>
+                    $\text{divide}(x_1,x_2 )\triangle\frac{x_1}{x_2}  (x_2\ne 0)$,<br/>
+                    $\text{divide}(x_1, 0)\triangle\text{undefined}$<br/>
+                    Propositions can therefore, with this newly applied knowledge, be part of the 
+                    boolean set of three possible values: true, false or undefined. (Undefined is 
+                    notated using an *).</p>
+                <br/>
+                <u>Propositional Operators</u>
+                <p>Propositional, or binary operators combine propositions and whatever their 
+                    individual boolean values are, they are cross-referenced to accumulate an 
+                    overall boolean value for the operated propositions.<br/>
+                    $(\lnot2+2=5)\wedge(3-2=6\wedge1=1)$<br/>
+                    Can be written as:<br/>
+                    $\lnot2+2=5\wedge3-2=6\wedge1=1$<br/>
+                    Evaluated, this statement can be decomposed and solved as follows:<br/>
+                    $\lnot2+2=5$ accumulates to true, as any value that isn't 2 plus 2 makes 5. The 
+                    value that isn't two can be 3 to make 5.<br/>
+                    3-2=6 accumulates to false as 3-2 is 1 and not 6.<br/>
+                    1=1 accumulates to true as 1 is 1.<br/>
+                    $\lnot2+2=5\wedge3-2=6$ accumulates to false, as the two propositions already 
+                    solved are true and false respectively. The operator is an AND, and with this 
+                    operator, if the two values are true and false, the overall boolean value is 
+                    false.<br/>
+                    $\lnot2+2=5\wedge3-2=6\wedge1=1$ accumulates to false. This is because the 
+                    operated two propositions accumulate to false and the other proposition 
+                    accumulates to true. Again, ANDed propositions with values of true and false 
+                    accumulate to false, meaning the overall statement is false.<br/>
+                    $\lnot, \wedge, \vee, \Rightarrow, \Leftrightarrow$<br/>
+                    Above is the descending priority hierarchy of the operators. In the example we 
+                    just solved, priority isn't really a problem as multiple AND operators in one 
+                    statement are commutative. Also, as propositional logic is lazily operated, 
+                    the algorithm will realize that the overall statement is false prior to 
+                    working out all the proposition values. (Once one false value is found in a 
+                    statement that only involves AND operators, the whole statement will instantly 
+                    become false.)</p>
+                <br/>
+                <u>Truth Tables</u>
+                <p><img src='Formal Specification/Image5.jpg' alt='Fifth Image' style='max-width: 100%;'><br/>
+                    <img src='Formal Specification/Image6.jpg' alt='Sixth Image' style='max-width: 100%;'><br/>
+                    Under the law of the excluded middle, it states that:<br/>
+                    $E\vee\lnot E$<br/>
+                    Will be true for any proposition E. In 3-valued logic, $E\vee\lnot E$ will 
+                    evaluate to not true as it relies on E being defined.<br/>We wish to use 
+                    partial functions and the advantage of the 3-valued logic is that statements 
+                    such as<br/>
+                    $\frac 50=1\vee\frac 50\ne 1$<br/>
+                    Will output undefined rather than true, but obviously only in 3-valued logic 
+                    where the undefined value is available. Therefore the definition for 
+                    predicates can be extended to support 3-valued logic by assuming the outputted 
+                    boolean value could now also be undefined.</p>
+                <br/>
+                <u>Implicit Specification of Functions</u>
+                <p>Example:<br/>
+                    $\textit{Maxs}(s : \mathbb{N}-\textit{set})r :\mathbb{N}$<br/>
+                    $\textit{pre} s \ne\text{{ }}$<br/>
+                    $\textit{post} r\in s\wedge \forall i\in s.i\leq r$</p>
+                <br/>
+                <u>Keyword Form</u>
+                <p>A function, maxs has input(s) within the parentheses after the function 
+                    identifier. After the parentheses comes the output(s). Both inputs and outputs 
+                    all have to have their data type specified. The pre-condition are the 
+                    conditions that have to be met before the function is carried out and the 
+                    post-condition is how the output has to be after the function has been carried 
+                    out. Any function with a pre-condition is a partial function. An implicit 
+                    specification can allow for many satisfied post-conditions with one single 
+                    input. The pre-condition can only specify the inputs and the post-condition 
+                    can specify both the inputs and/or the outputs.</p>
+                <br/>
+                <u>Direct Definition Form</u>
+                <p>$\textit{pre}-f:T_p\rightarrow\textit{Boolean}$<br/>
+                    $\textit{post}-f:T_p\times T_r\rightarrow\textit{Boolean}$<br/>
+                    Of the form:<br/>
+                    $\textit{pre}-f(p)\triangle...p...$<br/>
+                    $\textit{post}-f(p,r)\triangle...p...r...$<br/>
+                    The direct definition of maxs is therefore:<br/>
+                    $\textit{pre}-\textit{maxs}:\mathbb{N}-\textit{set}\rightarrow\textit{Boolean}$<br/>
+                    $\textit{post}-\textit{maxs}:\mathbb{N}-\textit{set}\times\mathbb{N}\rightarrow\textit{Boolean}$<br/>
+                    $\textit{pre}-\textit{maxs}(s)\triangle s\ne\text{{ }}$<br/>
+                    $\textit{post-maxs}(s,r)\triangle r\in s\wedge\forall i\in s.i\leq r$</p>
+                <br/>
+                <u>Definition by Recursion</u>
+                <p>$\textit{sq}:\mathbb{N}\rightarrow\mathbb{N}$<br/>
+                    $\textit{sq}(i)\triangle \textit{ if }i=0\textit{ then }0\textit{ else }2\ast i-1+\textit{sq}(i-1)$<br/>
+                    $\textit{subp}:\mathbb{Z}\times\mathbb{Z}\rightarrow\mathbb{N}$<br/>
+                    $\textit{subp}(i,j)\triangle\textit{ if }i=j\textit{ then }0\textit{ else subp}(i,j+1)+1$</p>
+                <br/>
+                <u>The 'Let in' Notation</u>
+                <p>$\textit{absprod}:\mathbb{Z}\times\mathbb{Z}\rightarrow\mathbb{N}$<br/>
+                    $\textit{absprod}(i,j)\triangle\textit{ if }i*j<0\textit{ then }-(i*j)\textit{ else }i*j$</p>
+                <br/>
+                <u>Correctness Proofs - Satisfaction</u>
+                <p>We need to prove that:<br/>Explicit definition of function ("implementation")<br/>
+                    Satisfies<br/>Implicit definition of function ("specification")</p>
+                <br/>
+                <u>Implicit Definition</u>
+                <p>$\textit{pre-f}:T_p\rightarrow\textit{Boolean}$<br/>
+                    $\textit{post-f}:T_p\times T_r\rightarrow\textit{Boolean}$<br/>
+                    $\textit{pre-f}(p)\triangle...p...$<br/>
+                    $\textit{post-f}(p,r)\triangle...p...r...$</p>
+                <br/>
+                <u>Explicit Definition</u>
+                <p>$f:T_p\rightarrow T_r$<br/>
+                    $f(...)\triangle...$</p>
+                <br/>
+                <u>Proof Obligation</u>
+                <p>$\forall p\in T_p.\textit{pre-f}(p)\Rightarrow f(p)\in T_r\wedge \textit{post-f}(p,f(p))0$<br/>
+                    The proof obligation says that for values that satisfy the pre-condition the 
+                    evaluation of the explicit definition satisfies the post condition.<br/>
+                    For values which do not satisfy the pre-condition, the implementation 
+                    (explicit definition) is allowed to do anything. Indeed, the explicit 
+                    definition may be a partial function which is undefined where the 
+                    pre-condition is not satisfied.<br/>Example:</p>
+                <br/>
+                <u>Implicit Definition</u>
+                <p>$\textit{max}(i:\mathbb{Z},j:\mathbb{Z},r:\mathbb{Z})$<br/>
+                    $\textit{pre true}$<br/>
+                    $\textit{post} (r=i\vee r=j)\wedge i\leq r\wedge j\leq r$</p>
+                <br/>
+                <u>Explicit Definition</u>
+                <p>$\textit{max}:\mathbb{Z}\times\mathbb{Z}\rightarrow\mathbb{Z}$<br/>
+                    $\textit{max}(i,j)\triangle \textit {if }i\leq j\textit{ then }j\textit{ else }i$</p>
+                <br/>
+                <u>Proof Obligation</u>
+                <p>$\forall i\in\mathbb{Z}.\forall j\in\mathbb{Z}.\textit{true}\Rightarrow\textit{max}(i,j)\in\mathbb{Z}\wedge((\textit{max}(i,j)=i\vee$<br/>
+                    $\textit{max}(i,j)=j)\wedge i\leq\textit{max}(i,j)\wedge j\leq\textit{max}(i,j))$</p>
+                <br/>
+                <u>Correctness Proofs - Satisfiability</u>
+                <p>Contradictory specifications can be written in the English language, but can 
+                    also be written in VDM as well.<br/>
+                    $\textit{pre-f}:T_p\rightarrow\textit{Boolean}$<br/>
+                    $\textit{post-f}:T_p\times T_r\rightarrow\textit{Boolean}$<br/>
+                    Is satisfiable if<br/>
+                    $\forall p\in T_p.\textit{pre-f}(p)\Rightarrow\exists r\in T_r.\textit{post-f}(p,r)$<br/>
+                    $\textit{betweenreal}(i:\mathbb{R},r:\mathbb{R})$<br/>
+                    $\textit{pre true}$<br/>
+                    $\textit{post} (2i< r)\wedge(r<2i+1)$<br/>
+                    Is satisfiable if<br/>
+                    $\forall p\in R.\textit{true}\Rightarrow\exists r\in\mathbb{R}.(2p< r)\wedge(r<2p+1)$<br/>
+                    This is satisfiable.<br/>
+                    $\textit{betweeninteger}(i:\mathbb{Z},r:\mathbb{Z})$<br/>
+                    $\textit{pre true}$<br/>
+                    $\textit{post}(2i< r)\wedge(r<2i+1)$<br/>
+                    Is satisfiable if<br/>
+                    $\forall p\in \mathbb{Z}.\textit{true}\Rightarrow\exists r\in \mathbb{Z}.(2p< r)\wedge(r<2p+1)$<br/>
+                    This is not satisfiable.<br/>
+                    For two inputs, the specification is the same, however, two input values, 
+                    $T_{p1}$ and $T_{p2}$ that are both incorporated into the pre-condition and 
+                    the post-condition.<br/>
+                    $\textit{lowupbounds}(s,t:\mathbb{N}-\textit{set})r:\mathbb{N}\times\mathbb{N}$<br/>
+                    $\textit{pre } s\ne\textit{{ }}\wedge t\ne\textit{{ }}$<br/>
+                    $\textit{post }\exists r_1\in\mathbb{N}.\exists r_2\in\mathbb{N}.\forall i\in s.\forall j\in t.r_1\leq i\wedge j\leq r_2\wedge$<br/>
+                    $r=(r_1,r_2)$<br/>
+                    Is satisfiable if<br/>
+                    $\forall s\in\mathbb{N}-\textit{set}.\forall t\in\mathbb{N}-\textit{set}.s\ne\textit{{ }}\wedge$<br/>
+                    $t\ne\textit{{ }}\Rightarrow\exists r\in\mathbb{N}\times\mathbb{N}.\exists r_1\in\mathbb{N}.\exists r_2\in\mathbb{N}.\forall i\in s.\forall j\in t.r_1\leq i$<br/>
+                    $\wedge j\leq r_2\wedge r=(r_1,r_2)$<br/>
+                    <img src='Formal Specification/Image7.jpg' alt='Seventh Image' style='max-width: 100%;'></p>
+                <br/>
+                <u>Specification of Operations</u>
+                <p>Storing a value into a calculator using an operation specification:<br/>
+                    $\textit{LOAD}(i:\mathbb{N})$<br/>
+                    $\textit{ext wr reg}:\mathbb{N}$<br/>
+                    $\textit{post reg}=i$<br/>
+                    The name of the operation is in uppercase, the ext part records the variables 
+                    to which the operation has external access. Wr or rd define whether the 
+                    external variables can be written to or simply just read. The post-condition 
+                    depends on the parameters and the values of the external variables. A hook 
+                    above a variable identifier specifies the original value of the variable.<br/>
+                    An operation specification with external read access to one variable and 
+                    external write access to another is written as so:<br/>
+                    $\textit{OP}(p:T_p)r:T_r$<br/>
+                    $\textit{ext rd }v_1:T_1$<br/>
+                    $\textit{ext wr }v_2:T_2$<br/>
+                    $\textit{pre}...p...v_1...v_2...$<br/>
+                    $\textit{post}...p...v_1...v_2 (\textit{original})...r...v_2...$<br/>
+                    With functions we prove that explicit definitions satisfy implicit 
+                    specifications. When it comes to programs, we want to prove that an 
+                    implementation satisfies a specification. An implementation of a program is a 
+                    sequence of program statements, which is a sequence of operations. A 
+                    specification of a program is of a single operation. Therefore, we need to be 
+                    able to prove that a sequence of smaller operations satisfies the 
+                    specification of a single, larger operation.<br/>
+                    $\textit{OP1}$<br/>
+                    $\textit{ext wr }u_1,...,u_n:T$<br/>
+                    $\textit{pre pre-OP1}(u_1,...,u_n)$<br/>
+                    $\textit{post post-OP1}(u_1,...,u_n (\textit{original}),u_1,...,u_n )$<br/>
+                    $\textit{OP2}$<br/>
+                    $\textit{ext wr }u_1,...,u_n:T$<br/>
+                    $\textit{pre pre-OP2}(u_1,...,u_n )$<br/>
+                    $\textit{post post-OP2}(u_1,...,u_n (\textit{original}),u_1,...,u_n )$<br/>
+                    And that<br/>
+                    $\forall u_1\in T...\forall u_n\in T.\forall u_1\in T...\forall u_n\in T.$<br/>
+                    $\textit{pre-OP1}(u_1,...,u_n (\textit{original}))\wedge\textit{post-OP1}$<br/>
+                    $(u_1,...,u_n,u_1,...,u_n )\Rightarrow\textit{pre-OP2}(u_1,...,u_n )$</p>
+            </div>
+        </div>
+    </body>
+</html>

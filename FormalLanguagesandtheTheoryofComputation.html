@@ -775,8 +775,8 @@
                     state.<br/>Every DFA can be given a transition table.</p>
                 <br/>
                 <u>Expressive Power</u>
-                <p>Let `\texti L_{DFA}` be the class of all languages accepted by DFA. Then 
-                    `\texti L_{DFA} = REG`.<br/>On the one hand, DFA read a word from the left 
+                <p>Let $\textit L_{DFA}$ be the class of all languages accepted by DFA. Then 
+                    $\textit L_{DFA} = REG$.<br/>On the one hand, DFA read a word from the left 
                     to the right, and they can only apply a finite set of states when doing this; 
                     thus, it is not surprising that their expressive power equals that of Type 3 
                     grammars.<br/>On the other hand, DFA are deterministic, while Type 3 grammars 
@@ -823,7 +823,7 @@
                 <br/>
                 <u>Expressive Power</u>
                 <p>Let `text{L}_{NFA}` be the class of all languages accepted by NFA. Then 
-                    `texti{L}_{NFA} = REG`.<br/>Thus, nondeterminism does not enhance the 
+                    $textit{L}_{NFA} = REG$.<br/>Thus, nondeterminism does not enhance the 
                     computational power of finite automata.<br/>By definition, every DFA is an 
                     NFA.<br/>For every NFA A there is a DFA A' with L(A') = L(A).</p>
                 <br/>
@@ -911,8 +911,8 @@
                     of A. This does not affect the class of languages accepted by PDA.</p>
                 <br/>
                 <u>Expressive Power & Non-determinism</u>
-                <p>Let `\texti{L}_{PDA}` be the class of all languages accepted by PDA. Then 
-                    `\texti{L}_{PDA} = CF`.<br/>
+                <p>Let $\textit{L}_{PDA}$ be the class of all languages accepted by PDA. Then 
+                    $\textit{L}_{PDA} = CF$.<br/>
                     PDA are nondeterministic in two ways<br/>
                     . `\delta(q, a, z)` can consist of two or more elements for any<br/>
                     `q \in Q, a \in \Sigma \cup {\epsilon}` and `z \in \Gamma`. Hence, `\delta` is 
@@ -930,10 +930,10 @@
                     is empty.</p>
                 <br/>
                 <u>DPDA vs. PDA</u>
-                <p>Let `\texti{L}_{DPDA}` be the class of all languages accepted by DPDA.<br/>
-                    . `L(A_{rev}) = w | \exists x \in {a, b}^\ast : w = x x^R} \in \texti{L}_{PDA} \ \texti{L}_{DPDA}`<br/>
-                    . `{w | \exists x \in {a, b}^\ast : w = x c x^R} \in \texti{L}_{PDA} \cup \texti{L}_{DPDA}`<br/>
-                    . `\texti{L}_{PDA} \subset \texti{L}_{DPDA} \subset REG`<br/>
+                <p>Let $\textit{L}_{DPDA}$ be the class of all languages accepted by DPDA.<br/>
+                    . $L(A_{rev}) = w | \exists x \in {a, b}^\ast : w = x x^R} \in \textit{L}_{PDA} \ \textit{L}_{DPDA}$<br/>
+                    . ${w | \exists x \in {a, b}^\ast : w = x c x^R} \in \textit{L}_{PDA} \cup \textit{L}_{DPDA}$<br/>
+                    . $\textit{L}_{PDA} \subset \textit{L}_{DPDA} \subset REG$<br/>
                     Nondeterminism, unlike for the comparison between NFA's and DFA's, is 
                     important in the difference in expressive power between PDA's and DPDA's.</p>
                 <br/>
@@ -982,31 +982,31 @@
                     the same class of languages that can be accepted by Turing machines.</p>
                 <br/>
                 <u>Expressive Power</u>
-                <p>Let `\texti{L}_{TM}` be the class of all languages accepted by Turing machines. 
-                    Then `\texti{L}_{TM} = RE`.<br/>
+                <p>Let $\textit{L}_{TM}$ be the class of all languages accepted by Turing machines. 
+                    Then $\textit{L}_{TM} = RE$.<br/>
                     For general Turing machines, we do not gain computational power if we allow 
                     them to be nondeterministic:<br/>
                     . By definition, every TM is a NTM,<br/>
                     . For every NTM M there is a TM M' with L(M') = L(M).<br/>
-                    The famous P vs. NP problem: Given any `\text{NTM}.\texti{M}` that accepts its 
-                    language in polynomial time, does there always exist an equivalent `\text{TM} \texti{ M'}` 
+                    The famous P vs. NP problem: Given any $\text{NTM}.\textit{M}$ that accepts its 
+                    language in polynomial time, does there always exist an equivalent $\text{TM} \textit{ M'}$ 
                     that also accepts the language in polynomial time?</p>
                 <br/>
                 <u>Linear-bounded Automata</u>
                 <p>A nondeterministic Turing Machine that solely accesses during its moves the 
                     space initially occupied by the input word is called a Linear Bounded 
                     Automaton or LBA.<br/>`M_{anbn}` is a Linear Bounded Automaton apart from a 
-                    minor technical detail.<br/>Let \texti{L}_{LBA} be the class of all languages 
-                    accepted by Linear Bounded Automata. Then `\texti{L}_{LBA} = CS`.</p>
+                    minor technical detail.<br/>Let $\textit{L}_{LBA}$ be the class of all languages 
+                    accepted by Linear Bounded Automata. Then $\textit{L}_{LBA} = CS$.</p>
                 <br/>
                 <u>A Class of Automata Accepting REC?</u>
                 <p>There is no suitable class of automata exactly accepting the class of all 
-                    recursive languages:<br/>There is no recursively enumerable class `\texti{M}` of 
-                    automata satisfying `\texti{L}(\texti{M}) = REC`.<br/>We prove this statement 
+                    recursive languages:<br/>There is no recursively enumerable class $\textit{M}$ of 
+                    automata satisfying $\textit{L}(\textit{M}) = REC$.<br/>We prove this statement 
                     using the diagonalization technique:<br/>Let `w_1, w_2, w_3, ...` be a 
                     recursive enumeration of all words over the alphabet considered.<br/>Assume 
-                    to the contrary that there exists `\texti{M}` with the stated property. Let 
-                    then `M_1, M_2, M_3, ...` be a recursive enumeration of `\texti{M}`.<br/>
+                    to the contrary that there exists $\textit{M}$ with the stated property. Let 
+                    then `M_1, M_2, M_3, ...` be a recursive enumeration of $\textit{M}$.<br/>
                     We now define a language `L_d` as follows:<br/>
                     $L_d := {w | w_i \notin L(M_i)}$<br/>
                     According to our assumption, all `L(M_i)` are recursive and therefore `L_d` 
