@@ -19,8 +19,8 @@
                 <u>Formal Languages</u>
                 <p>Formal languages are sets of strings and symbols. They belong to the field of 
                     non-commutative discrete mathematics.<br/>Alphabet `\Sigma = \text{an often finite set of symbols or letters}`<br/>
-                    `\text{Word} (\text{over} \Sigma) = \text{a usually finite string of symbols from} \Sigma`. An empty word `\epsilon` is a word of length 0.<br/>
-                    `\text{Language} (\text{over} \Sigma) = \text{an often infinite set of words over} \Sigma`<br/>
+                    `\text{Word} (\text{over } \Sigma) = \text{a usually finite string of symbols from } \Sigma`. An empty word `\epsilon` is a word of length 0.<br/>
+                    `\text{Language} (\text{over } \Sigma) = \text{an often infinite set of words over } \Sigma`<br/>
                     Class of languages = a set of languages<br/>
                     `\text{Concatenation } \cdot = \text{a binary function that maps two words}`<br/>`\text{to each other}`, so words v and w would become vw in the sense that `v \cdot w = vw` (concatenation is non-commutative)<br/>
                     Kleene star * = an operation generating the language L* of all finite words that result from concatenating any words in L<br/>
@@ -812,6 +812,219 @@
                     Let `A = (Q, \Sigma, \delta, S, F)` be an NFA. A accepts the following 
                     language:<br/>
                     `L(A) := {w \in \Sigma^\ast | \delta\text{^}(S, w) \cap F \ne \emptyset}`.</p>
+                <br/>
+                <u>An NFA for Our Initial Keypad Controller</u>
+                <p><img src='Formal Languages & the Theory of Computation/Image4.jpg' alt='Fourth Image'><br/>
+                    It is characteristic for transition diagrams of proper NFA that there is at 
+                    least one state that has two outgoing arrows with the same labels.<br/>For NFA 
+                    we do not ask the transition relation to be total.<br/>Given the word 
+                    w := acdda, the NFA can finish in state `q_0` or in `q_4`. Since one of them, 
+                    namely `q_4`, is accepting, w is contained in the language of the NFA.</p>
+                <br/>
+                <u>Expressive Power</u>
+                <p>Let `text{L}_{NFA}` be the class of all languages accepted by NFA. Then 
+                    `texti{L}_{NFA} = REG`.<br/>Thus, nondeterminism does not enhance the 
+                    computational power of finite automata.<br/>By definition, every DFA is an 
+                    NFA.<br/>For every NFA A there is a DFA A' with L(A') = L(A).</p>
+                <br/>
+                <u>The Subset Construction</u>
+                <p>Let `A = (Q, \Sigma, \delta, S, F)` be an NFA. We construct an equivalent DFA 
+                    `A' = (Q, \Sigma, \delta', q'_0, F')` by defining<br/>
+                    . Q := P(Q),<br/>
+                    . `\delta'(Q', a) := \cup q\in Q' \delta(q, a) = \delta\text{^}(Q', a)` for 
+                    every `Q' \in Q`,<br/>
+                    . `q'_0 : = S`<br/>
+                    . `F' := {Q' \subseteq Q | Q' \cap F \emptyset}`<br/>
+                    In other words, the idea is to implement sets of states for A'. All other 
+                    elements of the definition follow directly from this decision.<br/>
+                    <img src='Formal Languages & the Theory of Computation/Image5.jpg' alt='Fifth Image'><br/>
+                    We apply this method to `A_{2-\text{start}}`. We obtain `A'_{2-\text{start}}` with<br/>
+                    . Eight states, namely<br/>
+                    - `\emptyset`,<br/>
+                    - `q_0 :- {q_0}`,<br/>
+                    - `q_1 := {q_1}`,<br/>
+                    - `q_2 := {q_2}`,<br/>
+                    - `q_{0, 1} := {q_0, q_1}`,<br/>
+                    - `q_{0, 2} := {q_0, q_2}`,<br/>
+                    - `q_{1, 2} := (q_1, q_2}`,<br/>
+                    - `Q_{0, 1, 2} := {q_0, q_1, q_2}`<br/>
+                    . Start state `q_{0, 1}` (since `q_0` and `q_1` were the start states of A) 
+                    and<br/>Accepting states `q_2, q_{0, 2}, q_{1, 2}, q_{0, 1, 2}`.</p>
+                <br/>
+                <u>Pushdown Automata</u>
+                <p>A pushdown automaton (PDA) A is a tuple `A = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)` 
+                    satisfying the following conditions:<br/>
+                    . Q is a finite set of states<br/>
+                    . `\Sigma` is a finite alphabet of input symbols<br/>
+                    . `\Gamma` is a finite alphabet of stack symbols<br/>
+                    . `\delta : (Q \times (\Sigma \cup {\epsilon}) \times \Gamma) \rightarrow P(Q \times \Gamma^\ast)` 
+                    is a transition relation<br/>
+                    . `Q_0 \in Q` is a start state<br/>
+                    . `Z_0 \in \Gamma` is a start symbol<br/>
+                    . `F \subseteq Q` is a set of accepting states</p>
+                <br/>
+                <u>Computations by Pushdown Automata</u>
+                <p>PDA read the input word in the dame way as DFA/NFA, i.e. The letter by letter 
+                    and from left to right.<br/>If the PDA is in state q, it reads an input symbol 
+                    a, has the stack content `z_1z_2z_3...z_nZ_0` (where `z_1` is the topmost 
+                    symbol) and it's transition relation `\delta` satisfies `(q', y_1y_2...y_m) \in \delta(q, a, z_1)`,
+                    Then the PDA can move to state q' and turn the stack content into `y_1y_2...y_mz_2z_3...z_nZ_0`<br/>
+                    The definition of PDA permits `\epsilon-\text{transitions}`, i.e., `\delta` may allow to change a 
+                    state and the stack content without reading an input symbol. Formally, this means that `\delta` 
+                    may be defined such that `\delta(q, \epsilon, z) \ne \emptyset` is admissible for `q \in Q` and 
+                    `z \in \Gamma`.</p>
+                <br/>
+                <u>Typical Stack Operations</u>
+                <p>For PDA, write access to the stack always involves that the topmost symbol of 
+                    the stack is consumed in every step of the computation.<br/>Thus, for a stack 
+                    content `z_1z_2z_3...z_n`, the typical stack operations need to be implemented 
+                    as follows:<br/>
+                    `\text{POP}: \delta(q, a, z_1)` needs to include<br/>
+                    `(q', \epsilon)`  for a `q' \in Q`, after applying this transition, the stack 
+                    content equals `z_2z_3...z_n`.<br/>
+                    PUSH of a symbol `z\text{^} \in \Gamma: \delta(q, a, z_1)`  needs to include 
+                    `(q', z\text{^}z_1)` for a `q' \in Q`; after applying this transition, the 
+                    stack content equals `z\text{^}z_1z_2z_3...z_n`.</p>
+                <br/>
+                <u>The Configuration of a PDA</u>
+                <p>Let `A = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)` be a PDA. A configuration 
+                    (or: instantaneous description (ID)) of A is a triple `(q, w, \gamma)` with<br/>
+                    . `q \in Q`<br/>
+                    . `w \in \Sigma^\ast`<br/>
+                    . `\gamma \in \Gamma^\ast`<br/>
+                    Let `A = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)` be a PDA. For any 
+                    `q \in Q, a \in \Sigma \cup {\epsilon}`,  and `z \in \Gamma`, if 
+                    `(q', \beta) \in \delta(q, a, z)`, then we write<br/>
+                    `(q, a_w, z_\gamma) \vdash_A (q', w, \beta\gamma)`<br/>
+                    For all `w \in \Sigma^\ast` and  `\gamma \in \Gamma^\ast`. The symbol `\vdash_A^\ast`
+                    denotes the reflexive and transitive closure of `\vdash_A.</p>
+                <br/>
+                <u>The Language Accepted by a PDA</u>
+                <p>Let `A =  (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)` be a PDA. A accepts the 
+                    following language:<br/>
+                    `L(A) := {w \in \Sigma^\ast | (q_0, w, Z_0) \vdash_A^\ast (q, \epsilon, \gamma)}`,<br/>
+                    Where `q \in F` and `\gamma \in \Gamma^\ast`.<br/>
+                    This method, referred to as acceptance by final state, is equivalent to that for NFA.<br/>
+                    Alternatively, we can accept by empty stack, i.e., we define<br/>
+                    `L_N(A) := {w \in \Sigma^\ast| (q_0, w, Z_0) \vdash_A^\ast (q, \epsilon, \epsilon)}`,<br/>
+                    Instead of L(A) as the languages accepted by A, and we omit the set F from the definition 
+                    of A. This does not affect the class of languages accepted by PDA.</p>
+                <br/>
+                <u>Expressive Power & Non-determinism</u>
+                <p>Let `\texti{L}_{PDA}` be the class of all languages accepted by PDA. Then 
+                    `\texti{L}_{PDA} = CF`.<br/>
+                    PDA are nondeterministic in two ways<br/>
+                    . `\delta(q, a, z)` can consist of two or more elements for any<br/>
+                    `q \in Q, a \in \Sigma \cup {\epsilon}` and `z \in \Gamma`. Hence, `\delta` is 
+                    indeed a<br/>transition relation, but not a transition function.<br/>
+                    . `\delta(q, a, z)` and `\delta(q, \epsilon, z)` can both be nonempty for any<br/>
+                    `q \in Q, a \in \Sigma` and `z \in \Gamma`. In other words, a computation of<br/>
+                    the PDA can choose between the use of an `\epsilon-\text{transition} and<br/>
+                    a transition that moves the input head one step to the right.</p>
+                <br/>
+                <u>The Definition of a DPDA (Deterministic Pushdown Automata)</u>
+                <p>A DPDA is a PDA `A = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)` satisfying the 
+                    following additional conditions:<br/>
+                    . For all `q \in Q, a \in \Sigma \cup {\epsilon}` and `z \in \Gamma, |\delta(q, a, z)| \leq 1`<br/>
+                    For all `q \in Q, a \in \Sigma` and `z \in \Gamma, \delta(q, a, z)` is empty or `\delta(q, \epsilon, z)`
+                    is empty.</p>
+                <br/>
+                <u>DPDA vs. PDA</u>
+                <p>Let `\texti{L}_{DPDA}` be the class of all languages accepted by DPDA.<br/>
+                    . `L(A_{rev}) = w | \exists x \in {a, b}^\ast : w = x x^R} \in \texti{L}_{PDA} \ \texti{L}_{DPDA}`<br/>
+                    . `{w | \exists x \in {a, b}^\ast : w = x c x^R} \in \texti{L}_{PDA} \cup \texti{L}_{DPDA}`<br/>
+                    . `\texti{L}_{PDA} \subset \texti{L}_{DPDA} \subset REG`<br/>
+                    Nondeterminism, unlike for the comparison between NFA's and DFA's, is 
+                    important in the difference in expressive power between PDA's and DPDA's.</p>
+                <br/>
+                <u>Turing Machines</u>
+                <p>A Turing machine has an unbounded tape and an arbitrary tape content produced 
+                    during the computation. It has a tape head that acts as pointer, showing the 
+                    user what block of the tape is currently mutable. A Turing machine also has a 
+                    finite state control.<br/>A deterministic Turing machine is a tuple 
+                    `M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)` satisfying the following 
+                    conditions:<br/>
+                    . Q is a finite set of states<br/>
+                    . `\Sigma` is a finite alphabet of input symbols<br/>
+                    . `\Gamma` is a finite alphabet of tape symbols, `\Gamma \subseteq \Sigma`<br/>
+                    . `\delta : (Q \times \Gamma) \rightarrow (Q \times \Gamma \times {R, L})` is a 
+                    transition function<br/>
+                    . `q_0 \in Q` is a start state<br/>
+                    . `B \in \Gamma` is a blank symbol<br/>
+                    . `F \subseteq Q` is a set of accepting states.<br/>
+                    A nondeterministic Turing machine is the same as a deterministic Turing 
+                    machine, except the transition relation is `\delta : (Q \times \Gamma) \rightarrow P(Q \times \Gamma \times {R, L})`.<br/>
+                    A move of  a Turing machine involves the change of the state, (that doesn't 
+                    necessarily have to become a different state; an override of the old tape 
+                    symbol with a new one, (which doesn't necessarily have to become a different 
+                    symbol) and a move of the tape head to the left or the right.</p>
+                <br/>
+                <u>The Configuration of a Turing Machine</u>
+                <p>Let `M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)` be a TM. A configuration (or an 
+                    Instantaneous Description (ID)) of M is a word,<br/>
+                    `B^wa_1a_2...a_{i-1}qa_ja_{j+1}...a_nB^w` with<br/>
+                    . `q \in Q`, the current state<br/>
+                    . `a_j \in \Gamma, 1 \leq j \leq n`, the current non-blank tape content.<br/>
+                    `B^w` stands for an infinite sequence of blank symbols.<br/>
+                    If the configuration is `B^wa_1a_2...a_{i-1}qa_ja_{j+1}...a_nB^w`, then we assume that 
+                    the tape head currently scans symbol `a_i`.</p>
+                <br/>
+                <u>The Language Accepted by a Turing Machine</u>
+                <p>Let `M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)` be a TM. M accepts the 
+                    following language:<br/>
+                    `L(M) := {w \in \Sigma^\ast | B^w q_0 w B^w \vdash_M^\ast B^w u q v B^w}`<br/>
+                    Where and `u, v \in \Gamma^\ast` and `q \in F`.<br/>
+                    Thus we again accept by final state.<br/>
+                    Alternatively, we can accept by halting. This means that the language accepted 
+                    by M is the set of all words `w \in \Sigma^\ast` where M from the initial 
+                    configuration `B^w q_0 w B^w` enters a state q such that M halts, i.e. `\delta(q, a)` 
+                    is undefined for the symbol a currently scanned.<br/>Both definitions yield 
+                    the same class of languages that can be accepted by Turing machines.</p>
+                <br/>
+                <u>Expressive Power</u>
+                <p>Let `\texti{L}_{TM}` be the class of all languages accepted by Turing machines. 
+                    Then `\texti{L}_{TM} = RE`.<br/>
+                    For general Turing machines, we do not gain computational power if we allow 
+                    them to be nondeterministic:<br/>
+                    . By definition, every TM is a NTM,<br/>
+                    . For every NTM M there is a TM M' with L(M') = L(M).<br/>
+                    The famous P vs. NP problem: Given any `\text{NTM}.\texti{M}` that accepts its 
+                    language in polynomial time, does there always exist an equivalent `\text{TM} \texti{ M'}` 
+                    that also accepts the language in polynomial time?</p>
+                <br/>
+                <u>Linear-bounded Automata</u>
+                <p>A nondeterministic Turing Machine that solely accesses during its moves the 
+                    space initially occupied by the input word is called a Linear Bounded 
+                    Automaton or LBA.<br/>`M_{anbn}` is a Linear Bounded Automaton apart from a 
+                    minor technical detail.<br/>Let \texti{L}_{LBA} be the class of all languages 
+                    accepted by Linear Bounded Automata. Then `\texti{L}_{LBA} = CS`.</p>
+                <br/>
+                <u>A Class of Automata Accepting REC?</u>
+                <p>There is no suitable class of automata exactly accepting the class of all 
+                    recursive languages:<br/>There is no recursively enumerable class `\texti{M}` of 
+                    automata satisfying `\texti{L}(\texti{M}) = REC`.<br/>We prove this statement 
+                    using the diagonalization technique:<br/>Let `w_1, w_2, w_3, ...` be a 
+                    recursive enumeration of all words over the alphabet considered.<br/>Assume 
+                    to the contrary that there exists `\texti{M}` with the stated property. Let 
+                    then `M_1, M_2, M_3, ...` be a recursive enumeration of `\texti{M}`.<br/>
+                    We now define a language `L_d` as follows:<br/>
+                    $L_d := {w | w_i \notin L(M_i)}$<br/>
+                    According to our assumption, all `L(M_i)` are recursive and therefore `L_d` 
+                    is also recursive.<br/>Hence, there must be a `k \in \mathbb{N}` with 
+                    `L(M_k) = L_d`. Due to the definition of `L_d`, we can then conclude that<br/>
+                    $W_k \in L_d \text{ iff } w_k \notin L(M_k)$.<br/>Thus, `L(M_k) \ne L_d`. This 
+                    is a contradiction.</p>
+                <br/>
+                <u>Turing Machines That Simulate All Turing Machines</u>
+                <p>There exists a Turing Machine M that interprets<br/>
+                    . One part of its input as an encoding of any Turing Machine M' and<br/>
+                    . Another part as an input w for M'<br/>
+                    And M simulates M' on w, i.e. it accepts w if and only if M' accepts w.<br/>
+                    Any Turing machine M with such an ability is called a Universal Turing 
+                    machine. Its existence is a characteristic condition for the existence of 
+                    general purpose computers.<br/>According to Neary and Woods there exists a 
+                    Universal Turing machine over a binary alphabet that requires just 15 
+                    states.</p>
             </div>
         </div>
     </body>
