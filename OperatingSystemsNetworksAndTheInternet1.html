@@ -1,0 +1,1205 @@
+<html>
+    <head>
+        <title>Operating Systems, Networks & the Internet 1</title>
+        <link rel="stylesheet" href="Main.css">
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    </head>
+    <body>
+        <div class="Main-Div">
+            <h2 class="Std-Header">Tom & Loughborough University - Operating Systems, Networks & the Internet 1</h2>
+            <div class="Input-Div" id="Back-Button-Div">
+                <input type="button" class="Back-Button" onclick="window.location = 'UniversityModules.html';" value="Back to University Modules">
+            </div>
+            <br/>
+            <div class="Sub-Div">
+                <p>Operating System - A program that acts as an intermediary between the user and 
+                    the computer hardware.<br/>
+                    A typical operating system has the following components:<br/>
+                    . Users<br/>
+                    . Application Programs<br/>
+                    . The Operating System<br/>
+                    . Computer Hardware<br/>
+                    Open-Source operating systems are made freely available in source code format, 
+                    rather than as compiled binary code.<br/>Closed-Source provide binary 
+                    executables instead of source code.<br/>The computer hardware is mainly made up 
+                    of the CPU (Central Processing Unit), the Memory and the I/O (Input/output 
+                    devices).<br/>For this module, only a computer with a single processor, a 
+                    shared memory and some connected peripherals is considered.<br/>
+                    An operating system hopes to achieve three objectives in its design:<br/>
+                    . Convenience<br/>
+                    . Efficiency<br/>
+                    . Ability to Evolve<br/>
+                    An operating system is both a resource allocator and a control program.<br/>
+                    Resource Allocator - The computer has several resources which may be required 
+                    to solve a problem: CPU time, memory space, file-storage space, I/O devices, 
+                    etc. The operating system among programs and users efficiently and fairly.<br/>
+                    Control Program - A control program manages the execution of user programs to 
+                    prevent errors and improper use of the various I/O (Input/Output) devices and 
+                    user programs. It aims to protect the computer resources and application 
+                    programs from each other.</p>
+                <br/>
+                <u>Multiprogramming</u>
+                <p>Multiprogramming allows the sharing of a processor and is needed for efficiency. 
+                    It allows for the organization of jobs for the CPU to execute, a subset of all 
+                    the available jobs in the memory, and a job which is currently selected to be 
+                    executed.</p>
+                <br/>
+                <u>Multitasking</u>
+                <p>Multitasking is an extension of multiprogramming. The idea is to execute 
+                    multiple jobs by cycling through them very quickly. This gives the appearance 
+                    that they are all running at the same time, even though only one program is 
+                    running at any time. It often is used in interactive systems with several 
+                    users. The user appears to have the sole use of the computer being shared also 
+                    known as a time-sharing system.<br/>In Layman's terms, the comparison between 
+                    multiprogramming and multitasking is that multiprogramming assigns a program to 
+                    the CPU through the users switching of programs. Multitasking keeps all 
+                    programs open by regularly updating each program.<br/>The processor also needs 
+                    protecting in order to avoid programs crashing the entire system. This is where 
+                    interrupts come into play.</p>
+                <br/>
+                <u>Interrupts</u>
+                <p>An interrupt tells the operating system that an event has occurred like an 
+                    infinite loop that needs to be dealt with to prevent a crash.<br/>Hardware 
+                    interrupts are asynchronous and come directly from the system devices. The 
+                    system timer is an example of one of these interrupts.<br/>Software or program 
+                    interrupts are triggered by software when attempting to run an illegal 
+                    operation for example. Program interrupts are sometimes called traps. System 
+                    calls can be used to request special system operations that user programs are 
+                    not usually allowed to access.</p>
+                <br/>
+                <u>Memory Sharing</u>
+                <p>The various users and application programs must all share the limited resources 
+                    of registers, cache, main memory and disc space. Applications should be 
+                    protected from each other so that one program cannot change the data of another 
+                    without authorization.</p>
+                <br/>
+                <u>Memory Manager</u>
+                <p>This software chooses what pieces of data to pass onto the CPU to allocate it to 
+                    the memory mapper.</p>
+                <br/>
+                <u>Memory Mapper</u>
+                <p>This software maps where the blocks of data for a program are going to go. If 
+                    the block of data will not fill in the gap because it is too big, then it 
+                    cannot be mapped.</p>
+                <br/>
+                <u>Peripherals</u>
+                <p>Shareable Devices are devices that can be shared between users like the hard 
+                    disk for example.<br/>Non-shareable Devices are devices that cannot be shared, 
+                    like a printer where only one document can be printed at any time.</p>
+                <br/>
+                <u>Protection of Resources</u>
+                <p>Protection of resources requires the knowledge of whether the processor is 
+                    running user code or operating system code.<br/>User state has limited access 
+                    to the instruction set, memory and peripherals.<br/>Special state has 
+                    unrestricted access to the instruction set, memory and the peripherals.<br/>
+                    There are some system instructions that are privileged like I/O calls, timer 
+                    management or switching, etc.<br/>There are two types of special states: 
+                    interruptible special states (supervisor states) and non-interruptible special 
+                    states (Kernel states)</p>
+                <br/>
+                <u>System Calls</u>
+                <p>System Call - The mechanism used to allow user programs to convey their 
+                    requirements to the operating system.</p>
+                <br/>
+                <u>Memory Sharing</u>
+                <p>Multiple users must share the RAM which has very limited memory. The data used 
+                    by the RAM should be protected so that one program can't alter the contents of 
+                    another program without authorization.<br/>
+                    Real Address = Base Address + Virtual Address<br/>Programs use virtual 
+                    addresses and memory uses the real addresses. A hardware device automatically 
+                    adds the base address to the virtual address, thus creating the real address 
+                    in the main memory.</p>
+                <br/>
+                <u>Base-limit Addressing</u>
+                <p>Each program's memory space should be separate. Each program can only access 
+                    legal addresses. This functionality is achieved by two values - base value and 
+                    limit value.</p>
+                <br/>
+                <u>MMU (Memory-management Unit)</u>
+                <p>The memory management unit maps in run-time virtual to real addresses. It also 
+                    checks accesses to memory are valid.<br/>The base value of a program is stored 
+                    in the base register.<br/>The limit value is stored in the limit register.</p>
+                <br/>
+                <u>Memory Management</u>
+                <p>First Fit - Place the new program in the first large enough position in the 
+                    memory.<br/>
+                    Best Fit - Place the new program in the smallest hole large enough to hold the 
+                    program.<br/>
+                    Worst Fit - Place the new program in the largest available hole.<br/>
+                    Sometimes there isn't a memory area big enough to accommodate a new program. 
+                    In this case there are two options - compaction and swapping.</p>
+                <br/>
+                <u>Compaction</u>
+                <p>When there are multiple holes in the memory, it is referred to as 
+                    fragmentation. A solution to this is compaction, which converts all the 
+                    current programs in the memory to form one memory block, still split but 
+                    without the intermittent holes, which will now be at the tail of the memory. 
+                    This can be an expensive operation to do.</p>
+                <br/>
+                <u>Swapping</u>
+                <p>Another alternative of further memory management is swapping, which will swap 
+                    an existent program that isn't currently being used and replace it with a 
+                    program that needs to be used currently. The previous program can be resumed 
+                    by swapping again.</p>
+                <br/>
+                <u>Segmentation</u>
+                <p>In segmentation, a program is split up into segments, a segment will be a 
+                    logical unit like a main program, a procedure, a method, an object, local 
+                    variables, arrays, etc.<br/>The advantage of segmentation is that a program 
+                    can run even if it doesn't have all of its segments in the real memory. Each 
+                    program will have a segment table. The segment table tells us information 
+                    about each segment of a particular program like whether that given segment is 
+                    in the main memory, its real memory address and how large the segment is.<br/>
+                    There are three accesses to a segment: The read access, the write access and 
+                    the execute access. The read access governs whether the user can see the data. 
+                    The write access governs whether the data can be edited by that user. The 
+                    execute access governs whether that user can run the program.<br/>Program 
+                    instructions are of execute access, constants are of read access and variables 
+                    are of read and write access.<br/>The code can be shared is the segment can be 
+                    shared by two programs or more.<br/>
+                    <img src="Operating Systems, Networks & the Internet 1/Image1.jpg" alt="First Image" style="max-width: 100%;"></p>
+                <br/>
+                <u>Paging</u>
+                <p>Pages are similar but also different to segments. They are small pieces of data 
+                    from a program like a segment but they are of a fixed size, normally 1KB., a 
+                    lot smaller than a segment. A page can have a combination of program 
+                    instruction, constant or variable words. Under paging there are two virtual 
+                    addresses, the virtual page number and the offset into that page. Since the 
+                    page size is a power of two, this means that the virtual address consists of 
+                    some number of bits for the offset and some number of bits for the page 
+                    number. To convert between virtual and real addresses the page table replaces 
+                    the virtual page number with the real page number. The pages, like segments 
+                    can be loaded into the real memory in any order and also, like segments 
+                    doesn't have to load all the pages of a program at once, as new parts of the 
+                    program are required, the new pages are loaded.<br/>Physical memory is divided 
+                    into frames of fixed-sized blocks and the logical memory is divided into pages 
+                    of fixed-sized blocks.<br/>
+                    <img src="Operating Systems, Networks & the Internet 1/Image2.jpg" alt="Second Image" style="max-width: 100%;"><br/>
+                    A combination of both segmentation and paging is often used is real life 
+                    system. This helps avoid the disadvantages of each method but requires more 
+                    hardware support.</p>
+                <br/>
+                <u>The Process Scheduler</u>
+                <p>The process scheduler is a hardware tool used to decide which process or 
+                    program should currently be running. The set of all the processes in the 
+                    system is called the job queue. The set of processes in the RAM that are 
+                    readily being used is called the ready queue. The scheduler will change jobs 
+                    frequently sometimes and thus decides which job is best to run next. Programs 
+                    can have three different states in the process scheduler: running, runnable or 
+                    blocked. Running means that the program is currently being used in the RAM. A 
+                    runnable program is a program that is able to run if the user requests it. A 
+                    blocked program is a program that is unable to run at the current time for 
+                    some reason. Once a program is no longer blocked by the process scheduler it 
+                    will return to the state of runnable until it is selected to be used by the 
+                    user or it breaks and is blocked again. A runnable program cannot be blocked, 
+                    only running programs can crash as they are operating and become blocked by 
+                    the process scheduler. A running program can also become runnable if the 
+                    program works fine through its execution and to the point of the process 
+                    scheduler switching processes.<br/>In a list, the process scheduler will be 
+                    scanning from top to bottom for the first runnable list to be run. If there is 
+                    a process at the top of the list that is blocked, the next process below, 
+                    which is runnable, will be changed to running.<br/>
+                    Round-robin Scheduling involves the process scheduler periodically analyze 
+                    each program in the scheduler to see whether the running state of that program 
+                    has changed. The running program is run by the scheduler simply knowing the 
+                    pointer that points to the running program and keeps it running each time it 
+                    loops until the user changes the running program.<br/>
+                    Priority Scheduling involves the process scheduler choosing the program with 
+                    the highest priority value. To achieve a priority values, the process 
+                    scheduler has a new data value in the virtual table called priority. The 
+                    highest priority value will be the lowest number in this case. As a new 
+                    process enters the queue, it's priority value is checked and it is appended to 
+                    the appropriate level of the queue priority-wise. Process priorities could be 
+                    altered in the sense that a number is given to new processes entering the 
+                    queue that may be lower for new processes, simulating a queue data structure. 
+                    It could be higher, simulating a stack. It could be based on the user using 
+                    the process in that particular network.<br/>Priority and round-robin 
+                    scheduling could be hybridized, implementing variables instead of constants to 
+                    the priority column. The process scheduler could periodically check the 
+                    priority column to see whether the variable values have changed.<br/>Long-term 
+                    Priority Scheduling is another form of priority scheduling that uses some sort 
+                    of formula to automate the number assigning job in the process scheduler in a 
+                    particular way. After the formulation has been completed, the queue must be 
+                    sorted again.</p>
+                <br/>
+                <u>CPU & I/O Bound Programs</u>
+                <p>Programs that are children of a device like a printer, a mouse, a keyboard or a 
+                    camera, as well as other I/O devices will be I/O-bound programs. These 
+                    programs will consume a small amount of time and memory in their execution.<br/>
+                    Programs that are children of the CPU, these processes handle no conversion and 
+                    take place on a solely software point-of-view, rarely interacting with any I/O 
+                    devices in terms of primary functionality. These programs require large amounts 
+                    of time and memory for them to run.<br/>I/O-bound programs are normally given 
+                    priority to get them out of the way with so the larger programs can run for a 
+                    longer amount of time.<br/>There has been shown to be an alternating sequence 
+                    between CPU and I/O bursts in a process scheduler where a program will 
+                    periodically send instructions to I/O devices or the CPU.</p>
+                <br/>
+                <u>Device Controllers</u>
+                <p>Devices connected to a computer need to be managed for the computer to work 
+                    without any faults or crashes. To achieve this, device controllers are sited 
+                    on the bus line running from each peripheral I/O device. They are pieces of 
+                    hardware consisting of electronics, and sets of instructions and Boolean 
+                    values for whether the device is ready to receive information or not, whether 
+                    it condones with synchronous data transmission.<br/>Device handlers can be 
+                    character-stream or block. Character-stream device handlers will send and 
+                    receive data byte by byte and block device handlers will send and receive data 
+                    in blocks of bytes at a time.<br/>Device handlers can be sequential access or 
+                    random access. Sequential access will get data sequentially, so in an order 
+                    and random access will access data at random points at the computer's 
+                    execution.<br/>Device handlers can be asynchronous or synchronous in their 
+                    data transmission methods. An asynchronous data transmission system will send 
+                    data when it needs to without request and an synchronous data transmission 
+                    system will send and receive data by requesting to send data and confirming 
+                    sending of data.<br/>Device handlers can also be RO, WO or R/W. Read-only 
+                    memory means that the device can only read data, write-only means that the 
+                    device can only write data and read/write data means that the device can read 
+                    and write data.<br/>Device handlers can also have latency, seek time and 
+                    transfer rate levels. Latency describes the lost time from sending or 
+                    receiving any data, seek time is the time it takes for the device to find the 
+                    data it needs to read or write to and transfer rate is the time it takes for 
+                    data to be received on both ends.<br/>Device handlers can also be sharable or 
+                    non-sharable. Sharable device handlers can be accessed by multiple other 
+                    devices at the same time. Non-sharable device handlers can only be accessed by 
+                    one other device at any one time. An example of a sharable device would be a 
+                    hard disk.</p>
+                <br/>
+                <u>Direct-memory Access</u>
+                <p>To transfer large amount of data to a device, DMA will be needed. It unburdens 
+                    the CPU from taking up the tasks of the devices as well as all the programs it 
+                    has to run. It will map device instructions with the main memory.<br/>Sharable 
+                    devices have request queues that will handle the demand of that device from 
+                    other devices that are a part of the computer. When another device wants data 
+                    from this sharable device, the device will request the data. After the command 
+                    has been put through the request queue that has been initialized, then the 
+                    device will send the data to the other device if it is ready while sending an 
+                    interrupt to the request queue so it can restart.<br/>Non-sharable devices 
+                    will have request receivers instead of queues. These pieces of software will 
+                    wait for a request and then run the data transmission protocol. Once the data 
+                    has been sent from the device successfully, it will then send the interrupt to 
+                    the request receiver to tell it that the task has been completed.<br/>Spooling 
+                    is a process where the data of a request from a device is put in a disk until 
+                    the other device becomes free and can process the other data. It acts as a 
+                    buffer.</p>
+                <br/>
+                <u>Files & Filing Systems</u>
+                <p>The contents of files in programs and system files does not matter when storing 
+                    that file in a hard disk or any other place of storage.<br/>A filing system 
+                    will change that, adding sorting systems to any data leaving or entering the 
+                    hard disk. The disk will be partitioned into several different parts where 
+                    files are categorized so it is easier to find them in the future.<br/>
+                    Therefore, a file is a collection of data items and a filing system is a piece 
+                    of software used to manage the contents of storage devices.<br/>Directories 
+                    are the main components to filing. They help keep files organized in programs 
+                    and also hold specific information for a collection of certain files. They 
+                    will hold the name of the file, the identification of the file's owner, the 
+                    size of the file, dates and times, protection details and retrieval 
+                    information.<br/>
+                    Single-level Filing System - A filing system with only one level of 
+                    directories. This means that all files of a program are stored in one 
+                    directory.<br/>The MFD will store the information of all the files on a hard 
+                    disk.<br/>In a single-level filing system, the files will all be one level 
+                    below the MFD of that hard disk.</p>
+                <br/>
+                <u>FAT (File Allocation Table)</u>
+                <p>File allocation tables are storage methods of hard disks that involve dividing 
+                    the hard disk into clusters. The cluster allocation for any file will be 
+                    located in the FAT value.<br/>
+                    $\textit{The Size of a Cluster} = \frac{\textit{The Storage Size of the Disk}}{The Number of Clusters}$<br/>
+                    FAT16 will split the hard disk into $2^{16}$ clusters and FAT32 will split the hard disk into 
+                    $2^{32}$ clusters. The file that needs to be stored on a FAT disk will be put in several 
+                    different clusters depending on that file's size. The directory entry will hold the first 
+                    cluster of the file. The first cluster of the file will then point to the second cluster of 
+                    the file, and that will happen until all the clusters of the file have been accounted for. A 
+                    value of -1 in the pointer of the final cluster will complete the chain of clusters associated 
+                    with one file.<br/>The FAT will be stored in the main memory of the computer.<br/>
+                    Two-Level Filing System - A filing system that has two directories for two 
+                    users, each containing files belonging to that user.<br/>The UFD will store 
+                    the information of all the files on the hard disk that belong or are shared 
+                    with that user.<br/>In a two-level filing system, the files will be two levels 
+                    below the MFD and one level below the UFD's.<br/>It is efficient to be able to 
+                    only search the user's directory when a file from that user is required. The 
+                    same file name can also be used across multiple user's directories.<br/>
+                    Multi-level Filing System - A filing system where any node can either be a 
+                    file or a directory. This is equivalent to the modern day operating systems 
+                    features like Windows, where Windows Explorer is an example.<br/>There is no 
+                    limit to the number of levels in the hard disks architecture.<br/>
+                    Single-filing systems are best used for networks with only one user. These 
+                    systems offer no level of protection from data.<br/>Two-level filing systems 
+                    are best used for multi-user system management and there is implicit effective 
+                    protection of data offered with these systems. With a two-level system, each 
+                    user has access only to their own directory. They will have to enter a 
+                    username and password to gain access to them. The username and password access 
+                    is secure but not flexible.<br/>Multi-level filing systems are best to help 
+                    users organize their work. These systems are flexible in their protection 
+                    levels.<br/>(r, w, x - read, write, and execute) are all values of files and 
+                    directories in a hard disk. Both files and directories are readable, writable 
+                    and executable.<br/>Users will need access rights to every branch down to a 
+                    file.</p>
+                <br/>
+                <u>Performance</u>
+                <p>Disk access is much slower than memory access. The aim is to reduce the number 
+                    of disk accesses as it will be slowing up the computer with higher amount of 
+                    disk accesses.</p>
+                <br/>
+                <u>Cache</u>
+                <p>Caches are a section of small amounts of memory in the main memory, accept the 
+                    cache is located closer to the CPU, to provide faster performance. Caches are 
+                    a form of fast memory that contain copies of data.<br/>The first time a piece 
+                    of data is loaded it would be slow as the CPU is requesting data that isn't 
+                    yet loaded in the cache, so the first operation is to copy the data from the 
+                    disk memory to the cache. From there, the cache sends the data to the 
+                    equivalent program in the main memory.<br/>Caches have limited storage space 
+                    and the cache size and data replacement rate must be chosen carefully 
+                    according to the system. Disk caches are also available to store the most 
+                    frequently used files in the hard disk.<br/>A synchronous cache write will 
+                    make the program wait until the piece of data has been written to the hard 
+                    disk.<br/>An asynchronous cache write will send a confirmation signal to the 
+                    program when the data is in the cache and will write the data to the hard disk 
+                    when convenient.<br/>For large transfers, output is far more efficient than 
+                    input in a disk. The user process sees very fast writes in particular.</p>
+                <br/>
+                <u>Recovery</u>
+                <p>Computer crashes can happen anytime and if it results in the computer being 
+                    turned off, all the data in the RAM will be lost. If the data in the main 
+                    memory and the cache hasn't been updated to the hard disk during the program's 
+                    running, then that data will be lost forever. This is known as 
+                    inconsistency.<br/>A consistency checker will analyze the data in directories 
+                    of a system and the data in blocks on the hard disk. It will try and fix any 
+                    inconsistencies it finds. If an inconsistency is irreparable then human 
+                    intervention is required to fix the problem.</p>
+                <br/>
+                <u>Journaling</u>
+                <p>In this case, all changes to data that need to make in the queue of the main 
+                    memory will be kept in a log, that is written to sequentially. In the 
+                    situation of a system crash, a log will be able to load the instructions back 
+                    into the CPU so those changes in data can still be made, even after a 
+                    crash.<br/>Journaling can be useful for the file allocation table, where 
+                    inconsistencies can cause serious system failures. This will have an impact on 
+                    performance as journaling requires all instruction data to be duplicated.<br/>
+                    Each set of operations that complete a certain task is called a transaction. A 
+                    transaction can be considered to be completed if the changed data is found in 
+                    the logs on the hard disk.</p>
+                <br/>
+                <u>Sequential I/O vs. Random I/O</u>
+                <p>The costly synchronous random data writes are turned into much less costly 
+                    synchronous sequential data writes to the log. Those changes are replayed 
+                    asynchronously through random disk writes.</p>
+                <br/>
+                <u>Backup & Restore</u>
+                <p>Magnetic disks can sometimes fail and data can be lost. This is where backing 
+                    up data can be useful as it duplicates all data currently on the internal hard 
+                    disk, to another external hard disk so if the internal hard disk fails, a new 
+                    one can be bought and the backup can be put on the hard disk.<br/>There are 
+                    two ways to copy these large amounts of data; full back-up or incremental 
+                    back-up, full back-up will write all the data in the hard disk to the external 
+                    hard disk, while an incremental back-up will write only the altered data to a 
+                    hard disk. It is best to do multiple back-ups in the order of a full back-up, 
+                    followed by n-1 incremental back-ups, then finally on the nth time, do one 
+                    final full back-up.</p>
+                <br/>
+                <u>Process</u>
+                <p>A process is a program in execution. It is actually more than a program's code 
+                    data, it also holds program counters and stacks, etc. Without these additional 
+                    features, a program cannot become a process.<br/>A process is generally 
+                    running any program with a giving starting data set.<br/>Two processes may use 
+                    the same program if both processes require data to be written or read using 
+                    that program.</p>
+                <br/>
+                <u>Process Concept</u>
+                <p>A process needs a process state, a program counter, CPU registers, CPU 
+                    scheduling information, memory-management information, accounting information 
+                    and I/O status information.</p>
+                <br/>
+                <u>Process Control Block</u>
+                <p>A process control block is a data block that will contain information for a 
+                    process, just like the aspects shown above, as well as the process number and 
+                    the list of open files.<br/>In the task of switching between processes, the 
+                    CPU will run into an interrupt or a system call and the first PCB will be 
+                    saved according to how it ended up at the end of running, then the updated PCB 
+                    of the other process is reloaded into the operating system. Another interrupt 
+                    or system call is then issued to trigger another process switch where the same 
+                    string of events will take place.</p>
+                <br/>
+                <u>Context Switch</u>
+                <p>A context switch stores and restores the state of the CPU so that multiple 
+                    resources can share the same processes. With a context switch, no procedures 
+                    will take place while the switch is taking place.<br/>Context switch time 
+                    depends on hardware support and the memory management method. The more 
+                    complicated an operating system, the more work must be done to switch 
+                    processes.<br/>Context switching can cause a performance bottleneck, to 
+                    resolve this there are alternative methods of switching processes like using 
+                    threading. Threads are created in a process that contain data. They all share 
+                    memory and code. Threads can be changed very quickly to simulate concurrency. 
+                    High core CPUs can achieve concurrency.<br/>Multithreading will allow for 
+                    multiple threads to be sent at once to the main memory. Single core threading 
+                    will queue threads and send them one at a time. Multithreading on a multi-core 
+                    CPU will hybridize both forms of threading, creating two queues, sending 
+                    threads at the same time.<br/>Multi-threading has higher performance, better 
+                    responsiveness, reduced resources and economy, parallelization, resource 
+                    sharing, and scalability.<br/>With a system with a multicore. Multithreading 
+                    can run where multiple threads can be sent at once and as such some things 
+                    should be covered like dividing activities, balance, data splitting, data 
+                    dependency, testing and debugging.</p>
+                <br/>
+                <u>Cooperating Process</u>
+                <p>A process is cooperating if it can affect or be affected by other processes. If 
+                    it doesn't do this then it is an independent process. Process cooperation is 
+                    good for breaking up large tasks into smaller sub-tasks, running all the 
+                    sub-tasks potentially simultaneously and speeding up performance. It also 
+                    allows for the system to be structured in a modular fashion as well as a user 
+                    being able to work on multiple tasks at any one time on an operating system.<br/>
+                    The producer-consumer problem is a common problem relating to cooperating 
+                    processes. There are often processes that are creating data and some processes 
+                    that are taking data. The creators are the producers and the takers are the 
+                    consumers. If one process is producing or taking too much  data there will be a 
+                    bias in polarity of actions in both the cooperating processes.<br/>To solve 
+                    these issues, the producer should not continue to produce data after the data 
+                    buffer for the customer process is full. The customer process should also not 
+                    try to take data that doesn’t exist in an empty data buffer of the producer 
+                    process.</p>
+                <br/>
+                <u>Synchronization</u>
+                <p>A semaphore is a hardware or software flag. It is a value that describes the 
+                    state of the common resource. It is used to lock the resource in some way.<br/>
+                    A process needing the resource will check the semaphores status to see if it 
+                    is locked or not.<br/>A semaphore has two operations, the V-operation and the 
+                    P-operation. The P-operation, the test option, will see if the resource is 
+                    free and if it isn't then it will be locked. If it is free then it will enter 
+                    the resource and then leave, securing the lock. If it is locked, then it will 
+                    wait until the resource becomes unlocked to access it and then lock itself out 
+                    afterwards. The V-operation, the free option, will unlock a resource for use. 
+                    It will also alert any processes wanting to use the resource that were 
+                    waiting.<br/>Semaphores should be locked and unlocked to prevent a process 
+                    from getting too far ahead and potentially causing a crash for itself or 
+                    another process.<br/>If there are two processes, trying to access one 
+                    resource, a bucket for example, then the two processes full bucket and empty 
+                    bucket will have to have opposite semaphore states attached to them. In this 
+                    case, if the empty bucket is free, then the full bucket must be locked as a 
+                    bucket cannot be both empty and full at the same time.</p>
+                <br/>
+                <u>The Internet</u>
+                <p>The Internet includes millions of connected computing devices, (end systems) 
+                    that make up a mesh network topology. The routers will forward the packets to 
+                    the destination IP address while the protocols control the sending and 
+                    receiving of messages. In a sense the Internet is a network of networks.<br/>
+                    The infrastructure of the Internet provides services to distributed 
+                    applications like the web, e-mail, games, e-commerce, etc.<br/>The 
+                    connectionless transmission will be unreliable and the connection-oriented 
+                    transmission is reliable.<br/>The transportation of data from a university to 
+                    another website will be $\text{End-system}\rightarrow \text{Ethernet port}\rightarrow \text{Hub}\rightarrow \text{Switch}\rightarrow$$\text{Gigabit switch}\rightarrow \text{Hall link}\rightarrow \text{Campus switching}\rightarrow$<br/>
+                    $\text{Router}\rightarrow\text{Firewall}\rightarrow\text{Web cache}\rightarrow\text{Mail servers}\rightarrow$$\text{UFS unix file system}\rightarrow\text{External link}$<br/>
+                    Computer Network - An interconnection of computers and computing equipment 
+                    using either wired or wireless connection over small or large geographic 
+                    distances.<br/>
+                    Voice Network - A network that transmits telephone signals<br/>
+                    Data network - A network that transmits computer data<br/>
+                    Telecommunications - The study of telephones and the systems that transmit 
+                    telephone signals<br/>
+                    Network Management - The design, installation, and support, of a network and 
+                    its hardware and software<br/>
+                    Data Communications - The transfer of digital or analog data using digital or 
+                    analog signals.</p>
+                <br/>
+                <u>Network Types</u>
+                <p>There are size-based networks like PAN, LAN, MAN, and WAN, (local, wide area 
+                    networks).<br/>Networks can be defined by the operating system like Novell, 
+                    Microsfot or UNIX.<br/>The network can be defined by its used like for staff 
+                    or students.<br/>Networks are comprise of workstations where the end-user 
+                    systems will be, the servers and the network modem, hubs, witches and 
+                    routers.<br/>LAN - A  local area network interconnects a variety of data 
+                    communicating devices within a small geographic area. LAN networks will use 
+                    high data transfer rates with very low error rates.</p>
+                <br/>
+                <u>Network Topologies</u>
+                <p>Ring Topology - All computers in a network are connected via  ring of cables.  
+                    The pro of this method is that there is equal sharing between all the 
+                    computers in question. The con is that a break in the ring will cause the 
+                    whole system to fail. Nodes will only be able to send data once they capture 
+                    the token.<br/>
+                    Bus Technology - All computers in a network are connected to one 'main road' 
+                    that is a bus, running through every computer, but unlike the ring topology, 
+                    it isn't cyclic. Bus topologies are easy to install but unfortunately the 
+                    nodes must actually contend against one another to access the network. There 
+                    is therefore no guarantee of data access at any time.<br/>
+                    Star Topology - All but one computer in the network are connected to that one 
+                    central server computer that acts as the manager of all the end-systems. Nodes 
+                    can be connected to a star network with ease as well as having the feature 
+                    that if one node on the topology fails, none of the other nodes should fail. 
+                    However, the one problem is that is the central server computer fails then all 
+                    the node computers will also fail in the network.<br/>
+                    There are also mesh, fully connected, line and tree network topologies. Line 
+                    topologies are like bus topologies accept the data has to go through the 
+                    computer in a line topology and has an option to branch off in a bus topology. 
+                    A mesh topology is a network where one node can be connected to n other nodes, 
+                    with no particular requirements, with enough connections, any node can connect 
+                    to any other node in a mesh topology, hopefully in less time than another 
+                    network, unless maybe a star network. An extension to the mesh topology is the 
+                    fully connected topology which had a node connect to n other nodes where n is 
+                    the number of nodes in the network. A tree network is where the root node 
+                    connects all the other nodes in the network and slowly, as the trees is 
+                    descended there will be less important computers that control less and less 
+                    other computers until the bottom of the tree is reached and the end-systems 
+                    are found.<br/>
+                    MAN networks, (Metropolitan Area Networks) are large networks that would span 
+                    more than a LAN, like a city but less than a WAN where a whole region or even 
+                    country can be covered. The MAN networks will typically use the wireless 
+                    infrastructure to connect to their sites. They have high transfer speeds and 
+                    can recover from network faults very quickly. They are often a ring topology 
+                    and some can be provisioned dynamically.<br/>
+                    WAN networks, (Wide Area Networks) are huge networks that cover broad 
+                    geographical areas. The most well-known example will be the Internet. WANs 
+                    used to be associated with slow and noisy lines but today are characterized by 
+                    very high speed data transfer rates and very low error occurrence rates. WANs 
+                    often follow the mesh topology.<br/>There are three types of communication for 
+                    networks, unicast, broadcast and multicast. A unicast will simply have a 
+                    single sender and a single receiver. A broadcast will have one sender and n-1 
+                    receivers where n is the number of nodes on the network. A multicast 
+                    communication will be between 1 sender and 1 to n-2 nodes connected to it.<br/>
+                    There are three main aspects to a network in terms of structure, the edge, the 
+                    core and the communication links by access networks.<br/>The network edge 
+                    includes all the hosts of the network, the client/server model and the 
+                    peer-to-peer model. The client-server models are the Internet and e-mails and 
+                    such. The peer-to-peer models are the systems with no dedicated servers like 
+                    Skype or Bittorrent.<br/>he network core is the mesh of all the routers of a 
+                    network that allow the interconnection of all the networks's end systems.<br/>
+                    The communication links are the form of transmission wirelessly, the bandwidth 
+                    and the access rates of different bodies using the network. The wireless 
+                    connection methods include radio, satellite and fibreoptic.</p>
+                <br/>
+                <u>Protocols</u>
+                <p>Protocols are a set of rules that users have to follow in a system. Depending 
+                    on how the string of events turns out, the output from the protocol might be 
+                    different.<br/>There are many network protocols that define how certain data 
+                    transmission methods work like TCP, UDP, SMTP etc.<br/>A protocol defines the 
+                    format and the order of messages exchanged between two or more communicating 
+                    entities as well as the actions taken on the transmission and/or receipt of a 
+                    message or other event.</p>
+                <br/>
+                <u>Layering Networks</u>
+                <p>There are two main ways to layer network protocols. One is the OSI reference 
+                    model and the other is the TCP/IP reference model.<br/>The OSI reference model 
+                    has an application, presentation, session, transport, network, data link and 
+                    physical layer in it. The application layer is the main interface for the 
+                    users to interact with the application. The presentation layer transforms the 
+                    data into an interface for the Application layer. The session layer is 
+                    responsible for establishing sessions between users. The transport layer 
+                    provides end-to-end error-free network connection between these two users. The 
+                    network layer is responsible for maintaining and ending network connections. 
+                    The data link layer is responsible for taking data and transforming it into a 
+                    frame with a header, control and address information as well as error 
+                    detection code. The physical layer is the handling of the transmission of bits 
+                    over a communication channel including the voltage levels, the connectors, the 
+                    media choice, etc.<br/>The TCP/IP protocol has an application layer, a 
+                    transport layer, a network layer and a network access layer.<br/>The OSI 
+                    reference model has bad implementation and politics and the TCP/IP protocol is 
+                    not a general model, the last layer isn't really a proper layer and there are 
+                    not physical and data link layers.<br/>A hybrid model has an application 
+                    layer, a transport layer, a network layer, a data link layer and a physical 
+                    layer.<br/>The application layer in the hybrid model controls the protocols 
+                    that define the formatting. The transport layer processes data transfer like 
+                    TCP or UDP. The network layer is the routing of the datagrams from source to 
+                    destination. The link layer transfers data between neighbouring network 
+                    elements. The physical layer controls the bits on the wire.<br/>A router will 
+                    run on a three-level OSI reference model which has a network, link and 
+                    physical layer</p>
+                <br/>
+                <u>Application Layer</u>
+                <p>The application layer supports network applications like HTTP, SMTP, FTP and 
+                    others. It will perform common application services for the application 
+                    processes.<br/>
+                    Process - A program running within a host.<br/>Within the same host, two 
+                    processes communicate using inter-process communication. Processes in 
+                    different hosts will communicate by exchanging messages.<br/>The client 
+                    process - a process that initiates communication.<br/>The server process - a 
+                    process that waits to be contacted.<br/>An application Programming Interface 
+                    lies between the application layer and the transport layer within a host. It 
+                    provides programming abstraction for processes communicating over a network. 
+                    Each socket will have an address and a port.</p>
+                <br/>
+                <u>Sockets</u>
+                <p>Process sends/receives messages to/from its socket. A socket will be analogous 
+                    to a door in this sense as the socket essentially is the gateway from the 
+                    application to the transportation phase of sending the message.</p>
+                <br/>
+                <u>Addressing Process</u>
+                <p>An IP address of 32 bits, uniquely identifies any host. In this sense, the 
+                    sending process must identify the receiving process.<br/>There are also port 
+                    numbers associated with the identifier that identifies the network application 
+                    with the process on the host computer.<br/>A port number is a 16 bit value. It 
+                    is a sub-address within a host and can only have one per host. HTTP is 80 for 
+                    example and SMTP is 25.</p>
+                <br/>
+                <u>Ports</u>
+                <p>A server port is fixed and well known.<br/>The name of an address involves a 
+                    one-to-one mapping to an IP address.<br/>The IP address is 32 bits in the form 
+                    x.x.x.x, the port number is a 16 bit value with a range from 0-65535 and port 
+                    numbers from 0-1023</p>
+                <br/>
+                <u>A Client Wanting to Visit the Internet</u>
+                <p>The client will send a request of source: x.x.x.x and a port number of P and a 
+                    destination: y.y.y.y and a port number of 80.<br/>The response will be a 
+                    source: y.y.y.y and a port number of 80 and a destination: x.x.x.x and a port 
+                    number of P.</p>
+                <br/>
+                <u>Applications & Application-layer Protocols</u>
+                <p>Web - allows users to obtain documents from web server on demands.<br/>
+                    Client and Server - A client sends a request and a server sends a response.<br/>
+                    The server is a web server of an FTP server, etc. where it will provide 
+                    service(s) for others to use.<br/>The client is a web browser or FTP program 
+                    etc. that uses the services of the server.<br/>The server is always a host and 
+                    has a permanent IP address.<br/>The clients communicate with the server and may 
+                    be intermittently connected, they may also have dynamic IP addresses and don't 
+                    communicate with each other directly.<br/>An application needs no data loss in 
+                    apps and loss-tolerant apps.<br/>It also requires bandwidth at a certain 
+                    rate.<br/>It requires good timing, some applications require delays to be 
+                    effective.<br/>Applications also need security in the form of encryption and 
+                    data integrity etc.<br/>
+                    <img src="Operating Systems, Networks & the Internet 1/Image3.jpg" alt="Third Image" style="max-width: 100%;"></p>
+                <br/>
+                <u>Services</u>
+                <p>TCP - Transmission Control Protocol, a connection-oriented service.<br/>UDP - 
+                    User Datagram Protocol, a connectionless service.<br/>TCP has reliable data 
+                    transfer, in the sense that it will have sensing protocols to see if the 
+                    transmission has been made and also protocols for retransmissions. In this 
+                    sense all the data will get to the client using TCP. TCP provides flow control 
+                    so that the sender can't overwhelm the receiver. TCP provides congestion 
+                    control so the sender will automatically buffer the sender so that the network 
+                    can recover from an overload.<br/>SMTP, HTTP, FTP and Telnet all use TCP.<br/>
+                    There is also no guarantee that minimum transmission rate and delay can be 
+                    achieved.<br/>UDP has unreliable data transfer, meaning that there is no 
+                    guarantee that data will arrive and may arrive out of order. There is no flow 
+                    control or congestion control, in a sense it is a 'send and hope' method. It 
+                    tolerates some loss but does require a minimum rate so it is not completely 
+                    unreliable. It is used in Internet Telephony and Video Conferencing.</p>
+                <br/>
+                <u>Pure Peer-to-peer Architecture</u>
+                <p>Peers are intermittently connected and often change IP addresses dynamically, 
+                    the two end systems in a peer-to-peer network architecture can communicate 
+                    directly.<br/>It is highly scalable but difficult to manage.</p>
+                <br/>
+                <u>Application Layer Protocol</u>
+                <p>The protocol defines the types of messages being sent, so whether they are 
+                    request or response messages. They contain message syntax where it analyzes 
+                    the fields contained in a message and how fields are delineated. Message 
+                    semantics include the meaning of information in fields. Rules must also appear 
+                    for when and how processes send and respond to messages.</p>
+                <br/>
+                <u>Web Terminology</u>
+                <p>Web pages consist of objects.<br/>Objects can be HTML files, JPEG images or 
+                    plenty of other possibilities. If a page has text and three images for 
+                    example, it has four objects overall.<br/>In a URL (a uniform resource 
+                    locator), there are two segments after the definition of the network 
+                    application (http://), the host name and the path name. The host name will be 
+                    the actual server name of the website. It will also contain whether it's on 
+                    the WWW and what organization or country it belongs to. The path name is the 
+                    path in the directory of the servers to the web page the user requests.<br/>In 
+                    HTTP, the user will request a web page from a website, the browser will 
+                    request the objects from the page to the server. The server will receive the 
+                    request and responds with an HTTP response message that will contain the 
+                    objects.<br/>HTTP is stateless meaning the server maintains no information 
+                    about the past clients requests. If the object is asked again from the same 
+                    user, it will have to be resent.<br/>With non-persistent HTTP, one object at 
+                    most could be sent over a TCP connection. Persistent HTTP however can send 
+                    multiple objects over a single TCP connection between the client and 
+                    server.<br/>
+                    HTTP request -<br/>
+                    GET /wiefuwhi/wegu/wiug.html<br/>
+                    Host: www.lboro.ac.uk<br/>
+                    User-agent: Mozilla/4.0<br/>
+                    Connection: close<br/>
+                    Accept-language: fr<br/>
+                    HTTP response - <br/>
+                    HTTP<br/>
+                    Connection close<br/>
+                    Date: Thu, 09 Aug 1998 12:00:13 GMT<br/>
+                    Server: Apache/1.3.0 (Unix)<br/>
+                    Last-Modified: Mon, 22 Jun 1998<br/>
+                    Content-length: 6821<br/>
+                    Content-type: text/html<br/>
+                    There are status codes to HTTP responses such as the well-known 404, 505, 400, 
+                    301 or 200 for Ok.<br/>HTTP also includes authentication like co-teach in 
+                    Loughborough University, it requests as normal but the response is a 401 
+                    status code where authorization would be required including a 
+                    WWW-Authentication header, the client will ask for the username and password 
+                    and then sends the filled-in username and password in the Authorization header 
+                    line.The security layer in HTTP is however very weak.<br/>Cookies allow for 
+                    state storage on a client. The server will for example, send a set-cookie: 
+                    header instruction. This will be stored locally and when the page is requested 
+                    again the browser will append the cookie: header.<br/>A cookie has four 
+                    components; a cookie header line in the HTTP response message, a cookie header 
+                    in the HTTP request message, a cookie file kept on the user's end system and 
+                    managed by the user's browser and a back-end database at the web site.</p>
+                <br/>
+                <u>Web Caches (Proxy Server)</u>
+                <p>The goal in proxy servers is to satisfy the client request without involving 
+                    the origin server where the data is being sent from.<br/>The client will in 
+                    this case send a HTTP request to a proxy server, which then forwards the 
+                    request to the actual server, and then the data from the HTTP response is sent 
+                    to the proxy server which is then forwarded to the client.<br/>Caches act as 
+                    both a client and server where a client is just a client and a server is just 
+                    a server. The cache will send requests to the server and send the data to the 
+                    client, as the 'middleman'.<br/>Web caching improves performance to end users, 
+                    reduces the load on the servers, reduces bandwidth requirements, organizes web 
+                    request and data traffic and reduces cost.<br/>
+                    Assume:<br/>
+                    The delay from an institutional router to an origin server and back to the 
+                    router is 2 seconds.<br/>
+                    The average request rate from an institution's browsers to origin servers is 
+                    15 per second.<br/>
+                    The average object size is 100K bits.<br/>
+                    The upgrade will be expensive but the cache is cheaper and faster than not 
+                    using one.</p>
+                <br/>
+                <u>Electronic Mail</u>
+                <p>Electronic mail has three main components: user agents, mail servers and simple 
+                    mail transfer protocol like SMTP or POP3.<br/>
+                    A user agent or a mail reader composes, edits, reads, and mails messages, like 
+                    Outlook for example. The outgoing and incoming messages are stored on the 
+                    server.<br/>Mail servers have a mailbox that contains incoming messages for 
+                    the user, a message queue of outgoing messages to be sent and an SMTP protocol 
+                    between mail servers to send e-mail messages. The client in this case will 
+                    therefore be the sending mail server and the server is the receiving mail 
+                    server.<br/>TCP assigns port number 25 to SMTP. Direct transfer allows for no 
+                    multiple connections needed. There are three phases of transfer, handshaking, 
+                    transfer of the messages and closure. The command and response actions act as 
+                    ASCII text and status codes and phrases respectively. Messages are sent in 
+                    7-bit ASCII.<br/>Sending mail would go from Alice on a user agent, to a mail 
+                    server once the message has been sent. It is then sent from the mail server to 
+                    the destination mail server that serves the other user's ISP and then to the 
+                    user agent of the destination user.<br/>POP3 requires authorization in mail 
+                    for both sending and receiving ends and a download.<br/>IMAP is a more complex 
+                    transfer protocol that involves the manipulation of the stored messages on the 
+                    server.<br/>There are also web e-mail servers like Yahoo! Mail or Gmail, 
+                    etc.<br/>Folders are supported on a number if not all user agents. These help 
+                    organize messages. POP3 however does not provide means to create folders and 
+                    assign messages to folders.<br/>IMAP changes this by allowing the storage of 
+                    message folders on a server. Email is in folders from anywhere, however the 
+                    system can be slow and if the network disappears so does the e-mail.<br/>HTTP 
+                    web-based e-mail systems are better in the sense that users can access their 
+                    e-mail from multiple different platforms anywhere and simply through a web 
+                    browser. It is however, slower than user agents in separate applications with 
+                    limited display capabilities.</p>
+                <br/>
+                <u>DNS (Domain Name Service)</u>
+                <p>Internet hosts and routers will have a hostname like www.facebook.com that is 
+                    human-readable and an IP address that is 32 bits long used for addressing 
+                    datagrams that are machine-readable.<br/>Name servers are one possible 
+                    solution to defining the names of machines. A single server on the Internet 
+                    that will do the translation autonomously. It will take requests, convert them 
+                    and then replies.<br/>There are however problems, there is a single point of 
+                    failure, too much traffic to handle all the queries, it will be a distant 
+                    centralized database which will result in a big delay and maintenance on name 
+                    servers is impossible.<br/>Distributed servers will reduce the load on a 
+                    single server and the system can still work if one system fails. These 
+                    distributed servers will also get to a larger span of clients.<br/>A 
+                    distributed database implemented in hierarchy of many name servers (DNS 
+                    servers).<br/>An application-layer protocol allows hosts to query the 
+                    distributed database and run between end systems using client-server paradigm, 
+                    it relies on underlying end-to-end transport protocol, it is not an 
+                    application with which a user directly interacts, its core function concerning 
+                    the Internet is to designate IP addresses. The complexity of a DNS is at the 
+                    network's edge as well.<br/>In this case, a user will send a HTTP request to 
+                    the web server. To do this though, the user will need to obtain the IP address 
+                    of the hostname. The browser will extract the hostname from the URL and then 
+                    send the hostname to the client-side DNS application. The DNS client-side 
+                    application will then send the IP address query to the DNS server. The DNS 
+                    server will return the requested IP address to the DNS client which will then 
+                    send the IP address to the browser which can then initiate the TCP connection, 
+                    assigning the request to a certain port number at that IP address.<br/>There 
+                    will be a root DNS server and then a series of com, org and edu, etc. DNS 
+                    servers that exist. These servers will each contain all of the hostnames 
+                    associated with that organization or country.<br/>All DNS servers must go 
+                    through the root.<br/>Top-level Domain Servers serve com, org, net, edu, gov, 
+                    etc. and all of the country top-level domains like uk, fr, ca, jp.<br/>
+                    Authoritative DNS Servers serve IP mappings to organization's servers like web 
+                    or mail servers.<br/>A local name server does not strictly belong to the 
+                    hierarchy. Each ISP, company or university, etc. will have one.<br/>When a 
+                    host makes a DNS query, query is sent to its local DNS server.<br/>There can 
+                    be iterative queries to a local DNS server, where the client will request a 
+                    server and the DNS server will send that request to the RDNS server which will 
+                    respond back to the LDNS, this will be repeated with the other two required 
+                    servers in this situation.<br/>A recursive query is when the client requests a 
+                    server name and the LDNS server sends the request through all the servers to 
+                    the ADNS server and back all the way to the LDNS and back to the client.<br/>
+                    Iterated queries by the root server are best to keep Internet performance 
+                    working.</p>
+                <br/>
+                <u>DNS Caching</u>
+                <p>DNS caching involves all DNS servers being able to cache results which will in 
+                    turn improve the delay performance and reduce the number of DNS messages. TLD 
+                    servers are typically cached in local name servers.<br/>RR format for DNS 
+                    records is (name, value, type, ttl)<br/>
+                    Type - A<br/>
+                    Name is hostname<br/>
+                    Value is IP address<br/>
+                    Type - CNAME<br/>
+                    Name is initial hostname<br/>
+                    Value is the canonical name<br/>
+                    Type - NS<br/>	
+                    Name is domain<br/>
+                    Value is IP address of the authoritative name server for that domain<br/>
+                    Type - MX<br/>
+                    Value is the name of the mail server associated with the name.<br/>There is a 
+                    unique 16 bit identification number for a query that is also used in the 
+                    response. There are also flags: query or reply; recursion desired; recursion 
+                    available; reply is authoritative.<br/>DNS is carried over UDP, so small 
+                    messages or TCP for large messages and in both cases, it used port number 
+                    53.<br/>In a stack, the elements will act on the element above and use the 
+                    elements below.</p>
+                <br/>
+                <u>Packets</u>
+                <p>A packet is a block of bytes. The block has a header and a body. The Internet 
+                    is a packet-switched network.<br/>Each layer has a defined PDU and will add a 
+                    header to the PDU with its own information.<br/>
+                    There are three layer functions:<br/>
+                    Error control - will add reliability to the channel<br/>
+                    Flow control - will avoid overwhelming slower end-station<br/>
+                    Segmentation and Reassembly - will divide large message into smaller, easier 
+                    to handle chunks.<br/>
+                    Multiplexing - will allow several high layer sessions to share a lower layer 
+                    session<br/>
+                    Connection setup - will provide appropriate handshaking.<br/>
+                    Advantages - Abstracts a complex system to a set of smaller systems and allows 
+                    for replacement of parts of the system.<br/>
+                    Disadvantages - Often functionality is duplicated and a bad design will result 
+                    in information needing to be shared between layers.</p>
+                <br/>
+                <u>Transport Services & Protocols</u>
+                <p>Transport protocols provide logical communication between app process running 
+                    on different hosts.<br/>The transport protocol will send segments of the app 
+                    messages to the network layer which will then send the segments to the network 
+                    layer of the host on the receiving side, where the segments are reassembled 
+                    and the equivalent app messages are sent to the application layer.<br/>The 
+                    difference between the network layer and the transport layer is that the 
+                    network layer transmits data across the Internet to another host or server, 
+                    the transport layer will only transmit data between processes. They both work 
+                    together however.</p>
+                <br/>
+                <u>Internet Transport-layer Protocols</u>
+                <p>There are three possible settings for data transferral in the transport layer, 
+                    reliable, unreliable or services not available.<br/>TCP (reliable) will send 
+                    data in order and support congestion, flow control and connection setup. An 
+                    unreliable UDP will send data in any order and some is lost.<br/>Services not 
+                    available contains delay and bandwidth guarantees.</p>
+                <br/>
+                <u>Multiplexing & Demultiplexing</u>
+                <p>Multiplexing will involve the sender gathering data from multiple sockets and 
+                    enveloping the data with the header. The data will be sent and at the 
+                    receiving end, the delivered segments are made sure to go into the correct 
+                    socket.<br/>Demultiplexing works by the host receiving the IP datagrams. The 
+                    datagrams will each contain one segment. Each segment will contain both a 
+                    source and a destination port number. The host will use these numbers to know 
+                    which port to transmit the segment to.</p>
+                <br/>
+                <u>TCP Overview</u>
+                <p>TCP is point-to-point meaning there is one receiver. It is reliable, meaning 
+                    data is transferred in order, it has send and receive buffers to allow for 
+                    multiple pieces of data to be sent without having to be completed. It has full 
+                    duplex data meaning bi-directional flow in the same connection. It is 
+                    connection-oriented meaning that handshaking is required to initiate the 
+                    sender and receiver's state before data exchange.<br/>The flow of data is also 
+                    controlled so the sender will not overwhelm the receiver.</p>
+                <br/>
+                <u>UDP - User Datagram Protocol</u>
+                <p>UDP offers a 'best effort' service which means segments may be lost or 
+                    delivered out of order to the application. It is connectionless meaning that 
+                    no handshaking is required between a UDP sender and receiver. Each UDP segment 
+                    will be handled individually from others.<br/>UDP offers no delay to the 
+                    transmission of data, it is simple, with a small segment header and has no 
+                    congestion control meaning UDP can send its data as fast as possible.<br/>UDP 
+                    is loss tolerant and rate sensitive.</p>
+                <br/>
+                <u>Network Layer</u>
+                <p>The sending side takes the segments from the transport layer and encapsulates 
+                    each segment into a datagram. The datagram is then sent to the associated 
+                    router.<br/>The receiving side receives the datagram from the nearby router 
+                    and extracts the transport-layer segment, which it then transports to the 
+                    transport layer of the receiver host.<br/>The router will be forwarding 
+                    datagrams from input links and sending them through output links. It will also 
+                    examine the header fields in all IP datagrams passing through it.<br/>Packets 
+                    will be forwarded using a destination host address.<br/>The Internet network 
+                    layer provides a single service, the best effort service.<br/>The Internet is 
+                    a datagram network, providing a connectionless host-to-host service.<br/>There 
+                    are two main functions involved in the network layer, forwarding and 
+                    routing.<br/>Forwarding moves packets from the router's input to her 
+                    appropriate output.<br/>Routing determines the route taken by the packets from 
+                    the source to the destination.<br/>Routing contains a series of sequential 
+                    forwarding routines.<br/>In the router there is a forwarding table that maps 
+                    the destination address to the output link interface.<br/>An IP datagram has a 
+                    32 bit format containing a lot of data including the source IP, the 
+                    destination IP, the IP version, the length of the datagram in bytes, the upper 
+                    layer it is delivering the data to in the host, etc.</p>
+                <br/>
+                <u>IP Addressing</u>
+                <p>An IP address has a 32 bit identifier, which is unique between hosts and 
+                    routers.<br/>The 32 bit number is split into 4, 8 bit segments that represent 
+                    the octets in an IP address.<br/>The dotted decimal notation is more simply 
+                    read by humans.<br/>10000000 10011100 00001110 00000111<br/>Is<br/>
+                    128.156.14.7<br/>The network part of the IP address is the first three parts 
+                    of the IP address and the host part is the last segment of the IP 
+                    address.<br/>There are five classes of IP addresses. Class A is 0 followed by 
+                    the network part of 7 bits and the host part of 24 bits.<br/>1.0.0.0 to 
+                    127.255.255.255<br/>Class B is 10 followed by the network part of 14 bits and 
+                    the host part of 16 bits.<br/>128.0.0.0 to 191.255.255.255<br/>Class C is 110 
+                    followed by the network part of 21 bits and then the host part of 8 bits.<br/>
+                    192.0.0.0 to 223.255.255.255<br/>Class D is 1110 followed by a multicast 
+                    address.<br/>224.0.0.0 to 239.255.255.255<br/>Class E is 1111 followed by a 
+                    future use address.<br/>240.0.0.0 to 255.255.255.255<br/>If the host is all 
+                    0's then it represents a network and if all the bits in the host part are 1's 
+                    then it is a broadcast.<br/>Class A also has a loopback address of 
+                    127.0.0.1.<br/>Class A has 8 bits per network part, class B has 16 bits per 
+                    network part, class C has 24 bits per network and class D has multicast.</p>
+                <br/>
+                <u>Subnets</u>
+                <p>A class A network will have millions of hosts, so to deal with high demand, 
+                    subnetting is used.<br/>The network portion of an IP address uniquely 
+                    identifies a physical network.<br/>The subnet number is created from the bits 
+                    in the host number part.<br/>The binary representation of the number will 
+                    equal the number of subnets on the network.<br/>Devices in a network are 
+                    divided up into subnets by dividing one IP address into a number of subnets, 
+                    so 223.1.1.4, 223.1.2.9 and 223.1.3.27 would all stem from one router.<br/>If 
+                    223.1.1.0/24 is the subnet IP address  then the 24 at the end represents the 
+                    left-most 24 bits of a 32 bit quantity IP address.</p>
+                <br/>
+                <u>CIDR - Classless Inter-domain Routing</u>
+                <p>The CIDR is the subnet portion of the address that is always a fixed, arbitrary 
+                    length. It has address format a.b.c.d/x.</p>
+                <br/>
+                <u>IP Subnet Masking</u>
+                <p>When there are a large amount of IP addresses to manage, subnet masking is used 
+                    to break the host ID portion of the address into a subnet ID and a host 
+                    ID.<br/>The subnet mask will show the number of bits that make up the network 
+                    and subnetwork part of the address.<br/>How to calculate Netmask:<br/>
+                    10.5.4.0/26<br/>
+                    26 bits of subnet, 6 bits of host<br/>
+                    11111111 11111111 11111111 11000000<br/>
+                    =255.255.255.192<br/>
+                    How to calculate Broadcast:<br/>
+                    26 bits of subnet, 6 bits of host<br/>
+                    00001010 00000101 00000100 00000000<br/>
+                    To<br/>
+                    00001010 00000101 00000100 00111111<br/>
+                    =10.5.4.63<br/>
+                    How to calculate Host Ranges: $\text{host part} = 1^n0-0^n1$ where n = host 
+                    part bits</p>
+                <br/>
+                <u>Link Layer</u>
+                <p>The link layer provides data transfer between neighbouring network elements 
+                    like PPP or the Ethernet.<br/>In link terminology, the hosts and routers will 
+                    be nodes. The channels connecting two nodes are called links, whether they be 
+                    wired, wireless or LANs. A link layer packer is called a frame which is an 
+                    encapsulated datagram.<br/>A transmitting node will encapsulate the datagram 
+                    into a link layer frame and transmit the frame into the link.<br/>A receiving 
+                    node receives the frame and extracts the datagram.<br/>Where the network 
+                    layer governs the overall path of data through the Internet, the link layer 
+                    provides transmission over a single link in the data's path.<br/>Each link 
+                    can and probably will differ in link protocol services, between PPP and 
+                    Ethernet.<br/>The frame will have a header just like a datagram but it will 
+                    use the source MAC address as source identification and NOT the IP 
+                    address.<br/>Other link layer services include flow control so that there is 
+                    pacing between adjacent sending and receiving nodes. Error detection provides 
+                    error-detection bits in the frame. Error correction will receive the frames 
+                    and correct any bit errors in frames with errors. Half-duplex functionality 
+                    provides that both ends of the link can transmit data, but not at the same 
+                    time.<br/>The link layer is implemented in the Network Interface Card. It 
+                    attaches into host's system buses.<br/>The adapter will receive a datagram 
+                    from an upper layer and encapsulate that datagram into a frame, as well as 
+                    adding other functionalities. The receiving side will receive the frame at 
+                    the adapter and extract the datagram, then pass to the receiving node and 
+                    then the upper layers at the receiving side.<br/>The adapter would've also 
+                    performed error-checking and correcting of packets.<br/>There are two types 
+                    of link layer channels: a broadcast channel and a point-to-point 
+                    communication link. The broadcast channel provides many hosts to the same 
+                    communication channel. This channel will coordinate transmission and avoid 
+                    collisions.<br/>A point-to-point communication link provides transmission 
+                    between two routers, normally exampled in a residential dial-up modem and an 
+                    ISP router. The data transfer will be reliable with flow control and error 
+                    detection.</p>
+                <br/>
+                <u>Multiple Access Protocols</u>
+                <p>These protocols are needed for a single shared broadcast channel or with two 
+                    or more simultaneous transmissions by nodes as without the protocol there 
+                    will be a collision.<br/>It will be a distributed algorithm to determine how 
+                    nodes share a channel, and when each node can transmit data.<br/>There are 
+                    three classes to Multiple Access Control Protocols.<br/>Channel partitioning 
+                    divides the channel into smaller pieces and will allocate a piece to a node 
+                    for exclusive use.<br/>Random access will not divide the channel and will 
+                    allow collisions but will simply recover from them when they happen.<br/>
+                    Taking turns is simply where the nodes take turns but nodes with more to send 
+                    can have longer to send it.</p>
+                <br/>
+                <u>Random Access Protocols</u>
+                <p>Random access protocols transmit and hope that there won't be a collision. A 
+                    random access protocol will detect collisions and knows how to recover from 
+                    them.</p>
+                <br/>
+                <u>MAC Addresses</u>
+                <p>MAC addresses are the link layer addresses of a node's adapter that are 48 
+                    bits long and do not change for an adapter.</p>
+                <br/>
+                <u>ARP (Address Resolution Protocol)</u>
+                <p>ARP resolves an IP address to a MAC address. It only resolves these addresses 
+                    for nodes on the same subnet as the host. DNS differs as it resolves an IP 
+                    address from a hostname and operates throughout the Internet.<br/>Ethernet 
+                    was the first wired LAN technology and was cheap for the 100Mb/s speed.</p>
+                <br/>
+                <u>Contention-based Protocols</u>
+                <p>If two workstations transmit data simultaneously, there can be a collision. To 
+                    prevent this from happening, when the two nodes hear the collision they will 
+                    stop transmitting data immediately.<br/>Ethernet uses CSMA/CD to prevent 
+                    collisions. First the adapter won't transmit if it senses another node's 
+                    transmission. A transmitting adapter will also stop immediately after it 
+                    senses an adapter transmitting. Before waiting to start up again, the adapter 
+                    will wait a random amount of time, (known as random access).<br/>10BaseT and 
+                    100BaseT are both types of Ethernet, the first running at 10Mbs and the 
+                    second running at 100Mbs.</p>
+                <br/>
+                <u>Hubs</u>
+                <p>Hubs are physical layer repeaters. Bits coming from one link go out all other 
+                    links at the same rate.<br/>There is no collision detection at the hub, the 
+                    NIC of the host detects any collisions.</p>
+                <br/>
+                <u>Switch</u>
+                <p>A switch is a link layer device that stores Ethernet frames. It will examine 
+                    the header and forward the frame based on that MAC address stored in the 
+                    header.<br/>Switches are transparent meaning that the hosts are unaware of 
+                    the presence of switches. They are also plug-and-play and self-learning, 
+                    meaning that they don't have to be configured and can simply learn.</p>
+                <br/>
+                <u>Traffic Isolation</u>
+                <p>A switch will break a subnet into LAN segments. It will then filter the 
+                    packets. These segments become individual collision domains and will not 
+                    normally forward frames to other LAN segments in the same LAN.</p>
+                <br/>
+                <u>Dedicated Access</u>
+                <p>Dedicated access gives hosts direct access to the switch, no hub will be 
+                    involved. This will prevent collisions and provide full duplex.</p>
+                <br/>
+                <u>Switches vs. Routers</u>
+                <p>Switches forward frames in LANs and routers forward datagrams over the 
+                    Internet as part of routing.<br/>Switches will also have switch tables, while 
+                    routers will have routing tables.<br/>
+                    PDU Types for each layer:<br/>
+                    Application - Messages<br/>
+                    Transport - Segments<br/>
+                    Network - Datagrams<br/>
+                    Link - Frames<br/>
+                    Physical - Layer 1 PDUs</p>
+                <br/>
+                <u>Security</u>
+                <p>We need network security for authentication, identification, and preventing 
+                    denial of service to authorized users.<br/>
+                    Confidentiality - only the sender and the intended receiver will understand 
+                    the contents of the message.<br/>
+                    Authentication - the sender and the receiver want to confirm the identity of 
+                    each other.<br/>
+                    Message integrity and Non-repudiation - to analyze a message and tell whether 
+                    the message has been altered or not.<br/>
+                    Access and Availability - services must be accessible and available to 
+                    users.<br/>
+                    The three main network security issues are trust, snooping and spoofing. 
+                    Trust involves trusting all of the nodes on the routing path and that they 
+                    won't look at or even edit the data the user is sending. Snooping is the 
+                    situation where hubs have the ability to broadcast, in which case anyone 
+                    could see the packets. Switches could stop this problem but can't guarantee 
+                    it. Spoofing involves someone seeing someone else's packets and forging new 
+                    packets while discarding the originals.<br/>
+                    Alice and Bob are the main two protagonists in network security with Trudy 
+                    being the malicious node. The people can represent end-users, servers, hubs 
+                    or switches, DNS servers or any other aspect to the Internet in data 
+                    transmission really.<br/>The malicious user can eavesdrop on virtual 
+                    conversations, insert messages into the connection channel, impersonate 
+                    other nodes or even take over an ongoing connection by removing the sender or 
+                    the receiver with him/herself. Malicious users can also prevent some services 
+                    from being used by others.</p>
+                <br/>
+                <u>Encryption & Decryption</u>
+                <p>Encryption will work by converting plain text into cipher text. This form of 
+                    data obfuscation often comes with a key that has the ability to lock the 
+                    message and after the message has been sent, the key will unlock the 
+                    messages.<br/>A symmetrical key is a key where both sender and receiver have 
+                    the same key.<br/>A public key is a key that will encrypt the message and 
+                    will require a private key to decrypt the message at the other end.<br/>If 
+                    only the cipher text is known, the only way to decrypt without the key is 
+                    statistical analysis. If some of the plain text is known, then it becomes a 
+                    little easier to decipher and if a particular area of text is deciphered, the 
+                    overall deciphering will become even more easier.<br/>Key distribution is 
+                    hard as a separate communication path will be needed to send the key data.</p>
+                <br/>
+                <u>Data Encryption Standard</u>
+                <p>The key would normally be 64 bits with an 8 bit odd parity.<br/>A triple data 
+                    encryption standard or advanced encryption standard would be to use three 
+                    keys to encrypt, decrypt and then encrypt again.</p>
+                <br/>
+                <u>Public Key Cryptography</u>
+                <p>The sender and the receiver will not share the private key. The public key is 
+                    known to everyone and the private key is only known by the receiver.<br/>
+                    If only one key was obtained, the other key would still be very hard to 
+                    obtain computationally.<br/>While using A's public and private keys, it is 
+                    possible to decrypt a message using the private or the public key first.<br/>
+                    In a real-life example, Alice would get Bob's public key when she wants to 
+                    send a message to him, Bob would have his own private key and the message 
+                    would be encrypted using the public key and decrypted using the private 
+                    key.<br/>When A is sending a message to B, A will encrypt with B's public key 
+                    and encrypt the result with A's private key. B will receive the message and 
+                    decrypts the result and the initial message using A's public key followed by 
+                    B's private key.<br/>
+                    Secrecy - only the receiver can read the message<br/>
+                    Authentication - the identity of the sender is assured<br/>
+                    Non-repudiation - the identity of the sender cannot be denied<br/>
+                    Integrity - the message has not been altered in transit</p>
+                <br/>
+                <u>Authentication Protocol</u>
+                <p>Establish the identities of the parties to each other's satisfaction. Only 
+                    after they are both satisfied can the transmission begin.<br/>There are many 
+                    ways that malicious users can lead hosts astray on this topic. The best way 
+                    however to send a message for authentication is to send the message and have 
+                    a nonce reply returned where Alice would have to resend the nonce, encrypted 
+                    with a shared private key.</p>
+                <br/>
+                <u>Digital Signatures</u>
+                <p>In this case, the sender will provide a digital signature establishing that he 
+                    is the creator. If is verifiable and non-forgettable. Documents are digitally 
+                    signed by the sender putting their private key on the message.<br/>If the 
+                    receiver receives the message, they can know it was the sender if they use 
+                    the sender's public key and output the decrypted message. This will prove 
+                    that no one else could've wrote the message as only the sender will know 
+                    their private key. This will provide non-repudiation as a form of 
+                    security.<br/>Long messages are too computationally hard to encrypt using a 
+                    public key system. Instead the message must be simplified down to its hash 
+                    form where the message is a fixed size. A digital signature will simply be a 
+                    signed message digest with the sender's private key. The encrypted message 
+                    digest and large message are then sent and both picked up by the receiver. 
+                    The encrypted message digest has to be decrypted with B's public key and the 
+                    large message has to be hashed. If H(m)=H(m) then it is verified that Bob did 
+                    send and sign that message.<br/>The signature will be produced from the 
+                    hashed message that has been created being put at the bottom of the 
+                    message.</p>
+                <br/>
+                <u>Key Problems</u>
+                <p>The symmetric key problem, where it is unknown on how the sender and receiver 
+                    will both have the same private key over a network. The solution would be to 
+                    use KDC (key distribution centre) that acts as an intermediary.<br/>The 
+                    public key problem is to know that the sender actually sent the message and 
+                    not any malicious user. The solution is to use the CA or certification 
+                    authority.</p>
+                <br/>
+                <u>Firewalls</u>
+                <p>Firewalls isolate an organization's internal net from the larger Internet, 
+                    allowing some packets to pass and preventing the others.<br/>The decision by 
+                    a router firewall to either forward a packet or drop it is based on the 
+                    addresses associated with the packet, the port numbers associated and other 
+                    bits.<br/>Some applications will have gateways that filter packets. 
+                    Authorized users of, say a Telnet system will be able to set up a connection 
+                    with another host. The router filter will block all Telnet connection not 
+                    originating from the gateway.<br/>The router filter will make sure that all 
+                    Telnet connections originate from the gateway.</p>
+            </div>
+        </div>
+    </body>
+</html>
