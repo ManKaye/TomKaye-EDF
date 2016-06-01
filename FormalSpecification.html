@@ -354,7 +354,273 @@
                     And that<br/>
                     $\forall u_1\in T...\forall u_n\in T.\forall u_1\in T...\forall u_n\in T.$<br/>
                     $\textit{pre-OP1}(u_1,...,u_n (\textit{original}))\wedge\textit{post-OP1}$<br/>
-                    $(u_1,...,u_n,u_1,...,u_n )\Rightarrow\textit{pre-OP2}(u_1,...,u_n )$</p>
+                    $(u_1,...,u_n,u_1,...,u_n )\Rightarrow\textit{pre-OP2}(u_1,...,u_n )$<br/>
+                    <img src='Formal Specification/Image8.jpg' alt='Eighth Image' style='max-width: 100%;'></p>
+                <br/>
+                <u>Operation Decomposition Correctness</u>
+                <p>If<br/>
+                    <img src='Formal Specification/Image9.jpg' alt='Ninth Image' style='max-width: 100%;'><br/>
+                    Is an abstract specification of an operation, then OP1;OP2 satisfy OP (or OP 
+                    is correctly decomposed into OP1;OP2<br/>
+                    If<br/>
+                    <img src='Formal Specification/Image10.jpg' alt='Tenth Image' style='max-width: 100%;'><br/>
+                    <img src='Formal Specification/Image11.jpg' alt='Eleventh Image' style='max-width: 100%;'></p>
+                <br/>
+                <u>Model-oriented Specification of Data Types</u><br/>
+                <u>Sets</u>
+                <p>The union of two sets, denoted by $\cup$, is a set containing all the elements 
+                    of both sets with any duplicate elements removed.<br/>The intersection is a 
+                    set containing the mutual elements of both sets.<br/>Two sets are disjoint if 
+                    they have an empty set as the intersection of the two sets. This means that 
+                    the elements of both sets are completely unique from the other set.<br/>The 
+                    difference of two sets, denoted by a -, is the set of elements in the first 
+                    set mentioned, which are not in the other set.<br/>A set X is a subset of Y if 
+                    every element of X is in Y. X would be a proper subset of Y if X is a subset 
+                    of Y but X isn't equal to Y; much like the difference between < and $\leq$.<br/>
+                    A set Y is a partition of a set X if the set Y is made up of a number of sets 
+                    which, overall contain only and all the elements in X.<br/>The distributed 
+                    union of a set of sets X is the union of all the sets in X.</p>
+                <br/>
+                <u>Set Comprehension</u>
+                <p>Set comprehension defines a set that satisfies a certain property or properties 
+                    where the prior known sets were either finite or infinite.<br/>The notation is 
+                    split by a | and to the left of it, shows the data type of the set, and to the 
+                    right of it, defines the constraint.</p>
+                <br/>
+                <u>Example for a Raffle</u>
+                <p><img src='Formal Specification/Image12.jpg' alt='Twelvth Image' style='max-width: 100%;'></p>
+                <br/>
+                <u>Defining Composite Objects</u>
+                <p>$\textit{Compose Datec of}$<br/>
+                    $\textit{Day} : \lbrace1,...,366\rbrace$<br/>
+                    $\textit{Year} : \mathbb{N}$<br/>
+                    $\textit{End}$<br/>
+                    $\textit{Or}$<br/>
+                    $\textit{Datec} :: \textit{day} : \lbrace1,...,366\rbrace$<br/>
+                    $\textit{year} : \mathbb{N}$<br/>
+                    $\textit{Datec}=\lbrace\textit{mk-Datec}(d,y)|d\in{1,...,366}\wedge y\in\mathbb{N}\rbrace$<br/>
+                    $\textit{Mk-Datec is a function where}:$<br/>
+                    $\textit{mk-Datec}:\lbrace1,...,366\rbrace\times\mathbb{N}\rightarrow\textit{Datec}$<br/>
+                    The mk will help define the difference between two functions where the input 
+                    parameters are the same, making them look visually ambiguous.</p>
+                <br/>
+                <u>Decomposing Objects</u>
+                <p>Objects can be decomposed to give the individual parameters where:<br/>
+                    $\textit{day}:\textit{Datec}\rightarrow\lbrace1,...,366\rbrace$<br/>
+                    $\textit{year}:\textit{Datec}\rightarrow\mathbb{N}$</p>
+                <br/>
+                <u>Invariants</u>
+                <p>Invariants restrict values further. In the case of Datec, we would need to 
+                    specify that the day can only be 366 if the year is a leap year, and as 
+                    such:<br/>
+                    $\textit{Datec}::\textit{day}:\lbrace1,...,366\rbrace$<br/>
+                    $\textit{year}:\mathbb{N}$<br/>
+                    $\textit{inv}(\textit{mk-Datec}(d,y))\triangle y \textit{mod} 4=0\vee d\leq365$</p>
+                <br/>
+                <u>Example</u>
+                <p><img src='Formal Specification/Image13.jpg' alt='Thirteenth Image' style='max-width: 100%;'></p>
+                <br/>
+                <u>Map Notation</u>
+                <p>When variables, paramters or results are of a function type we usually call the 
+                    function type a map. It is frequently the case that the domain of the map is 
+                    finite.<br/>Map notation is defined by a value, then a $\mapsto$, and then 
+                    another value. Each individual mapping is called a maplet. Maps can also be 
+                    defined using comprehension.<br/>The domain operator of a map will retrieve 
+                    the set of domain values of the map. This is defined by the reserved word 
+                    dom.<br/>The range operator will retrieve the set of all the range values, 
+                    noted by rng.<br/>The map override operator, defined by $\dagger$, will yield 
+                    the union of maplets of two maps. If the domain is the same for two maplets in 
+                    both the maps, the maplet of the right map will be used in the map override of 
+                    the two. <br/>The restriction operator, defined by $\triangleleft$, which, 
+                    when applied to a set and a map, it will output a map with only the domains 
+                    that appear in the set.<br/>If D and R are two sets, the notation being an 
+                    arrow from D to R with an m riding on top of it.<br/>So with,<br/>
+                    <img src='Formal Specification/Image14.jpg' alt='Fourteenth Image' style='max-width: 100%;'><br/>
+                    You would get a set of sets with all mapping possibilities, so:<br/>
+                    $\lbrace\lbrace \rbrace,\lbrace a\mapsto1\rbrace,\lbrace a\mapsto2,\lbrace b\mapsto1\rbrace,\lbrace b\mapsto2\rbrace,\lbrace a\mapsto1,b\mapsto1\rbrace$$,\lbrace a\mapsto1,b\mapsto2\rbrace,\lbrace a\mapsto2,b\mapsto1\rbrace,\lbrace a\mapsto2,b\mapsto2\rbrace\rbrace$
+                    A very complex example of a mapping includes banking:<br/>
+                    <img src='Formal Specification/Image15.jpg' alt='Fifteenth Image' style='max-width: 100%;'><br/>
+                    <img src='Formal Specification/Image16.jpg' alt='Sixteenth Image' style='max-width: 100%;'><br/>
+                    <img src='Formal Specification/Image17.jpg' alt='Seventeenth Image' style='max-width: 100%;'></p>
+                <br/>
+                <u>Natural Deduction</u>
+                <p>In section 2, we proved the formula<br/>
+                    <img src='Formal Specification/Image18.jpg' alt='Eighteenth Image' style='max-width: 100%;'><br/>
+                    True<br/>We deduced that the formula<br/>
+                    <img src='Formal Specification/Image19.jpg' alt='Nineteenth Image' style='max-width: 100%;'><br/>
+                    The way we proved these formulae was through a process called rigorous proof. 
+                    Rigorous proof is prone to human error so an alternative proofing method must 
+                    be chosen that a computer would be able to check through. Such a proof method 
+                    is called formal proof.</p>
+                <br/>
+                <u>Sequents</u>
+                <p>When all the hypotheses in a list of formulae are true, a sequent would govern 
+                    that another formula would be therefore true, and the notation for this is as 
+                    such<br/>
+                    $\Gamma\vdash E$<br/>
+                    This statement states that if all the formulae in the list of formulae known 
+                    as the hypotheses $(\Gamma)$ are true, then the formula, E is true.<br/>The $\vdash$
+                    is called a turnstile and the whole statement of $\Gamma\vdash E$ is the sequent.<br/>
+                    If E is a proof obligation, in order to prove E true, we need to generate the 
+                    sequent<br/>
+                    $\vdash E$<br/>
+                    Which has no hypotheses. To complete the proof, we must generate sequents 
+                    either using inference rules or truth tables. In the case of truth tables, the 
+                    same symbol is used but with two horizontal lines rather than one.<br/>
+                    $E_1, E_2 \vee E_3 |= E_1 \wedge E_2 \vee E_1 \wedge E_3$ truth table:<br/>
+                    <img src='Formal Specification/Image20.jpg' alt='Twentieth Image' style='max-width: 100%;'><br/>
+                    <img src='Formal Specification/Image21.jpg' alt='Twenty First Image' style='max-width: 100%;'><br/>
+                    Where $E_1$ and $E_2 \vee E_3$ are both true, the formula can be satisfied, 
+                    therefore this sequent is true according to the truth table.<br/>Generating 
+                    sequents that can contain infinite possibilities will require inference rules 
+                    to be used to add boundaries to the number of true sequents and formulae that 
+                    can be inferred to tell if other formulae or sequents are true.<br/>Consider 
+                    $\frac{E_1}{E_1 \vee E_2}$<br/>
+                    In this case, $E_1$ is the only hypothesis of the inference rule and $E_1 \vee E_2$
+                    is the consequent. This means that if $E_1$ is in the list of true inference 
+                    rules, then $E_1 \vee E_2$ can be inserted into the inference rules where $E_2$ 
+                    can be any formula. $E_1 \vdash E_1 \vee E_2$ can also be inserted into the 
+                    inference rules as a sequent.<br/>These inference rules do not assume 
+                    commutative consequents. This means that $E_2 \vee E_1$ can not be put in the 
+                    inference rules until a new inference rule of $\frac{E_1}{E_2 \vee E_1}$ has 
+                    been created.<br/>Several hypotheses in an inference rule are separated by a 
+                    semi-colon. In some inference rules, sequents are implemented in the 
+                    hypotheses of the inference rule. If a sequent in a hypothesis has multiple 
+                    hypotheses itself, then these hypotheses are separated by commas. If an 
+                    inference rule has an -I addition, this means that operators are included in 
+                    the consequent where they are not in the hypotheses. Generally, visually, an 
+                    -I inference rule has a larger looking denominator. The -E addition deals with 
+                    the elimination of operators in the consequent of an inference rule. This 
+                    would visually make the denominator appear smaller.<br/>There are inference 
+                    rules that can also define the propositional operators in terms of $\wedge$ or 
+                    $\lnot$. $\textit{Defn}-\wedge$ can set the consequent or hypotheses to have 
+                    their propositional operators to $\wedge$. $\textit{Defn}-\lnot$ can set the 
+                    consequent or hypotheses to have their propositional operators to $\lnot$.<br/>
+                    A very strange inference rule is the contradiction rule, notate by: 
+                    $\frac{E_1; \lnot E_1}{E_2}$ where $E_2$ is any formula. The hypotheses state 
+                    that if the boolean value of $E_1$ and $\lnot E_1$ are both true, the new 
+                    formula can be implemented into the inference rules.<br/>Prove 
+                    $E_1 \vee E_2 \vdash E_2 \vee E_1$<br/>
+                    Visually, this sequent is obviously true as we know that the or statement is 
+                    commutative, however, the proof has to be shown using inference rules.<br/>
+                    If $E_1 \vee E_2$ is true, as well as $E_1 \vdash E_2 \vee E_1$ and 
+                    $E_2 \vdash E_2 \vee E_1$, then $E_2 \vee E_1$ can be put in the inference 
+                    rules.</p>
+                <br/>
+                <u>Propositional Inference Rules</u>
+                <p><img src='Formal Specification/Image22.jpg' alt='Twenty Second Image' style='max-width: 100%;'><br/>
+                    Deduces that one of the formulae in the consequent below is going to be true, 
+                    and as all the formulae in the consequent are ORed onto one another, then the 
+                    overall consequent is true.<br/>
+                    <img src='Formal Specification/Image23.jpg' alt='Twenty Third Image' style='max-width: 100%;'><br/>
+                    Deduces that all of the formulae in the first hypothesis are true, meaning 
+                    that all the following sequents in the hypotheses are also true and thus the 
+                    formula E can be placed in the hypotheses.<br/>
+                    <img src='Formal Specification/Image24.jpg' alt='Twenty Fourth Image' style='max-width: 100%;'><br/>
+                    If all of the standard values of the formulae in the hypotheses are false to 
+                    be true when they're NOTed, then the standard, ORed statement of all the 
+                    formulae will be false, but if that statement is NOTed as well, then it can be 
+                    the consequent and then placed in the hypotheses.<br/>
+                    <img src='Formal Specification/Image25.jpg' alt='Twenty Fifth Image' style='max-width: 100%;'><br/>
+                    In this case, if all the formulae in the inference rule are false, and the 
+                    overall statement is NOTed to make the statement true, this means that any 
+                    formula from that statement, individually NOTed, will be a true consequent 
+                    and can be placed in the inference rules.<br/>
+                    <img src='Formal Specification/Image26.jpg' alt='Twenty Sixth Image' style='max-width: 100%;'><br/>
+                    This is a simple De Morgan's deduction, where the formula in the hypothesis is 
+                    true, a double NOTed equivalent of that formula will also be true. The same 
+                    goes for the similar but essentially opposite elimination rule:<br/>
+                    <img src='Formal Specification/Image27.jpg' alt='Twenty Seventh Image' style='max-width: 100%;'><br/>
+                    If the inference rule contains multiple hypotheses they are to be separated 
+                    using semi-colons.<br/>Multiple hypotheses within a sequent are separated by 
+                    commas, where that sequent is in the hypotheses of an inference rule.<br/>The 
+                    I stands for introduction (of operators) and the E stands for elimination (of 
+                    operators).<br/>Also, there are propositional rules for some other, defined 
+                    inference rules.<br/>
+                    <img src='Formal Specification/Image28.jpg' alt='Twenty Eighth Image' style='max-width: 100%;'><br/>
+                    <img src='Formal Specification/Image29.jpg' alt='Twenty Ninth Image' style='max-width: 100%;'><br/>
+                    The last inference rule is saying that if a formula and its NOTed version are 
+                    both true, then any other formula is also true.</p>
+                <br/>
+                <u>Layout of Proofs</u>
+                <p>Inference rules can sometimes have sequents in their hypotheses, making the 
+                    proof styling a form of natural deduction. Natural deduction proofs can be 
+                    written and indented in a 'block-structured' way.<br/>
+                    <img src='Formal Specification/Image30.jpg' alt='Thirtieth Image' style='max-width: 100%;'></p>
+                <br/>
+                <u>Derived Rules</u>
+                <p>Because we have proved $E_1\vee E_2\vdash E_2\vee E_1$, we can say that we have 
+                    derived the inference rule:<br/>
+                    $\frac{E_1\vee E_2}{E_2\vee E_1}$<br/>
+                    It's a good idea to build up a reserve of derived inference rules to help with 
+                    the overall proof.<br/>
+                    <img src='Formal Specification/Image31.jpg' alt='Thirty First Image' style='max-width: 100%;'><br/>
+                    For all of the hypotheses rules to be true, the ANDed consequent statement of 
+                    all the formulae must also be true.<br/>
+                    <img src='Formal Specification/Image32.jpg' alt='Thirty Second Image' style='max-width: 100%;'><br/>
+                    For the hypothesis to be true, all of the formulae need to be true, and as 
+                    such, any singular formula can be the consequent.<br/>
+                    <img src='Formal Specification/Image33.jpg' alt='Thirty Third Image' style='max-width: 100%;'><br/>
+                    For the hypothesis to be true, the formula must be false and as such, the 
+                    ANDed and then NOTed combination of all the possible formulae will always be 
+                    true and thus can be the consequent.<br/>
+                    <img src='Formal Specification/Image34.jpg' alt='Thirty Fourth Image' style='max-width: 100%;'><br/>
+                    For the hypotheses to be true, all the formulae must be false, and as such, E 
+                    can then be true as the consequent.</p>
+                <br/>
+                <u>Predicate Logic Inference Rules</u>
+                <p>This is for logic based on quantifiers.<br/>
+                    <img src='Formal Specification/Image35.jpg' alt='Thirty Fifth Image' style='max-width: 100%;'><br/>
+                    This means that for s in the set X, and s being used in place of x in the 
+                    formula E, then, for some of x in the set X, the formula using x will also be 
+                    true.<br/>
+                    <img src='Formal Specification/Image36.jpg' alt='Thirty Sixth Image' style='max-width: 100%;'><br/>
+                    This means that for some of x in X, the formula of E using x is true, and y is 
+                    in x, as well as the same formula with y in place of x being used infers that 
+                    another formula is true. Both of these situations being true, the other formula 
+                    would be the consequent.<br/>
+                    <img src='Formal Specification/Image37.jpg' alt='Thirty Seventh Image' style='max-width: 100%;'><br/>
+                    This means that for x in the set of X, it infers that the formula using x is 
+                    false, and thus the NOTed version is inferred. This would mean that some 
+                    values of x are not in X but the formula still holds for x.<br/>
+                    <img src='Formal Specification/Image38.jpg' alt='Thirty Eighth Image' style='max-width: 100%;'><br/>
+                    This means that for some of the values that aren't in the set X, the formula 
+                    using x still holds. Also, s is in the set X. This means that using s in place 
+                    of x for the formula will not hold and the overall statement for the 
+                    consequent will have to be NOTed to be true.<br/>
+                    <img src='Formal Specification/Image39.jpg' alt='Thirty Ninth Image' style='max-width: 100%;'><br/>
+                    The left hand inference rule means that for some values of x that aren't in 
+                    the set X, the formula will not hold using x and this means that for all 
+                    values of x in the set X, the formula holds for x. It is the opposite for the 
+                    other inference rule.<br/>
+                    <img src='Formal Specification/Image40.jpg' alt='Fourtieth Image' style='max-width: 100%;'><br/>
+                    This means that from x being in the set X, we can infer that the formula holds 
+                    for X, and this means that for all values of x in X, the formula will hold.<br/>
+                    <img src='Formal Specification/Image41.jpg' alt='Fourty First Image' style='max-width: 100%;'><br/>
+                    This means that for all x in the set X, the formula holds for x. Also, s is in 
+                    the set X. If both of these hypotheses are true, then the formula using s in 
+                    place of x.</p>
+                <br/>
+                <u>Special Rules for Predicate Logic</u>
+                <p>If a variable x has not been used yet and the set X is not empty, then the 
+                    rule<br/>
+                    <img src='Formal Specification/Image42.jpg' alt='Fourty Second Image' style='max-width: 100%;'><br/>
+                    Is true and can be used to introduce x.<br/>
+                    <img src='Formal Specification/Image43.jpg' alt='Fourty Third Image' style='max-width: 100%;'><br/>
+                    This inference rule can be used to replace the value of one variable with 
+                    another assuming that both values are equal.</p>
+                <br/>
+                <u>Induction</u>
+                <p>In order to carry out proofs involving recursive function definitions, we need 
+                    the following induction inference rule<br/>
+                    <img src='Formal Specification/Image44.jpg' alt='Fourty Fourth Image' style='max-width: 100%;'><br/>
+                    This inference rule is used for induction, showing that using 0 in place of n 
+                    in the formula p will output true, n is a natural number and using n in 
+                    formula p will infer that using n+1 in formula p will also be true. 
+                    Considering this, from n being a natural number, we can infer that using n in 
+                    p will hold.<br/>
+                    <img src='Formal Specification/Image45.jpg' alt='Fourty Fifth Image' style='max-width: 100%;'><br/>
+                    <img src='Formal Specification/Image46.jpg' alt='Fourty Sixth Image' style='max-width: 100%;'></p>
             </div>
         </div>
     </body>
