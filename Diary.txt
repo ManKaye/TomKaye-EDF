@@ -347,6 +347,6 @@ June, 2016
 1st
 Work on the development of the web site, specifically-speaking, the University Modules. I also began developing the Azure infrastructure for BERAN. I now have a Storage Account and two virtual machines linked to the storage account for both the universities and EDF employees working closely with Beran.
 2nd
-Fine tweaking on the Azure infrastructure, including consolidating the Runback scripts to make sure all virtual machines that remain active under the EDF subscription are being shut down and started up again. Also, more development on my web site. Also attended a Strategy session including Steve McHugh and Greg Buckle.
+Fine tweaking on the Azure infrastructure, including consolidating the Runbook scripts to make sure all virtual machines that remain active under the EDF subscription are being shut down and started up again. Also, more development on my web site. Also attended a Strategy session including Steve McHugh and Greg Buckle.
 3rd
 Annual Leave.
