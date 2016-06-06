@@ -335,3 +335,18 @@ Was meant to attend an Innovation Pipeline but missed it. Nothing but developmen
 GigJam is available to preview, so I'll be playing around with that for the next few days probably. Also, more development.
 25th
 More development of the web page, adding more university modules. Also working out my CTC vetting status with wrong GP details as well as giving back my Freedom laptop which I do not use any more.
+26th
+Attended a One EDF session with Martin, Sunil, Matt B, Dean Vessey, Mark Roberts, Robin, Sarah Burslem & Claire Sharpe. More work on development of University Modules on my web site.
+27th
+Annual Leave.
+30th
+Bank Holiday.
+31st
+Attended an Architect Team Meeting and also a Software Accessibility Meeting with Becky, Kathryn, Dave and Mike Glanville. More work on development.
+June, 2016
+1st
+Work on the development of the web site, specifically-speaking, the University Modules. I also began developing the Azure infrastructure for BERAN. I now have a Storage Account and two virtual machines linked to the storage account for both the universities and EDF employees working closely with Beran.
+2nd
+Fine tweaking on the Azure infrastructure, including consolidating the Runback scripts to make sure all virtual machines that remain active under the EDF subscription are being shut down and started up again. Also, more development on my web site. Also attended a Strategy session including Steve McHugh and Greg Buckle.
+3rd
+Annual Leave.

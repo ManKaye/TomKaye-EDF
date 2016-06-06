@@ -58,8 +58,14 @@ li {
     width: 15%;
     border-top: 1px solid;    
 }
-.Entry-Row, .Month-Row {
+[class$="-Entry-Row"]{
+    display: none;
+}
+.Month-Row {
     display: table-row;
+}
+.Month-Row:hover {
+    cursor: pointer;
 }
 .Favourite-Entry {
     width: 500px;
@@ -119,7 +125,7 @@ li {
     display: inline-block;
     cursor: pointer;
 }
-.Table-Div {
+.Diary-Div {
     width: 100%;
     display: table;
 }

@@ -2,10 +2,10 @@
     <head>
         <title>Tom's EDF Diary</title>
         <link rel="stylesheet" href="Main.css">
-        <script src="DiaryScript.js"></script>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="DiaryScript.js"></script>
     </head>
-    <body onload="LoadEntries()">
+    <body>
         <div class="Main-Div">
             <h1 class="Std-Header">EDF Diary</h1>
             <div class="Input-Div" id="Back-Button-Div">
@@ -18,7 +18,7 @@
                     <input type="submit" name="Submit-Entry" class="Submit-Entry" id="Submit-Entry" value="Save Data">
                 </form>
             </div>
-            <div id="Table-Div">
+            <div class="Diary-Div" id="Diary-Div">
                 
             </div>
         </div>
