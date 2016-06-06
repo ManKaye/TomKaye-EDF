@@ -350,3 +350,5 @@ Work on the development of the web site, specifically-speaking, the University M
 Fine tweaking on the Azure infrastructure, including consolidating the Runbook scripts to make sure all virtual machines that remain active under the EDF subscription are being shut down and started up again. Also, more development on my web site. Also attended a Strategy session including Steve McHugh and Greg Buckle.
 3rd
 Annual Leave.
+6th
+Attended an Innovation Pipeline. Met up with Ian to ask how the Risk Assessment is coming along. Asked Dot Product LLC about whether they hold 3D model data files server-side. More development on the web site.
