@@ -77,6 +77,11 @@ li {
     font-size: 150%;
     text-align: center;
 }
+.Logo-Image {
+    max-width:33%; 
+    max-height: 200px; 
+    vertical-align: middle;
+}
 .Main-Div {
     min-height: 100%;
     background-color: antiquewhite;
@@ -96,8 +101,7 @@ li {
 }
 .Side-Div {
     width: 100%;
-    margin-left: auto;
-    margin-right: auto; 
+    max-height: 300px;
 }
 .Std-Header {
     text-align: center;
