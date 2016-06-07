@@ -7,12 +7,12 @@
     </head>
     <body>
         <div class="Main-Div">
-            <h1 class="Std-Header">EDF Diary</h1>
-            <div class="Input-Div" id="Back-Button-Div">
+            <h1>EDF Diary</h1>
+            <div id="Back-Button-Div">
                 <input type="button" class="Back-Button" onclick="window.location = 'index.html';" value="Back to Main Page">
             </div>
             <br/>
-            <div class="Input-Div">
+            <div>
                 <form action="InsertEntry.php" method="post">
                     <input type="text" name="Diary-Entry" class="Diary-Entry" id="Diary-Entry" value="Enter Entry Here..." onfocus="if(this.value=='Enter Entry Here...') this.value='';">
                     <input type="submit" name="Submit-Entry" class="Submit-Entry" id="Submit-Entry" value="Save Data">

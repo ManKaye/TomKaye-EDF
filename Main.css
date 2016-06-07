@@ -9,7 +9,7 @@ body {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    background-color: burlywood;
+    background-color: cadetblue;
 }
 li {
     list-style-type:disc;
@@ -19,6 +19,8 @@ li {
     background-color: royalblue;
     cursor: pointer;
     width: 200px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
 }
 #Back-Button-Div {
     position: fixed;
@@ -26,10 +28,13 @@ li {
     left: 50%;
     margin-left: -100px;
 }
-.Diary-Button, .Favourites-Button, .Module-Button, .Modules-Button, .Task-Button {
+.Diary-Button, .Favourites-Button, .Link-Button, .Links-Button, .Module-Button, .Modules-Button, .Task-Button {
     text-align: center;
-    background-color: forestgreen;
+    background-color: dodgerblue;
     cursor: pointer;
+    margin-bottom: 10px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
 }
 .Diary-Entry {
     width: 100%;
@@ -61,21 +66,8 @@ li {
 [class$="-Entry-Row"]{
     display: none;
 }
-.Month-Row {
-    display: table-row;
-}
-.Month-Row:hover {
-    cursor: pointer;
-}
 .Favourite-Entry {
     width: 500px;
-}
-.Input-Div {
-    text-align: center;
-}
-.List-Header {
-    font-size: 150%;
-    text-align: center;
 }
 .Logo-Image {
     max-width:33%; 
@@ -84,7 +76,7 @@ li {
 }
 .Main-Div {
     min-height: 100%;
-    background-color: antiquewhite;
+    background-color: lightcyan;
     text-align: center;
 }
 .Month-And-Year {
@@ -95,22 +87,18 @@ li {
 }
 .Month-Row {
     background-color: gainsboro;
+    display: table-row;
+}
+.Month-Row:hover {
+    cursor: pointer;
 }
 .Position-Entry {
     width: 50px;
 }
-.Side-Div {
-    width: 100%;
-    max-height: 300px;
-}
-.Std-Header {
-    text-align: center;
-}
 .Sub-Div {
-    background-color: burlywood;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: lightcyan;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 [class$="-Sub-Task-Div"] {
     border-top: 1px solid;

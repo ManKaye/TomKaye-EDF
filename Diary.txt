@@ -352,3 +352,5 @@ Fine tweaking on the Azure infrastructure, including consolidating the Runbook s
 Annual Leave.
 6th
 Attended an Innovation Pipeline. Met up with Ian to ask how the Risk Assessment is coming along. Asked Dot Product LLC about whether they hold 3D model data files server-side. More development on the web site.
+7th
+Attended a Delivery Team 3 meeting as well as an Architect's meeting. I've been rounding off edges on the web site but need to get cracking on sorting out active directories on the Azure portal as well as acquiring licenses for the software that is required for the BERAN infrastructure.
