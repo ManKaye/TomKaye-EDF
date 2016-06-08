@@ -8,7 +8,7 @@ function LoadTasks(){
         var taskID = 1;
         for(var i = 0; i < len; i++){
             var task = lines[i].replace(/ /g, "-").trim();
-            $(taskArea).append("<h5 class='Task-Header' id='Task-"+taskID+"' onclick='ShowHide(\""+taskID+"\", \""+task+"\")'>"+task+"</h5><div class='"+task+"-Task-Div'><div id='"+taskID+"' class='Input-Div' hidden><form action='SubTaskEntry.php' method='post'><input type='text' name='Task-Entry' class='Task-Entry' id='Task-Entry' value='Enter Entry Here...' onfocus='DefaultEntry(this)'><input type='submit' name='Submit-Entry' class='Submit-Entry' id='Submit-Entry' value='Submit Sub-Task'><input type='hidden' name='Task-Name' value='"+task+"'></form></div></div>");
+            $(taskArea).append("<h5 class='Task-Header' id='Task-"+taskID+"' onclick='ShowHide(\""+taskID+"\", \""+task+"\")'>"+lines[i]+"</h5><div class='"+task+"-Task-Div'><div id='"+taskID+"' class='Input-Div' hidden><form action='SubTaskEntry.php' method='post'><input type='text' name='Task-Entry' class='Task-Entry' id='Task-Entry' value='Enter Entry Here...' onfocus='DefaultEntry(this)'><input type='submit' name='Submit-Entry' class='Submit-Entry' id='Submit-Entry' value='Submit Sub-Task'><input type='hidden' name='Task-Name' value='"+task+"'></form></div></div>");
             LoadSubTasks(task, taskID);
             taskID++;
         }
