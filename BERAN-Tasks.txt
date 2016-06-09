@@ -5,3 +5,4 @@ Continue to ask Ian Kelly on Risk Assessment status.not done
 Complete understanding of architectural components of current infrastructure.done
 Complete development of architectural components of potential infrastructure and send to Ian Kelly.done
 Implement new Azure infrastructure to be ready for the BERAN pilot stage.not done
+Continue talking with Ieuan & Gareth on the requirements they wish for.not done

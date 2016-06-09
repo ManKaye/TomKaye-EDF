@@ -2,10 +2,10 @@
     <head>
         <title>Tom's EDF Task List</title>
         <link rel="stylesheet" href="Main.css">
-        <script src="TaskListScript.js"></script>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="TaskListScript.js"></script>        
     </head>
-    <body onload="LoadTasks()">
+    <body>
         <div class="Main-Div">
             <h1>EDF Task List</h1>
             <div id="Back-Button-Div">
@@ -18,7 +18,9 @@
                     <input type="submit" name="Submit-Entry" class="Submit-Entry" id="Submit-Entry" value="Submit Task">
                 </form>
             </div>
-            <div class="Tasks-Div" id="Tasks-Div">
+            <div class="Sub-Div">
+                <div class="Tasks-Div" id="Tasks-Div">
+                </div>
             </div>
         </div>
     </body>

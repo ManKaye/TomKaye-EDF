@@ -354,3 +354,7 @@ Annual Leave.
 Attended an Innovation Pipeline. Met up with Ian to ask how the Risk Assessment is coming along. Asked Dot Product LLC about whether they hold 3D model data files server-side. More development on the web site.
 7th
 Attended a Delivery Team 3 meeting as well as an Architect's meeting. I've been rounding off edges on the web site but need to get cracking on sorting out active directories on the Azure portal as well as acquiring licenses for the software that is required for the BERAN infrastructure.
+8th
+Attended a 1-2-1 with Martin as well as talking with Andy on my current tasks to complete. Realized that I actually have more work to do with regards to BERAN that should keep me going. Also need to look into the API of Project Tango. More development of the site.
+9th
+Missed the Strategy Session. Got caught up in making the task pages of the site jQuery. The site is now very refined.

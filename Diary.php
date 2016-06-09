@@ -19,8 +19,9 @@
                 </form>
             </div>
             <p style="color:cornflowerblue;"><b>Click on a month to blow up the entries.</b></p>
-            <div class="Diary-Div" id="Diary-Div">
-                
+            <div class="Sub-Div">
+                <div class="Diary-Div" id="Diary-Div">
+                </div>
             </div>
         </div>
     </body>
