@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <title>Computer Systems</title>
+        <link rel="stylesheet" href="Main.css">
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    </head>
+    <body>
+        <div class="Main-Div">
+            <h1>Tom & Loughborough University - Computer Systems</h1>
+            <div id="Back-Button-Div">
+                <input type="button" class="Back-Button" onclick="window.location = 'UniversityModules.html';" value="Back to University Modules">
+            </div>
+            <br/>
+            <div class="Sub-Div">
+                <u>Definition</u>
+                <p>Computer: A computer is a device that manipulates data in accordance with a list
+                    of instructions.</p>
+                <br/>
+                <u>von Neumann Architecture</u>
+                <p><img src="Computer Systems/Image1.jpg" alt="First Image" style="max-width: 100%;"><br/>
+                    There are five units to von Neumann architecture: input, output, memory, 
+                    control, arithmetic/logic.<br/>
+                    The architecture does not depend on the problem to be solved; the solution
+                    of any problem requires a program that needs to be entered into the memory.
+                    <br/>Data and program share the same memory.<br/>The following instructions
+                    are supported: arithmetic, logic, jumps, waits, interrupts and input/output.</p>
+                <br/>
+                <u>Basic Notes</u>
+                <p>Most contemporary computers are based on a binary system, i.e. internally 
+                    they represent all data in sequences of just two different symbols. This has 
+                    technical reasons to be briefly explained in Chapter 3. The symbols are 
+                    called, 0 and 1, or false and true respectively.<br/>
+                    A sequence of such systems is either called a bit for one symbol, or a byte
+                    for eight symbols. Computers normally work with a sequence of a fixed length
+                    of 32, which is known as a word.<br/>
+                    We normally use 10 different symbols for our common decimal number system.
+                    The number of different symbols in the number system is called the base.</p>
+                <br/>
+                <u>SI Prefixes</u>
+                <p>Exa (E) - $10^{18}$<br/>
+                    Peta (P) - $10^{15}$<br/>
+                    Tera (T) - $10^{12}$<br/>
+                    Giga (G) - $10^9$<br/>
+                    Mega (M) - $10^6$<br/>
+                    Kilo (K) - $10^3$<br/>
+                    Hecto (h) - $10^2$<br/>
+                    Deca (da) - $10^1$<br/>
+                    Deci (d) - $10^{-1}$<br/>
+                    Centi (c) - $10^{-2}$<br/>
+                    Milli (m) - $10^{-3}$<br/>
+                    Micro ($\mu$) - $10^{-6}$<br/>
+                    Nano (n) - $10^{-9}$<br/>
+                    Pico (p) - $10^{-12}$<br/>
+                    Femto (f) - $10^{-15}$<br/>
+                    Atto (a) - $10^{-18}$</p>
+                <br/>
+                <u>Counting in the Decimal & Binary System</u>
+                <p><img src="Computer Systems/Image2.jpg" alt="Second Image" style="max-width: 100%;"><br/>
+                    <img src="Computer Systems/Image3.jpg" alt="Third Image" style="max-width: 100%;"><br/>
+                    <img src="Computer Systems/Image4.jpg" alt="Fourth Image" style="max-width: 100%;"><br/>
+                    The left-most bit is called the most significant bit and the right-most bit
+                    is called the least significant bit. One byte can by anywhere between 0 and
+                    255.</p>
+                <br/>
+                <u>Converting a Decimal Number to Binary</u>
+                <p>Let m be a decimal number not equal to 0.<br/>
+                    Define an empty set BIT.<br/>
+                    Find the number n such that $2^n \leq m \leq 2^{n+1}$<br/>
+                    $\text{BIT } := \text{ BIT } \cup \lbrace n\rbrace. m := m - 2^n$<br/>
+                    If $m \ne 0$ then go to step 2<br/>
+                    If $m = 0$ then go to step 5<br/>
+                    Define $k := \text{max}(\text{BIT})$. Initialize a sequence<br/>
+                    $w := d_kd_{k-1}...d_2d_1d_0$. For every i with $0 \leq i \leq k$:<br/>
+                    if $i \in \text{BIT}$ then $d_i := 1$, if $i \notin \text{BIT}$ then $d_i:= 0$<br/>
+                    Output w.<br/>
+                    <img src="Computer Systems/Image5.jpg" alt="Fifth Image" style="max-width: 100%;"><br/>
+                    An advanced method is:<br/>
+                    Define an empty set BIT. Define n := 0<br/>
+                    If (m mod 2 = 1) then $\text{BIT} := \text{BIT} \cup \lbrace n \rbrace$<br/>
+                    m := m div 2<br/>
+                    If $m \ne 0$ then n := n+1 and go to step 2<br/>
+                    If m = 0 then go to step 5<br/>
+                    Initialize a new sequence $w := d_nd_{n-1}...d_2d_1d_0$. For every i<br/>
+                    with $0 \leq i \leq n$: if $i \in \text{BIT}$ then $d_i := 1$, if $i \notin \text{BIT}$ then $d_i := 0$.<br/>
+                    Output w.<br/>
+                    <img src="Computer Systems/Image6.jpg" alt="Sixth Image" style="max-width: 100%;"><br/>
+                    <img src="Computer Systems/Image7.jpg" alt="Seventh Image" style="max-width: 100%;"></p>
+                <br/>
+                <u>Other Bases of Number Systems</u>
+                <p>Hexidecimal and octal number systems are two other popularly used number sytems. Hexidecimal
+                    uses a base of 16 and octal uses a base of 8<br/>
+                    Conversion between base 16 and base 2:<br/>
+                    If we have a binary number then we divide it into pieces of length 4 
+                    (because 16 = 24), and we convert each of these pieces to a hexadecimal 
+                    symbol. The resulting hexadecimal number is just the sequence of these 
+                    symbols.<br/>
+                    Conversely, if we have a hexadecimal number n, then we simply convert each 
+                    of its symbols to the binary system. The sequence of these binary numbers 
+                    (each of length 4) exactly corresponds to the binary representation of n.<br/>
+                    We consider $n = 11010111_2$. Then $n = D7_{16}$, because<br/>
+                    1101 are the first four bits, and $1101_2 = 13_{10} = D_{16}$, and<br/>
+                    0111 are the second four bits, and $0111_2 = 7_{10} = 7_{16}$.<br/>
+                    We consider $n = 310FB4_{16}$. Since we have  six symbols in this 
+                    representation and each symbol encodes four bits, we know that the binary
+                    representation of n consists of three bytes. We convert as follows:<br/>
+                    $3 \rightarrow 0011$<br/>
+                    $1 \rightarrow 0001$<br/>
+                    $0 \rightarrow 0000$<br/>
+                    $F \rightarrow 1111$<br/>
+                    $B \rightarrow 1011$<br/>
+                    $4 \rightarrow 0100$<br/>
+                    Therefore in binary representation, $n = 001100010000111110110100_2$.</p>
+                <br/>
+            </div>
+        </div>
+    </body>
+</html>
