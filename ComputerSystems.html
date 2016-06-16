@@ -115,6 +115,243 @@
                     $4 \rightarrow 0100$<br/>
                     Therefore in binary representation, $n = 001100010000111110110100_2$.</p>
                 <br/>
+                <u>Addition of Binary Numbers</u>
+                <p>Addition of two bits:<br/>
+                    $0_2+0_2=0_2$<br/>
+                    $0_2+1_2=1_2$<br/>
+                    $1_2+0_2=1_2$<br/>
+                    $1_2+1_2=10_2$ (A carry bit is required)<br/>
+                    Based on these rules, the addition of two binary numbers is equivalent to 
+                    that of decimals, i.e. we work bit by bit and use a carry bit when needed.<br/>
+                    Example: $11101000_2+01101001_2$<br/>
+                    $11101000+$<br/>
+                    $01101001=$<br/>
+                    $101010001$<br/>
+                    In this example and others, there may need to be an additional bit 
+                    incorporated.<br/>
+                    If more than two binary numbers are added, then the procedure needs to be
+                    executed in a sequence, for example:<br/>
+                    $n_0+n_1+n_2+n_3+...+n_m$<br/>
+                    $n_0+n_1=:i_1$<br/>
+                    $i_1+n_2=:i_2$<br/>
+                    $i_2+n_3=:i_3$<br/>
+                    ...<br/>
+                    $i_{m-1}+n_m=:\text{The answer}$
+                </p>
+                <br/>
+                <u>Multiplication of Binary Numbers</u>
+                <p>The multiplication of two binary numbers is simply done by adding some 
+                    particular numbers. It works as follows:<br/>
+                    For every $d_i, 0 \leq i \leq m$, with $d_i=1$, add the number<br/>
+                    $e_ne_{n-1}...e_2e_1e_0S$ (where S is a sequence of i times 0)<br/>
+                    to an initially empty set called SUMMAND.<br/>
+                    Output the sum of all elements in SUMMAND.<br/>
+                    This method (based on 'shifting bits' in step 1) can be conducted very 
+                    efficiently on a computer.<br/>
+                    Example: Let $v:=11010_2$ and $w:=1011_2$<br/>
+                    In v, the bits $d_1, d_3 \text{and} d_4$ equal one. Hence,<br/>
+                    $\text{SUMMAND} = {10110_2, 1011000_2, 10110000_2}. Therefore,<br/>
+                    $v \times w = 10110_2 + 1011000_2 + 10110000_2 = 100011110_2$<br/>
+                    $1011 \times 10110 =$<br/>
+                    $10110+$<br/>
+                    $1011000+$<br/>
+                    $10110000=$<br/>
+                    $100011110$
+                </p>
+                <br/>
+                <u>Signed Number Representation</u>
+                <p>There exist two standard ways of representing signed (i.e. positive and 
+                    negative) integers: 1's complement and 2's complement.<br/>
+                    1's Complement<br/>
+                    Let w be a positive integer of n bits, where the leftmost bit equals 0, i.e.
+                    $w:=d_{n-1}d{n-2}...d_2d_1d_0$ with $d_{n-1}=0$.<br/>
+                    For any bit $d_i$, let the $\lnotd_i$ denote the inverse of $d_i$, i.e.<br/>
+                    $\lnot0=1$ and $\lnot1=0$.<br/>
+                    Then the 1's complement defines -w as follows:<br/>
+                    $-w:=\lnot d_{n-1}\lnot d_{n-2}...\lnot d_2\lnot d_1\lnot d_0$<br/>
+                    <img src="Computer Systems/Image8.jpg" alt="Eighth Image" style="max-width: 100%;"><br/>
+                    The problem of two representations of 0 is solved by the 2's complement. It 
+                    shifts the negative spectrum of the 1's complement by 1. The representation 
+                    of the positive spectrum remains the same.<br/>
+                    2's Complement<br/>
+                    Let w be an integer of n bits, $w \ne 0$, where the leftmost bit equals 0. 
+                    Let $\lnot w$ be the representation of -w as defined by the 1's complement<br/>
+                    Then the 2's complement defines -w as follows: $-w := \lnot w + 1$<br/>
+                    <img src="Computer Systems/Image9.jpg" alt="Ninth Image" style="max-width: 100%;"><br/>
+                    2's complement is a more commonly used complement by computers.<br/>
+                    The calculation of 1's complement is simpler than 2's complement.<br/>
+                    Due to the double occurrence of the 0, the 1's complement is not compatible 
+                    to the representation of integers. Computers using the 1's complement need 
+                    to test for and convert -0 to 0 after each operation.<br/>
+                    For addition, 2's complement is a simpler operation to perform.
+                </p>
+                <br/>
+                <u>Floating Point Numbers</u>
+                <p>The representation of real numbers in computers is based on the foloowing
+                    principle:<br/>
+                    Any $r \in \mathbb{R}$ can be approximated by a floating point number<br/>
+                    $r \approx s \times m \times b^e$,<br/>
+                    where<br/>
+                    $s \in \lbrace1, -1\rbrace$ is the sign<br/>
+                    $m \in \mathbb{R}$ is the mantissa<br/>
+                    $b \in \mathbb{N}$ is the base, and<br/>
+                    $e \in \mathbb{Z}$ is the exponent.<br/>
+                    Example: $12.25 = 1 \times 0.0001225 \times 10^5 [= 1\times 122.5 \times 10^{-1}]$<br/>
+                    For every real number there are various ways of representing it in such a 
+                    way. Therefore, computers fix two parameters (so they do not need to be 
+                    stored, and arithmetic is more convenient):<br/>
+                    The base b (normally, it is 2, 10 or 16) and<br/>
+                    The position of the decimal (or binary) point (by normalizing the mantissa
+                    such that it satisfies $\frac 1b \leq m \leq 1$)<br/>
+                    Example: Normalized representations for $r:= 12.25$ are,<br/>
+                    for $b=2, r=1 \times 0.110001 \times 2^4$,<br/>
+                    for $b=10, r=1 \times 0.1225 \times 10^2$ and,<br/>
+                    for $b=16, r=1 \times 0.C4 \times 16^1$.<br/>
+                    The sign of the exponent e usually is not encoded by a complement, but the 
+                    so-called bias N (also referred to as excess-N). This means that e = N 
+                    stands for 0, all values e > N for positive exponents and all values e < N 
+                    for negative exponents.<br/>
+                    <img src="Computer Systems/Image10.jpg" alt="Tenth Image" style="max-width: 100%;"><br/>
+                    This methods allows the size of two floats to be compared easily.<br/>
+                    The format and arithmetic of floating point numbers is described by several 
+                    standards. For instance, IEEE 754 is a widely used standard for the case 
+                    b=2. It considers, amongst other things,<br/>
+                    Single-precision numbers:<br/>
+                    32 bits: 1 bit sign, 8 bits exponent, 23 bits mantissa, bias 127<br/>
+                    range: approx. $\pm 3.403 \times 10^{38}$<br/>
+                    Numbers closest to 0: approx. $\pm 1.175 \times 10^{-38}$<br/>
+                    Double-precision numbers:<br/>
+                    64 bits: 1 bit sign, 11 bits exponent, 52 bits mantissa, bias 1023<br/>
+                    range: approx. $\pm 1.798 \times 10^{308}$<br/>
+                    Numbers closest to 0: approx. $\pm 2.225 \times 10^{-308}$<br/>
+                    Arithmetic of floating point numbers is tricky (and clearly beyond the 
+                    scope of this module). It is done by special units of a CPU.<br/>
+                    Floating point numbers are vital for scientific computation. Therefore the 
+                    performance of supercomputers is often described by FLOPS (= floating point 
+                    operations per second), unlike the term MIPS (= million instructions per 
+                    second) more likely to be used for PCs
+                </p>
+                <br/>
+                <u>Endianness</u>
+                <p>There are two common ways of representing data where the a single value 
+                    needs more than one byte to be stored:<br/>
+                    Big-endian (i.e. the most significant byte first) and<br/>
+                    Little-endian (i.e. the least significant byte first)<br/>
+                    <img src="Computer Systems/Image11.jpg" alt="Eleventh Image" style="max-width: 100%;"><br/>
+                    Note that endianness describes the byte order. The bit order within a byte 
+                    is not affected.<br/>
+                    Both systems are widely used, e.g. big-endian in CPUs by Motorola and SUN
+                    and little-endian in many Intel CPUs.<br/>
+                    There also exists bi-endian systems, i.e. they can switch between both methods.
+                </p>
+                <br/>
+                <u>Alphanumeric Symbol Representation</u>
+                <p>There are a variety of methods of encoding alphanumeric symbols. We consider 
+                    just a small selection.<br/>
+                    <b>Morse Code</b><br/>
+                    Comprises five different symbols, . (dit), - (dah), white space (short gap)
+                    _ (medium gap), __ (long gap).<br/>
+                    Example:<br/>
+                    - . - ._- - -_- -_. - - ._. . -_-_._. - .___. . ._- . - -_. . ._-_._- -_. . .<br/>
+                    Stands for Computer Systems.<br/>
+                    <b>ASCII (American Standard Code for Information Interchange)</b><br/>
+                    It has a fixed length: every symbol is encoded with seven bits<br/>
+                    nevertheless, for every symbol a full byte is allocated; 8th bit used as a 
+                    means of error detection (parity bit); two systems:<br/>
+                    Even Parity: If the sum of the seven 'meaningful' bits is odd, then the parity
+                    bit equals 1 (so the sum of all the bits is even)<br/>
+                    Odd Parity: If the sum of the seven 'meaningful' bits is even, then the parity
+                    bit equals 1 (so the sum of all the bits is odd)<br/>
+                    Symbols 0-31 and 127 are control symbols, 32-126 are printable symbols 
+                    (including the SPACE character)<br/>
+                    <img src="Computer Systems/Image12.jpg" alt="Twelvth Image" style="max-width: 100%;"><br/>
+                    <img src="Computer Systems/Image13.jpg" alt="Thirteenth Image" style="max-width: 100%;"><br/>
+                    <b>Unicode</b><br/>
+                    Contains approximately 100000 different symbols, so that a single document
+                    can include symbols from various character sets; contains several different
+                    encodings; new symbols are constantly added<br/>
+                    Important encoding: UTF-8 (i.e. Unicode Transformation Format); variable
+                    length: 1-4 bytes per symbol; per allocation:<br/>
+                    1 byte (equivalent to ASCII): 0xxxxxxx<br/>
+                    2 bytes: 110xxxxx 10xxxxxx<br/>
+                    3 bytes: 1110xxxx 10xxxxxx 10xxxxxx<br/>
+                    4 bytes: 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+                </p>
+                <br/>
+                <u>Error-correcting Codes</u>
+                <p>ASCII code with parity is error-detecting: if a single bit in a byte is 
+                    changed, then the resulting byte does not belong to the ASCII code (regarding 
+                    the same parity, of course).<br/>
+                    This property can be formalized as follows:<br/>
+                    Definition: Let v, w be a sequence of equal length . The<br/>
+                    Hamming Distance of v and w is the number of symbols that need to be changed 
+                    when transforming v into w (bit by bit).<br/>
+                    Example: Let v = 11011000, w = 01011100. Thus, v represents the ASCII symbol 
+                    “X”, and w stands for “\” (even parity).<br/>
+                    The Hamming distance of v and w equals 2, but without parity bit it would be 
+                    just 1.<br/>
+                    We can now call any set of sequences of equal length as a code.<br/>
+                    Definition: The Hamming Distance d(C) of a code C is the minimum Hamming distance
+                    between any two elements of C.<br/>
+                    Examples:<br/>
+                    Let C := {10011, 01100, 11101}. Then d(C) = 2, since the Hamming distance of<br/>
+                    10011 and 01100 is 5,<br/>
+                    10011 and 11101 is 3,<br/>
+                    01100 and 11101 is 2, that is the minimum.<br/>
+                    The Hamming distance of ASCII code without parity bit is 1.<br/>
+                    ASCII code with parity bit has a Hamming distance of 2.<br/>
+                    Error-detecting capacity of C and it's Hamming distance d(C):<br/>
+                    d(C) = 1: in general, errors cannot be detected, since there exists two sequences
+                    in C which differ in just one bit.<br/>
+                    d(C) = 2: 1 bit errors can be detected.<br/>
+                    d(C) = 3: 2 bit errors can be detected; 1 bit errors can even be corrected: if we
+                    transform a sequence $v \in C$ into a sequence w by changing 1 bit, then all the
+                    sequences in C \ {v} still have a $\text{Hamming distance } \leq 2$ to w; thus,
+                    we only have to find the unique sequence  with a Hamming distance of 1 to w, and
+                    this is v.<br/>
+                    d(C) = 4: 3 bit errors can be detected, 1 bit errors corrected.<br/>
+                    General Rule: For any code C<br/>
+                    Errors of less than d(C) bits can be detected,<br/>
+                    Errors of less than $\frac{d(C)}2$ bits can be corrected.<br/>
+                    Definition: A code C with $d(C) \geq 3$ is called error-correcting.<br/>
+                    Application of error-correcting codes: For instance in<br/>
+                    RAM and<br/>
+                    expensive data transmission over noisy channels.<br/>
+                    Since the electronic equipment in satellites and space probes is heavily 
+                    affected by cosmic rays, error-correcting codes are particularly popular in 
+                    these environments.<br/>
+                    The Hamming code is an important example for an error-correcting code satisfying
+                    d(C) = 3. It is defined as follows:<br/>
+                    All bit positions in the sequence that are powers of 2 (i.e. 1, 2, 4, 8, 16...)
+                    are used for parity bits.<br/>
+                    All other positions contain data bits.<br/>
+                    Calculation of the value of the parity bits: Consider the binary representation 
+                    of the bit positions of all bits. For every parity bit pi, this contains 
+                    exactly one 1. Now scan all data bit positions where the same 1 is contained in 
+                    the binary representation (e.g. parity bit position 0010 and data bit position 
+                    0110). If the sum of the values of these data bits is even, then $p_i := 0$, 
+                    and otherwise $p_i := 1$.<br/>
+                    <img src="Computer Systems/Image14.jpg" alt="Fourteenth Image" style="max-width: 100%;"><br/>
+                    This is the system for even parity (i.e. the sum of the value of a parity bit 
+                    and its corresponding data bits is even). Note that the Hamming code can 
+                    analogously be defined for odd parity (i.e. that sum is odd).<br/>
+                    Error correction of the Hamming code:<br/>
+                    If a sequence is received, we consider the value of the data bits and 
+                    recalculate the parity bits. If there are some parity bits in the received 
+                    message that differ from our parity bits, then the sum of the positions of all 
+                    these parity bits equals the position of the erroneous bit.<br/>
+                    <img src="Computer Systems/Image15.jpg" alt="Fifteenth Image" style="max-width: 100%;"><br/>
+                    The error correction of the Hamming code automatically covers the correction of 
+                    erroneous parity bits (and that is a vital property).<br/>
+                    Only 1 bit errors can be corrected (2 bit errors can be detected).<br/>
+                    Number of parity bits required; for instance:<br/>
+                    4 data bits $\Rightarrow$ 3 parity bits<br/>
+                    26 data bits $\Rightarrow$ 5 parity bits<br/>
+                    247 data bits $\Rightarrow$ 8 parity bits<br/>
+                    1013 data bits $\Rightarrow$ 10 parity bits
+                </p>
+                <br/>
+                <u>Data Compression</u>
             </div>
         </div>
     </body>
