@@ -2,6 +2,12 @@
     <head>
         <title>The Information Bucket</title>
         <link rel="stylesheet" href="Main.css">
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']],
+            processEscapes : true}});
+        </script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
     </head>
     <body>
         <div class="Main-Div">
@@ -33,13 +39,14 @@
                     Wednesday - which, despite all the above, was an utter surprise to him. 
                     Everything the judge said came true.
                 </p>
+                <hr>
                 <h2><u>Quantum Suicide & Immortality</u></h2>
                 <p>In quantum mechanics, quantum suicide is a thought experiment, originally 
                     published independently by Hans Moravec in 1987 and Bruno Marchal in 
                     1988, and independently developed further by Max Tegmark in 1998. It 
                     attempts to distinguish between the Copenhagen interpretation of quantum 
                     mechanics and the Everett many-worlds interpretation by means of a variation 
-                    of the Schrödinger's cat thought experiment, from the cat's point of view. 
+                    of the Schr&ouml;dinger's cat thought experiment, from the cat's point of view. 
                     Quantum immortality refers to the subjective experience of surviving quantum 
                     suicide regardless of the odds.<br/>
                     Keith Lynch recalls that Hugh Everett took great delight in paradoxes such 
@@ -52,6 +59,140 @@
                     normally hinge upon a sequence of binary quantum events like those in the 
                     thought experiment.
                 </p>
+                <hr>
+                <h2><u>Mac Screenshots</u></h2>
+                <p><b>Whole Screenshot</b><br/>
+                    Cmd + Shift + 3<br/>
+                    <b>Specified Screenshot</b><br/>
+                    Cmd + Shift + 4
+                </p>
+                <hr>
+                <h2><u>P vs. NP Problem</u></h2>
+                <p>The P versus NP problem is a major unsolved problem in computer science. 
+                    Informally speaking, it asks whether every problem whose solution can be 
+                    quickly verified by a computer can also be quickly solved by a computer.<br/>
+                    It was essentially first mentioned in a 1956 letter written by Kurt G&ouml;del to 
+                    John von Neumann. G&ouml;del asked whether a certain NP-complete problem could be 
+                    solved in quadratic or linear time. The precise statement of the P versus NP 
+                    problem was introduced in 1971 by Stephen Cook in his seminal paper "The 
+                    complexity of theorem proving procedures" and is considered by many to be 
+                    the most important open problem in the field. It is one of the seven 
+                    Millennium Prize Problems selected by the Clay Mathematics Institute to 
+                    carry a US\$1,000,000 prize for the first correct solution.<br/>
+                    The informal term quickly, used above, means the existence of an algorithm 
+                    for the task that runs in polynomial time, i.e., that the time to complete 
+                    the task varies as a polynomial function on the size of the input to the 
+                    algorithm (as opposed to, say exponential time). The general class of 
+                    questions for which some algorithm can provide an answer in polynomial time 
+                    is called "class P" or just "P". For some questions, there is no known way 
+                    to find an answer quickly, but if one is provided with information showing 
+                    what the answer is, it is possible to verify the answer quickly. The class 
+                    of questions for which an answer can be verified in polynomial time is 
+                    called NP, which stands for "nondeterministic polynomial time."<br/>
+                    Consider the subset sum problem, an example of a problem that is easy to 
+                    verify, but whose answer may be difficult to compute. Given a set of 
+                    integers, does some nonempty subset of them sum to 0? For instance, does a 
+                    subset of the set {-2, -3, 15, 14, 7, -10} add up to 0? The answer "yes, 
+                    because the subset {-2, -3, -10, 15} adds up to zero" can be quickly 
+                    verified with three additions. There is no known algorithm to find such a 
+                    subset in polynomial time (there is one, however, in exponential time, 
+                    which consists of 2n-n-1 tries), but such an algorithm exists if P = NP; 
+                    hence this problem is in NP (quickly checkable) but not necessarily in P 
+                    (quickly solvable).<br/>
+                    An answer to the P = NP question would determine whether problems that can 
+                    be verified in polynomial time, like the subset-sum problem, can also be 
+                    solved in polynomial time. If it turned out that $P \ne NP$, it would mean that 
+                    there are problems in NP (such as NP-complete problems) that are harder to 
+                    compute than to verify: they could not be solved in polynomial time, but 
+                    the answer could be verified in polynomial time.<br/>
+                    Aside from being an important problem in computational theory, a proof 
+                    either way would have profound implications for mathematics, cryptography, 
+                    algorithm research, artificial intelligence, game theory, multimedia 
+                    processing, philosophy, economics and many other fields.
+                </p>
+                <hr>
+                <h2><u>The Dining Philosophers Problem</u></h2>
+                <p><img src="Info Bucket/Image1.jpg" alt="First Image"  style="width: 50%;"><br/>
+                    Five silent philosophers sit at a round table with bowls of spaghetti. Forks 
+                    are placed between each pair of adjacent philosophers.<br/>
+                    Each philosopher must alternately think and eat. However, a philosopher can 
+                    only eat spaghetti when he has both left and right forks. Each fork can be 
+                    held by only one philosopher and so a philosopher can use the fork only if 
+                    it is not being used by another philosopher. After he finishes eating, he 
+                    needs to put down both forks so they become available to others. A 
+                    philosopher can take the fork on his right or the one on his left as they 
+                    become available, but cannot start eating before getting both of them.<br/>
+                    Eating is not limited by the remaining amounts of spaghetti or stomach 
+                    space; an infinite supply and an infinite demand are assumed.<br/>
+                    The problem is how to design a discipline of behavior (a concurrent 
+                    algorithm) such that no philosopher will starve; i.e., each can forever 
+                    continue to alternate between eating and thinking, assuming that no 
+                    philosopher can know when others may want to eat or think.<br/>
+                    <b>Problems</b><br/>
+                    The problem was designed to illustrate the challenges of avoiding deadlock, 
+                    a system state in which no progress is possible. To see that a proper 
+                    solution to this problem is not obvious, consider a proposal in which each 
+                    philosopher is instructed to behave as follows:<br/>
+                    <span style="display: block; border: 1px solid black;">think until the left fork is available; when it is, pick it up;<br/>
+                    think until the right fork is available; when it is, pick it up;<br/>
+                    when both forks are held, eat for a fixed amount of time;<br/>
+                    then, put the right fork down;<br/>
+                    then, put the left fork down;<br/>
+                    repeat from the beginning.<br/></span>
+                    This attempted solution fails because it allows the system to reach a 
+                    deadlock state, in which no progress is possible. This is a state in which 
+                    each philosopher has picked up the fork to the left, and is waiting for the 
+                    fork to the right to become available. With the given instructions, this 
+                    state can be reached, and when it is reached, the philosophers will 
+                    eternally wait for each other to release a fork.<br/>
+                    Resource starvation might also occur independently of deadlock if a 
+                    particular philosopher is unable to acquire both forks because of a timing 
+                    problem. For example, there might be a rule that the philosophers put down 
+                    a fork after waiting ten minutes for the other fork to become available and 
+                    wait a further ten minutes before making their next attempt. This scheme 
+                    eliminates the possibility of deadlock (the system can always advance to a 
+                    different state) but still suffers from the problem of livelock. If all 
+                    five philosophers appear in the dining room at exactly the same time and 
+                    each picks up the left fork at the same time the philosophers will wait ten 
+                    minutes until they all put their forks down and then wait a further ten 
+                    minutes before they all pick them up again.<br/>
+                    Mutual exclusion is the basic idea of the problem; the dining philosophers 
+                    create a generic and abstract scenario useful for explaining issues of this 
+                    type. The failures these philosophers may experience are analogous to the 
+                    difficulties that arise in real computer programming when multiple programs 
+                    need exclusive access to shared resources. These issues are studied in the 
+                    branch of concurrent programming. The original problems of Dijkstra were 
+                    related to external devices like tape drives. However, the difficulties 
+                    exemplified by the dining philosophers problem arise far more often when 
+                    multiple processes access sets of data that are being updated. Systems such 
+                    as operating system kernels use thousands of locks and synchronizations 
+                    that require strict adherence to methods and protocols if such problems as 
+                    deadlock, starvation, or data corruption are to be avoided.                   
+                </p>
+                <hr>
+                <h2><u>Dadaist Cut-up Technique</u></h2>
+                <p>TO MAKE A DADAIST POEM<br/>
+                    Take a newspaper.<br/>
+                    Take some scissors.<br/>
+                    Choose from this paper an article of the length you want to make your 
+                    poem.<br/>
+                    Cut out the article.<br/>
+                    Next carefully cut out each of the words that makes up this article and put 
+                    them all in a bag.<br/>
+                    Shake gently.<br/>
+                    Next take out each cutting one after the other.<br/>
+                    Copy conscientiously in the order in which they left the bag.<br/>
+                    The poem will resemble you.<br/>
+                    And there you are - an infinitely original author of charming sensibility, 
+                    even though unappreciated by the vulgar herd.                    
+                </p>
+                <hr>
+                <h2><u>The Greek Alphabet</u></h2>
+                <p><img src="Info Bucket/Image2.jpg" alt="Second Image"  style="width: 50%;">
+                </p>
+                <hr>
+                <h2><u>The Phonetic Alphabet (UK)</u></h2>
+                <p><img src="Info Bucket/Image3.jpg" alt="Third Image"  style="height: 50%;"></p>
             </div>
         </div>
     </body>
