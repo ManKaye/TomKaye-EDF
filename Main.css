@@ -31,6 +31,10 @@ li {
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
 }
+.Box-Span {
+    display: inline-block;
+    border: 1px solid black;
+}
 input[type="button"]:hover {
     border: 3px solid white;
     background-color: midnightblue;
