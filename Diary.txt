@@ -374,3 +374,5 @@ More small amounts of development to the web site.
 Attended an Innovation Pipeline. Also had some high level thinking regarding BERAN solution. More development on the web site.
 21st
 Attended a Generation Architect's Meeting. Introduced myself to Vincent; a French intern who came here to be a part of the innovation team. I showed him round the site and gave him some innovation items to research.
+22nd
+A little thinking on BERAN infrastructure. I have been helping Vincent around a tiny bit more.
