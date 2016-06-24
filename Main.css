@@ -74,12 +74,13 @@ input[type="button"]:hover {
 .Favourite-Entry {
     width: 500px;
 }
-.Half-Break {
+.Half-Width-Ruler {
     width: 50%;
+    border: 1px solid black;
 }
 hr {
     color: black;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 .Logo-Image {
     max-width:33%; 
