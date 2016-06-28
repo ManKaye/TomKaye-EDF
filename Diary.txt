@@ -376,3 +376,7 @@ Attended an Innovation Pipeline. Also had some high level thinking regarding BER
 Attended a Generation Architect's Meeting. Introduced myself to Vincent; a French intern who came here to be a part of the innovation team. I showed him round the site and gave him some innovation items to research.
 22nd
 A little thinking on BERAN infrastructure. I have been helping Vincent around a tiny bit more.
+23rd
+The Strategy Session was cancelled to make way for a GEN IS Stand-up, which I did not attend. I attended a Bowls Session with Niall which was fun. Other than that I built on the BERAN requirements document to cater for the slightly altered requirements.
+24th
+More development on the BERAN requirements document, which I finished today. Had to wrap up labeling the items on the desk ready for the move of the department.
