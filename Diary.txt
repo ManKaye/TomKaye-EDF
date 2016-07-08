@@ -380,3 +380,24 @@ A little thinking on BERAN infrastructure. I have been helping Vincent around a 
 The Strategy Session was cancelled to make way for a GEN IS Stand-up, which I did not attend. I attended a Bowls Session with Niall which was fun. Other than that I built on the BERAN requirements document to cater for the slightly altered requirements.
 24th
 More development on the BERAN requirements document, which I finished today. Had to wrap up labeling the items on the desk ready for the move of the department.
+27th
+Had an Accessibility Software Working Group meeting and an Innovation Pipeline.
+28th
+Had a Delivery Team 3 meeting.
+29th
+Had a meeting with Gareth about better understanding, at a lower level, for developing the project further.
+30th
+Had a Strategy session and a quick catch up with Kathryn and Dave about working on something for the Accessibility group. I have to do testing for the new Pulse site to make sure it's efficient for JAWS and Dragon NaturallySpeaking users. I also am updating the Visio diagram for the BERAN future infrastructure implementation.
+July, 2016
+1st
+Had a talk with Robin about handing over the Pulse testing. I then emailed George Xydas who told me that it would be impossible for the testing to be available before I leave EDF. I gave him information on how the website should be set up so that JAWS users can use it to find it as useful as possible.
+4th
+Leave.
+5th
+Had a Delivery Team 3 meeting and went to a presenting workshop Lunch+Learn. I also started development of a lower level description document of how BERAN would be implemented in Azure.
+6th
+More development of the BERAN document.
+7th
+Had a strategy session on classification, etc. More development on the BERAN document.
+8th
+Had a quick clarification session on Lunch+Learn for Innovation, on what to set up for the 19th and 26th of July. Also had a teleconference with Greg Buckle and James Marchant on the migration of a shady website for CGR generation output data over to an Azure-hosted web service. Created the web service and the SQL database on Azure.
