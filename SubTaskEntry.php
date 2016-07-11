@@ -14,29 +14,19 @@
                 elseif("" != trim($_POST["Task-Entry"])){
                     $task = $_POST["Task-Name"];
                     $file = $task."-Tasks.txt";
-                    if(file_exists($file)){
-                        $current = file_get_contents($file);
+                    $current = file_get_contents($file);
+                    if($current != ""){
                         $current .= "\n".$_POST["Task-Entry"]."not done";
-                        $insert = file_put_contents($file, $current);
-                        if($insert == false){
-                            die("<p>There was an error writing the text to the file.</p></div>");
-                        }
-                        else{
-                            echo "<script>window.location = 'TaskList.php'</script>";
-                        }
                     }
                     else{
-                        $createFile = fopen($file, "w");
-                        fclose($createFile);
-                        $current = file_get_contents($file);
                         $current .= $_POST["Task-Entry"]."not done";
-                        $insert = file_put_contents($file, $current);
-                        if($insert == false){
-                            die("<p>There was an error writing the text to the file.</p></div>");
-                        }
-                        else{
-                            echo "<script>window.location = 'TaskList.php'</script>";
-                        }
+                    }
+                    $insert = file_put_contents($file, $current);
+                    if($insert == false){
+                        die("<p>There was an error writing the text to the file.</p></div>");
+                    }
+                    else{
+                        echo "<script>window.location = 'TaskList.php'</script>";
                     }
                 }
             }

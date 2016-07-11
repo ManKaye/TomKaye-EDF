@@ -44,12 +44,12 @@ $(document).ready(function(){
     $(".Tasks-Div").on("click", ".Task-Header", function(){
         var id = $(this).attr("value").split(",")[0];
         var task = $(this).attr("value").split(",")[1];
-        if($("#"+id).is(":hidden")){
-            $("#"+id).show();
+        if($("#"+id+".Input-Div").is(":hidden")){
+            $("#"+id+".Input-Div").show();
             $("."+task+"-Sub-Task-Div").show();
         }
-        else if($("#"+id).not(":hidden")){
-            $("#"+id).hide();
+        else if($("#"+id+".Input-Div").not(":hidden")){
+            $("#"+id+".Input-Div").hide();
             $("."+task+"-Sub-Task-Div").hide();
         }
     });

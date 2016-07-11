@@ -27,6 +27,9 @@
                     else{
                         echo "<script>window.location = 'TaskList.php'</script>";
                     }
+                    $hyphonedTask = str_replace(" ", "-", $_POST["Task-Entry"]);
+                    $createFile = fopen($hyphonedTask."-".$file, "w");
+                    fclose($createFile);
                 }
             }
         ?>

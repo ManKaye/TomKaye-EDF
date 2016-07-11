@@ -32,7 +32,8 @@ li {
     -webkit-border-radius: 15px;
 }
 .Box-Span {
-    display: inline-block;
+    display: block;
+    margin: 0 auto;
     border: 1px solid black;
 }
 input[type="button"]:hover {

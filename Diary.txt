@@ -401,3 +401,5 @@ More development of the BERAN document.
 Had a strategy session on classification, etc. More development on the BERAN document.
 8th
 Had a quick clarification session on Lunch+Learn for Innovation, on what to set up for the 19th and 26th of July. Also had a teleconference with Greg Buckle and James Marchant on the migration of a shady website for CGR generation output data over to an Azure-hosted web service. Created the web service and the SQL database on Azure.
+11th
+Worked a lot on developing my end-of-year presentation. I also practiced with Niall, Aidan and Wasim. I also attended an Innovation Pipeline on IoT and 360 degree imagery.
