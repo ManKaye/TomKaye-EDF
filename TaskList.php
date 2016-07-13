@@ -18,6 +18,7 @@
                     <input type="submit" name="Submit-Entry" class="Submit Button" id="Submit-Entry" value="Submit Task">
                 </form>
             </div>
+            <p style="color:cornflowerblue;"><b>Click on a Task to blow up the entries.</b></p>
             <div class="Sub-Div">
                 <div class="Tasks-Div" id="Tasks-Div">
                 </div>

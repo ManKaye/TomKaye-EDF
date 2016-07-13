@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-            echo "<div class='Main-Div'><br/><input type='button' class='Back-Button' onclick='window.location = \"Diary.php\";' value='Back to Diary'>";
+            echo "<div class='Main-Div'><br/><input type='button' class='Back Button' onclick='window.location = \"Diary.php\";' value='Back to Diary'>";
             if($_POST["Submit-Entry"]){
                 $date = getdate();
                 $monthName = $date["month"];

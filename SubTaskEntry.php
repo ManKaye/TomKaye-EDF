@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-            echo "<div class='Main-Div'><br/><input type='button' class='Back-Button' onclick='window.location = \"TaskList.php\";' value='Back to Task List'>";
+            echo "<div class='Main-Div'><br/><input type='button' class='Back Button' onclick='window.location = \"TaskList.php\";' value='Back to Task List'>";
             if($_POST["Submit-Entry"]){
                 if($_POST["Task-Entry"] == "Enter Entry Here..." || "" == trim($_POST["Task-Entry"])){
                     die("<p>The data set was the default or there was no data to write.</p></div>");
@@ -62,7 +62,7 @@
                 }
                 echo "<div class='Main-Div'><br/>";
                 echo "<h3>The current sub-task is:</h3><form action='' method='post'><p>".substr($subTask, 0, -strlen($status))."</p>";
-                echo "<input type='text' class='Task-Entry' name='Task-Entry'><input type='submit' name='Submit-Edit' value='Append the Task'><input type='hidden' name='Sub-Task' value='".$subTask."'><input type='hidden' name='Status' value='".$status."'><input type='hidden' name='Task' value='".$task."'></form></div";
+                echo "<input type='text' class='Task Entry' name='Task-Entry'><input type='submit' class='Submit Button' name='Submit-Edit' value='Append the Task'><input type='hidden' name='Sub-Task' value='".$subTask."'><input type='hidden' name='Status' value='".$status."'><input type='hidden' name='Task' value='".$task."'></form></div";
             }
             if($_POST["Submit-Edit"]){
                 if("" == trim($_POST["Task-Entry"])){

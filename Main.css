@@ -42,7 +42,7 @@ li {
 .Complete, .Edit, .Link, .Links, .Module, .RemoveTask, .Submit {
     background-color: dodgerblue;
     margin-bottom: 5px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 .Diary, .Favourites, .Task {
     width: 70%;
@@ -50,6 +50,7 @@ li {
 .Diary-Div {
     width: 100%;
     display: table;
+    border-collapse: collapse;
 }
 .Diary-Entry, .Diary-Table {
     width: 100%;
@@ -63,23 +64,21 @@ li {
     display: table-cell;
     float: left;
     width: 15%;
-    border-top: 1px solid;
 }
 .Entry-Cell-Middle {
-    display: table-cell; 
+    display: table-cell;
     float: left;
     width: 70%;
-    border-top: 1px solid;
 }
 .Entry-Cell-Right {
     display: table-cell;
     float: right;
     width: 15%;
-    border-top: 1px solid;    
 }
 [class$="-Entry-Row"]{
     display: none;
     background-color: #FFF8E7;
+    border: 2px solid;
 }
 .Half-Width-Ruler {
     width: 50%;
@@ -104,7 +103,6 @@ hr {
     text-align: center;
 }
 .Month-And-Year {
-    text-align: center;
     font-weight: bold;
     display: table-cell;
     border: 2px solid;
@@ -116,9 +114,10 @@ hr {
 .Month-Row:hover {
     cursor: pointer;
 }
-#Personal-Task-Entry {
+#Personal-Task-Entry, [class$="-Sub-Task-Table-Div"] {
     display: table;
     border-collapse: collapse;
+    width: 100%;
 }
 .Personal-Task {
     display: table-cell;
@@ -135,12 +134,13 @@ hr {
     margin-left: 50px;
     margin-right: 50px;
 }
-.Sub-Task, .Sub-Task-Status, .Sub-Task-Form {
+.Sub-Task-Cell, .Sub-Task-Status-Cell, .Sub-Task-Form-Cell {
     width: 33%;
-    display: inline-block;
+    display: table-cell;
     vertical-align: middle;
 }
-[class$="-Sub-Task-Div"] {
+[class$="-Sub-Task-Row-Div"] {
+    display: none;
     border: 2px solid;
     background-color: antiquewhite;
 }
@@ -154,4 +154,5 @@ hr {
     text-align: center;
     border: 2px solid;
     background-color: gainsboro;
+    margin: 5px auto;
 }
