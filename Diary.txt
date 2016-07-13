@@ -403,3 +403,5 @@ Had a strategy session on classification, etc. More development on the BERAN doc
 Had a quick clarification session on Lunch+Learn for Innovation, on what to set up for the 19th and 26th of July. Also had a teleconference with Greg Buckle and James Marchant on the migration of a shady website for CGR generation output data over to an Azure-hosted web service. Created the web service and the SQL database on Azure.
 11th
 Worked a lot on developing my end-of-year presentation. I also practiced with Niall, Aidan and Wasim. I also attended an Innovation Pipeline on IoT and 360 degree imagery.
+12th
+I attended a morning meeting where all the Year in Industry students gave five minute presentations on their year at EDF, and afterwards taking any questions that the audience had. Also had some communications with James Marchant on progress of the migration of a website to the Azure hosted web application.

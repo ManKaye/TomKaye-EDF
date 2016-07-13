@@ -19,7 +19,7 @@ $(document).ready(function(){
                 contents = "<div class='"+month+"-Entry-Row'><form action='EditEntries.php' method='post'><div class='Entry-Cell-Left'><p>"+lines[i]+"</p></div>";
             }
             else{
-                $(table).append(tableRow+"<div class='Entry-Cell-Middle'><p>"+lines[i]+"</p></div><div class='Entry-Cell-Right'><p><input type='submit' name='Edit-Entry' class='Edit-Entry' value='Edit Entry'><input type='hidden' name='Log' value='"+lines[i]+"'></p></div></form></div>");
+                $(table).append(tableRow+"<div class='Entry-Cell-Middle'><p>"+lines[i]+"</p></div><div class='Entry-Cell-Right'><p><input type='submit' name='Edit-Entry' class='Edit Button' value='Edit Entry'><input type='hidden' name='Log' value='"+lines[i]+"'></p></div></form></div>");
                 cellID ++;
             }
         }

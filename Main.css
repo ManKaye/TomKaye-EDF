@@ -8,13 +8,14 @@ body {
 li {
     list-style-type:disc;
 }
-.Back-Button {
-    text-align: center;
-    background-color: royalblue;
-    cursor: pointer;
+.Back {
+    background-color: tomato;
     width: 200px;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
+}
+.Back.Button:hover {
+    border: 2px solid white;
+    background-color: firebrick;
+    color: white;
 }
 #Back-Button-Div {
     position: fixed;
@@ -22,48 +23,56 @@ li {
     left: 50%;
     margin-left: -100px;
 }
-.Back-Button, .Diary-Button, .Favourites-Button, .Link-Button, .Links-Button, .Module-Button, .Modules-Button, .Task-Button {
-    text-align: center;
-    background-color: dodgerblue;
-    cursor: pointer;
-    margin-bottom: 10px;
-    border: 3px solid black;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
-}
 .Box-Span {
     display: block;
     margin: 0 auto;
     border: 1px solid black;
 }
-input[type="button"]:hover {
-    border: 3px solid white;
+.Button {
+    cursor: pointer;
+    border: 2px solid;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+.Button:hover {
+    border: 2px solid white;
     background-color: midnightblue;
     color: white;
 }
-.Diary-Entry {
+.Complete, .Edit, .Link, .Links, .Module, .RemoveTask, .Submit {
+    background-color: dodgerblue;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.Diary, .Favourites, .Task {
+    width: 70%;
+}
+.Diary-Div {
+    width: 100%;
+    display: table;
+}
+.Diary-Entry, .Diary-Table {
     width: 100%;
 }
-.Diary-Table {
-    width: 100%;
+.Entry {
+    border: 2px solid;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .Entry-Cell-Left {
-    display: table-cell ;
-    text-align: center;
+    display: table-cell;
     float: left;
     width: 15%;
     border-top: 1px solid;
 }
 .Entry-Cell-Middle {
-    display: table-cell;
-    text-align: center; 
+    display: table-cell; 
     float: left;
     width: 70%;
     border-top: 1px solid;
 }
 .Entry-Cell-Right {
     display: table-cell;
-    text-align: center;
     float: right;
     width: 15%;
     border-top: 1px solid;    
@@ -72,9 +81,6 @@ input[type="button"]:hover {
     display: none;
     background-color: #FFF8E7;
 }
-.Favourite-Entry {
-    width: 500px;
-}
 .Half-Width-Ruler {
     width: 50%;
     border: 1px solid black;
@@ -82,6 +88,10 @@ input[type="button"]:hover {
 hr {
     color: black;
     border: 2px solid black;
+}
+.List {
+    border: 2px solid;
+    cursor: pointer;
 }
 .Logo-Image {
     max-width:33%; 
@@ -97,7 +107,7 @@ hr {
     text-align: center;
     font-weight: bold;
     display: table-cell;
-    border-top: 1px solid;
+    border: 2px solid;
 }
 .Month-Row {
     background-color: gainsboro;
@@ -106,44 +116,42 @@ hr {
 .Month-Row:hover {
     cursor: pointer;
 }
-.Position-Entry {
-    width: 50px;
+#Personal-Task-Entry {
+    display: table;
+    border-collapse: collapse;
+}
+.Personal-Task {
+    display: table-cell;
+    left: 0px;
+    width: 70%;
+}
+.Remove-Task {
+    display: table-cell;
+    right: 0px;
+    width: 30%;
 }
 .Sub-Div {
     background-color: #CCEEFF;
     margin-left: 50px;
     margin-right: 50px;
 }
-[class$="-Sub-Task-Div"] {
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-    background-color: antiquewhite;
-}
 .Sub-Task, .Sub-Task-Status, .Sub-Task-Form {
     width: 33%;
     display: inline-block;
-    text-align: center;
     vertical-align: middle;
 }
-.Sub-Task-Table {
-    width: 100%;
-    text-align: center;
+[class$="-Sub-Task-Div"] {
+    border: 2px solid;
+    background-color: antiquewhite;
 }
-.Submit-Entry, .Edit-Entry, .Complete-Button {
-    display: inline-block;
-    cursor: pointer;
-}
-.Diary-Div {
-    width: 100%;
-    display: table;
-}
-.Task-Entry {
-    width: 100%;
-    box-sizing: border-box;
+.Task-Div {
+    display: table-row;
+    background-color: antiquewhite;
+    border: 2px solid;
 }
 .Task-Header {
     cursor: pointer;
     text-align: center;
-    border: 1px solid black;
+    border: 2px solid;
     background-color: gainsboro;
 }
