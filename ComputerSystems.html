@@ -1,27 +1,29 @@
 <html>
     <head>
         <title>Computer Systems</title>
-        <link rel="stylesheet" href="Main.css">
-        <script type="text/x-mathjax-config">
+        <link rel='stylesheet' href='Main.css'>
+        <script type='text/x-mathjax-config'>
             MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
         </script>
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML'>
         </script>
     </head>
     <body>
-        <div class="Main-Div">
+        <div class='Main-Div'>
+            <a name="Top"></a>
             <h1>Tom & Loughborough University - Computer Systems</h1>
-            <div id="Back-Button-Div">
-                <input type="button" class="Back-Button" onclick="window.location = 'UniversityModules.html';" value="Back to University Modules">
+            <div id='Back-Button-Div'>
+                <input type='button' class='Back Button' onclick="window.location = 'UniversityModules.html';" value='Back to University Modules'>
+                <input type='button' class='Back Button' onclick="window.location = '#Top';" value='Back to Top'>
             </div>
             <br/>
-            <div class="Sub-Div">
+            <div class='Sub-Div'>
                 <u>Definition</u>
                 <p>Computer: A computer is a device that manipulates data in accordance with a list
                     of instructions.</p>
                 <br/>
                 <u>von Neumann Architecture</u>
-                <p><img src="Computer Systems/Image1.jpg" alt="First Image" style="max-width: 100%;"><br/>
+                <p><img src='Computer Systems/Image1.jpg' alt='First Image' style='max-width: 100%;'><br/>
                     There are five units to von Neumann architecture: input, output, memory, 
                     control, arithmetic/logic.<br/>
                     The architecture does not depend on the problem to be solved; the solution
@@ -59,9 +61,9 @@
                     Atto (a) - $10^{-18}$</p>
                 <br/>
                 <u>Counting in the Decimal & Binary System</u>
-                <p><img src="Computer Systems/Image2.jpg" alt="Second Image" style="max-width: 100%;"><br/>
-                    <img src="Computer Systems/Image3.jpg" alt="Third Image" style="max-width: 100%;"><br/>
-                    <img src="Computer Systems/Image4.jpg" alt="Fourth Image" style="max-width: 100%;"><br/>
+                <p><img src='Computer Systems/Image2.jpg' alt='Second Image' style='max-width: 100%;'><br/>
+                    <img src='Computer Systems/Image3.jpg' alt='Third Image' style='max-width: 100%;'><br/>
+                    <img src='Computer Systems/Image4.jpg' alt='Fourth Image' style='max-width: 100%;'><br/>
                     The left-most bit is called the most significant bit and the right-most bit
                     is called the least significant bit. One byte can by anywhere between 0 and
                     255.</p>
@@ -77,7 +79,7 @@
                     $w := d_kd_{k-1}...d_2d_1d_0$. For every i with $0 \leq i \leq k$:<br/>
                     if $i \in \text{BIT}$ then $d_i := 1$, if $i \notin \text{BIT}$ then $d_i:= 0$<br/>
                     Output w.<br/>
-                    <img src="Computer Systems/Image5.jpg" alt="Fifth Image" style="max-width: 100%;"><br/>
+                    <img src='Computer Systems/Image5.jpg' alt='Fifth Image' style='max-width: 100%;'><br/>
                     An advanced method is:<br/>
                     Define an empty set BIT. Define n := 0<br/>
                     If (m mod 2 = 1) then $\text{BIT} := \text{BIT} \cup \lbrace n \rbrace$<br/>
@@ -87,8 +89,8 @@
                     Initialize a new sequence $w := d_nd_{n-1}...d_2d_1d_0$. For every i<br/>
                     with $0 \leq i \leq n$: if $i \in \text{BIT}$ then $d_i := 1$, if $i \notin \text{BIT}$ then $d_i := 0$.<br/>
                     Output w.<br/>
-                    <img src="Computer Systems/Image6.jpg" alt="Sixth Image" style="max-width: 100%;"><br/>
-                    <img src="Computer Systems/Image7.jpg" alt="Seventh Image" style="max-width: 100%;"></p>
+                    <img src='Computer Systems/Image6.jpg' alt='Sixth Image' style='max-width: 100%;'><br/>
+                    <img src='Computer Systems/Image7.jpg' alt='Seventh Image' style='max-width: 100%;'></p>
                 <br/>
                 <u>Other Bases of Number Systems</u>
                 <p>Hexidecimal and octal number systems are two other popularly used number sytems. Hexidecimal
@@ -169,7 +171,7 @@
                     $\lnot0=1$ and $\lnot1=0$.<br/>
                     Then the 1's complement defines -w as follows:<br/>
                     $-w:=\lnot d_{n-1}\lnot d_{n-2}...\lnot d_2\lnot d_1\lnot d_0$<br/>
-                    <img src="Computer Systems/Image8.jpg" alt="Eighth Image" style="max-width: 100%;"><br/>
+                    <img src='Computer Systems/Image8.jpg' alt='Eighth Image' style='max-width: 100%;'><br/>
                     The problem of two representations of 0 is solved by the 2's complement. It 
                     shifts the negative spectrum of the 1's complement by 1. The representation 
                     of the positive spectrum remains the same.<br/>
@@ -177,7 +179,7 @@
                     Let w be an integer of n bits, $w \ne 0$, where the leftmost bit equals 0. 
                     Let $\lnot w$ be the representation of -w as defined by the 1's complement<br/>
                     Then the 2's complement defines -w as follows: $-w := \lnot w + 1$<br/>
-                    <img src="Computer Systems/Image9.jpg" alt="Ninth Image" style="max-width: 100%;"><br/>
+                    <img src='Computer Systems/Image9.jpg' alt='Ninth Image' style='max-width: 100%;'><br/>
                     2's complement is a more commonly used complement by computers.<br/>
                     The calculation of 1's complement is simpler than 2's complement.<br/>
                     Due to the double occurrence of the 0, the 1's complement is not compatible 
@@ -211,7 +213,7 @@
                     so-called bias N (also referred to as excess-N). This means that e = N 
                     stands for 0, all values e > N for positive exponents and all values e < N 
                     for negative exponents.<br/>
-                    <img src="Computer Systems/Image10.jpg" alt="Tenth Image" style="max-width: 100%;"><br/>
+                    <img src='Computer Systems/Image10.jpg' alt='Tenth Image' style='max-width: 100%;'><br/>
                     This methods allows the size of two floats to be compared easily.<br/>
                     The format and arithmetic of floating point numbers is described by several 
                     standards. For instance, IEEE 754 is a widely used standard for the case 
@@ -237,7 +239,7 @@
                     needs more than one byte to be stored:<br/>
                     Big-endian (i.e. the most significant byte first) and<br/>
                     Little-endian (i.e. the least significant byte first)<br/>
-                    <img src="Computer Systems/Image11.jpg" alt="Eleventh Image" style="max-width: 100%;"><br/>
+                    <img src='Computer Systems/Image11.jpg' alt='Eleventh Image' style='max-width: 100%;'><br/>
                     Note that endianness describes the byte order. The bit order within a byte 
                     is not affected.<br/>
                     Both systems are widely used, e.g. big-endian in CPUs by Motorola and SUN
@@ -264,8 +266,8 @@
                     bit equals 1 (so the sum of all the bits is odd)<br/>
                     Symbols 0-31 and 127 are control symbols, 32-126 are printable symbols 
                     (including the SPACE character)<br/>
-                    <img src="Computer Systems/Image12.jpg" alt="Twelvth Image" style="max-width: 100%;"><br/>
-                    <img src="Computer Systems/Image13.jpg" alt="Thirteenth Image" style="max-width: 100%;"><br/>
+                    <img src='Computer Systems/Image12.jpg' alt='Twelvth Image' style='max-width: 100%;'><br/>
+                    <img src='Computer Systems/Image13.jpg' alt='Thirteenth Image' style='max-width: 100%;'><br/>
                     <b>Unicode</b><br/>
                     Contains approximately 100000 different symbols, so that a single document
                     can include symbols from various character sets; contains several different
@@ -287,7 +289,7 @@
                     Hamming Distance of v and w is the number of symbols that need to be changed 
                     when transforming v into w (bit by bit).<br/>
                     Example: Let v = 11011000, w = 01011100. Thus, v represents the ASCII symbol 
-                    “X”, and w stands for “\” (even parity).<br/>
+                    'X', and w stands for '\' (even parity).<br/>
                     The Hamming distance of v and w equals 2, but without parity bit it would be 
                     just 1.<br/>
                     We can now call any set of sequences of equal length as a code.<br/>
@@ -331,7 +333,7 @@
                     the binary representation (e.g. parity bit position 0010 and data bit position 
                     0110). If the sum of the values of these data bits is even, then $p_i := 0$, 
                     and otherwise $p_i := 1$.<br/>
-                    <img src="Computer Systems/Image14.jpg" alt="Fourteenth Image" style="max-width: 100%;"><br/>
+                    <img src='Computer Systems/Image14.jpg' alt='Fourteenth Image' style='max-width: 100%;'><br/>
                     This is the system for even parity (i.e. the sum of the value of a parity bit 
                     and its corresponding data bits is even). Note that the Hamming code can 
                     analogously be defined for odd parity (i.e. that sum is odd).<br/>
@@ -340,7 +342,7 @@
                     recalculate the parity bits. If there are some parity bits in the received 
                     message that differ from our parity bits, then the sum of the positions of all 
                     these parity bits equals the position of the erroneous bit.<br/>
-                    <img src="Computer Systems/Image15.jpg" alt="Fifteenth Image" style="max-width: 100%;"><br/>
+                    <img src='Computer Systems/Image15.jpg' alt='Fifteenth Image' style='max-width: 100%;'><br/>
                     The error correction of the Hamming code automatically covers the correction of 
                     erroneous parity bits (and that is a vital property).<br/>
                     Only 1 bit errors can be corrected (2 bit errors can be detected).<br/>
@@ -352,6 +354,427 @@
                 </p>
                 <br/>
                 <u>Data Compression</u>
+                <p>So far, we have encountered the following forms of bianry representation:<br/>
+                    Exact Correspondence: to the objects represented (e.g. Integers or ASCII without
+                    parity bits.<br/>
+                    Adjustable Length: to approximate a value with a certain precision (e.g. floating
+                    point numbers.<br/>
+                    Some Extra Bits: added to improve robustness (e.g. ASCII with parity bits or Hamming
+                    code.<br/>
+                    There is also the compressed data representation which will be shorter than the
+                    natural representation.<br/>
+                    Two subtypes have to be considered:<br/>
+                    Lossless (used with .zip, .gif, .png)<br/>
+                    Lossy (used with .jpg, .mp3, .mpg)<br/>
+                    Focussing on lossless data compression:<br/>
+                    Frequently occurring symbols/bit patterns are mapped onto the shortest 
+                    possible encodings and repeated occurrences of a symbol/bit pattern are 
+                    replaced by a pointer to their first occurrence.<br/>
+                    Many standard algorithms for compressing data to make use of these concepts.
+                    A selection of important algorithms include:<br/>
+                    Huffman Coding<br/>
+                    LZ77<br/>
+                    LZW<br/>
+                    DEFLATE<br/>
+                    This is the basic idea of RLE (Run Length Encoding):<br/>
+                    Replace each sequence of a single symbol in the file to be compressed by:<br/>
+                    Just a single occurrence of that symbol and<br/>
+                    A number representing the number of repetitions of that symbol.<br/>
+                    <img src='Computer Systems/Image16.jpg' alt='Sixteenth Image' style='max-width: 100%;'><br/>
+                    RLE is only useful if the input file contains long sequences of a single 
+                    repeated symbol. It is used in the .bmp format.
+                </p>
+                <br/>
+                <u>Representation of Colours</u>
+                <p>The foundation of colour representation for display purposes is normally
+                    the RGB model. An RGB value contains a triple pair value for red, blue and
+                    green.<br/>
+                    Examples:<br/>
+                    Black: < r, g, b > = < 0, 0, 0 ><br/>
+                    White: < r, g, b > = < 255, 255, 255 ><br/>
+                    Therefore, this model contains 256 possible values for each of the colours.
+                    In this case, there are $256^3 = 16,777,216$ different colours available.<br/>
+                    Standard Colour Depths:<br/>
+                    <b>8-bit colour: 1 byte</b><br/>
+                    256 colours; 3 bits for R, 3 bits for G, 2 bits for B<br/>
+                    <b>15/16-bit colour: 2 bytes</b><br/>
+                    32768 or 65536 colours; 5 bits for R, 5 (or 6) bits for G, 5 bits for B<br/>
+                    <b>24/32-bit colour: 3 or 4 bytes</b><br/>
+                    Approximately 16.7 million colours; 1 byte for R, G and B, 1 byte for
+                    transparency
+                </p>
+                <br/>
+                <u>Addition & Boolean Functions</u>
+                <p><img src='Computer Systems/Image17.jpg' alt='Seventeenth Image' style='max-width: 100%;'><br/>
+                    <img src='Computer Systems/Image18.jpg' alt='Eighteenth Image' style='max-width: 100%;'><br/>
+                    Note that we do not need to consider a carry bit when  calculating $c_0+d_0$ 
+                    (therefore it is a special case).<br/>
+                    Hence, $e_0=c_0+d_0$ is calculated by the Boolean function XOR.<br/>
+                    <img src='Computer Systems/Image19.jpg' alt='Nineteenth Image' style='max-width: 100%;'><br/>
+                    <img src='Computer Systems/Image20.jpg' alt='Twentieth Image' style='max-width: 100%;'><br/>
+                    Calculation of $e_1$ (almost the standard case):<br/>
+                    We now need to consider the carry bit $b_1$ produced by $c_0+d_0$ (and
+                    therefore it is almost the standard case).<br/>
+                    However, since there exists no carry bit $b_0$, the calculation of $b_1$
+                    is very simple (and therefore it is not really the standard case):<br/>
+                    The carry bit $b_1$ equals 1 if and only if $c_0=1$ and $d_0=1$.<br/>
+                    Hence, $b_1$ is calculated by the Boolean function AND applied to $c_0$ and
+                    $d_0$.<br/>
+                    <img src='Computer Systems/Image21.jpg' alt='Twenty First Image' style='max-width: 100%;'><br/>
+                    Boolean functions are called logical functions because they describe our way
+                    of drawing logical conclusions. For example, let us consider the following
+                    three statements:<br/>
+                    A: It is likely to rain<br/>
+                    B: I do not want to get wet<br/>
+                    C: I take an umbrella with me<br/>
+                    Then we have the following relation between the statements:<br/>
+                    If A is false, and B is false, then C is false<br/>
+                    If A is false, and B is true, then C is false<br/>
+                    If A is true, and B is false, then C is false<br/>
+                    If A is true, and B is true, then C is true<br/>
+                    Thus if '0' stands for 'false' and '1' is 'true', then this conclusion is
+                    described by the Boolean function C = A AND B.<br/>
+                    <img src='Computer Systems/Image22.jpg' alt='Twenty Second Image' style='max-width: 100%;'><br/>
+                    Calculation of $e_1$ (continued):<br/>
+                    In terms of Boolean functions, this means<br/>
+                    $e_1 = b_1 \text{ XOR } (c_1 \text{ XOR } d_1)$<br/>
+                    <img src='Computer Systems/Image23.jpg' alt='Twenty Third Image' style='max-width: 100%;'><br/>
+                    <img src='Computer Systems/Image24.jpg' alt='Twenty Fourth Image' style='max-width: 100%;'><br/>
+                    Calculation of $e_2$ (continued):<br/>
+                    Based on this calculation of $b_2$, the value of $e_2$ is determined in the
+                    same manner as that of $e_1$. Consequently,<br/>
+                    $e_2 = b_2 \text{ XOR } (c_2 \text{ XOR } d_2)$.<br/>
+                    Calculation of $e_3, e_4, ..., e_{n-1}$:<br/>
+                    The calculation of $e_3, e_4, ..., e_{n-1}$ works in the same way as that of
+                    $e_2$.<br/>
+                    Calculation of $e_n$ (a special case):<br/>
+                    Since there is no $c_n$ and no $d_n$, the value of $e_n$ equals the value
+                    of the carry it $b_n$ produced by $d_{n-1}, c_{n-1}$ and $d_{n-1}$.<br/>
+                    <img src='Computer Systems/Image25.jpg' alt='Twenty Fifth Image' style='max-width: 100%;'>
+                </p>
+                <br/>
+                <u>Other Boolean Functions</u>
+                <p><img src='Computer Systems/Image26.jpg' alt='Twenty Sixth Image' style='max-width: 100%;'><br/>
+                    <img src='Computer Systems/Image27.jpg' alt='Twenty Seventh Image' style='max-width: 100%;'>
+                </p>
+                <br/>
+                <u>Logic Gates</u>
+                <p>Elementary Boolean functions are realised by so-called logic gates . We use
+                    the symbols described by the standard IEC 60617-12. Some examples<br/>
+                    <img src='Computer Systems/Image28.jpg' alt='Twenty Eighth Image' style='max-width: 100%;'><br/>
+                    Note that the functional behaviour of a logic gate - i.e. the relation
+                    between its input value(s) and its output value - is equivalent to that of
+                    the corresponding Boolean function.<br/>
+                    Therefore, we can use a combination of logic gates in order to illustrate
+                    any (potentially complex) Boolean function.<br/>
+                    <img src='Computer Systems/Image29.jpg' alt='Twenty Ninth Image' style='max-width: 100%;'><br/>
+                    Each Boolean function can be realized by NAND gates only!<br/>
+                    <img src='Computer Systems/Image30.jpg' alt='Thirtieth Image' style='max-width: 100%;'><br/>
+                    Since NAND gates can be built very cost-efficiently, many current chips
+                    exclusively consist of NAND types.<br/>
+                    NOR gates have the smae property.
+                </p>
+                <br/>
+                <u>Digital Circuits</u>
+                <p>Within the scope of this module, any combination of logic gates is called a 
+                    digital circuit.<br/>
+                    <img src='Computer Systems/Image31.jpg' alt='Thirty First Image' style='max-width: 100%;'><br/>
+                    The adder on the previous slide is called a ripple carry adder, since each 
+                    full adder needs to wait for the carry bit of the previous level.<br/>
+                    Using similar principles, we can realize a variety of digital circuits. We 
+                    consider some important examples:<br/>
+                    1 - Multiplexer<br/>
+                    A multiplexer has n+1 different input signals (which normally consists of
+                    several bits each); one of these inputs is the selector. The selector can
+                    represent n different values. If its value is m ($0 \leq m \leq n-1$), then
+                    the output of the multiplexer exactly corresponds to the value of the mth
+                    data input:<br/>
+                    <img src='Computer Systems/Image32.jpg' alt='Thirty Second Image' style='max-width: 100%;'><br/>
+                    For instance, let MUX be a multiplexer with two dats inputs of three bits
+                    each and a selector of one bit. If<br/>
+                    The value of 0 equals 101 and<br/>
+                    The value of 1 equals 010,<br/>
+                    then the output MUX equals<br/>
+                    101 if the value of the selector equals 0 and<br/>
+                    010 if the value of the selector equals 1<br/>
+                    Multiplexer are widely used for the construction of, e.g. memory (here the
+                    value of the selector stands for a memory address) and buses.<br/>
+                    2 - Flip-flop<br/>
+                    Flip-flops are elementary devices for the storage of 1-bit data. We 
+                    consider an SR flip-flop (short for set-reset flip-flop, and sometimes also 
+                    called an SR latch). It has an input S to set the output to 1 and an input 
+                    R to set the output to 0. Thus, if<br/>
+                    S = 1 and R = 0, then the output equals 1 and<br/>
+                    S = 0 and R = 1, then the output equals 0.<br/>
+                    If S = 0 and R = 0, then the output does not change (it can be 1 or 0,
+                    depending on the previous action!). Hence the flip-flop stores the existing
+                    value.<br/>
+                    The input S = 1 and R = 1 is prohibited.<br/>
+                    In addition to the inputs S and R and the output Q, an SR flip-flop also 
+                    has a second output Q', which holds the inverted value of Q.<br/>
+                    <img src='Computer Systems/Image33.jpg' alt='Thirty Third Image' style='max-width: 100%;'><br/>
+                    Note that there is a variety of other flip-flops, e.g. so-called toggle 
+                    flip-flops, which have a single input t. If t = 1, then the output of the 
+                    flip-flop changes, if t = 0 then it does not change.<br/>
+                    Using NOT and NAND gates, the SR flip-flop is built as follows:<br/>
+                    <img src='Computer Systems/Image34.jpg' alt='Thirty Fourth Image' style='max-width: 100%;'><br/>
+                    It is a vital property of a flip-flop that its output at the same time 
+                    serves as a part of its input (see the two NAND gates).<br/>
+                    <img src='Computer Systems/Image35.jpg' alt='Thirty Fifth Image' style='max-width: 100%;'><br/>
+                    Verification of Behaviour:<br/>
+                    S = 0, R = 0 and Q = 0 $\Rightarrow$ the lower NAND gate has the input 
+                    <0,1> $\Rightarrow$ Q' = 1 $\Rightarrow$ the upper NAND gate has the input 
+                    <1,1> $\Rightarrow$ Q = 0. The system is stable.<br/>
+                    S = 0, R = 0 and Q = 1 $\Rightarrow$ the lower NAND gate has the input 
+                    <1,1> $\Rightarrow$ Q' = 0 $\Rightarrow$ the upper NAND gate has the input 
+                    <1,0> $\Rightarrow$ Q = 1. The system is stable.<br/>
+                    S = 0, R = 1 and Q = 0 $\Rightarrow$ the lower NAND gate has the input 
+                    <0,0> $\Rightarrow$ Q' = 1 $\Rightarrow$ the upper NAND gate has the input 
+                    <1,1> $\Rightarrow$ Q = 0. The output has not changed.<br/>
+                    S = 0, R = 1 and Q = 1 $\Rightarrow$ the lower NAND gate has the input 
+                    <1,0> $\Rightarrow$ Q' = 1 $\Rightarrow$ the upper NAND gate has the input 
+                    <1,1> $\Rightarrow$ Q = 0. The output has changed.<br/>
+                    S = 1, R = 0 and Q = 0 $\Rightarrow$ the upper NAND gate has the input 
+                    <0,1> $\Rightarrow$ Q = 1 $\Rightarrow$ the lower NAND gate has the input 
+                    <1,1> $\Rightarrow$ Q' = 0. The output has changed.<br/>
+                    S = 1, R = 0 and Q = 1 $\Rightarrow$ the lower NAND gate has the input 
+                    <1,1> $\Rightarrow$ Q' = 0 $\Rightarrow$ the upper NAND gate has the input 
+                    <0,0> $\Rightarrow$ Q = 1. The output has not changed.<br/>
+                    3 - Registers<br/>
+                    If a number of flip-flops is bundled and can be accessed in parallel, then 
+                    this bundle is called a register. Consequently, e.g., a 1 byte register 
+                    consists of 8 parallel flip-flops.<br/>
+                    4 - Shift Registers<br/>
+                    A shift register (or shifter for short) is a register that shifts its 
+                    content stepwise to the left or the right. Thus, in each step, one bit of 
+                    the register's original content is lost and another bit is inserted. We 
+                    simply assume that the inserted bit equals 0, but this does not need to be 
+                    true for all shift registers.<br/>
+                    For a 4-bit shift register that performs left shifts, this means:<br/>
+                    <img src='Computer Systems/Image36.jpg' alt='Thirty Sixth Image' style='max-width: 100%;'><br/>
+                    <img src='Computer Systems/Image37.jpg' alt='Thirty Seventh Image' style='max-width: 100%;'><br/>
+                    Note that simply structured shift registers can shift either to the left or 
+                    to the right. More sophisticated ones can do both.<br/>
+                    Arithmetic on binary numbers is strongly based on shift registers.<br/>
+                    Examples:<br/>
+                    A simple right shift of an unsigned integer n is equivalent to 'n div 2'. 
+                    For example, $1010_2 \text{ div } 2 = 0101_2 [i.e. 1010 \text{ div } 2 = 5_{10}]$.<br/>
+                    A simple left shift of an unsigned integer n is equivalent to '$n \times 2$'. 
+                    For example, $0111_2 \times 2 = 1110_2 [i.e. 7_{10} \times 2 = 14_{10}]$.<br/>
+                    Multiplication of arbitrary unsigned integers also makes use of shift 
+                    operations.<br/>
+                    With regards to signed integers we need to be more careful.
+                </p>
+                <br/>
+                <u>Switches & Logic Gates</u>
+                <p>How can we physically build logic gates (and, hence, digital circuits)? A 
+                    first proposal is the 'light bulb gate' with manual switches:<br/>
+                    <img src='Computer Systems/Image38.jpg' alt='Thirty Eighth Image' style='max-width: 100%;'><br/>
+                    Consequently, the light bulb shines if switch 1 and switch 2 are closed. 
+                    This sounds somehow familiar…<br/>
+                    We have the following relation between switches and bulb:<br/>
+                    <img src='Computer Systems/Image39.jpg' alt='Thirty Ninth Image' style='max-width: 100%;'><br/>
+                    If we consider the position of the switches as input, the state of the 
+                    light bulb as output and say that<br/>
+                    '0' stands for 'open' and for 'no' and<br/>
+                    '1' stands for 'closed and for 'yes',<br/>
+                    then our light bulb gate realizes the logic gate AND.<br/>
+                    Using similar approaches, we can build other logic gates:<br/>
+                    <img src='Computer Systems/Image40.jpg' alt='Fortieth Image' style='max-width: 100%;'><br/>
+                    Quite obviously, this parallel arrangement of the switches realizes the 
+                    logic gate OR.<br/>
+                    In addition to various practical problems, our light bulb gate suffers from 
+                    two severe basic disadvantages:<br/>
+                    The switches need to be handled manually (or at least mechanically). We, 
+                    however, want to build an electronic machine.<br/>
+                    The output of the gate, namely 'light' or 'no light', cannot be used as an 
+                    input of other light bulb gates. Thus, we can hardly assemble digital 
+                    circuits from such gates.<br/>
+                    Consequently, we replace the output of the gate by 'high voltage' or 'low 
+                    voltage', and we use switches that can use this as an input. In today's 
+                    computers, such switches are mainly realized by transistors.
+                </p>
+                <br/>
+                <u>Using Transistors as Switches</u>
+                <p>A strongly simplified view on transistors (largely based on so-called 
+                    field-effect transistors):<br/>
+                    Transistors are made of semiconductors (e.g. the chemical elements silicon 
+                    or germanium). They are components with an adjustable electric 
+                    resistance.<br/>
+                    If we regard transistors as switches (and that is what we want to do), then 
+                    we can distinguish between two states. We can make them serve as<br/>
+                    Insulator, or<br/>
+                    Conductor,<br/>
+                    and we can switch their state by a voltage.<br/>
+                    We use the following symbol for a transistor:<br/>
+                    <img src='Computer Systems/Image41.jpg' alt='Forty First Image' style='max-width: 100%;'><br/>
+                    S stands for 'source', D stands for 'drain', G stands for 'gate'.<br/>
+                    The voltage of the gate (actually it is the voltage between G and S)
+                    decides on whether the channel between source and drain is<br/>
+                    non-conductive or<br/>
+                    conductive.<br/>
+                    Hence, we have a switch controlled by the gate voltage.<br/>
+                    Strongly simplified sectional view of how transistors are physically built
+                    today:<br/>
+                    <img src='Computer Systems/Image42.jpg' alt='Forty Second Image' style='max-width: 100%;'><br/>
+                    There are two types of transistors:<br/>
+                    enhancement mode transistors and<br/>
+                    depletion mode transistors.<br/>
+                    We consider enhancement mode transistors. This means:<br/>
+                    If the gate voltage is low, then the channel between source and drain is blocked.<br/>
+                    If the gate voltage is high, then the channel between source and drain is 
+                    conductive.<br/>
+                    <img src='Computer Systems/Image43.jpg' alt='Forty Third Image' style='max-width: 100%;'><br/>
+                    Since transistors can work as switches, we use them to build logic gates.
+                    Depending on types of transistors considered the concrete construction of
+                    logic gates may differ significantly. Important examples:<br/>
+                    TTL<br/>
+                    NMOS<br/>
+                    CMOS<br/>
+                    Since the output of a logic gate made from transistors (low/high voltage) 
+                    also serves as their input, we can easily assemble larger digital circuits 
+                    from such logic gates.<br/>
+                    A NAND gate in NMOS technology (omitting a number of technical details)<br/>
+                    <img src='Computer Systems/Image44.jpg' alt='Forty Fourth Image' style='max-width: 100%;'>
+                </p>
+                <br/>
+                <u>Race Conditions</u>
+                <p>So far we have assumed that the calculation by a logic gate is accomplished
+                    instantly.<br/>
+                    <img src='Computer Systems/Image45.jpg' alt='Forty Fifth Image' style='max-width: 100%;'><br/>
+                    In real logic gates, however, this is not true. The gate needs some time, 
+                    the so-called gate delay (also referred to as propagation delay), to react 
+                    on a changed input.<br/>
+                    <img src='Computer Systems/Image46.jpg' alt='Forty Sixth Image' style='max-width: 100%;'><br/>
+                    Typically, the gate delay is some nanoseconds for standard transistor-based 
+                    logic gates.<br/>
+                    We consider the gate delays for the following digital circuit:<br/>
+                    <img src='Computer Systems/Image47.jpg' alt='Forty Seventh Image' style='max-width: 100%;'><br/>
+                    The spike in the value of c - i.e. the mismatch between the shape of the 
+                    idealized graph of the output value of the digital circuit and the shape of 
+                    the actual graph – is called a race condition, glitch or hazard. NB: the 
+                    example on before is not a race condition, but a mere delay.<br/>
+                    We distinguish between:<br/>
+                    Static race conditions, that occur when a value should be constant, and<br/>
+                    Dynamic race conditions, that occur when a value is expected to change.<br/>
+                    The race condition in the previous example is static, because the idealized
+                    value of c should be a constant 0.<br/>
+                    We consider an example for a dynamic race condition:<br/>
+                    <img src='Computer Systems/Image48.jpg' alt='Forty Eighth Image' style='max-width: 100%;'><br/>
+                    Race conditions can be critical, i.e. they can permanently switch a digital 
+                    circuit in an unwanted state. We consider the digital circuit from the 
+                    previous example, but we additionally attach an SR flip-flop to the output 
+                    c:<br/>
+                    <img src='Computer Systems/Image49.jpg' alt='Forty Ninth Image' style='max-width: 100%;'><br/>
+                    Race conditions are one of the main reasons why modern computers require a
+                    clock.
+                </p>
+                <br/>
+                <u>Limits of Computability</u>
+                <p>Conjecture:<br/>
+                    For every sufficiently precise description of a mathematical problem there 
+                    exists a computable function that solves this problem (assuming that the 
+                    computer has enough resources, i.e. time and memory).<br/>
+                    Question: Is this conjecture correct?<br/>
+                    Answer: No, this conjecture is incorrect!<br/>
+                    Note that this answer is the strongest possible one. It does not say that 
+                    we are unable to find certain computable functions, but it says that these 
+                    functions do not exist.<br/>
+                    Example for an undecidable problem (i.e. a mathematical problem that cannot
+                    be solved by a computable function):<br/>
+                    The Post-Correspondence Problem (PCP):<br/>
+                    Input: A finite number of pairs of finite sequences of symbols $(v_0, w_0),$
+                    $(v_1, w_1), (v_2, w_2), ..., (v_n, w_n)$.<br/>
+                    Question: Is there a sequence of indices $i_0, i_1, i_2, ..., i_m$ such that
+                    $v_{i0}v_{i1}v_{i2}...v_{im}=w_{i0}w_{i1}w_{i2}...w_{im}$?<br/>
+                    If there is such a sequence, then we call it a solution to PCP.<br/>
+                    Post's paper form 1946 says there is no single computable function that, for
+                    every input of the PCP, provides a correct answer to the question.<br/>
+                    Example 1: We consider three pairs of sequences that consist of the symbols 
+                    '0' and '1'.<br/>
+                    $(v_0, w_0) = (011, 1)$,<br/>
+                    $(v_1, w_1) = (01, 010)$,<br/>
+                    $(v_2, w_2) = (0111, 1011101)$<br/>
+                    In this example, we can answer the question in the affirmative:<br/>
+                    We define:<br/>
+                    $i_0 = 1$,<br/>
+                    $i_1 = 0$,<br/>
+                    $i_2 = 2$,<br/>
+                    $i_3 = 0$, and this leads to<br/>
+                    $v_1v_0v_2v_0 = 010110111011 = 010110111011 = w_1w_0w_2w_0$.<br/>
+                    Example 2: We again consider three pairs of sequences that consist of the
+                    symbols '0', and '1'.<br/>
+                    $(v_0, w_0) = (01, 111)$,<br/>
+                    $(v_1, w_1) = (1, 00)$,<br/>
+                    $(v_2, w_2) = (10, 1010)$<br/>
+                    In this example, we can answer the question in the negative. This is proved by
+                    the following observation:<br/>
+                        For every i, $0 \leq i \leq 2$, $v_i$ is shorter than $w_i$. Consequently,
+                        for all possible sequences of indices, $v_{i0}v_{i1}v_{i2}...v_{im}$ is
+                        strictly shorter than $w_{i0}w_{i1}w_{i2}...w_{im}$.<br/>
+                        Thus, there is no sequences of indices that can satisfy 
+                        $v_{i0}v_{i1}v_{i2}...v_{im} = w_{i0}w_{i1}w_{i2}...w_{im}$.
+                </p>
+                <br/>
+                <u>The General Purpose Computer</u>
+                <p>Early progress in the development of computers was mainly motivated by the wish to
+                    construct more powerful calculators.<br/>
+                    Difference between computer and calculator:<br/>
+                    Calculators manipulate data (normally numbers) by applying a small number of
+                    operations taken from a fixed set:<br/>
+                    Addition, Subtraction, Multiplication, Division, Square Root, Powers, etc.<br/>
+                    Computers can also use a fixed (but normally broader) set of operations, but any
+                    sequence of them can be selected in order to manipulate the data (i.e. we have a 
+                    programme).<br/>
+                    Examples:<br/>
+                    A task for a calculator:<br/>
+                    $((12 -9) \times (4 + 1))^2$<br/>
+                    A computer programme:<br/>
+                    $m:=371;$<br/>
+                    $\text{bit}:=\emptyset, n:=0;$<br/>
+                    $\text{WHILE}m \ne 0)\text{ DO}:$<br/>
+                    $\text{IF}m \text { mod } 2 = 1) \text{ THEN bit}:= \text{bit}:=\text{bit}\cup\lbrace n \rbrace; \text{ END IF};$<br/>
+                    $m := m \text{ div } 2;<br/>
+                    $n := n+1;<br/>
+                    $\text{END WHILE};$<br/>
+                    $\text{return bit};$<br/>
+                    Definition of a general purpose computer:<br/>
+                    A general purpose computer is a computer that, given sufficient time and
+                    memory, can solve every problem that, in principle, is solvable by a computer.<br/>
+                    Question: What properties does a computer need to have in order to be a 
+                    general purpose computer?<br/>
+                    This question was studied by many researchers, who presented theoretical 
+                    models of computers (or of classes of computable functions etc.). 
+                    Typically, these models exclusively consist of elements that can be 
+                    physically realized (hence excluding 'esoteric' ones).<br/>
+                    Turing complete definition:<br/>
+                    A model of computer or of a class of computable functions is said to be
+                    Turing-complete if it is at least as powerful as the Turing machine. Moreover,
+                    a model is called Turing-equivalent if it is exactly as powerful as a Turing
+                    machine.<br/>
+                    The fact that still no model has been found that is strictly more powerful 
+                    than a Turing machine has led to the Church-Turing thesis, which can be 
+                    paraphrased as follows:<br/>
+                    There is no physically realizable computer that is more powerful than the 
+                    Turing-equivalent ones.<br/>
+                    The Church-Turing thesis cannot be proved, but only disproved. It is widely 
+                    believed to be correct. Thus:<br/>
+                    We say that a computer is a general purpose computer if and only if it is 
+                    Turing-equivalent.<br/>
+                    Note that virtually all present computers are Turing-equivalent.<br/>
+                    Computer AIDJ: Let AIDJ be a computer that:<br/>
+                    supports any number of variables $x_1, x_2, x_3, ...$ and<br/>
+                    can read and execute any sequence of operations (called the programme) of
+                    the following form: $M_k$: < operation >.<br/>
+                    The natural number $M_k$ is called a marker.<br/>
+                    < operation > must be taken from the following list:<br/>
+                    $x_i := c$ [called assignment, c is any natural number]<br/>
+                    $x_i := x_i + 1$ [called increment]<br/>
+                    $x_i := x_i - 1$ [called decrement]<br/>
+                    if $x_i \ne 0$ then goto $M_n$ [called conditional jump, this means that if
+                    $x_i \ne 0$ then the next operation to be executed is that with marker $M_n$]<br/>
+                    
+                </p>
             </div>
         </div>
     </body>

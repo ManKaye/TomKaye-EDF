@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-            echo "<div class='Main-Div'><br/><input type='button' class='Back-Button' onclick='window.location = \"TaskList.php\";' value='Back to Task List'>";
+            echo "<div class='Main-Div'><br/><input type='button' class='Back Button' onclick='window.location = \"TaskList.php\";' value='Back to Task List'>";
             if($_POST["Submit-Entry"]){
                 if($_POST["Task-Entry"] == "Enter Entry Here..." || "" == trim($_POST["Task-Entry"])){
                     die("<p>The data set was the default or there was no data to write.</p></div>");
@@ -27,6 +27,9 @@
                     else{
                         echo "<script>window.location = 'TaskList.php'</script>";
                     }
+                    $hyphonedTask = str_replace(" ", "-", $_POST["Task-Entry"]);
+                    $createFile = fopen($hyphonedTask."-".$file, "w");
+                    fclose($createFile);
                 }
             }
         ?>

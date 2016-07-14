@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-            echo "<div class='Main-Div'><br/><div class='Input-Div' id='Back-Button-Div'><input type='button' class='Back-Button' onclick='window.location = \"FavouritesList.php\";' value='Back to Favourites'></div>";
+            echo "<div class='Main-Div'><br/><div class='Input-Div' id='Back-Button-Div'><input type='button' class='Back Button' onclick='window.location = \"FavouritesList.php\";' value='Back to Favourites'></div>";
             if($_POST["Submit-Favourite"]){
                 if($_POST["New-Favourite"] == "Enter Favourite Here..." || "" == trim($_POST["New-Favourite"])){
                     die("<p>The data set for the favourite was the default or there was no data to write.</p></div>");

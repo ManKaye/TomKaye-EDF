@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-            echo "<div class='Main-Div'><br/><input type='button' class='Back-Button' onclick='window.location = \"TaskList.php\";' value='Back to Task List'>";
+            echo "<div class='Main-Div'><br/><input type='button' class='Back Button' onclick='window.location = \"TaskList.php\";' value='Back to Task List'>";
             if($_POST["Submit-Entry"]){
                 if($_POST["Task-Entry"] == "Enter Entry Here..." || "" == trim($_POST["Task-Entry"])){
                     die("<p>The data set was the default or there was no data to write.</p></div>");
@@ -14,29 +14,19 @@
                 elseif("" != trim($_POST["Task-Entry"])){
                     $task = $_POST["Task-Name"];
                     $file = $task."-Tasks.txt";
-                    if(file_exists($file)){
-                        $current = file_get_contents($file);
+                    $current = file_get_contents($file);
+                    if($current != ""){
                         $current .= "\n".$_POST["Task-Entry"]."not done";
-                        $insert = file_put_contents($file, $current);
-                        if($insert == false){
-                            die("<p>There was an error writing the text to the file.</p></div>");
-                        }
-                        else{
-                            echo "<script>window.location = 'TaskList.php'</script>";
-                        }
                     }
                     else{
-                        $createFile = fopen($file, "w");
-                        fclose($createFile);
-                        $current = file_get_contents($file);
                         $current .= $_POST["Task-Entry"]."not done";
-                        $insert = file_put_contents($file, $current);
-                        if($insert == false){
-                            die("<p>There was an error writing the text to the file.</p></div>");
-                        }
-                        else{
-                            echo "<script>window.location = 'TaskList.php'</script>";
-                        }
+                    }
+                    $insert = file_put_contents($file, $current);
+                    if($insert == false){
+                        die("<p>There was an error writing the text to the file.</p></div>");
+                    }
+                    else{
+                        echo "<script>window.location = 'TaskList.php'</script>";
                     }
                 }
             }
@@ -72,7 +62,7 @@
                 }
                 echo "<div class='Main-Div'><br/>";
                 echo "<h3>The current sub-task is:</h3><form action='' method='post'><p>".substr($subTask, 0, -strlen($status))."</p>";
-                echo "<input type='text' class='Task-Entry' name='Task-Entry'><input type='submit' name='Submit-Edit' value='Append the Task'><input type='hidden' name='Sub-Task' value='".$subTask."'><input type='hidden' name='Status' value='".$status."'><input type='hidden' name='Task' value='".$task."'></form></div";
+                echo "<input type='text' class='Task Entry' name='Task-Entry'><input type='submit' class='Submit Button' name='Submit-Edit' value='Append the Task'><input type='hidden' name='Sub-Task' value='".$subTask."'><input type='hidden' name='Status' value='".$status."'><input type='hidden' name='Task' value='".$task."'></form></div";
             }
             if($_POST["Submit-Edit"]){
                 if("" == trim($_POST["Task-Entry"])){

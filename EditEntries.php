@@ -10,10 +10,10 @@
             if($_POST["Edit-Entry"]){
                 $entry = $_POST["Log"];
                 echo "<div class='Main-Div'>";
-                echo "<br/><input type='button' class='Back-Button' onclick='window.location = \"Diary.php\";' value='Back to Diary'>";
+                echo "<br/><input type='button' class='Back Button' onclick='window.location = \"Diary.php\";' value='Back to Diary'>";
                 echo "<h3>The entry chosen to edit is:</h3>";
                 echo "<form action='' method = 'post'><p name='Current'>".$entry."</p>";
-                echo "<input type='text' class='Task-Entry' name='Appended-Entry'><input type='submit' name='Submit-Edit' value='Submit the Appended Entry'><input type='hidden' name='Log' value='".$entry."'></form>";
+                echo "<input type='text' class='Task Entry' name='Appended-Entry' value='Enter Appended Diary Log Here...' onclick='if(this.value==\"Enter Appended Diary Log Here...\") this.value=\"\";'><input type='submit' class='Submit Button' name='Submit-Edit' value='Submit the Appended Entry'><input type='hidden' name='Log' value='".$entry."'></form>";
                 echo "</div>";
             }
             if($_POST["Submit-Edit"]){

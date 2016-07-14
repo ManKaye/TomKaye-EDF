@@ -7,3 +7,5 @@ Vagrant
 Obsolescence and Execution Plans
 Go4Set
 Project Tango
+Azure CGR Website
+Lunch and Learn Innovation

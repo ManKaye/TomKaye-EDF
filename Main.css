@@ -1,97 +1,116 @@
+<<<<<<< HEAD
 body {
     font-family: sans-serif, serif;
     width: 80%;
+=======
+.Anchor, .Complete, .Edit, .Link, .Links, .Module, .RemoveTask, .Submit {
+    background-color: dodgerblue;
+    margin: 2px auto;
+}
+body {    
+    background-color: #FFF8E7;
+    font-family: "Helvetica-Neue", Helvetica, Arial, sans-serif;
+>>>>>>> origin/master
     margin-left: auto;
     margin-right: auto;
-    background-color: #FFF8E7;
+    width: 80%;
 }
 li {
     list-style-type:disc;
 }
-.Back-Button {
-    text-align: center;
-    background-color: royalblue;
-    cursor: pointer;
+.Back {
+    background-color: tomato;
     width: 200px;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
 }
-#Back-Button-Div {
-    position: fixed;
-    top: 50px;
-    left: 50%;
-    margin-left: -100px;
-}
-.Back-Button, .Diary-Button, .Favourites-Button, .Link-Button, .Links-Button, .Module-Button, .Modules-Button, .Task-Button {
-    text-align: center;
-    background-color: dodgerblue;
-    cursor: pointer;
-    margin-bottom: 10px;
-    border: 3px solid black;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
-}
-input[type="button"]:hover {
-    border: 3px solid white;
-    background-color: midnightblue;
+.Back.Button:hover {
+    background-color: firebrick;
+    border: 2px solid white;
     color: white;
 }
-.Diary-Entry {
-    width: 100%;
+#Back-Button-Div {
+    left: 50%;
+    position: fixed;
+    top: 50px;
+    transform: translateX(-50%);
 }
-.Diary-Table {
-    width: 100%;
+.Box-Span {
+    border: 2px solid;
+    display: block;
+    margin: 3px auto;
 }
-.Entry-Cell-Left {
-    display: table-cell ;
-    text-align: center;
-    float: left;
+.Button {
+    border: 2px solid;
+    cursor: pointer;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+.Button:hover {
+    background-color: midnightblue;
+    border: 2px solid white;
+    color: white;
+}
+.Diary, .Favourites, .Task {
+    width: 70%;
+}
+.Entry {
+    border: 2px solid;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.Entry-Cell-Left, .Entry-Cell-Right {
+    display: table-cell;
+    vertical-align: middle;
     width: 15%;
-    border-top: 1px solid;
 }
 .Entry-Cell-Middle {
     display: table-cell;
-    text-align: center; 
-    float: left;
+    vertical-align: middle;
     width: 70%;
-    border-top: 1px solid;
-}
-.Entry-Cell-Right {
-    display: table-cell;
-    text-align: center;
-    float: right;
-    width: 15%;
-    border-top: 1px solid;    
 }
 [class$="-Entry-Row"]{
-    display: none;
     background-color: #FFF8E7;
+    border: 2px solid;
+    display: none;
 }
-.Favourite-Entry {
-    width: 500px;
+[class$="-Entry-Table"] {
+    margin-bottom: 2px;
+    margin-left: 1px;
 }
-.Half-Break {
+[class$="-Entry-Table"], .Month-Table, #Personal-Task-Entry, [class$="-Sub-Task-Table-Div"] {
+    border-collapse: collapse;
+    display: table;
+    width: 100%;
+}
+.Footer-Div {
+    font-size: 50%;
+    color: grey;
+}
+.Half-Width-Ruler {
+    border: 1px solid;
     width: 50%;
 }
 hr {
+    border: 2px solid;
     color: black;
-    border: 1px solid black;
 }
-.Logo-Image {
+.List {
+    border: 2px solid;
+    cursor: pointer;
+}
+.Logo-Image { 
+    max-height: 200px;
     max-width:33%; 
-    max-height: 200px; 
     vertical-align: middle;
 }
 .Main-Div {
-    min-height: 100%;
     background-color: #CCEEFF;
+    min-height: 100%;
     text-align: center;
 }
 .Month-And-Year {
-    text-align: center;
-    font-weight: bold;
+    border: 2px solid;
     display: table-cell;
-    border-top: 1px solid;
+    font-weight: bold;
 }
 .Month-Row {
     background-color: gainsboro;
@@ -100,44 +119,50 @@ hr {
 .Month-Row:hover {
     cursor: pointer;
 }
-.Position-Entry {
-    width: 50px;
+.Month-Table {
+    margin-bottom: 2px;
+}
+.Personal-Task {
+    display: table-cell;
+    vertical-align: middle;
+    width: 70%;
+}
+.Remove-Task {
+    display: table-cell;
+    right: 0px;
+    width: 30%;
 }
 .Sub-Div {
     background-color: #CCEEFF;
     margin-left: 50px;
     margin-right: 50px;
 }
-[class$="-Sub-Task-Div"] {
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-    background-color: antiquewhite;
-}
-.Sub-Task, .Sub-Task-Status, .Sub-Task-Form {
-    width: 33%;
-    display: inline-block;
-    text-align: center;
+.Sub-Task-Cell, .Sub-Task-Form-Cell, .Sub-Task-Status-Cell {
+    display: table-cell;
     vertical-align: middle;
 }
-.Sub-Task-Table {
-    width: 100%;
-    text-align: center;
+.Sub-Task-Cell {
+    width: 60%;
 }
-.Submit-Entry, .Edit-Entry, .Complete-Button {
-    display: inline-block;
-    cursor: pointer;
+.Sub-Task-Form-Cell, .Sub-Task-Status-Cell {
+    width: 20%;
 }
-.Diary-Div {
-    width: 100%;
-    display: table;
+[class$="-Sub-Task-Row-Div"] {
+    background-color: antiquewhite;
+    border: 2px solid;
+    display: none;
 }
-.Task-Entry {
-    width: 100%;
-    box-sizing: border-box;
+.Table-Form {
+    margin: auto;
+}
+.Task-Div {
+    background-color: antiquewhite;
+    border: 2px solid;
+    display: table-row;
 }
 .Task-Header {
-    cursor: pointer;
-    text-align: center;
-    border: 1px solid black;
     background-color: gainsboro;
+    border: 2px solid;
+    cursor: pointer;
+    margin: 2px auto;
 }
