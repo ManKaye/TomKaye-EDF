@@ -11,6 +11,7 @@ $(document).ready(function(){
         var month = "";
         for(var i = 0; i < len; i++) {
             var tableRow = contents;
+            lines[i] = lines[i].trim();
             if(!isNaN(lines[i].charAt(lines[i].length-4)) && !isNaN(lines[i].charAt(lines[i].length-3)) && !isNaN(lines[i].charAt(lines[i].length-2)) && !isNaN(lines[i].charAt(lines[i].length-1))){
                 month = lines[i].substring(0, lines[i].length-6);
                 $(table).append("<div class='Month-Row' value='"+month+"'><div class='Month-And-Year'><p>"+lines[i]+"</p></div></div>\n");
