@@ -1,9 +1,13 @@
-body {
+.Anchor, .Complete, .Edit, .Link, .Links, .Module, .RemoveTask, .Submit {
+    background-color: dodgerblue;
+    margin: 2px auto;
+}
+body {    
+    background-color: #FFF8E7;
     font-family: "Helvetica-Neue", Helvetica, Arial, sans-serif;
-    width: 80%;
     margin-left: auto;
     margin-right: auto;
-    background-color: #FFF8E7;
+    width: 80%;
 }
 li {
     list-style-type:disc;
@@ -13,99 +17,94 @@ li {
     width: 200px;
 }
 .Back.Button:hover {
-    border: 2px solid white;
     background-color: firebrick;
+    border: 2px solid white;
     color: white;
 }
 #Back-Button-Div {
+    left: 50%;
     position: fixed;
     top: 50px;
-    left: 50%;
-    margin-left: -100px;
+    transform: translateX(-50%);
 }
 .Box-Span {
+    border: 2px solid;
     display: block;
-    margin: 0 auto;
-    border: 1px solid black;
+    margin: 3px auto;
 }
 .Button {
-    cursor: pointer;
     border: 2px solid;
+    cursor: pointer;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
 }
 .Button:hover {
-    border: 2px solid white;
     background-color: midnightblue;
+    border: 2px solid white;
     color: white;
-}
-.Complete, .Edit, .Link, .Links, .Module, .RemoveTask, .Submit {
-    background-color: dodgerblue;
-    margin-bottom: 5px;
-    margin-top: 5px;
 }
 .Diary, .Favourites, .Task {
     width: 70%;
 }
-.Diary-Div {
-    width: 100%;
-    display: table;
-    border-collapse: collapse;
-}
-.Diary-Entry, .Diary-Table {
-    width: 100%;
-}
 .Entry {
     border: 2px solid;
-    margin-top: 5px;
     margin-bottom: 5px;
+    margin-top: 5px;
 }
-.Entry-Cell-Left {
+.Entry-Cell-Left, .Entry-Cell-Right {
     display: table-cell;
-    float: left;
+    vertical-align: middle;
     width: 15%;
 }
 .Entry-Cell-Middle {
     display: table-cell;
-    float: left;
+    vertical-align: middle;
     width: 70%;
 }
-.Entry-Cell-Right {
-    display: table-cell;
-    float: right;
-    width: 15%;
-}
 [class$="-Entry-Row"]{
-    display: none;
     background-color: #FFF8E7;
     border: 2px solid;
+    display: none;
+}
+[class$="-Entry-Table"] {
+    margin-bottom: 2px;
+    margin-left: 1px;
+}
+[class$="-Entry-Table"], .Month-Table, #Personal-Task-Entry, [class$="-Sub-Task-Table-Div"] {
+    border-collapse: collapse;
+    display: table;
+    width: 100%;
+}
+.Footer-Div {
+    font-size: 50%;
+    color: grey;
 }
 .Half-Width-Ruler {
+    border: 1px solid;
     width: 50%;
-    border: 1px solid black;
 }
 hr {
+    border: 2px solid;
     color: black;
-    border: 2px solid black;
 }
 .List {
     border: 2px solid;
     cursor: pointer;
 }
-.Logo-Image {
+.Logo-Image { 
+    max-height: 200px;
     max-width:33%; 
-    max-height: 200px; 
     vertical-align: middle;
 }
 .Main-Div {
-    min-height: 100%;
     background-color: #CCEEFF;
+    min-height: 100%;
     text-align: center;
 }
 .Month-And-Year {
-    font-weight: bold;
-    display: table-cell;
     border: 2px solid;
+    display: table-cell;
+    font-weight: bold;
 }
 .Month-Row {
     background-color: gainsboro;
@@ -114,14 +113,12 @@ hr {
 .Month-Row:hover {
     cursor: pointer;
 }
-#Personal-Task-Entry, [class$="-Sub-Task-Table-Div"] {
-    display: table;
-    border-collapse: collapse;
-    width: 100%;
+.Month-Table {
+    margin-bottom: 2px;
 }
 .Personal-Task {
     display: table-cell;
-    left: 0px;
+    vertical-align: middle;
     width: 70%;
 }
 .Remove-Task {
@@ -134,25 +131,32 @@ hr {
     margin-left: 50px;
     margin-right: 50px;
 }
-.Sub-Task-Cell, .Sub-Task-Status-Cell, .Sub-Task-Form-Cell {
-    width: 33%;
+.Sub-Task-Cell, .Sub-Task-Form-Cell, .Sub-Task-Status-Cell {
     display: table-cell;
     vertical-align: middle;
 }
+.Sub-Task-Cell {
+    width: 60%;
+}
+.Sub-Task-Form-Cell, .Sub-Task-Status-Cell {
+    width: 20%;
+}
 [class$="-Sub-Task-Row-Div"] {
-    display: none;
-    border: 2px solid;
     background-color: antiquewhite;
+    border: 2px solid;
+    display: none;
+}
+.Table-Form {
+    margin: auto;
 }
 .Task-Div {
-    display: table-row;
     background-color: antiquewhite;
     border: 2px solid;
+    display: table-row;
 }
 .Task-Header {
-    cursor: pointer;
-    text-align: center;
-    border: 2px solid;
     background-color: gainsboro;
-    margin: 5px auto;
+    border: 2px solid;
+    cursor: pointer;
+    margin: 2px auto;
 }

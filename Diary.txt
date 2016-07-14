@@ -405,3 +405,5 @@ Had a quick clarification session on Lunch+Learn for Innovation, on what to set 
 Worked a lot on developing my end-of-year presentation. I also practiced with Niall, Aidan and Wasim. I also attended an Innovation Pipeline on IoT and 360 degree imagery.
 12th
 I attended a morning meeting where all the Year in Industry students gave five minute presentations on their year at EDF, and afterwards taking any questions that the audience had. Also had some communications with James Marchant on progress of the migration of a website to the Azure hosted web application.
+13th
+I helped a little with making James Marchant able to distinguish the problem with accessing the Azure site on the Blue network. As well as this I made more steps in development of my personal web site.

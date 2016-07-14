@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-            echo "<div class='Main-Div'><br/><div class='Input-Div' id='Back-Button-Div'><input type='button' class='Back-Button' onclick='window.location = \"PersonalTaskList.php\";' value='Back to Personal Task List'></div>";
+            echo "<div class='Main-Div'><br/><div class='Input-Div' id='Back-Button-Div'><input type='button' class='Back Button' onclick='window.location = \"PersonalTaskList.php\";' value='Back to Personal Task List'></div>";
             if($_POST["Submit-Entry"]){
                 if(trim($_POST["Personal-Task-Entry"]) === "Enter Task Here..." || trim($_POST["Personal-Task-Entry"]) === ""){
                     die("<div><p>The data set for the task was the default or there was no data to write.</p></div>");
