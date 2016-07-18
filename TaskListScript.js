@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var file = "Tasks.txt";
-    var taskArea = document.getElementById("Tasks-Div");
+    var taskArea = document.getElementById("Sub-Div");
     var topics = [];
     var tasks = $.get({url: file, cache: false}).then(function(txt){
         var lines = txt.split("\n");
@@ -24,11 +24,11 @@ $(document).ready(function(){
                 var notDone = subTask.substring(subTask.length-8);
                 var taskAndSubTaskID = k+""+subTaskID;
                 if(notDone === "not done"){
-                    $("."+task+"-Sub-Task-Table-Div").append("<div class='"+task+"-Sub-Task-Row-Div' hidden><div class='Sub-Task-Cell'>"+subTask.substring(0, subTask.length-8)+"</div><div class='Sub-Task-Status-Cell' id='"+taskAndSubTaskID+"' style='color: red;'>Not Completed.</div><div class='Sub-Task-Form-Cell'><form action='SubTaskEntry.php' method='post' class='Table-Form'><input type='submit' class='Complete Button' name='Complete-Button' value='Complete'><input type='submit' name='Edit-Entry' class='Edit Button' value='Edit Entry'><input type='hidden' name='Line' value='"+subTask+"'><input type='hidden' name='Task' value='"+task+"'><input type='hidden' name='Sub-Task' value='"+subTask+"'></form></div></div>");
+                    $("."+task+"-Sub-Task-Table-Div").append("<div class='"+task+"-Sub-Task-Row-Div' hidden><div class='Sub-Task-Cell'>"+subTask.substring(0, subTask.length-8)+"</div><div class='Sub-Task-Status-Cell' id='"+taskAndSubTaskID+"' style='color: red;'>Not Completed.</div><div class='Sub-Task-Form-Cell'><form action='SubTaskEntry.php' method='post' class='Table-Form'><input type='submit' class='Complete Button' name='Complete-Button' value='Complete'><input type='submit' name='Edit-Entry' class='Edit Button' value='Edit Entry'><input type='hidden' name='Task' value='"+task+"'><input type='hidden' name='Sub-Task' value=\""+subTask+"\"></form></div></div>");
                     subTaskID++;
                 }
                 else{
-                    $("."+task+"-Sub-Task-Table-Div").append("<div class='"+task+"-Sub-Task-Row-Div' hidden><div class='Sub-Task-Cell'>"+subTask.substring(0, subTask.length-4)+"</div><div class='Sub-Task-Status-Cell' id='"+taskAndSubTaskID+"' style='color: green;'>Completed.</div><div class='Sub-Task-Form-Cell'><form action='SubTaskEntry.php' method='post' class='Table-Form'><input type='submit' class='Complete Button' name='Uncomplete-Button' value='Uncomplete'><input type='submit' name='Edit-Entry' class='Edit Button' value='Edit Entry'><input type='hidden' name='Line' value='"+subTask+"'><input type='hidden' name='Task' value='"+task+"'><input type='hidden' name='Sub-Task' value='"+subTask+"'></form></div></div>");
+                    $("."+task+"-Sub-Task-Table-Div").append("<div class='"+task+"-Sub-Task-Row-Div' hidden><div class='Sub-Task-Cell'>"+subTask.substring(0, subTask.length-4)+"</div><div class='Sub-Task-Status-Cell' id='"+taskAndSubTaskID+"' style='color: green;'>Completed.</div><div class='Sub-Task-Form-Cell'><form action='SubTaskEntry.php' method='post' class='Table-Form'><input type='submit' class='Complete Button' name='Uncomplete-Button' value='Uncomplete'><input type='submit' name='Edit-Entry' class='Edit Button' value='Edit Entry'><input type='hidden' name='Task' value='"+task+"'><input type='hidden' name='Sub-Task' value=\""+subTask+"\"></form></div></div>");
                     subTaskID++;
                 }
             }
@@ -41,7 +41,7 @@ $(document).ready(function(){
         }
     });
     
-    $(".Tasks-Div").on("click", ".Task-Header", function(){
+    $(".Sub-Div").on("click", ".Task-Header", function(){
         var id = $(this).attr("value").split(",")[0];
         var task = $(this).attr("value").split(",")[1];
         if($("#"+id+".Input-Div").is(":hidden")){
