@@ -411,3 +411,5 @@ I helped a little with making James Marchant able to distinguish the problem wit
 More development of the web site. I attended a meeting on the Hartree hackathon with Andy, Adam, Gareth and Simon Pegg. I also attended a web conference with Greg and James on the progress of the Azure-hosted web service.
 15th
 Leave.
+18th
+More development to the website. Attended an Innovation Pipeline. Handed over the Divided architecture document to Andy for him to provide comments/help on.

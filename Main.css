@@ -60,6 +60,7 @@ body {
     vertical-align: middle;    
 }
 .Entry-Cell-Left, .Entry-Cell-Right {
+    font-weight: bold;
     width: 15%;
 }
 .Entry-Cell-Middle {
@@ -72,9 +73,9 @@ body {
 }
 [class$="-Entry-Table"], #Personal-Task-Entry, [class$="-Sub-Task-Table-Div"] {
     border-collapse: collapse;
+    box-sizing: border-box;
     display: table;
     margin: 2px auto;
-    box-sizing: border-box;
     width: 100%;
 }
 .Footer-Div {
@@ -106,9 +107,9 @@ hr {
 .Month-And-Year, .Task-Header {
     background-color: gainsboro;
     border: 2px solid;
+    box-sizing: border-box;
     cursor: pointer;
     margin: 2px auto;
-    box-sizing: border-box;
     width: 100%;
 }
 .Month-Row:hover {
