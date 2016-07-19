@@ -19,9 +19,7 @@
                 </form>
             </div>
             <p style="color:cornflowerblue;"><b>Click on a Task to blow up the entries.</b></p>
-            <div class="Sub-Div">
-                <div class="Tasks-Div" id="Tasks-Div">
-                </div>
+            <div class="Sub-Div" id="Sub-Div">
             </div>
         </div>
     </body>

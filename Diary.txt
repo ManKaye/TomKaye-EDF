@@ -409,3 +409,9 @@ I attended a morning meeting where all the Year in Industry students gave five m
 I helped a little with making James Marchant able to distinguish the problem with accessing the Azure site on the Blue network. As well as this I made more steps in development of my personal web site.
 14th
 More development of the web site. I attended a meeting on the Hartree hackathon with Andy, Adam, Gareth and Simon Pegg. I also attended a web conference with Greg and James on the progress of the Azure-hosted web service.
+15th
+Leave.
+18th
+More development to the website. Attended an Innovation Pipeline. Handed over the Divided architecture document to Andy for him to provide comments/help on.
+19th
+Added cookies to the web site. Attended the Lunch + Learn for Innovation. Also had a random drugs test.

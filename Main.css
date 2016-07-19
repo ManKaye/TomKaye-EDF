@@ -1,6 +1,6 @@
 .Anchor, .Complete, .Edit, .Link, .Links, .Module, .RemoveTask, .Submit {
     background-color: dodgerblue;
-    margin: 2px auto;
+    margin: 2px;
 }
 body {    
     background-color: #FFF8E7;
@@ -8,9 +8,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-}
-li {
-    list-style-type:disc;
 }
 .Back {
     background-color: tomato;
@@ -48,32 +45,39 @@ li {
 }
 .Entry {
     border: 2px solid;
-    margin-bottom: 5px;
-    margin-top: 5px;
+    margin: 2px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.Entry:focus {
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+}
+.Entry-Cell-Left, .Entry-Cell-Right, .Entry-Cell-Middle {
+    display: table-cell;
+    vertical-align: middle;    
 }
 .Entry-Cell-Left, .Entry-Cell-Right {
-    display: table-cell;
-    vertical-align: middle;
+    font-weight: bold;
     width: 15%;
 }
 .Entry-Cell-Middle {
-    display: table-cell;
-    vertical-align: middle;
     width: 70%;
 }
-[class$="-Entry-Row"]{
+[class$="-Entry-Row"], [class$="-Sub-Task-Row-Div"] {
     background-color: #FFF8E7;
     border: 2px solid;
-    display: none;
+    display: table-row;
 }
-[class$="-Entry-Table"] {
-    margin-bottom: 2px;
-    margin-left: 1px;
-}
-[class$="-Entry-Table"], .Month-Table, #Personal-Task-Entry, [class$="-Sub-Task-Table-Div"] {
+[class$="-Entry-Table"], #Personal-Task-Entry, [class$="-Sub-Task-Table-Div"] {
     border-collapse: collapse;
-    display: table;
+    box-sizing: border-box;
+    margin: 2px auto;
     width: 100%;
+}
+[class$="-Entry-Table"], [class$="-Sub-Task-Table-Div"] {
+    display: none;    
 }
 .Footer-Div {
     font-size: 50%;
@@ -101,29 +105,28 @@ hr {
     min-height: 100%;
     text-align: center;
 }
-.Month-And-Year {
-    border: 2px solid;
-    display: table-cell;
-    font-weight: bold;
-}
-.Month-Row {
+.Month-And-Year, .Task-Header {
     background-color: gainsboro;
-    display: table-row;
+    border: 2px solid;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 2px auto;
+    width: 100%;
 }
 .Month-Row:hover {
     cursor: pointer;
 }
-.Month-Table {
-    margin-bottom: 2px;
-}
 .Personal-Task {
-    display: table-cell;
-    vertical-align: middle;
     width: 70%;
 }
-.Remove-Task {
+#Personal-Task-Entry {
+    display: table;
+}
+.Personal-Task, .Remove-Task {
     display: table-cell;
-    right: 0px;
+    vertical-align: middle;
+}
+.Remove-Task {
     width: 30%;
 }
 .Sub-Div {
@@ -141,22 +144,11 @@ hr {
 .Sub-Task-Form-Cell, .Sub-Task-Status-Cell {
     width: 20%;
 }
-[class$="-Sub-Task-Row-Div"] {
-    background-color: antiquewhite;
-    border: 2px solid;
-    display: none;
-}
 .Table-Form {
     margin: auto;
 }
 .Task-Div {
-    background-color: antiquewhite;
+    background-color: #FFF8E7;
     border: 2px solid;
     display: table-row;
-}
-.Task-Header {
-    background-color: gainsboro;
-    border: 2px solid;
-    cursor: pointer;
-    margin: 2px auto;
 }

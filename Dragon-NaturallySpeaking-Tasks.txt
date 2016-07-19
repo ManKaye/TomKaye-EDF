@@ -4,4 +4,4 @@ Communications with Jonathan Annison on the possible implementation of Dragon Na
 Work on interface accessible by Red and Blue for help and attached guides relating to accessibility software - SharePoint, Wiki or Pulse page.not done
 Speak with George Xydas on the best way to link to Pulse, potentially as an addition to Pulse with web page(s).done
 Complete a Vision diagram on website topography.done
-Create an Accessibility Software Requirements Matrix.not done
+Create an Accessibility Software Requirements Matrix.done
