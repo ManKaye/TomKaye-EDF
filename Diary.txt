@@ -413,3 +413,5 @@ More development of the web site. I attended a meeting on the Hartree hackathon 
 Leave.
 18th
 More development to the website. Attended an Innovation Pipeline. Handed over the Divided architecture document to Andy for him to provide comments/help on.
+19th
+Added cookies to the web site. Attended the Lunch + Learn for Innovation. Also had a random drugs test.

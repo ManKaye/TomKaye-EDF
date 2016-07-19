@@ -1,6 +1,6 @@
 .Anchor, .Complete, .Edit, .Link, .Links, .Module, .RemoveTask, .Submit {
     background-color: dodgerblue;
-    margin: 2px auto;
+    margin: 2px;
 }
 body {    
     background-color: #FFF8E7;
@@ -45,8 +45,7 @@ body {
 }
 .Entry {
     border: 2px solid;
-    margin-bottom: 5px;
-    margin-top: 5px;
+    margin: 2px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
 }
@@ -69,14 +68,16 @@ body {
 [class$="-Entry-Row"], [class$="-Sub-Task-Row-Div"] {
     background-color: #FFF8E7;
     border: 2px solid;
-    display: none;
+    display: table-row;
 }
 [class$="-Entry-Table"], #Personal-Task-Entry, [class$="-Sub-Task-Table-Div"] {
     border-collapse: collapse;
     box-sizing: border-box;
-    display: table;
     margin: 2px auto;
     width: 100%;
+}
+[class$="-Entry-Table"], [class$="-Sub-Task-Table-Div"] {
+    display: none;    
 }
 .Footer-Div {
     font-size: 50%;
@@ -117,6 +118,9 @@ hr {
 }
 .Personal-Task {
     width: 70%;
+}
+#Personal-Task-Entry {
+    display: table;
 }
 .Personal-Task, .Remove-Task {
     display: table-cell;
