@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Tom's EDF Diary</title>
+        <title>EDF Diary</title>
         <link rel="stylesheet" href="Main.css">
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="DiaryScript.js"></script>

@@ -2,10 +2,10 @@
     background-color: dodgerblue;
     margin: 2px;
 }
-body {    
+body {
     background-color: #FFF8E7;
-    font-family: "Helvetica-Neue", "Calibri", sans-serif;
-    font-size: 120%;
+    font-family: "Tahoma", sans-serif;
+    font-size: 90%;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
@@ -41,6 +41,17 @@ body {
     border: 2px solid white;
     color: white;
 }
+.Calendar-Table {
+    background-color: #FFF8E7;
+    border: 2px solid;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    margin-top: 2px;
+    width: 100%;
+}
+.Day-Row {
+    background-color: gainsboro;
+}
 .Diary, .Favourites, .Task {
     width: 70%;
 }
@@ -57,7 +68,7 @@ body {
 }
 .Entry-Cell-Left, .Entry-Cell-Right, .Entry-Cell-Middle {
     display: table-cell;
-    vertical-align: middle;    
+    vertical-align: middle;
 }
 .Entry-Cell-Left, .Entry-Cell-Right {
     font-weight: bold;
@@ -78,7 +89,7 @@ body {
     width: 100%;
 }
 [class$="-Entry-Table"], [class$="-Sub-Task-Table-Div"] {
-    display: none;    
+    display: none;
 }
 .Footer-Div {
     font-size: 50%;
@@ -96,9 +107,9 @@ hr {
     border: 2px solid;
     cursor: pointer;
 }
-.Logo-Image { 
+.Logo-Image {
     max-height: 200px;
-    max-width:33%; 
+    max-width:33%;
     vertical-align: middle;
 }
 .Main-Div {

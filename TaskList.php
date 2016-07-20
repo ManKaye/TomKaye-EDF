@@ -1,9 +1,9 @@
 <html>
     <head>
-        <title>Tom's EDF Task List</title>
+        <title>EDF Task List</title>
         <link rel="stylesheet" href="Main.css">
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="TaskListScript.js"></script>        
+        <script src="TaskListScript.js"></script>
     </head>
     <body>
         <div class="Main-Div">
@@ -11,7 +11,7 @@
             <div id="Back-Button-Div">
                 <input type="button" class="Back Button" onclick="window.location = 'index.html';" value="Back to Main Page">
             </div>
-            <div>                
+            <div>
                 <h4 style="padding-top: 5px;">Insert Project/Topic Here</h4>
                 <form action="TaskEntry.php" method="post">
                     <input type="text" name="Task-Entry" class="Task Entry" id="Task-Entry" value="Enter Task Here..." onfocus="if(this.value==='Enter Task Here...') this.value='';">

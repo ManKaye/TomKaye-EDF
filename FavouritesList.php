@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Tom's Favourites List</title>
+        <title>Favourites List</title>
         <link rel="stylesheet" href="Main.css">
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="FavouritesListScript.js"></script>

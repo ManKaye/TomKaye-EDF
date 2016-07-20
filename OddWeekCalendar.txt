@@ -1,0 +1,25 @@
+Mo,1,Computer Vision
+Mo,2,Robotics
+Mo,3,Data Mining
+Mo,2,Robotics
+Mo,1,Computer Vision
+Tu,1,Computer Vision
+Tu,2,Robotics
+Tu,3,Data Mining
+Tu,2,Robotics
+Tu,1,Computer Vision
+We,1,Computer Vision
+We,2,Robotics
+We,3,Data Mining
+We,2,Robotics
+We,1,Computer Vision
+Th,1,Computer Vision
+Th,2,Robotics
+Th,3,Data Mining
+Th,2,Robotics
+Th,1,Computer Vision
+Fr,1,Computer Vision
+Fr,2,Robotics
+Fr,3,Data Mining
+Fr,2,Robotics
+Fr,1,Computer Vision

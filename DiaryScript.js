@@ -38,7 +38,7 @@ $(document).ready(function(){
             }
         }
     });
-    
+
     $("#Sub-Div").on("click", ".Month-And-Year", function(){
         var month = $(this).attr("value");
         if($("."+month+"-Entry-Table").is(":hidden")){
