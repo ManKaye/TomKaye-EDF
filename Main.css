@@ -22,7 +22,7 @@ body {
 #Back-Button-Div {
     left: 50%;
     position: fixed;
-    top: 50px;
+    top: 12px;
     transform: translateX(-50%);
 }
 .Box-Span {
@@ -43,13 +43,16 @@ body {
 }
 .Calendar-Table {
     background-color: #FFF8E7;
-    border: 2px solid;
     border-collapse: collapse;
     box-sizing: border-box;
     margin-top: 2px;
     width: 100%;
 }
-.Day-Row {
+.Cell {
+    border: 2px solid;
+    text-align: center;
+}
+.Header {
     background-color: gainsboro;
 }
 .Diary, .Favourites, .Task {
@@ -114,6 +117,7 @@ hr {
 }
 .Main-Div {
     background-color: #CCEEFF;
+    border: 2px solid;
     min-height: 100%;
     text-align: center;
 }

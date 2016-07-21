@@ -415,3 +415,7 @@ Leave.
 More development to the website. Attended an Innovation Pipeline. Handed over the Divided architecture document to Andy for him to provide comments/help on.
 19th
 Added cookies to the web site. Attended the Lunch + Learn for Innovation. Also had a random drugs test.
+20th
+More development of the web site.
+21st
+A little web site development. I am also now working on improving the divided architecture BERAN document as well as looking into the REST API for Azure storage and how to utilize that for autonomous file transfers.
