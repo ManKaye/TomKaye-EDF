@@ -1,0 +1,25 @@
+Mo,2,Cryptography and Network Security
+Mo,1,Advanced Networking
+Mo,3,Data Mining
+Mo,2,Algorithm Analysis
+Mo,1,Computer Vision
+Tu,3,Implementation of Programming Languages
+Tu,2,Computer Vision
+Tu,2,Mobile Application Development
+Tu,1,Data Mining
+Tu,1,Advanced Networking
+We,1,Algorithm Analysis
+We,2,Mobile Application Development
+We,3,Cryptography and Network Security
+We,2,Computer Vision
+We,1,Advanced Networking
+Th,2,Data Mining
+Th,2,Implementation of Programming Languages
+Th,1,Cryptography and Network Security
+Th,3,Advanced Networking
+Th,1,Algorithm Analysis
+Fr,2,Advanced Networking
+Fr,1,Implementation of Programming Languages
+Fr,1,Computer Vision
+Fr,3,Algorithm Analysis
+Fr,2,Cryptography and Network Security

@@ -15,8 +15,8 @@
             <div>
                 <h3>Year Three</h3>
                 <select class="Odd-Even-Select List">
-                    <option value="Odd">Odd Week</option>
-                    <option value="Even">Even Week</option>
+                    <option class="Odd" value="Odd" selected="selected">Odd Week</option>
+                    <option class="Even" value="Even">Even Week</option>
                 </select>
                 <table class="Calendar-Table">
                     <tr class="Day-Row">
