@@ -1,3 +1,4 @@
 Create an Azure web service and SQL database + serverdone
 Copy the software and data across to the Azure platform.done
-Add security to the website.not done
+Add security to the website.done
+Look into encryption (maybe SSL) in Azure for web services.not done

@@ -419,3 +419,5 @@ Added cookies to the web site. Attended the Lunch + Learn for Innovation. Also h
 More development of the web site.
 21st
 A little web site development. I am also now working on improving the divided architecture BERAN document as well as looking into the REST API for Azure storage and how to utilize that for autonomous file transfers.
+22nd
+Aesthetic changes to the web site. Connected to a teleconference on the subject of the CGR generation web site to assess progress. More development of the BERAN divided architecture document.

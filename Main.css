@@ -1,5 +1,5 @@
 .Anchor, .Complete, .Edit, .Link, .Links, .Module, .RemoveTask, .Submit {
-    background-color: dodgerblue;
+    background-color: #1A66FF;
     margin: 2px;
 }
 body {
@@ -11,13 +11,13 @@ body {
     width: 80%;
 }
 .Back {
-    background-color: tomato;
+    background-color: #E60000;
     width: 200px;
 }
 .Back.Button:hover {
-    background-color: firebrick;
-    border: 2px solid white;
-    color: white;
+    background-color: #B30000;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
 }
 #Back-Button-Div {
     left: 50%;
@@ -37,7 +37,7 @@ body {
     -webkit-border-radius: 15px;
 }
 .Button:hover {
-    background-color: midnightblue;
+    background-color: #003399;
     border: 2px solid white;
     color: white;
 }
@@ -52,8 +52,11 @@ body {
     border: 2px solid;
     text-align: center;
 }
+h1, h2, h3, h4, h5, h6 {
+    color: #000000;
+}
 .Header {
-    background-color: gainsboro;
+    background-color: #DDDDDD;
 }
 .Diary, .Favourites, .Task {
     width: 70%;
@@ -65,8 +68,8 @@ body {
     -webkit-border-radius: 5px;
 }
 .Entry:focus {
-    border: 2px solid white;
-    background-color: black;
+    border: 2px solid #FFFFFF;
+    background-color: #000000;
     color: white;
 }
 .Entry-Cell-Left, .Entry-Cell-Right, .Entry-Cell-Middle {
@@ -96,7 +99,7 @@ body {
 }
 .Footer-Div {
     font-size: 50%;
-    color: grey;
+    color: #AAAAAA;
 }
 .Half-Width-Ruler {
     border: 1px solid;
@@ -104,7 +107,11 @@ body {
 }
 hr {
     border: 2px solid;
-    color: black;
+}
+.Links-Div {
+    display: inline-block;
+    width: 33%;
+    vertical-align: top;
 }
 .List {
     border: 2px solid;
@@ -116,13 +123,13 @@ hr {
     vertical-align: middle;
 }
 .Main-Div {
-    background-color: #CCEEFF;
+    background-color: #CCFFFF;
     border: 2px solid;
     min-height: 100%;
     text-align: center;
 }
 .Month-And-Year, .Task-Header {
-    background-color: gainsboro;
+    background-color: #DDDDDD;
     border: 2px solid;
     box-sizing: border-box;
     cursor: pointer;
@@ -146,7 +153,6 @@ hr {
     width: 30%;
 }
 .Sub-Div {
-    background-color: #CCEEFF;
     margin-left: 50px;
     margin-right: 50px;
 }
