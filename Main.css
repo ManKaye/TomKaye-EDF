@@ -108,10 +108,14 @@ h1, h2, h3, h4, h5, h6 {
 hr {
     border: 2px solid;
 }
+.Left {
+    float: left;
+}
 .Links-Div {
     display: inline-block;
-    width: 33%;
+    height: 200px;
     vertical-align: top;
+    max-width: 33% inherit;
 }
 .List {
     border: 2px solid;
@@ -151,6 +155,9 @@ hr {
 }
 .Remove-Task {
     width: 30%;
+}
+.Right {
+    float: right;
 }
 .Sub-Div {
     margin-left: 50px;
