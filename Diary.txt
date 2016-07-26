@@ -421,3 +421,7 @@ More development of the web site.
 A little web site development. I am also now working on improving the divided architecture BERAN document as well as looking into the REST API for Azure storage and how to utilize that for autonomous file transfers.
 22nd
 Aesthetic changes to the web site. Connected to a teleconference on the subject of the CGR generation web site to assess progress. More development of the BERAN divided architecture document.
+25th
+Attended an Innovation Pipeline. Finished altering the Divided Architecture for BERAN document and emailed the revised version over to Andy.
+26th
+Attended the second Lunch+Learn for Innovation. More investigation and practical learning on how to integrate Python as an object-oriented programming language with Microsoft Azure and successfully started importing files to the historicberandata file share.
