@@ -425,3 +425,5 @@ Aesthetic changes to the web site. Connected to a teleconference on the subject 
 Attended an Innovation Pipeline. Finished altering the Divided Architecture for BERAN document and emailed the revised version over to Andy.
 26th
 Attended the second Lunch+Learn for Innovation. More investigation and practical learning on how to integrate Python as an object-oriented programming language with Microsoft Azure and successfully started importing files to the historicberandata file share.
+27th
+More looking into Python and enquiring with Andy, and Gareth, about where the BERAN Base Station software should be hosted, as well as where the data transmission script file, (written in Python), should be held to be executed.
