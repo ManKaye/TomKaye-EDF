@@ -427,3 +427,12 @@ Attended an Innovation Pipeline. Finished altering the Divided Architecture for 
 Attended the second Lunch+Learn for Innovation. More investigation and practical learning on how to integrate Python as an object-oriented programming language with Microsoft Azure and successfully started importing files to the historicberandata file share.
 27th
 More looking into Python and enquiring with Andy, and Gareth, about where the BERAN Base Station software should be hosted, as well as where the data transmission script file, (written in Python), should be held to be executed.
+28th
+Attended a Strategy Session. More investigation into the capabilities of Python.
+29th
+Leave.
+August, 2016
+1st
+Missed an innovation pipeline meeting. Finished development on the Python file. Certain variables will have to be altered to allow for it to work. Started creating an Azure Utilization Guide.s
+2nd
+I attended a Delivery Team 3 meeting and an Architects Team meeting. I continued to write up the Microsoft Azure Utilization Guide document. I commented into the Python file on the Azure VM as well as implementing a task in Task Scheduler to make sure it ran at 8:00 in the morning on a daily basis.
