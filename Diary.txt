@@ -436,3 +436,7 @@ August, 2016
 Missed an innovation pipeline meeting. Finished development on the Python file. Certain variables will have to be altered to allow for it to work. Started creating an Azure Utilization Guide.s
 2nd
 I attended a Delivery Team 3 meeting and an Architects Team meeting. I continued to write up the Microsoft Azure Utilization Guide document. I commented into the Python file on the Azure VM as well as implementing a task in Task Scheduler to make sure it ran at 8:00 in the morning on a daily basis.
+3rd
+I have to oversee a conference call on the 12th. Did a little work on the BERAN virtual machine to see if new files will upload autonomously.
+4th
+Attended a Strategy session. Looking into opening ports to access VMs for BERAN project. Revised the Task Scheduler task to automate the python file on the BERAN VM.
