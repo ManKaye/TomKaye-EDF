@@ -440,3 +440,5 @@ I attended a Delivery Team 3 meeting and an Architects Team meeting. I continued
 I have to oversee a conference call on the 12th. Did a little work on the BERAN virtual machine to see if new files will upload autonomously.
 4th
 Attended a Strategy session. Looking into opening ports to access VMs for BERAN project. Revised the Task Scheduler task to automate the python file on the BERAN VM.
+5th
+Did some work on my poster for my year in placement.
