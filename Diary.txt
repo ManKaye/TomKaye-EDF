@@ -442,3 +442,5 @@ I have to oversee a conference call on the 12th. Did a little work on the BERAN 
 Attended a Strategy session. Looking into opening ports to access VMs for BERAN project. Revised the Task Scheduler task to automate the python file on the BERAN VM.
 5th
 Did some work on my poster for my year in placement.
+8th
+Talked with InfoSec/Perimeter Sec on access to various Azure things. Need to put in service requests for them. Talked with Erik Cummins on use of Azure to create a web server. Attended an Innovation Pipeline. Also started looking into accessibility for the visually impaired employees of EDF to have hard copy documents read out to them.

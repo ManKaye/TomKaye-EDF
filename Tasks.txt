@@ -9,3 +9,5 @@ Go4Set
 Project Tango
 Azure CGR Website
 Lunch and Learn Innovation
+Braille Embossing or AR Accessibility for the Visually Impaired
+Erik Cummins Web Server on Azure
