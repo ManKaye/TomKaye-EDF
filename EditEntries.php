@@ -28,7 +28,7 @@
                     $fileNew = str_replace($current, $new, $fileOpen);
                     file_put_contents($file, $fileNew);
                     echo "<script>window.location = 'Diary.php'</script>";
-                }                
+                }
             }
         ?>
     </body>

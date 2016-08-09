@@ -60,9 +60,9 @@
                 else{
                     $status = "done";
                 }
-                echo "<div class='Main-Div'><br/>";
+                echo "<div class='Sub-Div'><br/>";
                 echo "<h3>The current sub-task is:</h3><form action='' method='post'><p>".substr($subTask, 0, -strlen($status))."</p>";
-                echo "<input type='text' class='Task Entry' name='Task-Entry'><input type='submit' class='Submit Button' name='Submit-Edit' value='Append the Task'><input type='hidden' name='Sub-Task' value='".$subTask."'><input type='hidden' name='Status' value='".$status."'><input type='hidden' name='Task' value='".$task."'></form></div";
+                echo "<input type='text' class='Task Entry' name='Task-Entry'><input type='submit' class='Submit Button' name='Submit-Edit' value='Append the Task'><input type='hidden' name='Sub-Task' value='".$subTask."'><input type='hidden' name='Status' value='".$status."'><input type='hidden' name='Task' value='".$task."'></form></div>";
             }
             if($_POST["Submit-Edit"]){
                 if("" == trim($_POST["Task-Entry"])){
@@ -78,7 +78,7 @@
                     $fileNew = str_replace($subTask, $new.$status, $fileOpen);
                     file_put_contents($file, $fileNew);
                     echo "<script>window.location = 'TaskList.php'</script>";
-                }             
+                }
             }
         ?>
     </body>

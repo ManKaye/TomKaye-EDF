@@ -15,10 +15,10 @@
                     $file = "Tasks.txt";
                     $current = file_get_contents($file);
                     if($current != ""){
-                        $current .= "\n".$_POST["Task-Entry"];
+                        $current .= "\n".htmlspecialchars($_POST["Task-Entry"]);
                     }
                     else{
-                        $current .= $_POST["Task-Entry"];
+                        $current .= htmlspecialchars($_POST["Task-Entry"]);
                     }
                     $insert = file_put_contents($file, $current);
                     if($insert == false){
@@ -27,7 +27,7 @@
                     else{
                         echo "<script>window.location = 'TaskList.php'</script>";
                     }
-                    $hyphonedTask = str_replace(" ", "-", $_POST["Task-Entry"]);
+                    $hyphonedTask = str_replace(" ", "-", htmlspecialchars($_POST["Task-Entry"]));
                     $createFile = fopen($hyphonedTask."-".$file, "w");
                     fclose($createFile);
                 }
