@@ -446,3 +446,5 @@ Did some work on my poster for my year in placement.
 Talked with InfoSec/Perimeter Sec on access to various Azure things. Need to put in service requests for them. Talked with Erik Cummins on use of Azure to create a web server. Attended an Innovation Pipeline. Also started looking into accessibility for the visually impaired employees of EDF to have hard copy documents read out to them.
 9th
 Put in a service request for Internet access to the Azure portal for me, Gareth and Ieuan on the Blue network. Talked with Ian O' Hanlan on updating my OS on my desktop. Attended a Generation Architect's Team meeting.
+10th
+Helped out Billy to his interview and gave him a tour afterwards. Had a one to one with Martin.

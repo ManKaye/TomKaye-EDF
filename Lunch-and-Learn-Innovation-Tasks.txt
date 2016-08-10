@@ -1,4 +1,4 @@
 Book a room, preferably one of the training rooms.done
 Invite Gen IS staff to Events.done
 Attend the 19th Session.done
-Attend the 26th Session.not done
+Attend the 26th Session.done

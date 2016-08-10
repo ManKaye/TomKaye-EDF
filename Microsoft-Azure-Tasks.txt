@@ -1,4 +1,4 @@
 Create Azure automation with scripts.done
 Remove the Lync virtual machines from automation scripts and shut them down.done
 Create chart(s) on expenditure.done
-Make a document to help others to use Microsoft Azure.not done
+Make a document to help others to use Microsoft Azure.done

@@ -1,1 +1,4 @@
 Talk with Erik Cummins and Quorum on requirements.not done
+Add Erik as an Azure subscription member.done
+Add Quorum account as an Azure subscription member.done
+Ask Erik about endurance of the life of the app, whether Customer will pay, etc.not done

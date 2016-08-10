@@ -1,4 +1,5 @@
 Create an Azure web service and SQL database + serverdone
 Copy the software and data across to the Azure platform.done
 Add security to the website.done
-Look into encryption (maybe SSL) in Azure for web services.not done
+Look into encryption (maybe SSL) in Azure for web services.done
+Do performance tests to make sure the web site can handle large numbers of concurrent users.done
