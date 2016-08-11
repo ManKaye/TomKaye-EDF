@@ -448,3 +448,5 @@ Talked with InfoSec/Perimeter Sec on access to various Azure things. Need to put
 Put in a service request for Internet access to the Azure portal for me, Gareth and Ieuan on the Blue network. Talked with Ian O' Hanlan on updating my OS on my desktop. Attended a Generation Architect's Team meeting.
 10th
 Helped out Billy to his interview and gave him a tour afterwards. Had a one to one with Martin.
+11th
+Attended a Strategy Session. Helped Joe Blades attend his interview and gave him a tour afterwards. Did some Azure housekeeping.
