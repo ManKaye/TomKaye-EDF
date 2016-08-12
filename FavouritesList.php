@@ -2,6 +2,7 @@
     <head>
         <title>Favourites List</title>
         <link rel="stylesheet" href="Main.css">
+        <link rel="icon" href="Basquiat Crown.png">
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="FavouritesListScript.js"></script>
         <script type="text/javascript">

@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="Main.css">
+        <link rel="icon" href="Basquiat Crown.png">
         <script src="FavouritesListScript.js"></script>
     </head>
     <body>
@@ -34,7 +35,7 @@
                         array_push($newArray, $task);
                     }
                 }
-                
+
                 $newData = implode("\n", array_values($newArray));
                 $fileOpen = fopen($file, "w");
                 fwrite($fileOpen, $newData);

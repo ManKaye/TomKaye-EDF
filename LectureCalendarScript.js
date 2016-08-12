@@ -24,16 +24,16 @@ $(document).ready(function(){
                 var linesArray = lines[i].split(",");
                 var hours = parseInt(linesArray[1]);
                 if(hours === 1){
-                    $("#"+time+linesArray[0]).empty();
-                    $("#"+time+linesArray[0]).append(linesArray[2]);
-                    $("#"+time+linesArray[0]).css("background-color", colourArray[linesArray[2]]);
+                    $("#"+time+linesArray[0]).append(linesArray[2].trim());
+                    $("#"+time+linesArray[0]).css("background-color", colourArray[linesArray[2].trim()]);
+                    alert(linesArray[2]);
                     time = time + hours;
                 }
                 if(hours > 1){
-                    $("#"+time+linesArray[0]).empty();
-                    $("#"+time+linesArray[0]).append(linesArray[2]);
+                    $("#"+time+linesArray[0]).append(linesArray[2].trim());
                     $("#"+time+linesArray[0]).attr("rowspan", hours);
-                    $("#"+time+linesArray[0]).css("background-color", colourArray[linesArray[2]]);
+                    $("#"+time+linesArray[0]).css("background-color", colourArray[linesArray[2].trim()]);
+                    alert(linesArray[2]);
                     for(var j = time + 1; j < time + hours; j++){
                         $("#"+j+linesArray[0]).detach();
                     }

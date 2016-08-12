@@ -2,6 +2,7 @@
     <head>
         <title>Advanced Web Programming</title>
         <link rel="stylesheet" href="Main.css">
+        <link rel="icon" href="Basquiat Crown.png">
         <script type="text/x-mathjax-config">
             MathJax.Hub.Config({tex2jax: {inlineMath: [['$$','$$'], ['\\(','\\)']]}});
         </script>
@@ -17,61 +18,61 @@
             </div>
             <br/>
             <div class="Sub-Div">
-                <p>Syntax diagrams define the structure of any program and are good for communicating 
+                <p>Syntax diagrams define the structure of any program and are good for communicating
                     the syntax of that program to other people.</p>
                 <br/>
                 <u>Railway Tracks</u>
-                <p>Syntax diagrams have to be thought of as paths to follow, where paths can only 
+                <p>Syntax diagrams have to be thought of as paths to follow, where paths can only
                     be taken if they flow with the gradient<br/>
                     <img src="Advanced Web Programming/Image1.jpg" alt="First Image"><br/>
-                    With a sequence, one state leads to one state and no other options. With a 
-                    selection, before one state there is an alternating path to take before the 
-                    state to lead to another, alternate state. Repetition is achieved by applying 
-                    the opposite flowing line from a selection, with no second state to choose. 
-                    Therefore the alternate pathway can be taken only after the state has been 
+                    With a sequence, one state leads to one state and no other options. With a
+                    selection, before one state there is an alternating path to take before the
+                    state to lead to another, alternate state. Repetition is achieved by applying
+                    the opposite flowing line from a selection, with no second state to choose.
+                    Therefore the alternate pathway can be taken only after the state has been
                     reached.</p>
                 <br/>
                 <u>Syntactically Correct vs. Semantically Correct</u>
-                <p>A syntactically correct program will always work, whatever input, and means that 
-                    the structure is correct. A semantically correct program will not always 
+                <p>A syntactically correct program will always work, whatever input, and means that
+                    the structure is correct. A semantically correct program will not always
                     necessarily work but will always output the intended values.</p>
                 <br/>
                 <u>Terminal & Non-terminal</u>
-                <p>A terminal character will simply be read as it is and not the name of a 
-                    function. They are enclosed by rounded rectangles. A non-terminal character 
-                    will be read as the identifier for a function and will enter the syntax diagram 
+                <p>A terminal character will simply be read as it is and not the name of a
+                    function. They are enclosed by rounded rectangles. A non-terminal character
+                    will be read as the identifier for a function and will enter the syntax diagram
                     of that function. A terminal character is notated by a rectangle.</p>
                 <br/>
                 <u>Recursive Definitions</u>
-                <p>Recursive definitions in functions can be used, where the function identifier 
+                <p>Recursive definitions in functions can be used, where the function identifier
                     name is used within its own function.</p>
                 <br/>
                 <u>Backus-Naur Form</u>
-                <p>BNF is an alternative notation to syntax diagrams. It is a purely textual 
-                    notation and can be processed by a computer.<br/>In Backus Naur Form, terminal 
-                    characters are enclosed in speech marks, "(". The 'defined-to-be' operator is 
+                <p>BNF is an alternative notation to syntax diagrams. It is a purely textual
+                    notation and can be processed by a computer.<br/>In Backus Naur Form, terminal
+                    characters are enclosed in speech marks, "(". The 'defined-to-be' operator is
                     notated as `::=`.<br/>
                     An example:<br/>
                     `BB ::= "("BB")"`<br/>
-                    The BB is a non-terminal symbol, so at the point of the non-terminal symbol, 
-                    the associated function will be activated and the returned value will be 
-                    inserted in place of the BB non-terminal identifiers.<br/>A choice in BNF is 
+                    The BB is a non-terminal symbol, so at the point of the non-terminal symbol,
+                    the associated function will be activated and the returned value will be
+                    inserted in place of the BB non-terminal identifiers.<br/>A choice in BNF is
                     defined by two definitions of the non-terminal symbol in question.<br/>
-                    Recursion is defined by using the non-terminal symbol in the 'defined-to-be' 
-                    section.<br/>BNF can also be noted with non-terminal symbols being enclosed 
-                    in &lt;&gt;, so &lt;Bit&gt;, with the 'defined-to-be' operator as :, and the terminal 
+                    Recursion is defined by using the non-terminal symbol in the 'defined-to-be'
+                    section.<br/>BNF can also be noted with non-terminal symbols being enclosed
+                    in &lt;&gt;, so &lt;Bit&gt;, with the 'defined-to-be' operator as :, and the terminal
                     symbols, shown on their own.</p>
                 <br/>
                 <u>EBNF (Extended Backus-Naur Form)</u>
-                <p>Extended Backus Naur Form is a more concise and powerful tool for defining 
-                    patterns.<br/> - ? Is the symbol for the optional element<br/> - * is the 
-                    symbol that defines an element to be repeated 0 or more times<br/> - + is the 
-                    symbol that defines an element to be repeated 1 or more times<br/> - | is the 
-                    symbol to define alternatives<br/> - () is for grouping multiple symbols into 
-                    one element<br/> - = is the symbol for is-defined-to-be<br/><br/>Bit = "a"? 
-                    Would output a or nothing<br/>Bit = "a"* Would output nothing, a, aa, aaa, 
-                    aaaa, etc.<br/>Bit = "a"+ Would output a, aa, aaa, aaaa, etc.<br/>Bit = "a" | 
-                    "b" Would output a or b<br/>Bit = ("ab")* Would output nothing, ab, abab, 
+                <p>Extended Backus Naur Form is a more concise and powerful tool for defining
+                    patterns.<br/> - ? Is the symbol for the optional element<br/> - * is the
+                    symbol that defines an element to be repeated 0 or more times<br/> - + is the
+                    symbol that defines an element to be repeated 1 or more times<br/> - | is the
+                    symbol to define alternatives<br/> - () is for grouping multiple symbols into
+                    one element<br/> - = is the symbol for is-defined-to-be<br/><br/>Bit = "a"?
+                    Would output a or nothing<br/>Bit = "a"* Would output nothing, a, aa, aaa,
+                    aaaa, etc.<br/>Bit = "a"+ Would output a, aa, aaa, aaaa, etc.<br/>Bit = "a" |
+                    "b" Would output a or b<br/>Bit = ("ab")* Would output nothing, ab, abab,
                     ababab, etc. where Bit = "ab"* Would output a, ab, abb, abbb, etc.</p>
                 <br/>
                 <u>Syntax-Directed Editor</u>
@@ -89,130 +90,130 @@
                     `\text{Item} ::= "2"`<br/>
                     <img src="Advanced Web Programming/Image5.jpg" alt="Fifth Image"><br/>
                     <img src="Advanced Web Programming/Image6.jpg" alt="Sixth Image"><br/>
-                    With all the pieces of the puzzle available, these pieces can be combined to form one 
+                    With all the pieces of the puzzle available, these pieces can be combined to form one
                     syntax tree.<br/>For (1,2) -<br/>
                     <img src="Advanced Web Programming/Image7.jpg" alt="Seventh Image"><br/>
                     With scaling the tree, the branches must simply be followed in a depth-first manner.<br/>
                     The derivation for this tree will be:<br/>
                     <img src="Advanced Web Programming/Image8.jpg" alt="Eighth Image"><br/>
-                    With elements of recursion that are applied many times, there is a chance that 
-                    the created syntax tree could be heavy on one branch; left or right. To 
-                    prevent this from happening, a recursive definition could be split up into two 
+                    With elements of recursion that are applied many times, there is a chance that
+                    the created syntax tree could be heavy on one branch; left or right. To
+                    prevent this from happening, a recursive definition could be split up into two
                     recursive definitions, so:<br/>
                     `\text{List} ::= \text{item} "," \text{list}`<br/>
                     `\text{List} ::= \text{list} "," \text{item}`<br/>
-                    These two recursive functions, if used evenly, will prevent right or 
+                    These two recursive functions, if used evenly, will prevent right or
                     left-heavy recursion.</p>
                 <br/>
                 <u>Regular Expressions</u>
-                <p>In computing, regular expressions are used to create a series of patterns 
-                    through a string of terminal and non-terminal symbols accompanied with certain 
+                <p>In computing, regular expressions are used to create a series of patterns
+                    through a string of terminal and non-terminal symbols accompanied with certain
                     regular expression operators.<br/>With regular expressions, you can use:<br/>
-                    - a-z<br/> - A-Z<br/> - 0-9<br/> - . = wild card, it can be any of the above 
-                    characters<br/> - * and + = repetition, * is for 0 or more times and + is for 
-                    1 or more times<br/> - [a-z] and [0-9] = character groups, the range can be 
-                    changed as well<br/> - ^ and &dollar; = anchors, that can be used to anchor a string 
-                    to the front of the pattern, (^) or to the back of the pattern, (&dollar;)<br/> - () 
-                    = subpatterns, accompanied with the other mentioned operators, operate on the 
-                    entire subpattern instead of just the last character<br/> - ? = optional and 
-                    non-greedy, optional meaning that the previous subpattern/character can be 
-                    repeated 0 or 1 times. The non-greedy meaning that, if used after a repetition 
-                    operator, the string or subpattern will be repeated a non-greedy amount of 
-                    times<br/> - {n,m} = counted repetition, will repeat a string or subpattern n 
-                    to m amount of times<br/> - | = alternative, the | means that the pattern will 
+                    - a-z<br/> - A-Z<br/> - 0-9<br/> - . = wild card, it can be any of the above
+                    characters<br/> - * and + = repetition, * is for 0 or more times and + is for
+                    1 or more times<br/> - [a-z] and [0-9] = character groups, the range can be
+                    changed as well<br/> - ^ and &dollar; = anchors, that can be used to anchor a string
+                    to the front of the pattern, (^) or to the back of the pattern, (&dollar;)<br/> - ()
+                    = subpatterns, accompanied with the other mentioned operators, operate on the
+                    entire subpattern instead of just the last character<br/> - ? = optional and
+                    non-greedy, optional meaning that the previous subpattern/character can be
+                    repeated 0 or 1 times. The non-greedy meaning that, if used after a repetition
+                    operator, the string or subpattern will be repeated a non-greedy amount of
+                    times<br/> - {n,m} = counted repetition, will repeat a string or subpattern n
+                    to m amount of times<br/> - | = alternative, the | means that the pattern will
                     contain the string or subpattern to the left of it or to the right of it</p>
                 <br/>
                 <u>Applications of Regular Expressions</u>
-                <p>Regular expressions are used for searching when plain text patterns aren't 
-                    powerful enough, editing when the replacement depends on what was matched and 
-                    also data mining, where a large chunk of data is analysed and parsed for 
+                <p>Regular expressions are used for searching when plain text patterns aren't
+                    powerful enough, editing when the replacement depends on what was matched and
+                    also data mining, where a large chunk of data is analysed and parsed for
                     subpatterns within the data. </p>
                 <br/>
                 <u>Tokens</u>
-                <p>Tokens are an alternative and more computer science-related way of breaking up 
-                    sentences or strings. In a computer programming language the 'words' are 
-                    called tokens. Not all tokens are spelt with letters and aren't always 
-                    separated with spaces either. A compiler that breaks up a string into a series 
+                <p>Tokens are an alternative and more computer science-related way of breaking up
+                    sentences or strings. In a computer programming language the 'words' are
+                    called tokens. Not all tokens are spelt with letters and aren't always
+                    separated with spaces either. A compiler that breaks up a string into a series
                     of tokens is called a lexical analysis.</p>
                 <br/>
                 <u>Counting & Classifying Tokens</u>
-                <p>There are two sub-types of tokens; fixed tokens and programmer-defined tokens. 
-                    The exact spelling of a fixed token is prescribed in the language definition, 
-                    whereas a programmer-defined token follows protocol for that token to be 
-                    valid.<br/>An example of a fixed token would be the auto-increment operator, 
-                    '++', whereas an integer like '123' has been chosen by the programmer, making 
-                    it a programmer-defined token.<br/>The fixed tokens can be further broken down 
+                <p>There are two sub-types of tokens; fixed tokens and programmer-defined tokens.
+                    The exact spelling of a fixed token is prescribed in the language definition,
+                    whereas a programmer-defined token follows protocol for that token to be
+                    valid.<br/>An example of a fixed token would be the auto-increment operator,
+                    '++', whereas an integer like '123' has been chosen by the programmer, making
+                    it a programmer-defined token.<br/>The fixed tokens can be further broken down
                     into categories of: reserved words, operators, brackets and punctuation.<br/>
-                    The programmer-defined tokens can be further broken down into categories of 
-                    identifiers and constants.<br/>Reserved words include for, if, else, then, 
-                    etc. Operators include +, =, -, *, etc. Brackets include (, {, [, and their 
-                    closed counterparts. Punctuation includes ", ', !, etc.<br/>Identifiers 
-                    include variable identifiers, function identifiers and other kind of 
-                    indentifiers depending on the programming language. Type identifiers are an 
+                    The programmer-defined tokens can be further broken down into categories of
+                    identifiers and constants.<br/>Reserved words include for, if, else, then,
+                    etc. Operators include +, =, -, *, etc. Brackets include (, {, [, and their
+                    closed counterparts. Punctuation includes ", ', !, etc.<br/>Identifiers
+                    include variable identifiers, function identifiers and other kind of
+                    indentifiers depending on the programming language. Type identifiers are an
                     example. Constants include integers, reals, strings, boolean values, etc.<br/>
-                    The only problems that arise are the while word, which obeys the rule for an 
-                    identifier but could be seen as a reserved word. It is in-fact a 
-                    programmer-defined token. Built-in functions could be seen as 
-                    programmer-defined tokens, where the programmer is the creator of the 
-                    programming language, but can also be seen as a reserved word. The other 
-                    example is the return word which could mean programmer-defined as it is a 
-                    function identifier or it could be seen as a fixed token, where it is a 
-                    reserved word. This depends on whether it is written as return(v) or return v. 
-                    Also note that operators of two or more characters in length count as one 
+                    The only problems that arise are the while word, which obeys the rule for an
+                    identifier but could be seen as a reserved word. It is in-fact a
+                    programmer-defined token. Built-in functions could be seen as
+                    programmer-defined tokens, where the programmer is the creator of the
+                    programming language, but can also be seen as a reserved word. The other
+                    example is the return word which could mean programmer-defined as it is a
+                    function identifier or it could be seen as a fixed token, where it is a
+                    reserved word. This depends on whether it is written as return(v) or return v.
+                    Also note that operators of two or more characters in length count as one
                     token.</p>
                 <br/>
                 <u>Markup Languages</u>
-                <p>Markup languages provide an extra layer of representation and layout to text as 
+                <p>Markup languages provide an extra layer of representation and layout to text as
                     it is being rendered and displayed.</p>
                 <br/>
                 <u>HTML Hypertext Markup Language</u>
-                <p>HTML was the first markup language to format what was originally mono-font, 
-                    mono-tone text-only webpages. HTML would soon become HTML 5, with intermediate 
-                    versions, and also XHTML and XML.<br/>Markup languages are structured using 
-                    tags with accompanying, (most of the time), closing tags. Any less than symbol 
-                    in the text was to be replaced with &lt to prevent confusion. Some tags could 
-                    be self-closing like &lt;br /&gt;.<br/>Opening tags are allowed to have 
-                    attributes associated with them to format the enclosed content within the 
+                <p>HTML was the first markup language to format what was originally mono-font,
+                    mono-tone text-only webpages. HTML would soon become HTML 5, with intermediate
+                    versions, and also XHTML and XML.<br/>Markup languages are structured using
+                    tags with accompanying, (most of the time), closing tags. Any less than symbol
+                    in the text was to be replaced with &lt to prevent confusion. Some tags could
+                    be self-closing like &lt;br /&gt;.<br/>Opening tags are allowed to have
+                    attributes associated with them to format the enclosed content within the
                     tags.</p>
                 <br/>
                 <u>The Structure of XML - Extensible Markup Language</u>
-                <p>XML was meant to be strict and extensible and to leave the formatting to some 
-                    other agency, making the mark-up entirely semantic. XML documents should be 
-                    both well-formed and valid.<br/>Well-formed documents were concerned with the 
-                    syntax of the tags while valid documents were concerned with the semantics of 
+                <p>XML was meant to be strict and extensible and to leave the formatting to some
+                    other agency, making the mark-up entirely semantic. XML documents should be
+                    both well-formed and valid.<br/>Well-formed documents were concerned with the
+                    syntax of the tags while valid documents were concerned with the semantics of
                     the code against the document type definition.</p>
                 <br/>
                 <u>DTD - Document Type Definition</u>
-                <p>A DTD will have each possible tag for that mark-up language and will have all 
-                    the associated attributes for that tag.<br/>A new element will be defined as 
-                    &lt;!ELEMENT phones (phone)* &gt;…<br/>&lt;!ELEMENT phone (manufacturer, 
-                    model, feature*, screen) &gt;, this rooting will keep going until an attribute 
+                <p>A DTD will have each possible tag for that mark-up language and will have all
+                    the associated attributes for that tag.<br/>A new element will be defined as
+                    &lt;!ELEMENT phones (phone)* &gt;…<br/>&lt;!ELEMENT phone (manufacturer,
+                    model, feature*, screen) &gt;, this rooting will keep going until an attribute
                     with parsed character data is reached, so &lt;!ELEMENT model (#PCDATA) &gt;<br/>
                     Attributes are declared using &lt;!ATTLIST feature name CDATA #IMPLIED&gt;<br/>
                     Entities are declared as follows, &lt;!ENTITY pi "3.14159"&gt;</p>
                 <br/>
                 <u>XML Schema</u>
-                <p>A schema is an alternative supplement to a DTD. The schema will be written in 
-                    XML and will have a richer set of data types which is more familiar than 
+                <p>A schema is an alternative supplement to a DTD. The schema will be written in
+                    XML and will have a richer set of data types which is more familiar than
                     #PCDATA. These data types include complexType, element, sequence, etc.</p>
                 <br/>
                 <u>XHTML</u>
-                <p>DTDs are also created for HTML languages and documents created that are valid 
+                <p>DTDs are also created for HTML languages and documents created that are valid
                     against these DTDs are called XHTMLs.</p>
                 <br/>
                 <u>Data Mining by RegExp</u>
-                <p>The basic idea of data mining with regular expressions is to write a 
+                <p>The basic idea of data mining with regular expressions is to write a
                     specialised pattern of the form<br/>
                     `\text{Prefix_pattern}(\text{data_pattern})\text{postfix_pattern}`<br/>
-                    If the pattern is matched as a whole, then the data is matched to the first 
-                    subexpression.<br/>For example, if a module wants to be found, then the 
-                    pattern for the module will have to be broken up from 14COB231 to 14, CO, B 
-                    and 231. The first two numbers are the year, followed by the department, then 
+                    If the pattern is matched as a whole, then the data is matched to the first
+                    subexpression.<br/>For example, if a module wants to be found, then the
+                    pattern for the module will have to be broken up from 14COB231 to 14, CO, B
+                    and 231. The first two numbers are the year, followed by the department, then
                     the year of the module, and then the module number.</p>
                 <br/>
                 <u>Server-Side Data Mining</u>
-                <p>Both JavaScript and PHP have strong implementations of regular expressions so 
-                    that data mining using regular expressions can be employed equally easily on 
+                <p>Both JavaScript and PHP have strong implementations of regular expressions so
+                    that data mining using regular expressions can be employed equally easily on
                     client-side or server-side.<br/>
                     `$\text{doc} = \text{phpQuery}::\text{newDocumentHTML}('\text{myFile.html}');`<br/>
                     `\text{Echo} $\text{doc}['\text{ul} > \text{li}'];`<br/>
@@ -220,91 +221,91 @@
                     `\rightarrow\text{text}();`</p>
                 <br/>
                 <u>Semantics</u>
-                <p>Any part of a computer program should be able to be classified as either an 
-                    expression, a statement or a declaration.<br/>An expressions is part of the 
-                    program which is intended to generate a value which will then be used in some 
-                    way later on in the program.<br/>A statement is a command that represents a 
-                    task which has to be done.<br/>A declaration of a variable, function, constant 
-                    or type is typically the introduction of a new identifier and link that to a 
-                    storage location or a computation or a value or a type so that further 
+                <p>Any part of a computer program should be able to be classified as either an
+                    expression, a statement or a declaration.<br/>An expressions is part of the
+                    program which is intended to generate a value which will then be used in some
+                    way later on in the program.<br/>A statement is a command that represents a
+                    task which has to be done.<br/>A declaration of a variable, function, constant
+                    or type is typically the introduction of a new identifier and link that to a
+                    storage location or a computation or a value or a type so that further
                     references to the identifier in the program can be understood.</p>
                 <br/>
                 <u>Statements</u>
                 <p>`\text{Statement}::=\text{variable}":="\text{expression}`<br/>
-                    The value of the expression on the right is computed and the value is assigned 
-                    to the variable on the left.<br/>The operators allowed in statements are 
+                    The value of the expression on the right is computed and the value is assigned
+                    to the variable on the left.<br/>The operators allowed in statements are
                     assignment operators, so +=, -=, ++, --, =, etc.<br/>
                     The conditional<br/>
                     `\text{Statement}::='\text{if}' \text{condition} '\text{then}' \text{statement} '\text{else}' \text{statement}`<br/>
-                    If the condition is true, then the statement is executed. If the condition is false 
+                    If the condition is true, then the statement is executed. If the condition is false
                     then the else statement is executed.<br/>
                     `\text{Statement}::='\text{if}' '(' \text{expression} ')' \text{statement} '\text{else}' \text{statement}`<br/>
-                    When the values to be evaluated as true or false are non-boolean values, note 
-                    that the undefined and null values count as false, if the value is an integer 
-                    then 0 is false and any other integer is true, if the value is a string then 
-                    an empty string will return false and any other string value will return true. 
+                    When the values to be evaluated as true or false are non-boolean values, note
+                    that the undefined and null values count as false, if the value is an integer
+                    then 0 is false and any other integer is true, if the value is a string then
+                    an empty string will return false and any other string value will return true.
                     All objects are true.<br/>Iteration<br/>
                     `\text{Statement}::='\text{while}' \text{expression} '\text{do}' \text{statement}`<br/>
                     `\text{Statement}::='\text{while}' '(' \text{expression} ')' \text{statement}`<br/>
-                    Note that while(E)S can be obtained from if(E){S; while(E)S}<br/>The JavaScript 
+                    Note that while(E)S can be obtained from if(E){S; while(E)S}<br/>The JavaScript
                     for-loop<br/>
                     `\text{Statement}::='\text{for}' '(' \text{expression} ';' \text{expression} ';'`<br/>`\text{expression} ')' \text{statement}`<br/>
                     For(E1; E2; E3), S can be rewritten as E1; while(E2){S;E3}<br/>
                     So `\text{for}(i = 0; i < 10; i++)t += v[i];` becomes `i = 0; while(i < 10){t +=v [i]; i++}`</p>
                 <br/>
                 <u>Expressions</u>
-                <p>The main purpose of an expression is to compute a value. This value is 
+                <p>The main purpose of an expression is to compute a value. This value is
                     presented at the end of the computation.<br/>
                     `\text{Expression}::=\text{term} '+' \text{term}`<br/>
                     In arithmetic, the semantics of (t1 op t2) is:<br/>- Evaluate t1 to V1, then<br/>
                     - Evaluate t2 to V2, then<br/>- Combine the resulting values V1, V2 using op<br/>
                     For assignment:<br/>
                     `\text{Expression} ::= \text{variable} '=' \text{expression}`<br/>
-                    The semantics for the assignment variable is:<br/>Find the location of the 
-                    variable<br/>- Evaluate the expression to a value VE<br/>- Store the value VE 
-                    in the loaction associated with the variable<br/>- The value of the whole 
+                    The semantics for the assignment variable is:<br/>Find the location of the
+                    variable<br/>- Evaluate the expression to a value VE<br/>- Store the value VE
+                    in the loaction associated with the variable<br/>- The value of the whole
                     assignment is also VE<br/>For auto-increment:<br/>
                     `\text{Expression} ::= \text{variable}'++'`<br/>
-                    The value of the variable will be incremented by one in the above example but 
+                    The value of the variable will be incremented by one in the above example but
                     the old value of the variable is used.<br/>
                     `\text{Expression} ::= '++'\text{variable}`<br/>
-                    The value of the variable will be incremented by one in the above example but 
+                    The value of the variable will be incremented by one in the above example but
                     the new value of the variable is used.<br/>For compound assignment operators:<br/>
                     `\text{Expression} ::= \text{variable} '+=' \text{expression}`<br/>
                     This expression simply re-words the formula `\text{variable} '=' \text{variable} '+' \text{expression}`<br/>
                     For the conditional expression:<br/>
                     `\text{Expression} ::= \text{expression} '?' \text{expression} ':' \text{expression}`<br/>
-                    This means that if the first expression is true, then execute the second 
+                    This means that if the first expression is true, then execute the second
                     expression, and if it isn't then execute the third expression.</p>
                 <br/>
                 <u>First-class Values</u>
-                <p>A first-class value is one which can take part in every kind of operation 
-                    available to any value. These values can be denoted, assigned, transput, 
-                    included in data structures, passed as parameters, the result of a function, 
+                <p>A first-class value is one which can take part in every kind of operation
+                    available to any value. These values can be denoted, assigned, transput,
+                    included in data structures, passed as parameters, the result of a function,
                     etc.<br/>Denotation - 2, "hello;<br/>Assignment - `v = 2; s = 'hello';`<br/>
                     I/O - `s = \text{prompt}('\text{number please}' ); \text{and alert}(2);`<br/>
                     Inclusion in Data Structures - `\text{var} v = \text{new Array}(5); v[0] = 2; v[1] = '\text{hello}';`<br/>
                     Passed as a Parameter - `\text{function} f(i){\text{return}(i(i));}  \text{alert}(f(2));`<br/>
                     The Result of a Function - `\text{function} f(i){\text{return}(i(i));} \text{alert}(f(2)));`<br/>
-                    Arrays are not first-class values in C or JavaScript. They are not first-class 
-                    values in C because arrays are unable to be assigned to anything without the 
-                    thing it is being assigned to being instantiated first. JavaScript arrays are 
-                    not first-class values either as arrays can not be input in JavaScript, only 
+                    Arrays are not first-class values in C or JavaScript. They are not first-class
+                    values in C because arrays are unable to be assigned to anything without the
+                    thing it is being assigned to being instantiated first. JavaScript arrays are
+                    not first-class values either as arrays can not be input in JavaScript, only
                     output.</p>
                 <br/>
                 <u>Functions as First-class Values</u>
-                <p>For a function to be a first-class value, there would need to be denotations 
-                    for them, have function variables, they would need to be able to assign them 
+                <p>For a function to be a first-class value, there would need to be denotations
+                    for them, have function variables, they would need to be able to assign them
                     by writing an assignment of a denotation to a function variable like this<br/>
                     `F = \text{function denotation}`<br/>
-                    We would need to be able to have arrays of functions, read and write 
-                    functions, have functions with function parameters and functions with function 
+                    We would need to be able to have arrays of functions, read and write
+                    functions, have functions with function parameters and functions with function
                     results.</p>
                 <br/>
                 <u>Concept of a Function Denotation</u>
-                <p>Functions can be used in some programming languages like JavaScript to be 
-                    assigned to variables or return values. In these cases, the functions can have 
-                    no names and can simply have its required parameters remaining in the 
+                <p>Functions can be used in some programming languages like JavaScript to be
+                    assigned to variables or return values. In these cases, the functions can have
+                    no names and can simply have its required parameters remaining in the
                     parentheses.</p>
                 <br/>
                 <u>Lambda Notation</u>
@@ -315,30 +316,30 @@
                     `\lambda(\text{parameters}).\text{body}` or `(\lambda \text{parameter}.\text{body})(\text{value})`</p>
                 <br/>
                 <u>Type Notation</u>
-                <p>All programming languages have a set of data types, whether they be built-in, 
-                    primitive, predefined or atomic.<br/>They can be integers, reals, characters, 
-                    or booleans.<br/>Larger structures that contain these smaller data types 
-                    include lists, arrays and records.<br/>For array types, if there is an array 
-                    of elements and all of that array's elements are integers, then the type of 
-                    the array is integer*. If all of the elements of that array are characters 
-                    then the type of the array will be Char*.<br/>For tuple types, if x and y are 
-                    integers then (x,y) is a 2-tuple and its type is written as Integer x Integer. 
-                    If c is a character, I is an integer and b is a boolean then (c,I,b) is a 
-                    3-tuple and its type is Char x Integer x Boolean.<br/>Function types, or 
-                    signatures are basically the type progression of a function as the function 
-                    itself progresses. So `D1 × D2 \rightarrow R` where D1 and D2 are both 
-                    integers are strings<br/>for example. D1 and D2 are also the two parameters of 
+                <p>All programming languages have a set of data types, whether they be built-in,
+                    primitive, predefined or atomic.<br/>They can be integers, reals, characters,
+                    or booleans.<br/>Larger structures that contain these smaller data types
+                    include lists, arrays and records.<br/>For array types, if there is an array
+                    of elements and all of that array's elements are integers, then the type of
+                    the array is integer*. If all of the elements of that array are characters
+                    then the type of the array will be Char*.<br/>For tuple types, if x and y are
+                    integers then (x,y) is a 2-tuple and its type is written as Integer x Integer.
+                    If c is a character, I is an integer and b is a boolean then (c,I,b) is a
+                    3-tuple and its type is Char x Integer x Boolean.<br/>Function types, or
+                    signatures are basically the type progression of a function as the function
+                    itself progresses. So `D1 × D2 \rightarrow R` where D1 and D2 are both
+                    integers are strings<br/>for example. D1 and D2 are also the two parameters of
                     the function while the real number is the returned result.</p>
                 <br/>
                 <u>Higher Order Functions</u>
-                <p>Higher-order functions are where a function hasa  set of parameters that 
-                    produce a result, and then that result produces a new result, and so on and so 
+                <p>Higher-order functions are where a function hasa  set of parameters that
+                    produce a result, and then that result produces a new result, and so on and so
                     on if need be.<br/>
                     <img src='Advanced Web Programming/Image9.jpg' alt='Ninth Image' style='max-width:100%;'><br/>
-                    Functions can also be curried where a function with n parameters is turned 
-                    into a higher order function where each parameter is a function, and each 
+                    Functions can also be curried where a function with n parameters is turned
+                    into a higher order function where each parameter is a function, and each
                     function leads its respective result onto the next function.</p>
             </div>
         </div>
     </body>
-</html>    
+</html>

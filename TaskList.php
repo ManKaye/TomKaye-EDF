@@ -2,6 +2,7 @@
     <head>
         <title>EDF Task List</title>
         <link rel="stylesheet" href="Main.css">
+        <link rel="icon" href="Basquiat Crown.png">
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="TaskListScript.js"></script>
     </head>

@@ -2,6 +2,7 @@
     <head>
         <title>Operating Systems, Networks & the Internet 2</title>
         <link rel="stylesheet" href="Main.css">
+        <link rel="icon" href="Basquiat Crown.png">
         <script type="text/x-mathjax-config">
             MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
         </script>
@@ -20,84 +21,84 @@
             <div class="Sub-Div">
                 <u>Memory Management</u><br/>
                 <u>Paging</u>
-                <p>Paging splits a process into multiple, equally-sized pages. A virtual page has a 
-                    virtual page address, which links to the page table which holds the real 
-                    address for the pages of each process. The offset of both the virtual and real 
+                <p>Paging splits a process into multiple, equally-sized pages. A virtual page has a
+                    virtual page address, which links to the page table which holds the real
+                    address for the pages of each process. The offset of both the virtual and real
                     addresses does not change.</p>
                 <br/>
                 <u>Demand Paging</u>
-                <p>Demand paging basically means we wait until a particular page for a process is 
-                    needed at that time. Then, the page is loaded into the CPU. This means that 
-                    when a process is first started, no pages will be loaded into the CPU until an 
-                    actual procedure needs to be carried.<br/>Page faults can occur with demand 
-                    paging as a page fault is where a process is trying to access a page but that 
-                    page is not currently found on the RAM. After a page fault occurs, the page 
-                    will be loaded into the CPU by the operating system. A bit in the page controls 
-                    the validity of whether the page is in the RAM or not. Therefore the bit will be 
-                    set to 0 at the start of the process but once the page is used and there is no 
-                    page fault, the validity bit will change to a 1.<br/>When a reference to a page 
-                    is made and the page is not in the memory, then an OS trap is called and the OS 
-                    puts the missing page in the backing store. The missing page is then put in the 
-                    physical memory and the page table is reset, for the instruction to be 
-                    retransmitted.<br/>Performance of Demand Paging<br/>If a page fault rate is 0, 
-                    there will never be page faults. If a page fault rate is 1, every reference will 
-                    produce a page fault.<br/>An Effective Access Time (EAT) can be calculated 
+                <p>Demand paging basically means we wait until a particular page for a process is
+                    needed at that time. Then, the page is loaded into the CPU. This means that
+                    when a process is first started, no pages will be loaded into the CPU until an
+                    actual procedure needs to be carried.<br/>Page faults can occur with demand
+                    paging as a page fault is where a process is trying to access a page but that
+                    page is not currently found on the RAM. After a page fault occurs, the page
+                    will be loaded into the CPU by the operating system. A bit in the page controls
+                    the validity of whether the page is in the RAM or not. Therefore the bit will be
+                    set to 0 at the start of the process but once the page is used and there is no
+                    page fault, the validity bit will change to a 1.<br/>When a reference to a page
+                    is made and the page is not in the memory, then an OS trap is called and the OS
+                    puts the missing page in the backing store. The missing page is then put in the
+                    physical memory and the page table is reset, for the instruction to be
+                    retransmitted.<br/>Performance of Demand Paging<br/>If a page fault rate is 0,
+                    there will never be page faults. If a page fault rate is 1, every reference will
+                    produce a page fault.<br/>An Effective Access Time (EAT) can be calculated
                     through:<br/>
                     $\text{EAT}=(1-p) \times \text{memory access} + p(\text{page fault overhead} +$<br/>
                     $\text{Swap page out} + \text{swap page in} + \text{restart overhead})$<br/>
                     Memory access time = 200 nanoseconds<br/>
                     Average page-fault service time = 8 milliseconds<br/>
                     $\text{EAT} = (1-p) \times 200 = 200 + p \times 8 =$$(1-p) \times 200 + p \times 8,000,000$$= 200 + p \times 7,999,800 = 8.2 microseconds$<br/>
-                    When a page is needed, it is loaded into a free page, which is a frame that is 
-                    not currently being used. Alternatively, the page could replace another, 
+                    When a page is needed, it is loaded into a free page, which is a frame that is
+                    not currently being used. Alternatively, the page could replace another,
                     currently not used page. The page to be replaced is called the victim frame.<br/>
-                    To do this, the victim frame is swapped out and put in the backing store. The 
-                    validity bit for the victim frame must then be changed to a 0 to show it is no 
-                    longer in the main memory. The new page to be put in the main memory will then 
-                    be put in the empty page and the page table is reset for the new page with a 
-                    validity bit of 1.<br/>FIFO Page Replacement - FIFO, first in, first out, 
-                    regards to a queue data structure, and is more fair. The oldest page in the main 
-                    memory will be replaced by the required page.<br/>Modified Bits - Each page has 
-                    a modified bit which governs whether the page has had changes made to it in the 
-                    main memory. This can speed up efficiency as only the pages with true modified 
+                    To do this, the victim frame is swapped out and put in the backing store. The
+                    validity bit for the victim frame must then be changed to a 0 to show it is no
+                    longer in the main memory. The new page to be put in the main memory will then
+                    be put in the empty page and the page table is reset for the new page with a
+                    validity bit of 1.<br/>FIFO Page Replacement - FIFO, first in, first out,
+                    regards to a queue data structure, and is more fair. The oldest page in the main
+                    memory will be replaced by the required page.<br/>Modified Bits - Each page has
+                    a modified bit which governs whether the page has had changes made to it in the
+                    main memory. This can speed up efficiency as only the pages with true modified
                     bits have to be saved in the backing store.</p>
                 <br/>
                 <u>Thrashing</u>
-                <p>If there isn't enough main memory in a system to allow for a certain number of 
-                    pages of a process without having to remove required pages, the system will 
-                    start thrashing. Thrashing is the situation where a process is using up more 
-                    time loading pages than executing code. The hard disk, being a form of I/O to 
-                    the system, is slow at sending and receiving pages making thrashing possible. 
-                    The result of thrashing is that most processes are blocked and pages will have 
-                    to be brought back into the main memory again. Reducing the degree of 
+                <p>If there isn't enough main memory in a system to allow for a certain number of
+                    pages of a process without having to remove required pages, the system will
+                    start thrashing. Thrashing is the situation where a process is using up more
+                    time loading pages than executing code. The hard disk, being a form of I/O to
+                    the system, is slow at sending and receiving pages making thrashing possible.
+                    The result of thrashing is that most processes are blocked and pages will have
+                    to be brought back into the main memory again. Reducing the degree of
                     multiprogramming helps to stop thrashing from taking place.</p>
                 <br/>
                 <u>The Working Set Theory</u>
-                <p>A process' working set, is the set of pages it has accessed in the past n page 
-                    references.<br/>To compute the working set size for a process I, the number of 
-                    pages in the working set must be calculated.<br/>The demand, D can be 
-                    calculated with $D = \Sigma WSS(i)$.<br/>To prevent thrashing, $D \leq m$, 
+                <p>A process' working set, is the set of pages it has accessed in the past n page
+                    references.<br/>To compute the working set size for a process I, the number of
+                    pages in the working set must be calculated.<br/>The demand, D can be
+                    calculated with $D = \Sigma WSS(i)$.<br/>To prevent thrashing, $D \leq m$,
                     where m is the number of frames available in the main memory.</p>
                 <br/>
                 <u>Inverted Page Tables</u>
-                <p>Inverted page tables simply display the virtual pages rather than the real 
-                    pages. In addition, a process ID is used to reference the process with the 
-                    page. This can be a costly process though in terms of time.<br/>If a page is 
-                    not found in the main memory using an inverted page table, a normal, 
-                    conventional page table will have to be used to get that page into the main 
+                <p>Inverted page tables simply display the virtual pages rather than the real
+                    pages. In addition, a process ID is used to reference the process with the
+                    page. This can be a costly process though in terms of time.<br/>If a page is
+                    not found in the main memory using an inverted page table, a normal,
+                    conventional page table will have to be used to get that page into the main
                     memory from the backing store.</p>
                 <br/>
                 <u>Associative Memory/Hash Functions</u>
-                <p>These methods are used to improve the efficiency of the inverted page table as, 
-                    with each reference, the entire table has to be scoured for a reference that 
-                    correlates.<br/>Modern systems will use aspects of segmentation and paging to 
+                <p>These methods are used to improve the efficiency of the inverted page table as,
+                    with each reference, the entire table has to be scoured for a reference that
+                    correlates.<br/>Modern systems will use aspects of segmentation and paging to
                     improve the efficiency of a system.</p>
                 <br/>
                 <u>Processes</u>
-                <p>Processes can be compute bound or I/O bound. The priority to how these processes 
-                    are scheduled is dependent on the way these processes run. I/O bound processes 
-                    have a higher priority than compute bound processes, however, a process can 
-                    change from running in a compute-bound manner to running in an I/O bound 
+                <p>Processes can be compute bound or I/O bound. The priority to how these processes
+                    are scheduled is dependent on the way these processes run. I/O bound processes
+                    have a higher priority than compute bound processes, however, a process can
+                    change from running in a compute-bound manner to running in an I/O bound
                     manner and visa versa.</p>
                 <br/>
                 <u>DECSystem-10</u>
@@ -106,191 +107,191 @@
                     QTT - Queue Transfer Table</p>
                 <br/>
                 <u>Job Table Queue</u>
-                <p>The job table queue stores the set of all jobs that a process has to do. These 
-                    jobs are split into three priority queues. The run queue is the concatenation 
+                <p>The job table queue stores the set of all jobs that a process has to do. These
+                    jobs are split into three priority queues. The run queue is the concatenation
                     of three priority queues.</p>
                 <br/>
                 <u>Doubly Linked Lists</u>
-                <p>Each priority queue will use doubly-linked lists to store the list of all jobs 
-                    in that queue. In a doubly-linked list, there are two pointers, one points to 
-                    the job in front of it and the other points to the job behind it.<br/>They 
-                    implement precision and allow for the creation of queue data structures or 
-                    stacks. The first and last jobs of the queue will both point to the PQ1 job, 
+                <p>Each priority queue will use doubly-linked lists to store the list of all jobs
+                    in that queue. In a doubly-linked list, there are two pointers, one points to
+                    the job in front of it and the other points to the job behind it.<br/>They
+                    implement precision and allow for the creation of queue data structures or
+                    stacks. The first and last jobs of the queue will both point to the PQ1 job,
                     which basically means the overall priority queue.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image1.jpg" alt="First Image" style="max-width: 100%;"><br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image2.jpg" alt="Second Image" style="max-width: 100%;"><br/>
-                    The above example shows PQ1 starting at the job in position 6, going to  the 
-                    job at 4, and then going to the job at 7 before finishing. PQ2 is empty as 
+                    The above example shows PQ1 starting at the job in position 6, going to  the
+                    job at 4, and then going to the job at 7 before finishing. PQ2 is empty as
                     both the head and tail of the queue point to PQ2.</p>
                 <br/>
                 <u>The Job Status Table</u>
-                <p>The job status table concerns itself with the extra information regarding each 
+                <p>The job status table concerns itself with the extra information regarding each
                     job.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image3.jpg" alt="Third Image" style="max-width: 100%;"><br/>
-                    The important status bits, (the sections within the blown up column of the 
-                    diagram, are RUN, which is 1 if the job is runnable and 0 if it is running or 
-                    blocked. JRQ determines whether the job has been changed and needs to be 
-                    re-queued (1) or not, (0). The wait state code states the reason that the job 
-                    is not runnable, e.g. It is doing I/O.<br/>Less important status bits include, 
-                    SWP which determines whether the job has been swapped or is in transit. CMWB 
-                    is the command wait bit and it used to swap jobs in when they need to be 
+                    The important status bits, (the sections within the blown up column of the
+                    diagram, are RUN, which is 1 if the job is runnable and 0 if it is running or
+                    blocked. JRQ determines whether the job has been changed and needs to be
+                    re-queued (1) or not, (0). The wait state code states the reason that the job
+                    is not runnable, e.g. It is doing I/O.<br/>Less important status bits include,
+                    SWP which determines whether the job has been swapped or is in transit. CMWB
+                    is the command wait bit and it used to swap jobs in when they need to be
                     changed.</p>
                 <br/>
                 <u>Quantum Run-time Left</u>
-                <p>Measured in jiffies, the quantum run time left is the time for which the job 
-                    should be left to run undisturbed.<br/>At the end of each time slice, the 
-                    scheduler will reduce by one, the quantum run time of the currently running 
-                    job. If the jobs QRT is already zero, then the job will be re-queued after its 
-                    QRT is set to 1 again. The same goes for all the other jobs that have a QRT of 
+                <p>Measured in jiffies, the quantum run time left is the time for which the job
+                    should be left to run undisturbed.<br/>At the end of each time slice, the
+                    scheduler will reduce by one, the quantum run time of the currently running
+                    job. If the jobs QRT is already zero, then the job will be re-queued after its
+                    QRT is set to 1 again. The same goes for all the other jobs that have a QRT of
                     zero at the end of the time slice.</p>
                 <br/>
                 <u>Queue Transfer Table</u>
-                <p>The queue transfer table is used to denote which queue to move to and what 
-                    Quantum Run Time to set when an event occurs. An example of an action in this 
-                    table is when a job in PQ2 has just reached a QRT of zero and the time slice 
+                <p>The queue transfer table is used to denote which queue to move to and what
+                    Quantum Run Time to set when an event occurs. An example of an action in this
+                    table is when a job in PQ2 has just reached a QRT of zero and the time slice
                     it was running in has just finished.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image4.jpg" alt="Fourth Image" style="max-width: 100%;"><br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image5.jpg" alt="Fifth Image" style="max-width: 100%;"></p>
                 <br/>
                 <u>UNIX v.6 Filing System</u>
-                <p>A hard disk is made up of a number of physical blocks or sectors, each 
-                    traditionally capable of storing 256x16-bit words or 512x8-bit bytes, ($2^9$ 
-                    bytes).<br/>The block of the hard disk can be split up into a boot block, a 
-                    super-block, an inode section and a data section.<br/>The boot block contains 
-                    the bootstrap program, the super-block contains the data defining the filing 
-                    system, like the number of inode blocks, the filing system size, the details 
-                    of the free blocks and inodes and the date of the last synchronization. The 
-                    inode section contains information about the nodes. A node can be a file, 
-                    directory or special file, so which one is each node? Some blocks on a hard 
-                    disk are dedicated to storing inodes as they are very important. The data 
-                    block actually contains the information within that node whether it just be a 
+                <p>A hard disk is made up of a number of physical blocks or sectors, each
+                    traditionally capable of storing 256x16-bit words or 512x8-bit bytes, ($2^9$
+                    bytes).<br/>The block of the hard disk can be split up into a boot block, a
+                    super-block, an inode section and a data section.<br/>The boot block contains
+                    the bootstrap program, the super-block contains the data defining the filing
+                    system, like the number of inode blocks, the filing system size, the details
+                    of the free blocks and inodes and the date of the last synchronization. The
+                    inode section contains information about the nodes. A node can be a file,
+                    directory or special file, so which one is each node? Some blocks on a hard
+                    disk are dedicated to storing inodes as they are very important. The data
+                    block actually contains the information within that node whether it just be a
                     file or it contains a directory.</p>
                 <br/>
                 <u>Structure of an Inode</u>
-                <p>Bit 15 of an inode is 1 if the node is in use or 0 if it is free. Bits 14-13 
-                    determine what type of node it is, a file or a directory. Bit 12 determines 
-                    whether the file is small, where the value will be set to 0, or large, where 
-                    the value will be 1. Bit 11 will set the user identification flag on execution. 
-                    Bit 10 will set the group identification flag on execution. Bit 9 is unused and 
-                    the other 9 bits determine the permissions for the owner (rwx), the group (rwx) 
-                    and all (rwx).<br/>2 bytes are used for flags, 1 byte is used for links, 1 byte 
-                    is used for user identification, 1 byte is used for group identification, 3 
-                    bytes for file size, 8 bytes access dates and times, 16 bytes address words (8 
-                    address words of 2 bytes each).<br/>The maximum size of a small file is 8*512 
-                    bytes which is 4KiB. As well as this, as has already been mentioned, the 12th 
-                    flag determining the file size is set to 0.<br/>For small files, its eight 
+                <p>Bit 15 of an inode is 1 if the node is in use or 0 if it is free. Bits 14-13
+                    determine what type of node it is, a file or a directory. Bit 12 determines
+                    whether the file is small, where the value will be set to 0, or large, where
+                    the value will be 1. Bit 11 will set the user identification flag on execution.
+                    Bit 10 will set the group identification flag on execution. Bit 9 is unused and
+                    the other 9 bits determine the permissions for the owner (rwx), the group (rwx)
+                    and all (rwx).<br/>2 bytes are used for flags, 1 byte is used for links, 1 byte
+                    is used for user identification, 1 byte is used for group identification, 3
+                    bytes for file size, 8 bytes access dates and times, 16 bytes address words (8
+                    address words of 2 bytes each).<br/>The maximum size of a small file is 8*512
+                    bytes which is 4KiB. As well as this, as has already been mentioned, the 12th
+                    flag determining the file size is set to 0.<br/>For small files, its eight
                     address pointers contained in the inode each point to a block of data.<br/>
-                    Things get a little more complicated with large files. In this situation, the 
-                    maximum size of a large file is 7*256*512 bytes which is 896KiB. The 12th flag 
-                    determining the file size is set to 1. As well as this, there are a set of 
-                    indirect data blocks sandwiched in between the address pointers and the 
-                    physical data blocks. The indirect blocks each point to 256 data blocks. The 
-                    eighth address pointer is equal to 0, defining it as a non-huge file. This is 
-                    why the maximum file size uses 7 instead of 8.<br/>Finally, with huge files, an 
-                    additional, double indirect block is implemented to be associated with the 
-                    eighth address pointer. Aside from that, huge files have the same syntax as 
-                    large files. The maximum file size for a huge file is $2^{24}$ bytes as there are 24 
-                    bits dedicated to store the file size. In the case of the double indirect 
-                    block, that block points to 256 indirect blocks which then points to 256 data 
+                    Things get a little more complicated with large files. In this situation, the
+                    maximum size of a large file is 7*256*512 bytes which is 896KiB. The 12th flag
+                    determining the file size is set to 1. As well as this, there are a set of
+                    indirect data blocks sandwiched in between the address pointers and the
+                    physical data blocks. The indirect blocks each point to 256 data blocks. The
+                    eighth address pointer is equal to 0, defining it as a non-huge file. This is
+                    why the maximum file size uses 7 instead of 8.<br/>Finally, with huge files, an
+                    additional, double indirect block is implemented to be associated with the
+                    eighth address pointer. Aside from that, huge files have the same syntax as
+                    large files. The maximum file size for a huge file is $2^{24}$ bytes as there are 24
+                    bits dedicated to store the file size. In the case of the double indirect
+                    block, that block points to 256 indirect blocks which then points to 256 data
                     blocks.</p>
                 <br/>
                 <u>Directories & Directory Entries</u>
-                <p>Inodes act differently, corresponding to directories and directory entries. In 
-                    the case of directories and directory entries, the first address pointer points 
-                    to a block, inside of which are the directory entries. The directory entries 
-                    store the name and inode number of files and directories contained within this 
-                    particular directory. A directory entry is made up of 16 bytes, 2 bytes for the 
-                    inode number and 14 bytes for the filename and is stored with 31 other 
-                    directory entries in a single disk block within a data area of the disk.<br/>If 
-                    there is a directory of /us/staff/paul/file1.cpp , then the first inode, of the 
-                    directory entry of us will point to the data block for that directory entry. 
-                    The header of that data block then points to the inode of the next directory 
-                    entry, so in this case, staff. That inode will point to the data block of 
+                <p>Inodes act differently, corresponding to directories and directory entries. In
+                    the case of directories and directory entries, the first address pointer points
+                    to a block, inside of which are the directory entries. The directory entries
+                    store the name and inode number of files and directories contained within this
+                    particular directory. A directory entry is made up of 16 bytes, 2 bytes for the
+                    inode number and 14 bytes for the filename and is stored with 31 other
+                    directory entries in a single disk block within a data area of the disk.<br/>If
+                    there is a directory of /us/staff/paul/file1.cpp , then the first inode, of the
+                    directory entry of us will point to the data block for that directory entry.
+                    The header of that data block then points to the inode of the next directory
+                    entry, so in this case, staff. That inode will point to the data block of
                     staff, etc., etc.</p>
                 <br/>
                 <u>Filenames under the UNIX Filing System</u>
-                <p>Filenames aren't stored in the inode but are rather stored in the hard disk 
+                <p>Filenames aren't stored in the inode but are rather stored in the hard disk
                     with the corresponding inode that defines that directory.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image6.jpg" alt="Sixth Image" style="max-width: 100%;"><br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image7.jpg" alt="Seventh Image" style="max-width: 100%;"></p>
                 <br/>
                 <u>Device Handlers</u>
-                <p>All devices connected to a computer have a peripheral interface to manage 
+                <p>All devices connected to a computer have a peripheral interface to manage
                     connections and sort out I/O functions associated with that peripheral.<br/>
-                    Device controllers are interfaced to the system by the device controllers and 
-                    are pieces of hardware.<br/>Device handlers is a piece of software allowing 
-                    the operating system to communicate with the device.<br/>Devices can be 
-                    shareable or non-shareable. If a device is shareable, it means that multiple 
-                    requests for the device can be made simultaneously. Non-shareable devices are 
-                    allocate to one process at a time like a printer for example.<br/>The 
-                    chronology of a process requesting to use a peripheral, is the initialization 
-                    of the device. The request is then queued, then the request at the front of 
-                    the queue is dequeued and the transfer is initiated to the device. After the 
+                    Device controllers are interfaced to the system by the device controllers and
+                    are pieces of hardware.<br/>Device handlers is a piece of software allowing
+                    the operating system to communicate with the device.<br/>Devices can be
+                    shareable or non-shareable. If a device is shareable, it means that multiple
+                    requests for the device can be made simultaneously. Non-shareable devices are
+                    allocate to one process at a time like a printer for example.<br/>The
+                    chronology of a process requesting to use a peripheral, is the initialization
+                    of the device. The request is then queued, then the request at the front of
+                    the queue is dequeued and the transfer is initiated to the device. After the
                     device has finished its operation, an interrupt service routine is run.<br/>
-                    The device driver handles the dequeuing  of the request and the device 
+                    The device driver handles the dequeuing  of the request and the device
                     controller handles the commands being sent to the device.</p>
                 <br/>
                 <u>The Request Queue</u>
-                <p>The request queue has to deal with strategies concerning adding requests and 
+                <p>The request queue has to deal with strategies concerning adding requests and
                     serving requests.</p>
                 <br/>
                 <u>Disk Scheduling</u>
-                <p>Disk scheduling takes requests from the queue so as to optimize the transfer of 
-                    data.<br/>Magnetic disks can be scanned in certain different ways when looking 
+                <p>Disk scheduling takes requests from the queue so as to optimize the transfer of
+                    data.<br/>Magnetic disks can be scanned in certain different ways when looking
                     for data that can be more efficient than others depending on the situation.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image8.jpg" alt="Eighth Image" style="max-width: 100%;"><br/>
-                    In a standard case, the words track and cylinder are interchangeable and only 
+                    In a standard case, the words track and cylinder are interchangeable and only
                     a single platter shall be considered.</p>
                 <br/>
                 <u>Overview of Mass Storage Structure</u>
                 <p>Magnetic disks rotate at a speed of 60 to 200 times per second.<br/>
-                    - The transfer rate is the rate at which data flows between the drive and the 
+                    - The transfer rate is the rate at which data flows between the drive and the
                     computer<br/>
-                    - Access Time (Random-Access Time) is the time to move the disk arm to desired 
-                    track (seek time) and time for desired sector to rotate under the disk head 
+                    - Access Time (Random-Access Time) is the time to move the disk arm to desired
+                    track (seek time) and time for desired sector to rotate under the disk head
                     (rotational latency)<br/>
-                    - Head crash results from the disk head actually making contact with the disk 
+                    - Head crash results from the disk head actually making contact with the disk
                     surface which will cause an error.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image9.jpg" alt="Ninth Image" style="max-width: 100%;"><br/>
-                    Disk drives are addressed as large 1-dimensional arrays of logical blocks, 
-                    where the logical block is the smallest unit of transfer (normally 512 bytes). 
-                    The 1-dimensional array of logical blocks is mapped into the sectors of the 
+                    Disk drives are addressed as large 1-dimensional arrays of logical blocks,
+                    where the logical block is the smallest unit of transfer (normally 512 bytes).
+                    The 1-dimensional array of logical blocks is mapped into the sectors of the
                     disk sequentially.</p>
                 <br/>
                 <u>Disk Scheduling</u>
-                <p>Hardware must be used efficiently, and as such, access time must be reduced and 
-                    therefore the seek time must be reduced which is the speed at which the head 
-                    can move from track-to-track.<br/>Whenever a process needs to use I/O, it 
-                    issues a system call which provides information on whether the operation is in 
-                    read or write, the disk address for the transfer, what the RAM address for the 
+                <p>Hardware must be used efficiently, and as such, access time must be reduced and
+                    therefore the seek time must be reduced which is the speed at which the head
+                    can move from track-to-track.<br/>Whenever a process needs to use I/O, it
+                    issues a system call which provides information on whether the operation is in
+                    read or write, the disk address for the transfer, what the RAM address for the
                     transfer is and the number of sectors to be transferred.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image10.jpg" alt="Tenth Image" style="max-width: 100%;"></p>
                 <br/>
                 <u>FCFS - First Come, First Serve</u>
-                <p>This is the simplest form of disk scheduling where the request is serviced in 
-                    the order they're made, so the queue doesn't have to be rearranged in any way. 
-                    This makes disk scheduling fair but not very fast.<br/>In the example, the 
+                <p>This is the simplest form of disk scheduling where the request is serviced in
+                    the order they're made, so the queue doesn't have to be rearranged in any way.
+                    This makes disk scheduling fair but not very fast.<br/>In the example, the
                     head moves as such:<br/>
                     $53\rightarrow98\rightarrow183\rightarrow37\rightarrow122\rightarrow14\rightarrow124\rightarrow65\rightarrow67$<br/>
                     Meaning 640 tracks will be covered.</p>
                 <br/>
                 <u>SSTF - Shortest Seek-time First</u>
-                <p>This method will seek for the request with the minimum seek time from the 
-                    current head position. This method can cause starvation, where some requests 
-                    can be waiting endlessly to be serviced, like if tracks 54 and 52 want to be 
-                    serviced from track 53. The head pointer will service these requests close to 
-                    the head pointer and not service the requests far away from the head 
+                <p>This method will seek for the request with the minimum seek time from the
+                    current head position. This method can cause starvation, where some requests
+                    can be waiting endlessly to be serviced, like if tracks 54 and 52 want to be
+                    serviced from track 53. The head pointer will service these requests close to
+                    the head pointer and not service the requests far away from the head
                     pointer.<br/>In the example, the head moves as such:<br/>
                     $53\rightarrow65\rightarrow67\rightarrow37\rightarrow14\rightarrow98\rightarrow122\rightarrow124\rightarrow183$<br/>
                     Meaning that 236 tracks will be covered.</p>
                 <br/>
                 <u>SCAN Method</u>
-                <p>The disk arm will, in this case, start at one end of the disk and move to the 
-                    other end , servicing requests until it gets to the other end of the disk, 
-                    where the head movement is reversed and servicing continues.<br/>In this 
+                <p>The disk arm will, in this case, start at one end of the disk and move to the
+                    other end , servicing requests until it gets to the other end of the disk,
+                    where the head movement is reversed and servicing continues.<br/>In this
                     example, the head moves as such:<br/>
                     $53\rightarrow37\rightarrow14\rightarrow0\rightarrow65\rightarrow67\rightarrow98\rightarrow122\rightarrow124\rightarrow183$<br/>
-                    Performance really does depend on the order of request being made and the 
+                    Performance really does depend on the order of request being made and the
                     performance of the overall computer.<br/>
                     For head pointer: 10<br/>
                     Previous pointer: 8<br/>
@@ -298,148 +299,148 @@
                     - $\text{FCFS} - 10\rightarrow50\rightarrow5\rightarrow20\rightarrow70\rightarrow30 = 190$<br/>
                     - $\text{SSTF} - 10\rightarrow5\rightarrow20\rightarrow30\rightarrow50\rightarrow70 = 70$<br/>
                     - $\text{SCAN} - 10\rightarrow20\rightarrow30\rightarrow50\rightarrow70\rightarrow100\rightarrow5 = 195$<br/>
-                    Solid State Drives - Solid state drives are mass storage devices like a 
-                    magnetic disk, although there are no moving parts, improving reliability and 
-                    speed. They are however, more expensive than magnetic disks and have a lower 
-                    memory capacity as well as a limited lifespan.<br/>There can be programs that 
-                    can be written without reference to a particular file or device. The device or 
-                    file must also be nominated before the channel is assigned. There can be two 
-                    channels involved, input and output, that correspond with the direction of 
+                    Solid State Drives - Solid state drives are mass storage devices like a
+                    magnetic disk, although there are no moving parts, improving reliability and
+                    speed. They are however, more expensive than magnetic disks and have a lower
+                    memory capacity as well as a limited lifespan.<br/>There can be programs that
+                    can be written without reference to a particular file or device. The device or
+                    file must also be nominated before the channel is assigned. There can be two
+                    channels involved, input and output, that correspond with the direction of
                     data flow.</p>
                 <br/>
                 <u>Redundant Array of Independent Disks (RAID)</u>
-                <p>RAIDs improve performance and reliability of disk storage. It basically 
-                    implements multiple hard drives in a system where redundant information can be 
-                    stored on multiple disks so that if one fails, the other can resume to improve 
-                    reliability. These multiple disks can be operated in parallel to improve 
+                <p>RAIDs improve performance and reliability of disk storage. It basically
+                    implements multiple hard drives in a system where redundant information can be
+                    stored on multiple disks so that if one fails, the other can resume to improve
+                    reliability. These multiple disks can be operated in parallel to improve
                     performance,as there will be a higher data-transfer rate.</p>
                 <br/>
                 <u>Improvement of Reliability via Redundancy</u>
-                <p>Mirroring involves writing duplicate data to a separate disk drive. If either 
-                    disk fails, hopefully the original; the second drive is still alive with all 
-                    of the data. The only problem with this is that full duplication can be 
-                    expensive. Selective duplication of critical data is a better option.<br/>The 
-                    mean time to failure of a mirrored volume depends on two factors: the mean 
-                    time to failure of a single disk and the mean time to repair the disk. If the 
-                    mean time to failure of a single disk is 100,000 hours and the mean time to 
-                    repair is 10 hours, the mean time to data loss is 
+                <p>Mirroring involves writing duplicate data to a separate disk drive. If either
+                    disk fails, hopefully the original; the second drive is still alive with all
+                    of the data. The only problem with this is that full duplication can be
+                    expensive. Selective duplication of critical data is a better option.<br/>The
+                    mean time to failure of a mirrored volume depends on two factors: the mean
+                    time to failure of a single disk and the mean time to repair the disk. If the
+                    mean time to failure of a single disk is 100,000 hours and the mean time to
+                    repair is 10 hours, the mean time to data loss is
                     $\frac{100,000^2}{2*10}=500*106 \text{ hours}$ or 57,000 years.</p>
                 <br/>
                 <u>Improvement of Performance via Parallelism</u>
-                <p>Striping is the distribution of data transparently over multiple disks to make 
-                    them appear as a single, fast, large disk. Striping can be done on bit-level 
-                    or block-level.<br/>Bit-level Striping - The bits of each byte are split 
-                    across multiple disks. With 8 disks, bit I will be distributed to disk I for 
-                    each byte of memory. The eight disks can be treated as a single disk with 
-                    sectors eight times the size. This will improve the access rate of reading in 
-                    data by a factor of n, where n is the number of disks.<br/>Block-level 
-                    Striping - In block-level striping, blocks of a file are striped across 
-                    multiple disks. If there are n disks, block I of a file goes to disk 
-                    (I mod n)+1 where the block numbers are assumed to start from 0 and the disk 
-                    numbers start from 1. When several blocks of a file need to be read in, we can 
-                    read n of them in concurrently.<br/>Striping can cause catastrophic damage 
-                    though, if one disk is lost, then one bit to a byte or several blocks to a 
-                    file are lost and cannot be recovered. This is why striping should be done in 
+                <p>Striping is the distribution of data transparently over multiple disks to make
+                    them appear as a single, fast, large disk. Striping can be done on bit-level
+                    or block-level.<br/>Bit-level Striping - The bits of each byte are split
+                    across multiple disks. With 8 disks, bit I will be distributed to disk I for
+                    each byte of memory. The eight disks can be treated as a single disk with
+                    sectors eight times the size. This will improve the access rate of reading in
+                    data by a factor of n, where n is the number of disks.<br/>Block-level
+                    Striping - In block-level striping, blocks of a file are striped across
+                    multiple disks. If there are n disks, block I of a file goes to disk
+                    (I mod n)+1 where the block numbers are assumed to start from 0 and the disk
+                    numbers start from 1. When several blocks of a file need to be read in, we can
+                    read n of them in concurrently.<br/>Striping can cause catastrophic damage
+                    though, if one disk is lost, then one bit to a byte or several blocks to a
+                    file are lost and cannot be recovered. This is why striping should be done in
                     unison with mirroring where mirroring doesn't necessarily require striping.<br/>
-                    There are 6 levels of RAID, where RAID 0 is just a number of standard hard 
-                    drives, RAID 1 is a number of standard hard drives with an equal number of 
-                    mirrored disks. From RAIDs 2 to 5, parity bits are used to reduce the number of 
+                    There are 6 levels of RAID, where RAID 0 is just a number of standard hard
+                    drives, RAID 1 is a number of standard hard drives with an equal number of
+                    mirrored disks. From RAIDs 2 to 5, parity bits are used to reduce the number of
                     disks required while still allowing redundancy of data.</p>
                 <br/>
                 <u>Process Communication & Deadlock</u>
-                <p>Multiple processes can be invoked simultaneously where two instances of a 
-                    program are initiated, either by the same user or by two or more users within 
+                <p>Multiple processes can be invoked simultaneously where two instances of a
+                    program are initiated, either by the same user or by two or more users within
                     an operating system.</p>
                 <br/>
                 <u>Cooperation vs. Interference</u>
-                <p>Processes can sometimes share resources. Scheduling of processes can result in 
+                <p>Processes can sometimes share resources. Scheduling of processes can result in
                     their traces of instructions being interleaved in an unpredictable fashion.<br/>
-                    If there are two processes that are independent to one another in their sets of 
-                    data, then the result is independent of the order of execution, meaning that 
-                    in any order of execution, both sets of data will achieve their same 
-                    respective results.<br/>Some processes can both be working on the same set of 
-                    data, meaning that the result will not be independent depending on execution, 
+                    If there are two processes that are independent to one another in their sets of
+                    data, then the result is independent of the order of execution, meaning that
+                    in any order of execution, both sets of data will achieve their same
+                    respective results.<br/>Some processes can both be working on the same set of
+                    data, meaning that the result will not be independent depending on execution,
                     and the result will also be nondeterministic.</p>
                 <br/>
                 <u>The Critical-section Problem</u>
-                <p>Where n processes are trying to access a shared piece of data. The shared piece 
-                    of data shall be split up into n pieces of critical sections that each process 
-                    has access to. The Critical-Section Problem determines that no other process 
-                    is allowed to access its critical section when one process is already 
-                    accessing its own first.<br/>Under this new problem, process scheduling where 
-                    half of one processes timeline is completed before the other processes 
-                    timeline is completed, and then the other half of the initial processes 
-                    timeline is finalized cannot be used anymore. Now, only the situations where 
-                    one process is completed from the start, followed by the other process can be 
-                    used.<br/>The critical-section problem can be solved with mutual exclusion; 
-                    meaning at most one process can be in its critical section at a time, 
-                    progress; meaning that one process must eventually be let into its critical 
-                    section if it is currently waiting, and finally fairness; meaning that 
-                    processes in their critical section must eventually leave and also must 
-                    cooperate with ALL of the other processes to prevent starvation for one or 
+                <p>Where n processes are trying to access a shared piece of data. The shared piece
+                    of data shall be split up into n pieces of critical sections that each process
+                    has access to. The Critical-Section Problem determines that no other process
+                    is allowed to access its critical section when one process is already
+                    accessing its own first.<br/>Under this new problem, process scheduling where
+                    half of one processes timeline is completed before the other processes
+                    timeline is completed, and then the other half of the initial processes
+                    timeline is finalized cannot be used anymore. Now, only the situations where
+                    one process is completed from the start, followed by the other process can be
+                    used.<br/>The critical-section problem can be solved with mutual exclusion;
+                    meaning at most one process can be in its critical section at a time,
+                    progress; meaning that one process must eventually be let into its critical
+                    section if it is currently waiting, and finally fairness; meaning that
+                    processes in their critical section must eventually leave and also must
+                    cooperate with ALL of the other processes to prevent starvation for one or
                     more process.</p>
                 <br/>
                 <u>The Producer-Consumer Problem</u>
-                <p>The producer, in this problem will produce data where the consumer will then 
-                    use and manipulate this produced data. Problems arise with the fairness 
-                    involved in this problem as well.<br/>One solution would be to use shared 
-                    memory, where both the producer and the consumer use a shared buffer; 
-                    unbounded or bounded. The buffer can be seen as a circular array with two 
-                    pointers, in and out. The in pointer will point to the next free position in 
-                    the buffer and the out pointer will point to the first full position of the 
-                    buffer. A counter would also be used to count the size of the array.<br/>If 
-                    the producer and consumer are run separately, the processes will execute 
-                    without problems provided the code is right, however, if the processes are run 
-                    concurrently, then the counter, which will be measuring the number of elements 
-                    in a list, could be incremented and decremented from one integer, 
-                    simultaneously. The computer would then get confused on what the value of 
+                <p>The producer, in this problem will produce data where the consumer will then
+                    use and manipulate this produced data. Problems arise with the fairness
+                    involved in this problem as well.<br/>One solution would be to use shared
+                    memory, where both the producer and the consumer use a shared buffer;
+                    unbounded or bounded. The buffer can be seen as a circular array with two
+                    pointers, in and out. The in pointer will point to the next free position in
+                    the buffer and the out pointer will point to the first full position of the
+                    buffer. A counter would also be used to count the size of the array.<br/>If
+                    the producer and consumer are run separately, the processes will execute
+                    without problems provided the code is right, however, if the processes are run
+                    concurrently, then the counter, which will be measuring the number of elements
+                    in a list, could be incremented and decremented from one integer,
+                    simultaneously. The computer would then get confused on what the value of
                     counter would be; one less or one more than before.</p>
                 <br/>
                 <u>Race Condition</u>
-                <p>This situation, where an output depends on the order of execution is called a 
-                    race condition. To avoid such problems, the critical-section situation must be 
+                <p>This situation, where an output depends on the order of execution is called a
+                    race condition. To avoid such problems, the critical-section situation must be
                     considered where synchronization is implemented.</p>
                 <br/>
                 <u>Semaphores</u>
-                <p>One solution to the critical section problem is with the use of semaphores. A 
-                    semaphore is an integer variable which is only modified by p-operations and 
-                    v-operations.<br/>P-operation - tests a lock and then enters if it is free and 
-                    then secures the lock, otherwise the process waits for the lock to be 
-                    free.<br/>V-operation - frees the lock.<br/>Both P and V operations are 
-                    indivisible, meaning that no two processes are in their P or V operations 
-                    simultaneously to avoid errors.<br/>While both P and V operations are 'busy 
-                    waiting' for a semaphore to modify, they become stuck in a continuous loop 
-                    called a spinlock. To remedy this situation, a process waiting can 
+                <p>One solution to the critical section problem is with the use of semaphores. A
+                    semaphore is an integer variable which is only modified by p-operations and
+                    v-operations.<br/>P-operation - tests a lock and then enters if it is free and
+                    then secures the lock, otherwise the process waits for the lock to be
+                    free.<br/>V-operation - frees the lock.<br/>Both P and V operations are
+                    indivisible, meaning that no two processes are in their P or V operations
+                    simultaneously to avoid errors.<br/>While both P and V operations are 'busy
+                    waiting' for a semaphore to modify, they become stuck in a continuous loop
+                    called a spinlock. To remedy this situation, a process waiting can
                     purposefully make itself non-runnable to avoid a wasteful situation.<br/>
-                    Semaphores can be either binary; for situations where there is simply a lock 
-                    that is locked at 0, and unlocked at 1, or counting; where the number of 
-                    resources is counted, and once the semaphore reaches 0, all resources are 
+                    Semaphores can be either binary; for situations where there is simply a lock
+                    that is locked at 0, and unlocked at 1, or counting; where the number of
+                    resources is counted, and once the semaphore reaches 0, all resources are
                     being used.</p>
                 <br/>
                 <u>Deadlocks</u>
-                <p>Deadlocks can occur when two processes are waiting for a resource that is held 
-                    by another process but cannot give the resource up because they are both 
-                    waiting for another resource. If process A opens file A for writing and 
-                    process B opens file B for writing and then tries to open file A for writing, 
-                    followed by process A trying to open file B for writing, the two processes 
-                    will enter deadlock.<br/>There are two solutions to help with deadlock: 
-                    deadlock prevention and deadlock detection.<br/>Deadlock prevention can be 
-                    achieved by simply cutting off access to one resource from one process. In 
-                    essence, this is completely disallowing the opportunity for the process to 
-                    manage the resource.<br/>Deadlock detection can be achieved by applying a 
-                    mathematical process to detect the deadlock, and then forcing one process to 
+                <p>Deadlocks can occur when two processes are waiting for a resource that is held
+                    by another process but cannot give the resource up because they are both
+                    waiting for another resource. If process A opens file A for writing and
+                    process B opens file B for writing and then tries to open file A for writing,
+                    followed by process A trying to open file B for writing, the two processes
+                    will enter deadlock.<br/>There are two solutions to help with deadlock:
+                    deadlock prevention and deadlock detection.<br/>Deadlock prevention can be
+                    achieved by simply cutting off access to one resource from one process. In
+                    essence, this is completely disallowing the opportunity for the process to
+                    manage the resource.<br/>Deadlock detection can be achieved by applying a
+                    mathematical process to detect the deadlock, and then forcing one process to
                     give up its lock, allowing flow again.</p>
                 <br/>
                 <u>Nets</u><br/>
                 <u>Delay</u>
-                <p>There is a packet buffer in a router that, if full, will lose packets 
-                    completely as they try and enter the buffer. There is a delay in the queuing 
-                    of packets as well as the transmission of packets from one router to 
+                <p>There is a packet buffer in a router that, if full, will lose packets
+                    completely as they try and enter the buffer. There is a delay in the queuing
+                    of packets as well as the transmission of packets from one router to
                     another.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image11.jpg" alt="Eleventh Image" style="max-width: 100%;"><br/>
-                    Bandwidth - the capacity of a link; how much data can be transmitted per unit 
-                    of time. Speed of communication.<br/>Bandwidth = Data transmitted / Time to 
-                    transmit it<br/>Units of bandwidth: b/s or bps (bits per second)<br/>Where 
+                    Bandwidth - the capacity of a link; how much data can be transmitted per unit
+                    of time. Speed of communication.<br/>Bandwidth = Data transmitted / Time to
+                    transmit it<br/>Units of bandwidth: b/s or bps (bits per second)<br/>Where
                     1Kb/s is 1000b/s and not 1024b/s.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image12.jpg" alt="Twelvth Image" style="max-width: 100%;"></p>
                 <br/>
@@ -448,23 +449,23 @@
                     n=packet length (size in bits)<br/>
                     B=link bandwidth (bits per second)<br/>
                     Time to send bits into link = n/B (seconds)<br/>
-                    Propogation delay: (Moving of bits from one end of the link, to the 
+                    Propogation delay: (Moving of bits from one end of the link, to the
                     other.)<br/>
                     n=length of physical link<br/>
                     s=propogation speed in medium (2x108 m/sec)<br/>
                     Propogation delay=n/2x108 (seconds)<br/>
-                    Processing delay: (Moving the data from the computer to the link to be 
+                    Processing delay: (Moving the data from the computer to the link to be
                     queued.)<br/>
                     Check bit errors<br/>
                     Examine packets' header, determine output link<br/>
                     Queuing delay: (Moving the data in the packet buffer.)<br/>
                     Time waiting at output link for transmission<br/>
                     Depends on congestion level of the router<br/>
-                    The transmission delay is the time it takes in between the first bit leaving 
+                    The transmission delay is the time it takes in between the first bit leaving
                     the link and the last bit leaving the link.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image13.jpg" alt="Thirteenth Image" style="max-width: 100%;"><br/>
-                    The propogation delay is the time needed for the signal to travel from one end 
-                    of the wire to the other. It therefore depends on the distance and the speed 
+                    The propogation delay is the time needed for the signal to travel from one end
+                    of the wire to the other. It therefore depends on the distance and the speed
                     of the signal in the medium.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image14.jpg" alt="Fourteenth Image" style="max-width: 100%;"><br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image15.jpg" alt="Fifteenth Image" style="max-width: 100%;"><br/>
@@ -476,18 +477,18 @@
                     <img src="Operating Systems, Networks & the Internet 2/Image21.jpg" alt="Twenty First Image" style="max-width: 100%;"></p>
                 <br/>
                 <u>Shared Links</u>
-                <p>If many communications are sharing a link then there will be extra delay due to 
-                    queuing.<br/>Processing Delay - If the device has interfaces to several links, 
-                    each packet has to be examined to decide through which link to route it. This 
-                    delay is the processing delay.<br/>Queuing Delay - Each output link has a 
-                    buffer for queuing packets if they arrive while a previous packet has not 
-                    finished being transmitted.<br/>Normally these delays are negligible but if 
-                    congestion occurs in transmission then these forms of delay will actually 
+                <p>If many communications are sharing a link then there will be extra delay due to
+                    queuing.<br/>Processing Delay - If the device has interfaces to several links,
+                    each packet has to be examined to decide through which link to route it. This
+                    delay is the processing delay.<br/>Queuing Delay - Each output link has a
+                    buffer for queuing packets if they arrive while a previous packet has not
+                    finished being transmitted.<br/>Normally these delays are negligible but if
+                    congestion occurs in transmission then these forms of delay will actually
                     occur.<br/>Traffic intensity I at a router for a link of bandwidth R:<br/>
                     $I=\frac{\text{average number of bits arriving per second}}R$<br/>
-                    If I>1 the router cannot function.<br/>If $I\leq1$ and packets arrive at 
+                    If I>1 the router cannot function.<br/>If $I\leq1$ and packets arrive at
                     uniform intervals, there is no queue. Normally packets arrive in bursts.<br/>
-                    The queuing delays increase exponentially as the traffic intensity approaches 
+                    The queuing delays increase exponentially as the traffic intensity approaches
                     1.<br/>
                     $R=\text{link bandwidth} (b/s)$<br/>
                     $L=\text{packet length} (\text{bits})$<br/>
@@ -502,15 +503,15 @@
                     <img src="Operating Systems, Networks & the Internet 2/Image25.jpg" alt="Twenty Fifth Image" style="max-width: 100%;"></p>
                 <br/>
                 <u>Stop-and-wait Protocol</u>
-                <p>Some protocols require each packet to be acknowledged. The stop-and-wait 
-                    protocol provides that the next packet cannot be sent until an acknowledgment 
-                    was received for the current packet.<br/>Round-trip-time (RTT) - the delay 
-                    between sending the packet and receiving the acknowledgment.<br/>If the delay 
-                    from A to B is 30ms, then the RTT will be 60ms as it is roughly the trip their 
+                <p>Some protocols require each packet to be acknowledged. The stop-and-wait
+                    protocol provides that the next packet cannot be sent until an acknowledgment
+                    was received for the current packet.<br/>Round-trip-time (RTT) - the delay
+                    between sending the packet and receiving the acknowledgment.<br/>If the delay
+                    from A to B is 30ms, then the RTT will be 60ms as it is roughly the trip their
                     and back again.</p>
                 <br/>
                 <u>Throughput</u>
-                <p>The throughput of communication is the amount of data per second that can be 
+                <p>The throughput of communication is the amount of data per second that can be
                     transferred. (packet size/time)<br/>Using a stop-and-wait protocol:<br/>
                     $\frac L{RTT}$</p>
                 <br/>
@@ -519,63 +520,63 @@
                     $\frac{\frac L{RTT}}R$  which is $E=\frac L{R\times RTT}$</p>
                 <br/>
                 <u>Bandwidth-delay Product</u>
-                <p>The bandwidth-delay product is the product of a data link's capacity and its 
-                    end-to-end delay.<br/>The result, an amount of data measured in bits, is 
-                    equivalent to the maximum amount of data on the network circuit at any given 
-                    time, i.e. data that has been transmitted but not yet received. Sometimes it 
+                <p>The bandwidth-delay product is the product of a data link's capacity and its
+                    end-to-end delay.<br/>The result, an amount of data measured in bits, is
+                    equivalent to the maximum amount of data on the network circuit at any given
+                    time, i.e. data that has been transmitted but not yet received. Sometimes it
                     is calculated as the data link's capacity times its round trip time.</p>
                 <br/>
                 <u>Reliability & Data Transfer</u>
-                <p>Packets can get lost in the routers or lost due to errors which both have an 
-                    impact on the reliability of data transfer. Acknowledgments are used here to 
+                <p>Packets can get lost in the routers or lost due to errors which both have an
+                    impact on the reliability of data transfer. Acknowledgments are used here to
                     help the system know when a packet has successfully been received or sent.<br/>
-                    Upon losing a packet and the receiver not receiving it, a timeout will be 
-                    issued where no procedure takes place. Once the timeout is over, the next 
-                    packet is then sent, and the previous packet will be received. From then on 
-                    the received packets will always be buffered behind one.<br/>Keep in mind that 
-                    the sender will not know whether it is the acknowledgment or the original 
-                    packet is lost.A sequence count can also be used where a subscript 0 or 1 is 
-                    used to indicate whether the packet is a new one or not.<br/>Reliability in 
+                    Upon losing a packet and the receiver not receiving it, a timeout will be
+                    issued where no procedure takes place. Once the timeout is over, the next
+                    packet is then sent, and the previous packet will be received. From then on
+                    the received packets will always be buffered behind one.<br/>Keep in mind that
+                    the sender will not know whether it is the acknowledgment or the original
+                    packet is lost.A sequence count can also be used where a subscript 0 or 1 is
+                    used to indicate whether the packet is a new one or not.<br/>Reliability in
                     data transfer can be achieved with three things:<br/>
                     - Error detection<br/>
                     - Receiver feedback<br/>
                     - Retransmission<br/>
-                    Reliable Data Transfer 1.0 - Reliable transfer over a reliable channel - In 
+                    Reliable Data Transfer 1.0 - Reliable transfer over a reliable channel - In
                     this case there are no bit errors and no lost packets.<br/>
-                    Reliable Data Transfer 2.0 - Channel with bit errors - In this case the 
-                    underlying channel may flip bits in the packet which would require a checksum 
-                    to detect if any of the bits had been changed. When the checksum is used to 
-                    check for bit errors, if there aren't any, an ACK will be sent to the sender 
-                    to let them know that the receiver has got the intended packet. If there are 
-                    errors then a NACK will be sent to tell the sender that the packet had errors 
+                    Reliable Data Transfer 2.0 - Channel with bit errors - In this case the
+                    underlying channel may flip bits in the packet which would require a checksum
+                    to detect if any of the bits had been changed. When the checksum is used to
+                    check for bit errors, if there aren't any, an ACK will be sent to the sender
+                    to let them know that the receiver has got the intended packet. If there are
+                    errors then a NACK will be sent to tell the sender that the packet had errors
                     in it.<br/>
-                    Reliable Data Transfer 3.0 - RDT 3.0 will resend the packet and acknowledgment 
+                    Reliable Data Transfer 3.0 - RDT 3.0 will resend the packet and acknowledgment
                     again if either is lost after a timeout.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image26.jpg" alt="Twenty Sixth Image" style="max-width: 100%;"><br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image27.jpg" alt="Twenty Seventh Image" style="max-width: 100%;"></p>
                 <br/>
                 <u>The RDT 3.0 Stop-and-wait Operation</u>
                 <p><img src="Operating Systems, Networks & the Internet 2/Image28.jpg" alt="Twenty Eighth Image" style="max-width: 100%;"><br/>
-                    Stop-and-Wait Protocols - The sender sends one packet and waits for feedback. 
-                    It then transmits a new packet or retransmits the old one.<br/>If the protocol 
-                    is only dealing with bit errors, then only a checksum must be added to the 
-                    packet to detect any bit errors. After the error(s) have or haven't been 
-                    detected then an ACK or NACK will be sent by the receiver to alert the sender 
-                    whether the process was successful or not. If the sender receives an ACK, they 
-                    will send the new packet and if they receive a NACK then they will send the 
-                    old packet again.<br/>This method doesn't work out very well if the ACK or 
-                    NACK has an error.<br/>To deal with lost packets, the receiver will send an 
-                    ACK after receiving each packet and if the ACK has not been received within 
-                    the timeout interval, then the packet is considered lost in transmission and 
-                    will need to be resent.<br/>After a timeout, the sender cannot know whether 
-                    the packet was lost or the ACK, so the receiver can receive multiple of the 
-                    same packets. Also, if an ACK packet arrives to the sender after the timeout 
-                    interval, then the sender will not know which packer is the acknowledged 
-                    one.<br/>An alternating-bit protocol, where sequence numbers are showed for 
-                    each packet in 1, 0, 1, 0, 1, 0, etc. format. This would mean that if a packet 
-                    was lost then there will be an inconsistency with the alternating bit pattern 
-                    at some point in the received packets of the receiver. If an acknowledgment 
-                    was lost then there would be an inconsistency with the format of the 
+                    Stop-and-Wait Protocols - The sender sends one packet and waits for feedback.
+                    It then transmits a new packet or retransmits the old one.<br/>If the protocol
+                    is only dealing with bit errors, then only a checksum must be added to the
+                    packet to detect any bit errors. After the error(s) have or haven't been
+                    detected then an ACK or NACK will be sent by the receiver to alert the sender
+                    whether the process was successful or not. If the sender receives an ACK, they
+                    will send the new packet and if they receive a NACK then they will send the
+                    old packet again.<br/>This method doesn't work out very well if the ACK or
+                    NACK has an error.<br/>To deal with lost packets, the receiver will send an
+                    ACK after receiving each packet and if the ACK has not been received within
+                    the timeout interval, then the packet is considered lost in transmission and
+                    will need to be resent.<br/>After a timeout, the sender cannot know whether
+                    the packet was lost or the ACK, so the receiver can receive multiple of the
+                    same packets. Also, if an ACK packet arrives to the sender after the timeout
+                    interval, then the sender will not know which packer is the acknowledged
+                    one.<br/>An alternating-bit protocol, where sequence numbers are showed for
+                    each packet in 1, 0, 1, 0, 1, 0, etc. format. This would mean that if a packet
+                    was lost then there will be an inconsistency with the alternating bit pattern
+                    at some point in the received packets of the receiver. If an acknowledgment
+                    was lost then there would be an inconsistency with the format of the
                     acknowledgments.</p>
                 <br/>
                 <u>Throughput</u>
@@ -584,91 +585,91 @@
                 <br/>
                 <u>Efficiency</u>
                 <p>$E=\frac{\text{Packet Size}}{\text{Bandwidth}\times\text{Round Trip Time}}$<br/>
-                    To improve the efficiency of a stop-and-wait protocol, the throughput has to 
-                    be improved. This would allow more packets to be sent at once which would 
-                    improve the throughput and thus the efficiency.<br/>The ideal is to send as 
-                    many packets simultaneously as possible, however this number is subject to the 
-                    abilities of the corresponding network with regards to congestion control and 
+                    To improve the efficiency of a stop-and-wait protocol, the throughput has to
+                    be improved. This would allow more packets to be sent at once which would
+                    improve the throughput and thus the efficiency.<br/>The ideal is to send as
+                    many packets simultaneously as possible, however this number is subject to the
+                    abilities of the corresponding network with regards to congestion control and
                     the ability of the receiver with regards to flow control.</p>
                 <br/>
                 <u>Sliding Window Protocols</u>
-                <p>Sliding window protocols allow the sender to have a window of size N and can 
-                    transmit all the packets that are in the window. When the first packet in the 
+                <p>Sliding window protocols allow the sender to have a window of size N and can
+                    transmit all the packets that are in the window. When the first packet in the
                     window is acknowledged, the window slides.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image29.jpg" alt="Twenty Ninth Image" style="max-width: 100%;"></p>
                 <br/>
                 <u>Pipelining Protocols</u>
-                <p>Pipelining protocols allow the user to send multiple, yet-to-be acknowledged 
-                    packets. In this protocol the range of sequence numbers must be increased and 
-                    there must be buffering at the sender and/or receiver.<br/>There are two forms 
+                <p>Pipelining protocols allow the user to send multiple, yet-to-be acknowledged
+                    packets. In this protocol the range of sequence numbers must be increased and
+                    there must be buffering at the sender and/or receiver.<br/>There are two forms
                     of pipelining protocol: go-Back-N and Selective Repeat</p>
                 <br/>
                 <u>Go-back-N</u>
-                <p>The receiver only sends cumulative acknowledgments and doesn't acknowledge a 
-                    packet is there is a gap. The sender will have a timer for the oldest 
-                    unacknowledged packet and if the timer expires, it retransmits all of the 
-                    unacknowledged packets.<br/>On the sender's side there is a k-bit sequence 
-                    number in the packet header. The window of up to N, consecutive unacknowledged 
-                    packets are allowed. The function ACK(n) acknowledges all packets up to and 
-                    including sequence number n. Timeout(n) will retransmit packet n and all the 
-                    higher number sequence number packets in the window.<br/>On the receiver's 
-                    side it always sends the acknowledgment for the correctly received packet 
-                    with the highest in-order sequence number. This may generate duplicate 
-                    acknowledgments. An out-of-order packet is discarded but not buffered as 
-                    there is no buffering on the receiving end. Re-acknowledge the packet with the 
+                <p>The receiver only sends cumulative acknowledgments and doesn't acknowledge a
+                    packet is there is a gap. The sender will have a timer for the oldest
+                    unacknowledged packet and if the timer expires, it retransmits all of the
+                    unacknowledged packets.<br/>On the sender's side there is a k-bit sequence
+                    number in the packet header. The window of up to N, consecutive unacknowledged
+                    packets are allowed. The function ACK(n) acknowledges all packets up to and
+                    including sequence number n. Timeout(n) will retransmit packet n and all the
+                    higher number sequence number packets in the window.<br/>On the receiver's
+                    side it always sends the acknowledgment for the correctly received packet
+                    with the highest in-order sequence number. This may generate duplicate
+                    acknowledgments. An out-of-order packet is discarded but not buffered as
+                    there is no buffering on the receiving end. Re-acknowledge the packet with the
                     highest in-order sequence number after this.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image30.jpg" alt="Thirtieth Image" style="max-width: 100%;"><br/>
-                    The advantage of GBN is the simplicity of having a buffer at the receiving 
-                    end.<br/>The disadvantages include the throwing away of a correctly received 
-                    packet is that the subsequent retransmission of that packet might be lost or 
-                    garbled and thus even more retransmission would be required. The other 
+                    The advantage of GBN is the simplicity of having a buffer at the receiving
+                    end.<br/>The disadvantages include the throwing away of a correctly received
+                    packet is that the subsequent retransmission of that packet might be lost or
+                    garbled and thus even more retransmission would be required. The other
                     disadvantage is thus there is unnecessary retransmission.</p>
                 <br/>
                 <u>Selective Repeat</u>
-                <p>With selective repeat, the receiver individually acknowledges all the correctly 
-                    received packets. It will buffer packets, as needed, for eventual in-order 
-                    delivery to the upper layer. The sender only resends packets for which the 
-                    acknowledgment is not received. The sender then has a timer for each 
-                    unacknowledged packet. There is also a sender window with N consecutive 
-                    sequence numbers, with that been the limit to the number of sequence numbers 
-                    of sent, unacknowledged packets.<br/>On the sender's side the next available 
-                    sequence number in the window has it's packet sent. The sender also has a 
-                    timeout(n) function that resends packet n and restarts the timer. The other 
-                    function is ACK(n) which marks the packet as received. If n is the smallest 
-                    unacknowledged packer, it advances the window base to the next unacknowledged 
-                    sequence number.<br/>On the receiver's side, once the packet n has been 
-                    received it sends ACK(n) and buffers the packet if it is out-of-order. It if 
-                    is in-order, it advances the window to the next not-yet-received packet. If a 
-                    non-received packet is eventually received, then an ACK(n) is sent. Otherwise 
+                <p>With selective repeat, the receiver individually acknowledges all the correctly
+                    received packets. It will buffer packets, as needed, for eventual in-order
+                    delivery to the upper layer. The sender only resends packets for which the
+                    acknowledgment is not received. The sender then has a timer for each
+                    unacknowledged packet. There is also a sender window with N consecutive
+                    sequence numbers, with that been the limit to the number of sequence numbers
+                    of sent, unacknowledged packets.<br/>On the sender's side the next available
+                    sequence number in the window has it's packet sent. The sender also has a
+                    timeout(n) function that resends packet n and restarts the timer. The other
+                    function is ACK(n) which marks the packet as received. If n is the smallest
+                    unacknowledged packer, it advances the window base to the next unacknowledged
+                    sequence number.<br/>On the receiver's side, once the packet n has been
+                    received it sends ACK(n) and buffers the packet if it is out-of-order. It if
+                    is in-order, it advances the window to the next not-yet-received packet. If a
+                    non-received packet is eventually received, then an ACK(n) is sent. Otherwise
                     it is ignored.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image31.jpg" alt="Thirty First Image" style="max-width: 100%;"><br/>
-                    In selective repeat the window size must be less than or equal to half the 
+                    In selective repeat the window size must be less than or equal to half the
                     size of the sequence number space for the selective repeat protocol.</p>
                 <br/>
                 <u>Error Detection</u>
-                <p>Error detection detects whether the bits that are received are the same value as 
-                    they were when they left.<br/>Parity bits are used as the simplest error detecting 
-                    code. A parity bit is a bit that is added to ensure that the number of bits with 
-                    the value of one in a given set of bits is always even or odd.<br/>With even 
-                    parity the parity bit is set to one if the number of ones in a given set of bits 
-                    is odd, making the overall set of bits even. If the number of ones in a given set 
+                <p>Error detection detects whether the bits that are received are the same value as
+                    they were when they left.<br/>Parity bits are used as the simplest error detecting
+                    code. A parity bit is a bit that is added to ensure that the number of bits with
+                    the value of one in a given set of bits is always even or odd.<br/>With even
+                    parity the parity bit is set to one if the number of ones in a given set of bits
+                    is odd, making the overall set of bits even. If the number of ones in a given set
                     of bits is even, then the parity bit is set to zero.<br/>
                     A sends 1001<br/>
                     A computes the parity bit value, which under even parity is 0<br/>
                     A adds the parity bit ands sends 10010<br/>
                     B receives 10010<br/>
                     B computes the parity which comes out to be true as he received an even result.<br/>
-                    If B had received 11010, then something would have gone wrong and the parity bit 
-                    would've allowed him to see that.<br/>With one parity bit, only one error can 
+                    If B had received 11010, then something would have gone wrong and the parity bit
+                    would've allowed him to see that.<br/>With one parity bit, only one error can
                     be detected and any even number of errors will not be detected.</p>
                 <br/>
                 <u>Internet Checksum</u>
                 <p>The Internet checksum is defined as follows:<br/>
                     A set of symbols of 16-bits each along with a parity symbol b.<br/>
                     B will be a 1's complement of the sum of all the data symbols.<br/>
-                    1's complement is obtained by converting all the 0s to 1s and all the 1s to 
+                    1's complement is obtained by converting all the 0s to 1s and all the 1s to
                     0s.<br/>
-                    If the checksum that the receiver computes has a single or more 0s in it, then 
+                    If the checksum that the receiver computes has a single or more 0s in it, then
                     there has been n number of errors where n is the number of 0s.<br/>
                     1110011001100110<br/>
                     1101010101010101<br/>
@@ -679,35 +680,35 @@
                 <br/>
                 <u>TCP Sender Events</u>
                 <p>Data received from the application:<br/>
-                    A segment is created with a sequence number that is a byte-stream number of 
+                    A segment is created with a sequence number that is a byte-stream number of
                     the first data byte in the segment.<br/>
                     A start timer will run if it is not already running.<br/>
                     There is also an expiration interval.<br/>
-                    The timeout causes the retransmission of the segment that caused the timeout 
+                    The timeout causes the retransmission of the segment that caused the timeout
                     and then the timer is restarted.<br/>
-                    Once an acknowledgment is received it will update what is known to be 
+                    Once an acknowledgment is received it will update what is known to be
                     acknowledged and start the timer if there are any outstanding segments.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image32.jpg" alt="Thirty Second Image" style="max-width: 100%;"><br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image33.jpg" alt="Thirty Third Image" style="max-width: 100%;"><br/>
-                    With regards to a TCP retransmission, the next timeout interval will be twice 
-                    the length of the previous interval. This means that if the first timeout is 
-                    0.75 seconds, the next timeout, should something go wrong, will be 1.5 
+                    With regards to a TCP retransmission, the next timeout interval will be twice
+                    the length of the previous interval. This means that if the first timeout is
+                    0.75 seconds, the next timeout, should something go wrong, will be 1.5
                     seconds.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image34.jpg" alt="Thirty Fourth Image" style="max-width: 100%;"><br/>
-                    Fast Retransmit - Resending the segment before the timer expires.<br/>TCP uses 
-                    both GBN and SR protocols to govern how its messages are transmitted.<br/>TCP 
-                    acknowledges cumulatively and correctly received but out-of-order segments are 
-                    not individually acknowledged by the receiver. Buffers correctly received but 
-                    out-of-order segments. With GBN, if a segment is lost, it will send all of the 
-                    next segment including the lost segment. In TCP, only the lost segment will be 
-                    sent.<br/>With regards to the size of the sliding window, it depends on the 
-                    size of the network and how much the receiver can take. The network depends on 
+                    Fast Retransmit - Resending the segment before the timer expires.<br/>TCP uses
+                    both GBN and SR protocols to govern how its messages are transmitted.<br/>TCP
+                    acknowledges cumulatively and correctly received but out-of-order segments are
+                    not individually acknowledged by the receiver. Buffers correctly received but
+                    out-of-order segments. With GBN, if a segment is lost, it will send all of the
+                    next segment including the lost segment. In TCP, only the lost segment will be
+                    sent.<br/>With regards to the size of the sliding window, it depends on the
+                    size of the network and how much the receiver can take. The network depends on
                     congestion control and the receiver depends on flow control.</p>
                 <br/>
                 <u>Congestion Control</u>
-                <p>Congestion informally means two sources sending too much data too fast for a 
-                    network to handle.<br/>Congestion control is required where there is packet 
-                    loss and increased end-to-end delays. Congestion results in unfairness and 
+                <p>Congestion informally means two sources sending too much data too fast for a
+                    network to handle.<br/>Congestion control is required where there is packet
+                    loss and increased end-to-end delays. Congestion results in unfairness and
                     poor utilization of a network's resources.<br/>
                     End-to-end Congestion Control<br/>
                     - No explicit feedback from the network layer<br/>
@@ -719,62 +720,62 @@
                     - Network layer routers provide feedback to end-systems<br/>
                     - Single bit indicating congestion<br/>
                     - Direct feedback sent from router to sender<br/>
-                    - Router mark/update packet field flowing from the sender to the receiver to 
-                    indicate congestion, the receiver then notifies the sender and the 
+                    - Router mark/update packet field flowing from the sender to the receiver to
+                    indicate congestion, the receiver then notifies the sender and the
                     notification is at least a full RTT<br/>
-                    TCP congestion control implements a second, congestion window. It expands in 
-                    no-loss situations and contracts on a loss event. The size is measured in 
+                    TCP congestion control implements a second, congestion window. It expands in
+                    no-loss situations and contracts on a loss event. The size is measured in
                     terms of segments.<br/>
                     The rate of transmission can roughly be calculated from $rate=\frac{\text{cwnd}}{\text{RTT}}$<br/>
-                    Cwnd is the dynamic function of a perceived network congestion.<br/>A loss 
+                    Cwnd is the dynamic function of a perceived network congestion.<br/>A loss
                     event is either a timeout or 3 duplicate acknowledgments.</p>
                 <br/>
                 <u>Additive Increase & Multiplicative Decrease</u>
-                <p>This form of congestion control adds 1 to the cwnd value after each RTT until a 
-                    loss is detected. After this, the cwnd is halved.<br/>Keep in mind that MSS, 
-                    or maximum segment size is the maximum amount of application-layer data in the 
+                <p>This form of congestion control adds 1 to the cwnd value after each RTT until a
+                    loss is detected. After this, the cwnd is halved.<br/>Keep in mind that MSS,
+                    or maximum segment size is the maximum amount of application-layer data in the
                     segment, not that along with the TCP headers.</p>
                 <br/>
                 <u>SS (Slow Start)</u>
-                <p>This protocol for congestion control starts of slowly and then accelerates to 
-                    an appropriate level, assuming that there is lots of data to transmit, no loss 
+                <p>This protocol for congestion control starts of slowly and then accelerates to
+                    an appropriate level, assuming that there is lots of data to transmit, no loss
                     expect where indicated and the receiver is always capable of receiving.<br/>
                     Every RTT will double the congestion window size if these demands are met.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image35.jpg" alt="Thirty Fifth Image" style="max-width: 100%;"></p>
                 <br/>
                 <u>Congestion Avoidance</u>
-                <p>Assuming, like last time there is lots of data to transmit, no loss except 
-                    where indicated and the receiver is always capable of receiving, then after 
-                    every RTT, add 1 to CongWin.<br/>Start using Slow Start Congestion Control, 
-                    then move on to Congestion Avoidance when a threshold is reached (ssthresh). 
-                    Once there is loss, start this process over and set ssthresh to half of 
-                    CongWin.<br/>This method can be refined to differentiate loss between getting 
-                    three duplicate acknowledgments and a timeout. If we consider three duplicate 
-                    acknowledgments, this is not a critical condition as the network is clearly 
-                    able to send the segments. Concerning a timeout, this indicates a more serious 
+                <p>Assuming, like last time there is lots of data to transmit, no loss except
+                    where indicated and the receiver is always capable of receiving, then after
+                    every RTT, add 1 to CongWin.<br/>Start using Slow Start Congestion Control,
+                    then move on to Congestion Avoidance when a threshold is reached (ssthresh).
+                    Once there is loss, start this process over and set ssthresh to half of
+                    CongWin.<br/>This method can be refined to differentiate loss between getting
+                    three duplicate acknowledgments and a timeout. If we consider three duplicate
+                    acknowledgments, this is not a critical condition as the network is clearly
+                    able to send the segments. Concerning a timeout, this indicates a more serious
                     congestion problem that needs to be dealt with.<br/>
                     <img src="Operating Systems, Networks & the Internet 2/Image36.jpg" alt="Thirty Sixth Image" style="max-width: 100%;"><br/>
-                    The average throughput of TCP as a function of window size and RTT, ignoring 
-                    the slow start protocol, will require W to be the window size when loss 
-                    occurs, when the window is W, throughput is W/RTT. Just after loss, the window 
-                    drops to W/2 and the throughput will become W/2RTT. The average throughput 
+                    The average throughput of TCP as a function of window size and RTT, ignoring
+                    the slow start protocol, will require W to be the window size when loss
+                    occurs, when the window is W, throughput is W/RTT. Just after loss, the window
+                    drops to W/2 and the throughput will become W/2RTT. The average throughput
                     here is 0.75 W/RTT.</p>
                 <br/>
                 <u>Active Queue Management</u>
-                <p>Active Queue Management is a router mechanism used for congestion control. It 
-                    manages queue lengths by dropping packets when congestion is building up, that 
-                    is, before the queue is full; end-systems can then react to such losses by 
-                    reducing their packet rate, hence avoiding sever congestion.<br/>The goal of 
-                    AQM is to reduce the average queue length and to reduce packet loss. The 
+                <p>Active Queue Management is a router mechanism used for congestion control. It
+                    manages queue lengths by dropping packets when congestion is building up, that
+                    is, before the queue is full; end-systems can then react to such losses by
+                    reducing their packet rate, hence avoiding sever congestion.<br/>The goal of
+                    AQM is to reduce the average queue length and to reduce packet loss. The
                     method involved is dropping packets before the buffer becomes full.</p>
                 <br/>
                 <u>RED (Random Early Detection)</u>
-                <p>RED constantly monitors the queue length, and calculates it based on a formula. 
-                    A random drop is applied to an incoming packet before it enters the waiting 
-                    queue based upon the formula.<br/>RED is effective for reducing the average 
-                    queue size and thus reducing the average delay. It is effective against both 
-                    global synchronization and unfair against busy traffic. Unfortunately, RED is 
-                    sensitive to parameters, the number of flows, the packet size and has severe 
+                <p>RED constantly monitors the queue length, and calculates it based on a formula.
+                    A random drop is applied to an incoming packet before it enters the waiting
+                    queue based upon the formula.<br/>RED is effective for reducing the average
+                    queue size and thus reducing the average delay. It is effective against both
+                    global synchronization and unfair against busy traffic. Unfortunately, RED is
+                    sensitive to parameters, the number of flows, the packet size and has severe
                     queue length oscillation when there is a change in traffic.</p>
             </div>
         </div>

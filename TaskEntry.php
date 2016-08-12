@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="Main.css">
+        <link rel="icon" href="Basquiat Crown.png">
         <script src="TaskListScript.js"></script>
     </head>
     <body>

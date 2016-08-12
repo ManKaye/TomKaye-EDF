@@ -2,6 +2,7 @@
     <head>
         <title>Formal Languages & the Theory of Computation</title>
         <link rel="stylesheet" href="Main.css">
+        <link rel="icon" href="Basquiat Crown.png">
         <script type="text/x-mathjax-config">
             MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
         </script>
@@ -18,7 +19,7 @@
             <br/>
             <div class="Sub-Div">
                 <u>Formal Languages</u>
-                <p>Formal languages are sets of strings and symbols. They belong to the field of 
+                <p>Formal languages are sets of strings and symbols. They belong to the field of
                     non-commutative discrete mathematics.<br/>Alphabet `\Sigma = \text{an often finite set of symbols or letters}`<br/>
                     `\text{Word} (\text{over } \Sigma) = \text{a usually finite string of symbols from } \Sigma`. An empty word `\epsilon` is a word of length 0.<br/>
                     `\text{Language} (\text{over } \Sigma) = \text{an often infinite set of words over } \Sigma`<br/>
@@ -37,7 +38,7 @@
                     `\text{if}\quad x = b,`
                     b}<br/>
                     h(abb) = bbaaa<br/>
-                    A homo-morphism is simply one Kleene star that morphs to another Kleene star 
+                    A homo-morphism is simply one Kleene star that morphs to another Kleene star
                     if it is compatible with the concatenation.</p>
                 <br/>
                 <u>Set-formers</u>
@@ -46,39 +47,39 @@
                     Example: `L = {w \in {a, b}\ast | |w|_a = |w|_b}`</p>
                 <br/>
                 <u>Grammars</u>
-                <p>A grammar, or language generator is a device that describes how to enumerate 
-                    all words in a language. A grammar provides rules to produce these words but 
-                    unfortunately doesn't lead to a simple test of whether a word is in that 
+                <p>A grammar, or language generator is a device that describes how to enumerate
+                    all words in a language. A grammar provides rules to produce these words but
+                    unfortunately doesn't lead to a simple test of whether a word is in that
                     language or not.</p>
                 <br/>
                 <u>Automata</u>
-                <p>An automaton or a language acceptor is a computational device that reads any 
-                    word and outputs 'yes' if it is in the language and 'no' if it isn't, although 
-                    this doesn't always happen. Automata allow us to test easily on whether words 
-                    are in a language although it makes it difficult to obtain all the words in a 
-                    language.<br/>Set-formers are easy for humans to read but not formal enough for 
-                    a computer to compute. Grammars and automata are the opposite, computers can 
-                    use these but most example of these are too big and complicated for humans to 
-                    read.<br/>As a solution, regular expressions, Backus-Naur Form/Extended 
+                <p>An automaton or a language acceptor is a computational device that reads any
+                    word and outputs 'yes' if it is in the language and 'no' if it isn't, although
+                    this doesn't always happen. Automata allow us to test easily on whether words
+                    are in a language although it makes it difficult to obtain all the words in a
+                    language.<br/>Set-formers are easy for humans to read but not formal enough for
+                    a computer to compute. Grammars and automata are the opposite, computers can
+                    use these but most example of these are too big and complicated for humans to
+                    read.<br/>As a solution, regular expressions, Backus-Naur Form/Extended
                     Backus-Naur Form and patterns are used.</p>
                 <br/>
                 <u>Notation & Remarks</u>
-                <p>If M is a grammar or automaton then L(M) is the language generated/accepted by 
+                <p>If M is a grammar or automaton then L(M) is the language generated/accepted by
                     that grammar or automaton.<br/>
-                    If <i>M</i> is a set of grammars or automata then L(<i>M</i>) denotes the class 
+                    If <i>M</i> is a set of grammars or automata then L(<i>M</i>) denotes the class
                     of all languages that are generated/accepted from <i>M</i>.</p>
                 <br/>
                 <u>The Membership Problem</u>
                 <p>Input: word w<br/>
                     Output: 'yes' is `w \in L`, 'no' otherwise<br/>
-                    The membership problem for L is decidable if there is a computable 
-                    function `\chi_L` that solves the problem for every w. L is 
-                    decidable/recursive.<br/>If there is a computable function that outputs 'yes' 
-                    when reading any word `w \in L`, and is undefined otherwise then L is 
+                    The membership problem for L is decidable if there is a computable
+                    function `\chi_L` that solves the problem for every w. L is
+                    decidable/recursive.<br/>If there is a computable function that outputs 'yes'
+                    when reading any word `w \in L`, and is undefined otherwise then L is
                     semi-decidable/recursively enumerable.</p>
                 <br/>
                 <u>Problem or Language?</u>
-                <p>Observation: Any decision problem can be interpreted as the membership problem 
+                <p>Observation: Any decision problem can be interpreted as the membership problem
                     for a formal language.<br/>We simply encode the problem in a language.<br/>
                     Example: Is n a prime number?<br/>
                     `L = {w | w \text{ is a binary representation of a prime number}}`</p>
@@ -108,34 +109,34 @@
                     `\text{Output}: '\text{yes}'\text{ if }w \in L(M), '\text{no}'\text{ otherwise}`</p>
                 <br/>
                 <u>Decidability of the Inclusion Problem</u>
-                <p>Decidability and co-semi-decidability: The inclusion problem for a class <i>M</i> of 
-                    grammars/automata is decidable if there exists a computable function that, 
-                    given any `M, N \in mathcal{M}`, outputs 'yes' if `L(M) \subseteq L(N)` and 'no' if 
-                    $L(M) \nsubseteq L(N)$, semi-decidable if there exists a computable function 
-                    that, given any `M, N \in \mathcal{M}`, outputs 'yes' if `L(M) \subseteq L(N)` 
-                    and is undefined if $L(M) \nsubseteq L(N)$, co-semi-decidable if there exists 
-                    a computable function that, given any `M, N \in \mathcal{M}`, outputs 'yes' if 
+                <p>Decidability and co-semi-decidability: The inclusion problem for a class <i>M</i> of
+                    grammars/automata is decidable if there exists a computable function that,
+                    given any `M, N \in mathcal{M}`, outputs 'yes' if `L(M) \subseteq L(N)` and 'no' if
+                    $L(M) \nsubseteq L(N)$, semi-decidable if there exists a computable function
+                    that, given any `M, N \in \mathcal{M}`, outputs 'yes' if `L(M) \subseteq L(N)`
+                    and is undefined if $L(M) \nsubseteq L(N)$, co-semi-decidable if there exists
+                    a computable function that, given any `M, N \in \mathcal{M}`, outputs 'yes' if
                     $L(M) \nsubseteq L(N)$ and is undefined if `L(M) \subseteq L(N)`.</p>
                 <br/>
                 <u>How Difficult Is It to Solve a Decision Problem?</u>
-                <p>Decision problems can be decidable, semi-decidable or co-semi-decidable. If 
-                    they are decidable, then we wish to know the amount of time required for the 
-                    characteristic function `\chi` to compute the correct answer when given an input of 
-                    length n. We might also ask for the required memory space in big O notation 
+                <p>Decision problems can be decidable, semi-decidable or co-semi-decidable. If
+                    they are decidable, then we wish to know the amount of time required for the
+                    characteristic function `\chi` to compute the correct answer when given an input of
+                    length n. We might also ask for the required memory space in big O notation
                     although complexity questions won't be asked for this module.</p>
                 <br/>
                 <u>Closure Properties</u>
                 <p> Let <i>M</i> be a set of grammars or automata.<br/>
-                    L(M) is said to be closed under union if, for all `M, N \in \mathcal{M}`, 
+                    L(M) is said to be closed under union if, for all `M, N \in \mathcal{M}`,
                     `L(M) \cup L(N) \in L(M)`.<br/>
-                    L(M) is said to be closed under intersection if, for all `M, N \in 
+                    L(M) is said to be closed under intersection if, for all `M, N \in
                     \mathcal{M}`, `L(M) \cap L(N) \in L(M)`.<br/>
                     L(M) is said to be closed under complement if, for every `M \in \mathcal{M}, L(M)' \in L(M)`.</p>
                 <br/>
                 <u>Chomsky Hierarchy</u>
-                <p>Type 0 grammars - recursively enumerable<br/>Type 1 grammars - 
-                    context-sensitive<br/>Type 2 grammars - context-free<br/>Type 3 grammars - 
-                    regular<br/>Formal languages always contain a subject, a predicate and an 
+                <p>Type 0 grammars - recursively enumerable<br/>Type 1 grammars -
+                    context-sensitive<br/>Type 2 grammars - context-free<br/>Type 3 grammars -
+                    regular<br/>Formal languages always contain a subject, a predicate and an
                     object.<br/>A grammar connects these things as such:<br/>
                     `\text{Sentence} \rightarrow \text{Subject Predicate Object}`<br/>
                     `\text{Subject} \rightarrow \text{Name}`<br/>
@@ -162,27 +163,27 @@
                     In this layout, the start symbol would be w = Sentence</p>
                 <br/>
                 <u>Type 0 Grammars</u>
-                <p>A (formal or phase-structure) grammar of Type 0 is a tuple G = (N, T, P, S) 
-                    satisfying the following conditions:<br/>N is a finite alphabet of 
-                    non-terminal symbols (or variables), T is a finite alphabet of terminal 
-                    symbols (or letters), `N\cap T = \emptyset`, P is a set of production rules, 
-                    i.e. P is a finite subset of `(N\cup T)^+ x (N\cup T)^\ast, S \in N` is a start 
+                <p>A (formal or phase-structure) grammar of Type 0 is a tuple G = (N, T, P, S)
+                    satisfying the following conditions:<br/>N is a finite alphabet of
+                    non-terminal symbols (or variables), T is a finite alphabet of terminal
+                    symbols (or letters), `N\cap T = \emptyset`, P is a set of production rules,
+                    i.e. P is a finite subset of `(N\cup T)^+ x (N\cup T)^\ast, S \in N` is a start
                     variable.</p>
                 <br/>
                 <u>Transition Relation</u>
-                <p>Let G = (N, T, P, S) be a grammar of Type 0. Let `u, v \in (N\cup T)^\ast`. We 
-                    define the transition relation `u \Rightarrow _Gv` if there exist 
-                    `x, y, y', z \in (N\cup T)^\ast` such that u, v and P satisfy the following 
+                <p>Let G = (N, T, P, S) be a grammar of Type 0. Let `u, v \in (N\cup T)^\ast`. We
+                    define the transition relation `u \Rightarrow _Gv` if there exist
+                    `x, y, y', z \in (N\cup T)^\ast` such that u, v and P satisfy the following
                     conditions:<br/>
                     `u = xyz`<br/>
                     `v = xy'z`<br/>
                     `y \rightarrow y'` is contained in P.<br/>
-                    We write `\Rightarrow` instead of `\Rightarrow_G` if the grammar G is 
-                    understood. `\Rightarrow_G^\ast` denotes the reflexive and transitive closure 
+                    We write `\Rightarrow` instead of `\Rightarrow_G` if the grammar G is
+                    understood. `\Rightarrow_G^\ast` denotes the reflexive and transitive closure
                     of `\Rightarrow_G`.</p>
                 <br/>
                 <u>The Language Generated by a Grammar</u>
-                <p>Let G = (N, T, P, S) be a grammar of Type 0. G generates the following 
+                <p>Let G = (N, T, P, S) be a grammar of Type 0. G generates the following
                     language:<br/>
                     `L(G) := {w \in T^\ast | S \Rightarrow_G^\ast w}`</p>
                 <br/>
@@ -208,18 +209,18 @@
                     `L(G_{mon}) = {w | \exists n \in \mathbb{N} : w = \text{anbncn}}`</p>
                 <br/>
                 <u>Nondeterminism</u>
-                <p>The application of the production rules can be nondeterministic in two 
-                    regards:<br/>For any `v \in (N \cup T)^\ast`, there might be more than one 
-                    rule in P with v as a left side. In other words, P is a relation, but not a 
-                    function.<br/>The derivation can lead to a word `u \in (N \cup T)^\ast` 
-                    satisfying<br/>U = xvy = x'wy' with `v \ne w` and `v, w, x, x', y, y' \in (N \cup T)^\ast` 
+                <p>The application of the production rules can be nondeterministic in two
+                    regards:<br/>For any `v \in (N \cup T)^\ast`, there might be more than one
+                    rule in P with v as a left side. In other words, P is a relation, but not a
+                    function.<br/>The derivation can lead to a word `u \in (N \cup T)^\ast`
+                    satisfying<br/>U = xvy = x'wy' with `v \ne w` and `v, w, x, x', y, y' \in (N \cup T)^\ast`
                     and there is a rule in P with v as a left side and another rule with w as a left side.</p>
                 <br/>
                 <u>Expressive Power of Type 0 Grammars</u>
-                <p>Theorem: The class of all languages that can be generated by Type 0 grammars 
+                <p>Theorem: The class of all languages that can be generated by Type 0 grammars
                     equals the class of all semi-decidable (= recursively enumerable) languages.<br/>
-                    Type 0 grammars are computationally maximally powerful. For example `{(h, g) | h, g \text{morphisms} \wedge E_{h, g} \ne \emptyset}` 
-                    can be generated by a Type 0 grammar. There are Type 0 grammars G where L(G) 
+                    Type 0 grammars are computationally maximally powerful. For example `{(h, g) | h, g \text{morphisms} \wedge E_{h, g} \ne \emptyset}`
+                    can be generated by a Type 0 grammar. There are Type 0 grammars G where L(G)
                     cannot be recursively enumerated in length-lexicographical order.</p>
                 <br/>
                 <u>Decision Problems</u>
@@ -241,23 +242,23 @@
                     . Concatenation<br/>
                     . Kleene Star<br/>
                     . Morphisms<br/>
-                    The class of languages generated by Type 0 grammars is not closed under 
+                    The class of languages generated by Type 0 grammars is not closed under
                     complement.</p>
                 <br/>
                 <u>Type 1 Grammars</u>
-                <p>Let G = (N, T, P, S) be a Type 0 grammar. G is said to be of Type 1 (or: 
+                <p>Let G = (N, T, P, S) be a Type 0 grammar. G is said to be of Type 1 (or:
                     monotonous) if every rule `u\rightarrow v \in P` satisfies<br/>
                     `|u| \leq |v|`<br/>
-                    Exception: If `\epsilon \in L(G)` shall be satisfied, then G may contain the 
-                    rule `S \rightarrow \epsilon`. However, then S must occur on the right side of 
-                    any rule in P.<br/>Let L be a language generated by a Type 1 grammar. We then 
-                    call L a context-sensitive language. We denote the class of all 
-                    context-sensitive languages by CS.<br/>Let G = (N, T, P, S) be a Type 0 
-                    grammar. G is said to be of Type 1 (or: context-sensitive) if every rule 
+                    Exception: If `\epsilon \in L(G)` shall be satisfied, then G may contain the
+                    rule `S \rightarrow \epsilon`. However, then S must occur on the right side of
+                    any rule in P.<br/>Let L be a language generated by a Type 1 grammar. We then
+                    call L a context-sensitive language. We denote the class of all
+                    context-sensitive languages by CS.<br/>Let G = (N, T, P, S) be a Type 0
+                    grammar. G is said to be of Type 1 (or: context-sensitive) if every rule
                     `u \rightarrow v \in P`, for some `w_1, w_2 \in (N \cup T)^\ast, A \in N, x \in (N \cup T)^+`<br/>
                     `u = w_1Aw_2`<br/>
                     `v = w_1xw_2`<br/>
-                    Every context-sensitive grammar is a monotonous grammar. For every monotonous 
+                    Every context-sensitive grammar is a monotonous grammar. For every monotonous
                     grammar G there is a context-sensitive grammar G' satisfying L(G) = L(G').</p>
                 <br/>
                 <u>A Grammar for a Copy Language</u>
@@ -271,23 +272,23 @@
                 <p>Let `G_{cs} := ({S, A, B}, {a, b, c}, P, S)` where<br/>
                     `P = {S \rightarrow BA, BA \rightarrow BBA, B \rightarrow a, aA \rightarrow ab, bA \rightarrow bc}`<br/>
                     `L(G_{cs}) = {w | \exists n \in \mathbb{N} : w = \text{anb}}`<br/>
-                    The rule `bA \rightarrow bc` in `G_{cs}` is not reachable, i.e. there is no 
-                    derivation where it can be applied.<br/>There is a second reason why G_{cs} is 
-                    not optimal: `L(G_{cs})` can be produced by a much simpler type of grammar. 
+                    The rule `bA \rightarrow bc` in `G_{cs}` is not reachable, i.e. there is no
+                    derivation where it can be applied.<br/>There is a second reason why G_{cs} is
+                    not optimal: `L(G_{cs})` can be produced by a much simpler type of grammar.
                     This shall become apparent later.</p>
                 <br/>
                 <u>Derivations of Words Using Monotonous Grammars</u>
-                <p>`S \Rightarrow u_1 \Rightarrow u_2 \Rightarrow u_3 \Rightarrow ... \Rightarrow u_n` 
+                <p>`S \Rightarrow u_1 \Rightarrow u_2 \Rightarrow u_3 \Rightarrow ... \Rightarrow u_n`
                     be a derivation in a Type 1 grammar. Then, for every `i, 1 \leq i \leq n`,<br/>
                     `|u_i| \leq |u_{i+1}|`<br/>
-                    Corollary: Let G be a Type 1 grammar. Then L(G) can be recursively enumerated in 
-                    length-lexicographical order. This difference between Type 0 and Type 1 grammars 
-                    has a vital impact on the decidability of the membership problem for Type 1 
+                    Corollary: Let G be a Type 1 grammar. Then L(G) can be recursively enumerated in
+                    length-lexicographical order. This difference between Type 0 and Type 1 grammars
+                    has a vital impact on the decidability of the membership problem for Type 1
                     Grammars...</p>
                 <br/>
                 <u>Decision Problems</u>
-                <p>Let G be a Type 1 grammar. Then the membership problem for G is decidable (but 
-                    PSPACE-complete, i.e. most likely exponential in the worst case).<br/>The 
+                <p>Let G be a Type 1 grammar. Then the membership problem for G is decidable (but
+                    PSPACE-complete, i.e. most likely exponential in the worst case).<br/>The
                     following problems are undecidable for the class of Type 1 grammars:<br/>
                     . Equivalence<br/>
                     . Inclusion<br/>
@@ -296,7 +297,7 @@
                     . Emptiness</p>
                 <br/>
                 <u>Expressive Power of Type 1 Grammars</u>
-                <p>R.E. denotes the class of recursively enumerable (= semi-decidable) languages. 
+                <p>R.E. denotes the class of recursively enumerable (= semi-decidable) languages.
                     R.E.C. denotes the class of all recursive (= decidable) languages.<br/>
                     `R.E. \subset R.E.C. \subset C.S.`<br/>
                     This implies that there are decidable languages that are not context-sensitive.</p>
@@ -308,25 +309,25 @@
                     . Complement<br/>
                     . Concatenation<br/>
                     . Kleene Star<br/>
-                    The class of languages generated by Type 1 grammars is not closed under 
+                    The class of languages generated by Type 1 grammars is not closed under
                     morphisms.</p>
                 <br/>
                 <u>Natural Context-sensitive Structure</u>
-                <p>Context-sensitive languages are mainly required to model natural languages and 
-                    structures in bio-sequences.<br/>Unfortunately the decision problems for Type 
-                    1 grammars are too hard. Therefore, subclasses of CS are investigated, often 
-                    referred to as mildly context-sensitive languages. Proper super-classes of the 
-                    context-free languages (the next lower level of the Chomsky hierarchy), 
-                    polynomial-time membership problem and tailored to the corresponding area of 
+                <p>Context-sensitive languages are mainly required to model natural languages and
+                    structures in bio-sequences.<br/>Unfortunately the decision problems for Type
+                    1 grammars are too hard. Therefore, subclasses of CS are investigated, often
+                    referred to as mildly context-sensitive languages. Proper super-classes of the
+                    context-free languages (the next lower level of the Chomsky hierarchy),
+                    polynomial-time membership problem and tailored to the corresponding area of
                     application.</p>
                 <br/>
                 <u>Type 2 Grammars</u>
-                <p>Let G = (N, T, P, S) be a Type 1 grammar. G is said to be of Type 2 (or: 
+                <p>Let G = (N, T, P, S) be a Type 1 grammar. G is said to be of Type 2 (or:
                     context-free) if every rule `u \rightarrow v \in P` satisfies `u \in N`.<br/>
-                    An exception is that we can allow for (only) Type 2 grammars arbitrary 
+                    An exception is that we can allow for (only) Type 2 grammars arbitrary
                     production rules of the form `A \rightarrow \epsilon, A \in N`.<br/>
-                    Let L be a language generated by a Type 2 grammar. We then call L a 
-                    context-free language. We denote the class of all context-free languages by 
+                    Let L be a language generated by a Type 2 grammar. We then call L a
+                    context-free language. We denote the class of all context-free languages by
                     CF.</p>
                 <br/>
                 <u>A Context-free Grammar</u>
@@ -349,44 +350,44 @@
                     `\Rightarrow \text{aabccbaa}`</p>
                 <br/>
                 <u>Context-free Grammars Without `\epsilon` Rules</u>
-                <p>Let G = (N, T, P, S) be a Type 2 grammar. We call a rule in P an `\epsilon` 
+                <p>Let G = (N, T, P, S) be a Type 2 grammar. We call a rule in P an `\epsilon`
                     rule if it has the structure `A \rightarrow \epsilon` for an `A \in N`.<br/>
-                    For every Type 2 grammar G with `\epsilon \notin L(G)` there is a Type 2 
+                    For every Type 2 grammar G with `\epsilon \notin L(G)` there is a Type 2
                     grammar G' = (N', T', P', S') such that:<br/>
                     L(G') = L(G) and <br/>
                     P' does not contain any `\epsilon` rules.</p>
                 <br/>
                 <u>Chomsky Normal Form</u>
-                <p>Let G = (N, T, P, S) be a Type 2 grammar. G is said to be in Chomsky Normal 
+                <p>Let G = (N, T, P, S) be a Type 2 grammar. G is said to be in Chomsky Normal
                     Form (CNF) if, for every rule `r \in P`,<br/>
                     `R = (A \rightarrow \text{BC})` with `A, B, C \in N` or<br/>
                     `R = (A \rightarrow a)` with `A \in N` and `a \in T`<br/>
-                    For every Type 2 grammar G with `\epsilon \notin L(G)` there is a Type 2 
+                    For every Type 2 grammar G with `\epsilon \notin L(G)` there is a Type 2
                     grammar G' = (N', T', P', S') such that:<br/>
                     L(G') = L(G) and<br/>
                     G' is in Chomsky Normal Form</p>
                 <br/>
                 <u>The Use of Chomsky Normal Form</u>
-                <p>The Chomsky Normal Form significantly simplifies the structure of context-free 
-                    grammars. Thus, algorithms on such grammars are much simpler than those on 
-                    general Type 2 grammars.<br/>The derivation trees of Type 2 grammars in CNF 
-                    are binary trees.<br/>For every Type 2 grammar G in CNF and for every word 
+                <p>The Chomsky Normal Form significantly simplifies the structure of context-free
+                    grammars. Thus, algorithms on such grammars are much simpler than those on
+                    general Type 2 grammars.<br/>The derivation trees of Type 2 grammars in CNF
+                    are binary trees.<br/>For every Type 2 grammar G in CNF and for every word
                     `w \in L(G)`, the derivation `S \Rightarrow_G^\ast w has length 2|w| - 1.</p>
                 <br/>
                 <u>Greibach Normal Form</u>
-                <p>Let G = (N, T, P, S) be a Type 2 grammar. G is said to be in Greibach Normal 
+                <p>Let G = (N, T, P, S) be a Type 2 grammar. G is said to be in Greibach Normal
                     Form (GNF) if, for every rule `r \in P`,<br/>
                     `R = (A \rightarrow aB_1B_2...B_k)`,<br/>
                     For a `k \in \mathbb{N}_0, a \in T`, and for some `A, B_1, B_2, ..., B_k \in N`.<br/>
-                    For every Type 2 grammar G with `\epsilon \notin L(G)` there is a Type 2 grammar 
+                    For every Type 2 grammar G with `\epsilon \notin L(G)` there is a Type 2 grammar
                     G' = (N', T', P', S') such that:<br/>
                     L(G') = L(G) and<br/>
                     G' is in Greibach Normal Form</p>
                 <br/>
                 <u>Expressive Power of Type 2 Grammars</u>
                 <p>`R.E. \subset R.E.C. \subset C.S. \subset C.F.`<br/>
-                    Therefore, the step from Type 1 to Type 2 grammars causes a substantial loss 
-                    of expressive power. However, we gain a significant speed-up of the membership 
+                    Therefore, the step from Type 1 to Type 2 grammars causes a substantial loss
+                    of expressive power. However, we gain a significant speed-up of the membership
                     test...</p>
                 <br/>
                 <u>Decision Problems</u>
@@ -412,70 +413,70 @@
                 <p>Context-free grammars are very important for<br/>
                     . Programming languages<br/>
                     . Mark-up languages<br/>
-                    Since their membership test is fast and their expressive power is sufficient 
-                    to model many types of nested parenthesized expressions (as indicated by the 
-                    example grammar `G_{arithm}`).<br/>Unfortunately, they are not sufficiently 
-                    powerful to model most natural languages, regularities in sequences of natural 
+                    Since their membership test is fast and their expressive power is sufficient
+                    to model many types of nested parenthesized expressions (as indicated by the
+                    example grammar `G_{arithm}`).<br/>Unfortunately, they are not sufficiently
+                    powerful to model most natural languages, regularities in sequences of natural
                     objects (such as in bio-sequences), and so on.</p>
                 <br/>
                 <u>The Pumping Lemma for Context-Free Languages</u>
-                <p>The Pumping Lemma is a powerful tool for demonstrating that a language is not 
+                <p>The Pumping Lemma is a powerful tool for demonstrating that a language is not
                     context-free:<br/>
-                    Lemma (Pumping Lemma, version CF): Let `L \in CF`. Then there exists an 
-                    `n \in \mathbb{N}` such that, for every `z \in L` with `|z| \geq n`, we can 
+                    Lemma (Pumping Lemma, version CF): Let `L \in CF`. Then there exists an
+                    `n \in \mathbb{N}` such that, for every `z \in L` with `|z| \geq n`, we can
                     write z = uvwxy, where the following  conditions are satisfied:<br/>
                     . `|vwx| \leq n`,<br/>
                     . `vx \ne \epsilon`,<br/>
                     . For all `i \in \mathbb{N}_0, uv_iwx_iy \in L`.<br/>
-                    Note that the conditions of the Pumping Lemma are a necessary condition for 
+                    Note that the conditions of the Pumping Lemma are a necessary condition for
                     context-free languages, but not a sufficient one.</p>
                 <br/>
                 <u>Example Application of the Pumping Lemma</u>
                 <p>`L := {w | \exists k \in \mathbb{N} : w = a_kb_{2k}a_k}` is not context-free.<br/>
-                    We apply the contraposition of the Pumping Lemma, i.e. we show that L does not 
-                    satisfy the conditions of the Pumping Lemma, and this implies that L is not 
-                    context-free:<br/>Let n be the constant provided by the Pumping Lemma. We now 
-                    consider the word `z := a_nb_{2n}a_n`. Obviously, `z \in L` and `|z| \geq n`, 
-                    and therefore we can consider the factorization z = uvwxy. Hence, we know that 
-                    `|vwx| \leq n` and v or x are nonempty.<br/>We consider the following cases 
+                    We apply the contraposition of the Pumping Lemma, i.e. we show that L does not
+                    satisfy the conditions of the Pumping Lemma, and this implies that L is not
+                    context-free:<br/>Let n be the constant provided by the Pumping Lemma. We now
+                    consider the word `z := a_nb_{2n}a_n`. Obviously, `z \in L` and `|z| \geq n`,
+                    and therefore we can consider the factorization z = uvwxy. Hence, we know that
+                    `|vwx| \leq n` and v or x are nonempty.<br/>We consider the following cases
                     (assuming the previously stated conditions are both true):<br/>
-                    . vx consists of a's only. Hence, by increasing i in condition 3, we can 
-                    construct a word `a_mb_{2n}a_n` or `a_nb_{2n}a_m` with m > n. Since such a word 
+                    . vx consists of a's only. Hence, by increasing i in condition 3, we can
+                    construct a word `a_mb_{2n}a_n` or `a_nb_{2n}a_m` with m > n. Since such a word
                     is not in L, condition 3 is not satisfied.<br/>
-                    . vx consists of b's only. Hence, by increasing i in condition 3, we can 
-                    construct a word `a_nb_ma_n` with m > 2n. Since such a word is not in L, 
+                    . vx consists of b's only. Hence, by increasing i in condition 3, we can
+                    construct a word `a_nb_ma_n` with m > 2n. Since such a word is not in L,
                     condition 3 is not satisfied.<br/>
-                    . v or x consist of a's followed by b's or of b's followed by a's. Hence, by 
-                    increasing i in condition 3, we can construct a word with arbitrarily many 
+                    . v or x consist of a's followed by b's or of b's followed by a's. Hence, by
+                    increasing i in condition 3, we can construct a word with arbitrarily many
                     factors ab. Since such a word is not in L, condition 3 is not satisfied.<br/>
-                    . v consists of a's only and x consists of b's only. Hence, by increasing i in 
-                    condition 3, we can construct a word `a_mb_pa_n` with m > n. Since such a word 
+                    . v consists of a's only and x consists of b's only. Hence, by increasing i in
+                    condition 3, we can construct a word `a_mb_pa_n` with m > n. Since such a word
                     is not in L, condition 3 is not satisfied.<br/>
-                    . v consists of b's only and x consists of a's only. Hence, by increasing i in 
-                    condition 3, we can construct a word `a_nb_pa_m` with m > n. Since such a word 
+                    . v consists of b's only and x consists of a's only. Hence, by increasing i in
+                    condition 3, we can construct a word `a_nb_pa_m` with m > n. Since such a word
                     is not in L, condition 3 is not satisfied.<br/>
-                    This reasoning covers all possible cases, and all of them show that the 
-                    correctness of conditions 1 and 2 implies that condition 3 is not correct. Thus, 
-                    L does not satisfy the conditions of the Pumping Lemma, and this implies 
+                    This reasoning covers all possible cases, and all of them show that the
+                    correctness of conditions 1 and 2 implies that condition 3 is not correct. Thus,
+                    L does not satisfy the conditions of the Pumping Lemma, and this implies
                     `L \notin CF`.</p>
                 <br/>
                 <u>Type 3 Grammars</u>
-                <p>Let G = (N, T, P, S) be a Type 2 grammar. G is said to be of Type 3 (or: 
+                <p>Let G = (N, T, P, S) be a Type 2 grammar. G is said to be of Type 3 (or:
                     regular) if every rule `u \rightarrow v \in P` satisfies<br/>
                     v = a or v = aA<br/>
                     for an `a \in T` and an `A \in N`.<br/>
-                    An exception of this is if `\epsilon \in L(G)` shall be satisfied, then G may 
-                    contain the rule `S \rightarrow \epsilon`. However, then S must not occur on 
-                    the right side of any rule in P.<br/>Let L be a language generated by a Type 3 
-                    grammar. We then call L a regular language. We denote the class of all regular 
+                    An exception of this is if `\epsilon \in L(G)` shall be satisfied, then G may
+                    contain the rule `S \rightarrow \epsilon`. However, then S must not occur on
+                    the right side of any rule in P.<br/>Let L be a language generated by a Type 3
+                    grammar. We then call L a regular language. We denote the class of all regular
                     languages by REG.</p>
                 <br/>
                 <u>Type 3 Grammars & Greibach Normal Form</u>
-                <p>By definition, every Type 3 grammar is a Type 2 grammar. Additionally, we may 
-                    note the following observation:<br/>Every Type 3 grammar is a Type 2 grammar 
-                    in Greibach Normal Form.<br/>More precisely, a grammar G = (N, T, P, S) is of 
-                    Type 2 and in GNF if all rules in P satisfy `A \rightarrow aB_1B_2...B_k` for 
-                    some `a \in T` and `A, B_1, B_2, ..., B_k \in N`. Thus, such a grammar is of 
+                <p>By definition, every Type 3 grammar is a Type 2 grammar. Additionally, we may
+                    note the following observation:<br/>Every Type 3 grammar is a Type 2 grammar
+                    in Greibach Normal Form.<br/>More precisely, a grammar G = (N, T, P, S) is of
+                    Type 2 and in GNF if all rules in P satisfy `A \rightarrow aB_1B_2...B_k` for
+                    some `a \in T` and `A, B_1, B_2, ..., B_k \in N`. Thus, such a grammar is of
                     Type 3 if the additional restriction `k \in {0, 1}` is satisfied.</p>
                 <br/>
                 <u>A Regular Grammar</u>
@@ -494,13 +495,13 @@
                     Apart from<br/>
                     . `REC \subseteq CS`<br/>
                     . `REG \subseteq FIN`<br/>
-                    All these inclusions follow by definition. Regarding 1, the inclusion is 
+                    All these inclusions follow by definition. Regarding 1, the inclusion is
                     explained on slides 22 and 23. Inclusion 2 can be understood easily.<br/>
                     The following witnesses show that the given hierarchy is proper:<br/>
                     . `(\text{PCP})' \in RE \backslash REC`<br/>
-                    . Let c be a function that encodes a context-sensitive grammar G in a word w 
-                    over a binary alphabet. Then `{w | w \notin L(c^{-1}(w))} \in REC \backslash CS`. The 
-                    same holds for all recursive languages with an EXPSPACE-hard membership 
+                    . Let c be a function that encodes a context-sensitive grammar G in a word w
+                    over a binary alphabet. Then `{w | w \notin L(c^{-1}(w))} \in REC \backslash CS`. The
+                    same holds for all recursive languages with an EXPSPACE-hard membership
                     problem.<br/>
                     . `L(G_{copy}) = {w | \exists x \in {a, b}^+ : w = \text{xccx}} \in CS \backslash CF`<br/>
                     The same holds for other expressions.</p>
@@ -523,8 +524,8 @@
                     . Morphisms</p>
                 <br/>
                 <u>Applications of Regular Grammars</u>
-                <p>Regular grammars are not used very often. However, other representations of 
-                    regular languages - namely regular expressions and finite automata - are very 
+                <p>Regular grammars are not used very often. However, other representations of
+                    regular languages - namely regular expressions and finite automata - are very
                     important. They are mainly applied to<br/>
                     . Data mining<br/>
                     . Specifications and verification of the behaviour of simple controllers<br/>
@@ -532,10 +533,10 @@
                 <br/>
                 <u>Compact Language Representations</u><br/>
                 <u>BNF (Backus-Naur Form)</u>
-                <p>Let G = (N, T, P, S) be a Type 2 grammar. G is said to be in Backus-Naur Form 
+                <p>Let G = (N, T, P, S) be a Type 2 grammar. G is said to be in Backus-Naur Form
                     if P contains production rules<br/>
                     `A\rightarrow \beta| \beta_2 | ... | \beta_n`.<br/>
-                    With `n \in \mathbb{N}, A \in N, \beta_i \in (N\cup T)^\ast, 1 \leq I \leq n`, 
+                    With `n \in \mathbb{N}, A \in N, \beta_i \in (N\cup T)^\ast, 1 \leq I \leq n`,
                     and `|  \notin (N\cup T)`.<br/>
                     Any rule `(A \rightarrow \beta_1 | \beta_2 | ... | \beta_n) \in P` stands for<br/>
                     `A \rightarrow \beta_1`<br/>
@@ -554,13 +555,13 @@
                     Since BNF is almost self-explanatory.</p>
                 <br/>
                 <u>EBNF (Extended Backus-Naur Form)</u>
-                <p>Let G = (N, T, P, S) be  Type 2 grammar. G is said to be in extended 
+                <p>Let G = (N, T, P, S) be  Type 2 grammar. G is said to be in extended
                     Backus-Naur form if P is in BNF or if P contains production rules<br/>
                     `A \rightarrow \alpha[\beta]\gamma` or<br/>
                     `A \rightarrow \alpha{\beta}\gamma`<br/>
-                    With `A \in N, \alpha, \beta, \gamma \in (N \cup T)^\ast`, 
+                    With `A \in N, \alpha, \beta, \gamma \in (N \cup T)^\ast`,
                     and `[, ], {, } \notin (N \cup T)`.<br/>
-                    Note that the meta-symbols of BNF and EBNF may be combined in EBNF, i.e. Rules 
+                    Note that the meta-symbols of BNF and EBNF may be combined in EBNF, i.e. Rules
                     such as<br/>
                     `A \rightarrow \alpha[\beta]\gamma | aA`<br/>
                     Are allowed in EBNF.</p>
@@ -573,8 +574,8 @@
                     `A \rightarrow \alpha\gamma` and `A \rightarrow \alpha\beta\gamma`.<br/>
                     The rule<br/>
                     `A \rightarrow \alpha{\beta}\gamma`<br/>
-                    Means that the word `\beta` may be repeated an arbitrary number of times (this 
-                    includes 0 times) between `\alpha` and `\gamma`. Thus, this rule is short for the 
+                    Means that the word `\beta` may be repeated an arbitrary number of times (this
+                    includes 0 times) between `\alpha` and `\gamma`. Thus, this rule is short for the
                     rules<br/>
                     `A 'rightarrow \alpha\gamma` , `A \rightarrow \alpha\beta\gamma` , `B \rightarrow \beta`,
                     and `B \rightarrow \beta B`.</p>
@@ -612,27 +613,27 @@
                     . Emptiness</p>
                 <br/>
                 <u>Main Area of Application</u>
-                <p>Due to their compact and natural appearance, regular expressions are very 
-                    popular when searching for strings in larger texts. Here, a regular expression 
+                <p>Due to their compact and natural appearance, regular expressions are very
+                    popular when searching for strings in larger texts. Here, a regular expression
                     E is formulated by the user, and it asked whether the text is in `L(\Sigma\ast E\Sigma\ast)`.
                     Therefore, regular expressions are vital for data mining for example.<br/>
-                    Regular expressions are also supported by most of today's text editors and 
-                    programming languages which contain a REGEX engine, i.e. a programme that can 
-                    perform the match test, which means that it can compute an answer to the 
+                    Regular expressions are also supported by most of today's text editors and
+                    programming languages which contain a REGEX engine, i.e. a programme that can
+                    perform the match test, which means that it can compute an answer to the
                     membership problem.</p>
                 <br/>
                 <u>REGEX Engines</u>
-                <p>Since the expressive power of regular expressions is limited, most REGEX 
-                    engines support regular expressions that use concepts exceeding the original 
-                    definition given above.<br/>In particular, they would allow the use of 
-                    so-called back-references, which specify that a variable factor needs to be 
+                <p>Since the expressive power of regular expressions is limited, most REGEX
+                    engines support regular expressions that use concepts exceeding the original
+                    definition given above.<br/>In particular, they would allow the use of
+                    so-called back-references, which specify that a variable factor needs to be
                     exactly repeated at several locations in the word.<br/>Some consequences:<br/>
-                    Let REGEX be the class of languages generated by extended regular expressions. 
+                    Let REGEX be the class of languages generated by extended regular expressions.
                     Then `CS \subset REGEX \subset REG`.<br/>
                     The membership problem for extended regular expressions is NP-complete</p>
                 <br/>
                 <u>Patterns</u>
-                <p>Patterns can be interpreted as particular regular expressions with 
+                <p>Patterns can be interpreted as particular regular expressions with
                     back-references. They were introduced by Dana Auglin in 1980.<br/>
                     . `\Sigma` is an alphabet of terminal symbols.<br/>
                     Example: `\Sigma = {a, b, c}`<br/>
@@ -646,11 +647,11 @@
                     . `CS \subset \text{nePAT}_{\Sigma,} CS \subset ePAT_\Sigma`<br/>
                     . `CF # \text{nePAT}_{\Sigma,} CF # ePAT_\Sigma`<br/>
                     . `REG # \text{nePAT}_{\Sigma,} REG # ePAT_\Sigma`<br/>
-                    Let `\Sigma` be an alphabet, `|\Sigma| = 2`. Then `L_{NE,\Sigma}(x_1 x_2 x_2 x_3)` 
+                    Let `\Sigma` be an alphabet, `|\Sigma| = 2`. Then `L_{NE,\Sigma}(x_1 x_2 x_2 x_3)`
                     is regular.</p>
                 <br/>
                 <u>Decision Problems</u>
-                <p>The following problems are decidable for `\text{nePAT}\Sigma` and `ePAT\Sigma`, 
+                <p>The following problems are decidable for `\text{nePAT}\Sigma` and `ePAT\Sigma`,
                     where `\Sigma` is any finite alphabet:<br/>
                     . Membership<br/>
                     . Disjointness<br/>
@@ -658,11 +659,11 @@
                     . Finiteness</p>
                 <br/>
                 <u>Inclusion Problem</u>
-                <p>Let `\Sigma` be a finite alphabet, `|\Sigma| \geq 2`. Then the inclusion 
+                <p>Let `\Sigma` be a finite alphabet, `|\Sigma| \geq 2`. Then the inclusion
                     problem<br/>
                     for `\text{nePAT}\Sigma` and for `ePAT\Sigma` is undecidable.<br/>
                     A sufficient condition for the inclusion is known:<br/>
-                    Let `\Sigma` be an alphabet, and let `\alpha, \beta \in (\Sigma \cup X)^\ast`. 
+                    Let `\Sigma` be an alphabet, and let `\alpha, \beta \in (\Sigma \cup X)^\ast`.
                     If there exists a<br/>
                     terminal-preserving morphism `\varphi : (\Sigma \cup X)^\ast \rightarrow (\Sigma \cup X)^\ast`
                     satisfying `\varphi(\alpha) = \beta`, then `L_{E,\Sigma}(\alpha) \subseteq L_{E,\Sigma}(\beta)`.<br/>
@@ -670,27 +671,27 @@
                 <br/>
                 <u>Equivalence Problem</u>
                 <p>For NE-pattern languages, the equivalence problem is not hard to solve:<br/>
-                    Let `\Sigma` be an alphabet, `|\Sigma| \geq 2`, and let `\alpha, \beta \in (\Sigma \cup X)^+`. 
-                    `L_{NE,\Sigma}(\alpha) = L_{NE,\Sigma}(\beta)` if and only if `\alpha` and `\beta` 
+                    Let `\Sigma` be an alphabet, `|\Sigma| \geq 2`, and let `\alpha, \beta \in (\Sigma \cup X)^+`.
+                    `L_{NE,\Sigma}(\alpha) = L_{NE,\Sigma}(\beta)` if and only if `\alpha` and `\beta`
                     are identical (up to are naming of variables).<br/>
-                    Corollary - Let `\Sigma` be an alphabet, `|\Sigma| \geq 2`. The equivalence 
+                    Corollary - Let `\Sigma` be an alphabet, `|\Sigma| \geq 2`. The equivalence
                     problem for<br/>
                     `\text{nePAT}\Sigma` is decidable in O(n).<br/>
                     For E-Pattern languages, the equivalence problem is open.<br/>
-                    Conjecture - Let `\Sigma` be an alphabet, `|\Sigma| \geq 3`, and let `\alpha, \beta \in (\Sigma \cup X)^\ast`. 
-                    `L_{E,\Sigma}(\alpha) = L_{E,\Sigma}(\beta)` if and only if there exist 
+                    Conjecture - Let `\Sigma` be an alphabet, `|\Sigma| \geq 3`, and let `\alpha, \beta \in (\Sigma \cup X)^\ast`.
+                    `L_{E,\Sigma}(\alpha) = L_{E,\Sigma}(\beta)` if and only if there exist
                     terminal-preserving<br/>
-                    morphisms `\varphi, \Psi : (\Sigma \cup X)^\ast \rightarrow (\Sigma \cup X)^\ast` 
+                    morphisms `\varphi, \Psi : (\Sigma \cup X)^\ast \rightarrow (\Sigma \cup X)^\ast`
                     satisfying `\varphi(\alpha) = \beta` and `\Psi(\beta) = \alpha`.<br/>
                     This conjecture is (at least partly) incorrect:<br/>
                     Ohlebusch and Ukkonen's Conjecture does not hold for<br/>
-                    `|\Sigma| \in {3, 4}`. For all other alphabets, the correctness of the 
+                    `|\Sigma| \in {3, 4}`. For all other alphabets, the correctness of the
                     conjecture is open.</p>
                 <br/>
                 <u>Closure Properties</u>
                 <p>Let `\Sigma` be an alphabet, `|\Sigma| \geq 2`. The classes `\text{nePAT}\Sigma`
                     and `ePAT\Sigma`<br/>are closed under concatenation.<br/>
-                    Let `\Sigma` be an alphabet, `|\Sigma| \geq 2`. The classes `\text{nePAT}\Sigma 
+                    Let `\Sigma` be an alphabet, `|\Sigma| \geq 2`. The classes `\text{nePAT}\Sigma
                     and `ePAT\Sigma` are not closed under:<br/>
                     . Union<br/>
                     . Intersection<br/>
@@ -699,25 +700,25 @@
                     . Morphisms</p>
                 <br/>
                 <u>Further Properties</u>
-                <p>As seen for some of the above questions, the properties of pattern languages 
-                    can depend on the size of the alphabet `\Sigma`. This is a rare phenomenon in 
-                    formal language theory, where normally a type of languages has the same 
-                    properties for all alphabets with at least two letters.<br/>Due to their 
-                    simple definition, pattern languages are closely connected to a large number 
-                    of other important concepts in theoretical computer science and discrete 
-                    mathematics. This holds for equality sets, word equations and avoidable 
+                <p>As seen for some of the above questions, the properties of pattern languages
+                    can depend on the size of the alphabet `\Sigma`. This is a rare phenomenon in
+                    formal language theory, where normally a type of languages has the same
+                    properties for all alphabets with at least two letters.<br/>Due to their
+                    simple definition, pattern languages are closely connected to a large number
+                    of other important concepts in theoretical computer science and discrete
+                    mathematics. This holds for equality sets, word equations and avoidable
                     patterns.</p>
                 <br/>
                 <u>Finding Patterns Common to a Set of Words</u>
-                <p>Pattern languages are mainly used in bio-informatics and data mining, where it 
-                    is the task to find and describe commonalities of some given words. The 
-                    corresponding theory is then depending on the actual parameters of this task, 
+                <p>Pattern languages are mainly used in bio-informatics and data mining, where it
+                    is the task to find and describe commonalities of some given words. The
+                    corresponding theory is then depending on the actual parameters of this task,
                     called<br/>
                     . Pattern discovery<br/>
                     . Algorithmic learning of patterns<br/>
-                    However the practical applicability of pattern languages still suffers from 
+                    However the practical applicability of pattern languages still suffers from
                     our lack of understanding of of their properties.<br/>
-                    Due to their manifold connections to other concepts, pattern languages are 
+                    Due to their manifold connections to other concepts, pattern languages are
                     also used to gain a deeper understanding of other fields of study.</p>
                 <br/>
                 <u>Automata</u><br/>
@@ -728,16 +729,16 @@
                     in state `q_4` the controller unlocks the door</p>
                 <br/>
                 <u>The Connection to Formal Language Theory</u>
-                <p>The behaviour of this computational device is completely described by the set 
-                    of all sequences of keypad inputs that make the controller move from the 
+                <p>The behaviour of this computational device is completely described by the set
+                    of all sequences of keypad inputs that make the controller move from the
                     initial state `q_0` to its final state `q_4`.<br/>
                     In this view, our controller accepts the language $(a | b | c | d | \lozenge)^\ast \cdot \text{cdda}$.<br/>
-                    In language theory, such a controller is called a finite automaton. It is 
+                    In language theory, such a controller is called a finite automaton. It is
                     considered to be a device that consists of:<br/>
                     . An unbounded input tape<br/>
                     . An input head which scans this tape letter by letter<br/>
                     . A finite set of states<br/>
-                    A finite state control determining the next state based on the current state 
+                    A finite state control determining the next state based on the current state
                     and the letter currently read by the input head.</p>
                 <br/>
                 <u>Deterministic Finite Automata</u>
@@ -748,56 +749,56 @@
                     . `\delta : (Q \times \Sigma) \rightarrow Q`  is a transition function<br/>
                     . `q_o \in Q` is a start state<br/>
                     . `F \subseteq Q` is a set of accepting states<br/>
-                    We normally assume the transition function to be total.<br/>However, for 
+                    We normally assume the transition function to be total.<br/>However, for
                     certain automata, this requirement is unessential.</p>
                 <br/>
                 <u>The Language Accepted by a DFA</u>
-                <p>We extend the transition function such that it does not deal with single 
+                <p>We extend the transition function such that it does not deal with single
                     letters, but with arbitrary words over `\Sigma` as an input:<br/>
-                    Let `A = (Q, \Sigma, \delta, q_0, F)` be a DFA. We inductively define the 
-                    function $\delta\text^ : (Q \times \Sigma^\ast) \rightarrow Q$ by, for 
+                    Let `A = (Q, \Sigma, \delta, q_0, F)` be a DFA. We inductively define the
+                    function $\delta\text^ : (Q \times \Sigma^\ast) \rightarrow Q$ by, for
                     every `q \in Q, a \in \Sigma, v \in \Sigma^\ast`,<br/>
                     $\delta\text^(q, \epsilon) = q$,<br/>
                     $\delta\text^(q, av) = \delta\text^(\delta(q, a), v)$.<br/>
-                    Let `A = (Q, \Sigma, \delta, q_0, F)` be a DFA. A accepts the following 
+                    Let `A = (Q, \Sigma, \delta, q_0, F)` be a DFA. A accepts the following
                     language: $L(A) := {w \in \Sigma^\ast | \delta\text^(q_0, w) \in F}$.</p>
                 <br/>
                 <u>Transition Diagrams</u>
-                <p>A graph as used for our initial keypad controller is called a transition 
+                <p>A graph as used for our initial keypad controller is called a transition
                     diagram. For `A_{3mod4}`, it looks as follows<br/>
                     <img src='Formal Languages & the Theory of Computation/Image2.jpg' alt='Second Image'><br/>
-                    The unlabeled arrow indicates the start state, a double circle stands for an 
+                    The unlabeled arrow indicates the start state, a double circle stands for an
                     accepting state.<br/>Every DFA can be given as a transition diagram.</p>
                 <br/>
                 <u>Transition Tables</u>
                 <p>Alternatively, we can define `A_{3mod4} using a so-called transition table:<br/>
                     <img src='Formal Languages & the Theory of Computation/Image3.jpg' alt='Third Image'><br/>
-                    The arrow indicates the start state, an asterisk * highlights an accepting 
+                    The arrow indicates the start state, an asterisk * highlights an accepting
                     state.<br/>Every DFA can be given a transition table.</p>
                 <br/>
                 <u>Expressive Power</u>
-                <p>Let $\textit L_{DFA}$ be the class of all languages accepted by DFA. Then 
-                    $\textit L_{DFA} = REG$.<br/>On the one hand, DFA read a word from the left 
-                    to the right, and they can only apply a finite set of states when doing this; 
-                    thus, it is not surprising that their expressive power equals that of Type 3 
-                    grammars.<br/>On the other hand, DFA are deterministic, while Type 3 grammars 
-                    and regular expressions are nondeterministic. In this regard, it might seem a 
-                    bit counter intuitive that DFA are as powerful as the nondeterministic 
+                <p>Let $\textit L_{DFA}$ be the class of all languages accepted by DFA. Then
+                    $\textit L_{DFA} = REG$.<br/>On the one hand, DFA read a word from the left
+                    to the right, and they can only apply a finite set of states when doing this;
+                    thus, it is not surprising that their expressive power equals that of Type 3
+                    grammars.<br/>On the other hand, DFA are deterministic, while Type 3 grammars
+                    and regular expressions are nondeterministic. In this regard, it might seem a
+                    bit counter intuitive that DFA are as powerful as the nondeterministic
                     generators of regular languages.</p>
                 <br/>
                 <u>Further Properties</u>
-                <p>Since DFA exactly accept the regular languages, their decision problems have 
-                    the same desirable properties as the Type 3 grammars. In particular, their 
-                    membership problem is not only decidable, but in time O(n), since, for every 
-                    word, there is exactly one computation.<br/>A closer look at the properties of 
-                    transition diagrams gives a very clear idea of why the Pumping Lemma is 
-                    correct: In an infinite regular language, all words from a certain length 
-                    onwards can only be accepted by passing a circle in the transition diagram. It 
+                <p>Since DFA exactly accept the regular languages, their decision problems have
+                    the same desirable properties as the Type 3 grammars. In particular, their
+                    membership problem is not only decidable, but in time O(n), since, for every
+                    word, there is exactly one computation.<br/>A closer look at the properties of
+                    transition diagrams gives a very clear idea of why the Pumping Lemma is
+                    correct: In an infinite regular language, all words from a certain length
+                    onwards can only be accepted by passing a circle in the transition diagram. It
                     must then be possible to pass this circle arbitrarily many times.</p>
                 <br/>
                 <u>Nondeterministic Finite Automata</u>
-                <p>Let S be a set. The P(S) denotes the power set of S, i.e., the set of all 
-                    subsets of S.<br/>A nondeterministic finite automaton is a tuple 
+                <p>Let S be a set. The P(S) denotes the power set of S, i.e., the set of all
+                    subsets of S.<br/>A nondeterministic finite automaton is a tuple
                     `A = (Q, \Sigma, \delta, S, F)`  satisfying the following conditions:<br/>
                     . Q is a finite set of states.<br/>
                     . `\Sigma` is a finite alphabet of input symbols.<br/>
@@ -806,37 +807,37 @@
                     . `F \subseteq Q` is a set of accepting states</p>
                 <br/>
                 <u>The Languages Accepted by an NFA</u>
-                <p>Let `A = (Q, \Sigma, \delta, S, F)` be an NFA. We inductively define the 
-                    function `\delta\text{^} : (P(Q) \times \Sigma^\ast) \rightarrow P(Q)` by, for 
+                <p>Let `A = (Q, \Sigma, \delta, S, F)` be an NFA. We inductively define the
+                    function `\delta\text{^} : (P(Q) \times \Sigma^\ast) \rightarrow P(Q)` by, for
                     every `Q' \subseteq Q, a \in \Sigma, v \in \Sigma^\ast`,<br/>
                     `\delta\text{^}(Q', \epsilon) = Q', \delta\text{^}(Q', av) = \cup vq \in Q' \delta\text{^}(\delta(q, a), v)`.<br/>
-                    Let `A = (Q, \Sigma, \delta, S, F)` be an NFA. A accepts the following 
+                    Let `A = (Q, \Sigma, \delta, S, F)` be an NFA. A accepts the following
                     language:<br/>
                     `L(A) := {w \in \Sigma^\ast | \delta\text{^}(S, w) \cap F \ne \emptyset}`.</p>
                 <br/>
                 <u>An NFA for Our Initial Keypad Controller</u>
                 <p><img src='Formal Languages & the Theory of Computation/Image4.jpg' alt='Fourth Image'><br/>
-                    It is characteristic for transition diagrams of proper NFA that there is at 
-                    least one state that has two outgoing arrows with the same labels.<br/>For NFA 
-                    we do not ask the transition relation to be total.<br/>Given the word 
-                    w := acdda, the NFA can finish in state `q_0` or in `q_4`. Since one of them, 
+                    It is characteristic for transition diagrams of proper NFA that there is at
+                    least one state that has two outgoing arrows with the same labels.<br/>For NFA
+                    we do not ask the transition relation to be total.<br/>Given the word
+                    w := acdda, the NFA can finish in state `q_0` or in `q_4`. Since one of them,
                     namely `q_4`, is accepting, w is contained in the language of the NFA.</p>
                 <br/>
                 <u>Expressive Power</u>
-                <p>Let `text{L}_{NFA}` be the class of all languages accepted by NFA. Then 
-                    $textit{L}_{NFA} = REG$.<br/>Thus, nondeterminism does not enhance the 
-                    computational power of finite automata.<br/>By definition, every DFA is an 
+                <p>Let `text{L}_{NFA}` be the class of all languages accepted by NFA. Then
+                    $textit{L}_{NFA} = REG$.<br/>Thus, nondeterminism does not enhance the
+                    computational power of finite automata.<br/>By definition, every DFA is an
                     NFA.<br/>For every NFA A there is a DFA A' with L(A') = L(A).</p>
                 <br/>
                 <u>The Subset Construction</u>
-                <p>Let `A = (Q, \Sigma, \delta, S, F)` be an NFA. We construct an equivalent DFA 
+                <p>Let `A = (Q, \Sigma, \delta, S, F)` be an NFA. We construct an equivalent DFA
                     `A' = (Q, \Sigma, \delta', q'_0, F')` by defining<br/>
                     . Q := P(Q),<br/>
-                    . `\delta'(Q', a) := \cup q\in Q' \delta(q, a) = \delta\text{^}(Q', a)` for 
+                    . `\delta'(Q', a) := \cup q\in Q' \delta(q, a) = \delta\text{^}(Q', a)` for
                     every `Q' \in Q`,<br/>
                     . `q'_0 : = S`<br/>
                     . `F' := {Q' \subseteq Q | Q' \cap F \emptyset}`<br/>
-                    In other words, the idea is to implement sets of states for A'. All other 
+                    In other words, the idea is to implement sets of states for A'. All other
                     elements of the definition follow directly from this decision.<br/>
                     <img src='Formal Languages & the Theory of Computation/Image5.jpg' alt='Fifth Image'><br/>
                     We apply this method to `A_{2-\text{start}}`. We obtain `A'_{2-\text{start}}` with<br/>
@@ -849,74 +850,74 @@
                     - `q_{0, 2} := {q_0, q_2}`,<br/>
                     - `q_{1, 2} := (q_1, q_2}`,<br/>
                     - `Q_{0, 1, 2} := {q_0, q_1, q_2}`<br/>
-                    . Start state `q_{0, 1}` (since `q_0` and `q_1` were the start states of A) 
+                    . Start state `q_{0, 1}` (since `q_0` and `q_1` were the start states of A)
                     and<br/>Accepting states `q_2, q_{0, 2}, q_{1, 2}, q_{0, 1, 2}`.</p>
                 <br/>
                 <u>Pushdown Automata</u>
-                <p>A pushdown automaton (PDA) A is a tuple `A = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)` 
+                <p>A pushdown automaton (PDA) A is a tuple `A = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)`
                     satisfying the following conditions:<br/>
                     . Q is a finite set of states<br/>
                     . `\Sigma` is a finite alphabet of input symbols<br/>
                     . `\Gamma` is a finite alphabet of stack symbols<br/>
-                    . `\delta : (Q \times (\Sigma \cup {\epsilon}) \times \Gamma) \rightarrow P(Q \times \Gamma^\ast)` 
+                    . `\delta : (Q \times (\Sigma \cup {\epsilon}) \times \Gamma) \rightarrow P(Q \times \Gamma^\ast)`
                     is a transition relation<br/>
                     . `Q_0 \in Q` is a start state<br/>
                     . `Z_0 \in \Gamma` is a start symbol<br/>
                     . `F \subseteq Q` is a set of accepting states</p>
                 <br/>
                 <u>Computations by Pushdown Automata</u>
-                <p>PDA read the input word in the dame way as DFA/NFA, i.e. The letter by letter 
-                    and from left to right.<br/>If the PDA is in state q, it reads an input symbol 
-                    a, has the stack content `z_1z_2z_3...z_nZ_0` (where `z_1` is the topmost 
+                <p>PDA read the input word in the dame way as DFA/NFA, i.e. The letter by letter
+                    and from left to right.<br/>If the PDA is in state q, it reads an input symbol
+                    a, has the stack content `z_1z_2z_3...z_nZ_0` (where `z_1` is the topmost
                     symbol) and it's transition relation `\delta` satisfies `(q', y_1y_2...y_m) \in \delta(q, a, z_1)`,
                     Then the PDA can move to state q' and turn the stack content into `y_1y_2...y_mz_2z_3...z_nZ_0`<br/>
-                    The definition of PDA permits `\epsilon-\text{transitions}`, i.e., `\delta` may allow to change a 
-                    state and the stack content without reading an input symbol. Formally, this means that `\delta` 
-                    may be defined such that `\delta(q, \epsilon, z) \ne \emptyset` is admissible for `q \in Q` and 
+                    The definition of PDA permits `\epsilon-\text{transitions}`, i.e., `\delta` may allow to change a
+                    state and the stack content without reading an input symbol. Formally, this means that `\delta`
+                    may be defined such that `\delta(q, \epsilon, z) \ne \emptyset` is admissible for `q \in Q` and
                     `z \in \Gamma`.</p>
                 <br/>
                 <u>Typical Stack Operations</u>
-                <p>For PDA, write access to the stack always involves that the topmost symbol of 
-                    the stack is consumed in every step of the computation.<br/>Thus, for a stack 
-                    content `z_1z_2z_3...z_n`, the typical stack operations need to be implemented 
+                <p>For PDA, write access to the stack always involves that the topmost symbol of
+                    the stack is consumed in every step of the computation.<br/>Thus, for a stack
+                    content `z_1z_2z_3...z_n`, the typical stack operations need to be implemented
                     as follows:<br/>
                     `\text{POP}: \delta(q, a, z_1)` needs to include<br/>
-                    `(q', \epsilon)`  for a `q' \in Q`, after applying this transition, the stack 
+                    `(q', \epsilon)`  for a `q' \in Q`, after applying this transition, the stack
                     content equals `z_2z_3...z_n`.<br/>
-                    PUSH of a symbol `z\text{^} \in \Gamma: \delta(q, a, z_1)`  needs to include 
-                    `(q', z\text{^}z_1)` for a `q' \in Q`; after applying this transition, the 
+                    PUSH of a symbol `z\text{^} \in \Gamma: \delta(q, a, z_1)`  needs to include
+                    `(q', z\text{^}z_1)` for a `q' \in Q`; after applying this transition, the
                     stack content equals `z\text{^}z_1z_2z_3...z_n`.</p>
                 <br/>
                 <u>The Configuration of a PDA</u>
-                <p>Let `A = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)` be a PDA. A configuration 
+                <p>Let `A = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)` be a PDA. A configuration
                     (or: instantaneous description (ID)) of A is a triple `(q, w, \gamma)` with<br/>
                     . `q \in Q`<br/>
                     . `w \in \Sigma^\ast`<br/>
                     . `\gamma \in \Gamma^\ast`<br/>
-                    Let `A = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)` be a PDA. For any 
-                    `q \in Q, a \in \Sigma \cup {\epsilon}`,  and `z \in \Gamma`, if 
+                    Let `A = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)` be a PDA. For any
+                    `q \in Q, a \in \Sigma \cup {\epsilon}`,  and `z \in \Gamma`, if
                     `(q', \beta) \in \delta(q, a, z)`, then we write<br/>
                     `(q, a_w, z_\gamma) \vdash_A (q', w, \beta\gamma)`<br/>
                     For all `w \in \Sigma^\ast` and  `\gamma \in \Gamma^\ast`. The symbol `\vdash_A^\ast`
                     denotes the reflexive and transitive closure of `\vdash_A.</p>
                 <br/>
                 <u>The Language Accepted by a PDA</u>
-                <p>Let `A =  (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)` be a PDA. A accepts the 
+                <p>Let `A =  (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)` be a PDA. A accepts the
                     following language:<br/>
                     `L(A) := {w \in \Sigma^\ast | (q_0, w, Z_0) \vdash_A^\ast (q, \epsilon, \gamma)}`,<br/>
                     Where `q \in F` and `\gamma \in \Gamma^\ast`.<br/>
                     This method, referred to as acceptance by final state, is equivalent to that for NFA.<br/>
                     Alternatively, we can accept by empty stack, i.e., we define<br/>
                     `L_N(A) := {w \in \Sigma^\ast| (q_0, w, Z_0) \vdash_A^\ast (q, \epsilon, \epsilon)}`,<br/>
-                    Instead of L(A) as the languages accepted by A, and we omit the set F from the definition 
+                    Instead of L(A) as the languages accepted by A, and we omit the set F from the definition
                     of A. This does not affect the class of languages accepted by PDA.</p>
                 <br/>
                 <u>Expressive Power & Non-determinism</u>
-                <p>Let $\textit{L}_{PDA}$ be the class of all languages accepted by PDA. Then 
+                <p>Let $\textit{L}_{PDA}$ be the class of all languages accepted by PDA. Then
                     $\textit{L}_{PDA} = CF$.<br/>
                     PDA are nondeterministic in two ways<br/>
                     . `\delta(q, a, z)` can consist of two or more elements for any<br/>
-                    `q \in Q, a \in \Sigma \cup {\epsilon}` and `z \in \Gamma`. Hence, `\delta` is 
+                    `q \in Q, a \in \Sigma \cup {\epsilon}` and `z \in \Gamma`. Hence, `\delta` is
                     indeed a<br/>transition relation, but not a transition function.<br/>
                     . `\delta(q, a, z)` and `\delta(q, \epsilon, z)` can both be nonempty for any<br/>
                     `q \in Q, a \in \Sigma` and `z \in \Gamma`. In other words, a computation of<br/>
@@ -924,7 +925,7 @@
                     a transition that moves the input head one step to the right.</p>
                 <br/>
                 <u>The Definition of a DPDA (Deterministic Pushdown Automata)</u>
-                <p>A DPDA is a PDA `A = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)` satisfying the 
+                <p>A DPDA is a PDA `A = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)` satisfying the
                     following additional conditions:<br/>
                     . For all `q \in Q, a \in \Sigma \cup {\epsilon}` and `z \in \Gamma, |\delta(q, a, z)| \leq 1`<br/>
                     For all `q \in Q, a \in \Sigma` and `z \in \Gamma, \delta(q, a, z)` is empty or `\delta(q, \epsilon, z)`
@@ -935,85 +936,85 @@
                     . $L(A_{rev}) = w | \exists x \in {a, b}^\ast : w = x x^R} \in \textit{L}_{PDA} \ \textit{L}_{DPDA}$<br/>
                     . ${w | \exists x \in {a, b}^\ast : w = x c x^R} \in \textit{L}_{PDA} \cup \textit{L}_{DPDA}$<br/>
                     . $\textit{L}_{PDA} \subset \textit{L}_{DPDA} \subset REG$<br/>
-                    Nondeterminism, unlike for the comparison between NFA's and DFA's, is 
+                    Nondeterminism, unlike for the comparison between NFA's and DFA's, is
                     important in the difference in expressive power between PDA's and DPDA's.</p>
                 <br/>
                 <u>Turing Machines</u>
-                <p>A Turing machine has an unbounded tape and an arbitrary tape content produced 
-                    during the computation. It has a tape head that acts as pointer, showing the 
-                    user what block of the tape is currently mutable. A Turing machine also has a 
-                    finite state control.<br/>A deterministic Turing machine is a tuple 
-                    `M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)` satisfying the following 
+                <p>A Turing machine has an unbounded tape and an arbitrary tape content produced
+                    during the computation. It has a tape head that acts as pointer, showing the
+                    user what block of the tape is currently mutable. A Turing machine also has a
+                    finite state control.<br/>A deterministic Turing machine is a tuple
+                    `M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)` satisfying the following
                     conditions:<br/>
                     . Q is a finite set of states<br/>
                     . `\Sigma` is a finite alphabet of input symbols<br/>
                     . `\Gamma` is a finite alphabet of tape symbols, `\Gamma \subseteq \Sigma`<br/>
-                    . `\delta : (Q \times \Gamma) \rightarrow (Q \times \Gamma \times {R, L})` is a 
+                    . `\delta : (Q \times \Gamma) \rightarrow (Q \times \Gamma \times {R, L})` is a
                     transition function<br/>
                     . `q_0 \in Q` is a start state<br/>
                     . `B \in \Gamma` is a blank symbol<br/>
                     . `F \subseteq Q` is a set of accepting states.<br/>
-                    A nondeterministic Turing machine is the same as a deterministic Turing 
+                    A nondeterministic Turing machine is the same as a deterministic Turing
                     machine, except the transition relation is `\delta : (Q \times \Gamma) \rightarrow P(Q \times \Gamma \times {R, L})`.<br/>
-                    A move of  a Turing machine involves the change of the state, (that doesn't 
-                    necessarily have to become a different state; an override of the old tape 
-                    symbol with a new one, (which doesn't necessarily have to become a different 
+                    A move of  a Turing machine involves the change of the state, (that doesn't
+                    necessarily have to become a different state; an override of the old tape
+                    symbol with a new one, (which doesn't necessarily have to become a different
                     symbol) and a move of the tape head to the left or the right.</p>
                 <br/>
                 <u>The Configuration of a Turing Machine</u>
-                <p>Let `M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)` be a TM. A configuration (or an 
+                <p>Let `M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)` be a TM. A configuration (or an
                     Instantaneous Description (ID)) of M is a word,<br/>
                     `B^wa_1a_2...a_{i-1}qa_ja_{j+1}...a_nB^w` with<br/>
                     . `q \in Q`, the current state<br/>
                     . `a_j \in \Gamma, 1 \leq j \leq n`, the current non-blank tape content.<br/>
                     `B^w` stands for an infinite sequence of blank symbols.<br/>
-                    If the configuration is `B^wa_1a_2...a_{i-1}qa_ja_{j+1}...a_nB^w`, then we assume that 
+                    If the configuration is `B^wa_1a_2...a_{i-1}qa_ja_{j+1}...a_nB^w`, then we assume that
                     the tape head currently scans symbol `a_i`.</p>
                 <br/>
                 <u>The Language Accepted by a Turing Machine</u>
-                <p>Let `M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)` be a TM. M accepts the 
+                <p>Let `M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)` be a TM. M accepts the
                     following language:<br/>
                     `L(M) := {w \in \Sigma^\ast | B^w q_0 w B^w \vdash_M^\ast B^w u q v B^w}`<br/>
                     Where and `u, v \in \Gamma^\ast` and `q \in F`.<br/>
                     Thus we again accept by final state.<br/>
-                    Alternatively, we can accept by halting. This means that the language accepted 
-                    by M is the set of all words `w \in \Sigma^\ast` where M from the initial 
-                    configuration `B^w q_0 w B^w` enters a state q such that M halts, i.e. `\delta(q, a)` 
-                    is undefined for the symbol a currently scanned.<br/>Both definitions yield 
+                    Alternatively, we can accept by halting. This means that the language accepted
+                    by M is the set of all words `w \in \Sigma^\ast` where M from the initial
+                    configuration `B^w q_0 w B^w` enters a state q such that M halts, i.e. `\delta(q, a)`
+                    is undefined for the symbol a currently scanned.<br/>Both definitions yield
                     the same class of languages that can be accepted by Turing machines.</p>
                 <br/>
                 <u>Expressive Power</u>
-                <p>Let $\textit{L}_{TM}$ be the class of all languages accepted by Turing machines. 
+                <p>Let $\textit{L}_{TM}$ be the class of all languages accepted by Turing machines.
                     Then $\textit{L}_{TM} = RE$.<br/>
-                    For general Turing machines, we do not gain computational power if we allow 
+                    For general Turing machines, we do not gain computational power if we allow
                     them to be nondeterministic:<br/>
                     . By definition, every TM is a NTM,<br/>
                     . For every NTM M there is a TM M' with L(M') = L(M).<br/>
-                    The famous P vs. NP problem: Given any $\text{NTM}.\textit{M}$ that accepts its 
-                    language in polynomial time, does there always exist an equivalent $\text{TM} \textit{ M'}$ 
+                    The famous P vs. NP problem: Given any $\text{NTM}.\textit{M}$ that accepts its
+                    language in polynomial time, does there always exist an equivalent $\text{TM} \textit{ M'}$
                     that also accepts the language in polynomial time?</p>
                 <br/>
                 <u>Linear-bounded Automata</u>
-                <p>A nondeterministic Turing Machine that solely accesses during its moves the 
-                    space initially occupied by the input word is called a Linear Bounded 
-                    Automaton or LBA.<br/>`M_{anbn}` is a Linear Bounded Automaton apart from a 
-                    minor technical detail.<br/>Let $\textit{L}_{LBA}$ be the class of all languages 
+                <p>A nondeterministic Turing Machine that solely accesses during its moves the
+                    space initially occupied by the input word is called a Linear Bounded
+                    Automaton or LBA.<br/>`M_{anbn}` is a Linear Bounded Automaton apart from a
+                    minor technical detail.<br/>Let $\textit{L}_{LBA}$ be the class of all languages
                     accepted by Linear Bounded Automata. Then $\textit{L}_{LBA} = CS$.</p>
                 <br/>
                 <u>A Class of Automata Accepting REC?</u>
-                <p>There is no suitable class of automata exactly accepting the class of all 
-                    recursive languages:<br/>There is no recursively enumerable class $\textit{M}$ of 
-                    automata satisfying $\textit{L}(\textit{M}) = REC$.<br/>We prove this statement 
-                    using the diagonalization technique:<br/>Let `w_1, w_2, w_3, ...` be a 
-                    recursive enumeration of all words over the alphabet considered.<br/>Assume 
-                    to the contrary that there exists $\textit{M}$ with the stated property. Let 
+                <p>There is no suitable class of automata exactly accepting the class of all
+                    recursive languages:<br/>There is no recursively enumerable class $\textit{M}$ of
+                    automata satisfying $\textit{L}(\textit{M}) = REC$.<br/>We prove this statement
+                    using the diagonalization technique:<br/>Let `w_1, w_2, w_3, ...` be a
+                    recursive enumeration of all words over the alphabet considered.<br/>Assume
+                    to the contrary that there exists $\textit{M}$ with the stated property. Let
                     then `M_1, M_2, M_3, ...` be a recursive enumeration of $\textit{M}$.<br/>
                     We now define a language `L_d` as follows:<br/>
                     $L_d := {w | w_i \notin L(M_i)}$<br/>
-                    According to our assumption, all `L(M_i)` are recursive and therefore `L_d` 
-                    is also recursive.<br/>Hence, there must be a `k \in \mathbb{N}` with 
+                    According to our assumption, all `L(M_i)` are recursive and therefore `L_d`
+                    is also recursive.<br/>Hence, there must be a `k \in \mathbb{N}` with
                     `L(M_k) = L_d`. Due to the definition of `L_d`, we can then conclude that<br/>
-                    $W_k \in L_d \text{ iff } w_k \notin L(M_k)$.<br/>Thus, `L(M_k) \ne L_d`. This 
+                    $W_k \in L_d \text{ iff } w_k \notin L(M_k)$.<br/>Thus, `L(M_k) \ne L_d`. This
                     is a contradiction.</p>
                 <br/>
                 <u>Turing Machines That Simulate All Turing Machines</u>
@@ -1021,10 +1022,10 @@
                     . One part of its input as an encoding of any Turing Machine M' and<br/>
                     . Another part as an input w for M'<br/>
                     And M simulates M' on w, i.e. it accepts w if and only if M' accepts w.<br/>
-                    Any Turing machine M with such an ability is called a Universal Turing 
-                    machine. Its existence is a characteristic condition for the existence of 
-                    general purpose computers.<br/>According to Neary and Woods there exists a 
-                    Universal Turing machine over a binary alphabet that requires just 15 
+                    Any Turing machine M with such an ability is called a Universal Turing
+                    machine. Its existence is a characteristic condition for the existence of
+                    general purpose computers.<br/>According to Neary and Woods there exists a
+                    Universal Turing machine over a binary alphabet that requires just 15
                     states.</p>
             </div>
         </div>
