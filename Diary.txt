@@ -454,3 +454,11 @@ Attended a Strategy Session. Helped Joe Blades attend his interview and gave him
 Hosted a teleconference on the Hartree Hackathon. We have to produce documents for use cases and participants by the end of next week. Also had a chat with Ignatius on RDP possibilities from the Blue network to an Azure Virtual Machine.
 15th
 Attended an Innovation Pipeline. Worked on finding a solution to accessibility of physical documents for the visually impaired.
+16th
+Attended a Generation Architect's meeting. More development of my understanding of the BERAN architecture. Finished document on OCR technology.
+17th
+Tried to get a talk with Gareth. Meeting pushed to tomorrow. Talked with Ian on the security needed to set up BERAN architecture. Set up meeting with Ian, Andy, Adam and Graham for tomorrow.
+18th
+Attended the BERAN meeting with Gareth clearing up the queries from when he was on leave. Attended a leaving presentation for Andy Mountford and then attended a Strategy session. Attended a meeting with Ian on security issues with BERAN architecture. He demands a document on the updated BERAN architecture. Started development of the document.
+19th
+Continued development of the updated architecture document for Ian. Completed the first draft and attached it to an email to Gareth so he could provide any feedback, confirming his vision aligns with mine.

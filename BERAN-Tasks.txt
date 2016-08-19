@@ -6,5 +6,6 @@ Complete understanding of architectural components of current infrastructure.don
 Complete development of architectural components of potential infrastructure and send to Ian Kelly.done
 Implement new Azure infrastructure to be ready for the BERAN pilot stage.done
 Continue talking with Ieuan & Gareth on the requirements they wish for.not done
-Put in service requests for Blue access to remote VM, storage drives and the Azure portal website.not done
+Put in service requests for Blue access to remote VM, storage drives and the Azure portal website.done
 Talk with Matt Bennett/Ignatius about RDP methods to get to Azure virtual machines safely (and legally).done
+Create an updated Architecture document for Ian.not done
