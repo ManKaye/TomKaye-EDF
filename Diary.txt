@@ -455,6 +455,7 @@ Hosted a teleconference on the Hartree Hackathon. We have to produce documents f
 15th
 Attended an Innovation Pipeline. Worked on finding a solution to accessibility of physical documents for the visually impaired.
 16th
+<<<<<<< HEAD
 Attended a Generation Architect's meeting. More development of my understanding of the BERAN architecture. Finished document on OCR technology.
 17th
 Tried to get a talk with Gareth. Meeting pushed to tomorrow. Talked with Ian on the security needed to set up BERAN architecture. Set up meeting with Ian, Andy, Adam and Graham for tomorrow.
@@ -462,3 +463,6 @@ Tried to get a talk with Gareth. Meeting pushed to tomorrow. Talked with Ian on 
 Attended the BERAN meeting with Gareth clearing up the queries from when he was on leave. Attended a leaving presentation for Andy Mountford and then attended a Strategy session. Attended a meeting with Ian on security issues with BERAN architecture. He demands a document on the updated BERAN architecture. Started development of the document.
 19th
 Continued development of the updated architecture document for Ian. Completed the first draft and attached it to an email to Gareth so he could provide any feedback, confirming his vision aligns with mine.
+=======
+Finished up document on wikification and the progress so far. Started a document on OCR mobile technologies. Attended a quick Architect's Team meeting. Went out to see the Fukushima related response team for the UK.
+>>>>>>> origin/master
