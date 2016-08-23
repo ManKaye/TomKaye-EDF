@@ -462,3 +462,7 @@ Tried to get a talk with Gareth. Meeting pushed to tomorrow. Talked with Ian on 
 Attended the BERAN meeting with Gareth clearing up the queries from when he was on leave. Attended a leaving presentation for Andy Mountford and then attended a Strategy session. Attended a meeting with Ian on security issues with BERAN architecture. He demands a document on the updated BERAN architecture. Started development of the document.
 19th
 Continued development of the updated architecture document for Ian. Completed the first draft and attached it to an email to Gareth so he could provide any feedback, confirming his vision aligns with mine.
+22nd
+Went to a lunchtime TED talk with young professionals discussing topics like motivation and what makes a good leader. Also went to demo the Project Tango device with some engineering employees of Barnwood. Made another document for BERAN, more on how to pick up the project after I have left the company. Went to Jumptastic after work.
+23rd
+Attended a GAF, a Hartree Hackathon meeting and a Delivery Team 3 meeting. Sorted out some stuff with still pending CTC vetting.
